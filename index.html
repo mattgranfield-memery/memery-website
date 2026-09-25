@@ -1107,10 +1107,715 @@
         transform:none;
       }
     }
+
+
+    /* =========================================================
+       ELEGANCE PASS — progressive CSS enhancement
+       No framework, no extra assets, GitHub Pages friendly.
+       ========================================================= */
+
+    /* More refined rhythm and typography where supported */
+    h1,h2,h3{
+      text-wrap:balance;
+    }
+
+    p{
+      text-wrap:pretty;
+    }
+
+    section[id]{
+      scroll-margin-top:110px;
+    }
+
+    /* Very subtle paper grain / depth. It is CSS-only and sits above
+       backgrounds without intercepting clicks. */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:999;
+      pointer-events:none;
+      opacity:.035;
+      background-image:
+        radial-gradient(circle at 20% 30%, currentColor .55px, transparent .7px),
+        radial-gradient(circle at 70% 65%, currentColor .45px, transparent .65px);
+      background-size:9px 9px, 13px 13px;
+      color:#171b34;
+      mix-blend-mode:multiply;
+    }
+
+    /* Scroll progress: progressive enhancement for browsers that support
+       CSS scroll-driven animations. Invisible everywhere else. */
+    .scroll-progress{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      z-index:1000;
+      pointer-events:none;
+      background:linear-gradient(90deg,var(--coral),#ff9b7f);
+      transform:scaleX(0);
+      transform-origin:left center;
+    }
+
+    @supports (animation-timeline: scroll()){
+      .scroll-progress{
+        display:block;
+        animation:memery-progress linear both;
+        animation-timeline:scroll(root block);
+      }
+      @keyframes memery-progress{
+        to{transform:scaleX(1)}
+      }
+    }
+
+    /* NAV: lighter, more architectural glass treatment */
+    .nav{
+      border-color:rgba(255,255,255,.14);
+      background:linear-gradient(180deg,rgba(23,27,52,.88),rgba(23,27,52,.76));
+      box-shadow:
+        0 16px 45px rgba(7,9,22,.22),
+        inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    .nav::after{
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:inherit;
+      pointer-events:none;
+      background:linear-gradient(100deg,rgba(255,255,255,.05),transparent 30%,transparent 70%,rgba(247,102,63,.055));
+    }
+
+    .navlinks a{
+      position:relative;
+      transition:color .2s ease;
+    }
+
+    .navlinks a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:100%;
+      bottom:-6px;
+      height:1px;
+      background:var(--coral);
+      transition:right .25s ease;
+    }
+
+    .navlinks a:hover::after{
+      right:0;
+    }
+
+    /* Buttons get a restrained light sweep rather than a bigger shadow */
+    .btn{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      z-index:-1;
+      transform:translateX(-120%) skewX(-20deg);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
+      transition:transform .55s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .btn:hover::before{
+      transform:translateX(120%) skewX(-20deg);
+    }
+
+    /* HERO: layered light field, fine grid and stronger typographic focal point */
+    .hero{
+      isolation:isolate;
+      background:
+        radial-gradient(circle at 72% 26%,rgba(247,102,63,.13),transparent 28%),
+        radial-gradient(circle at 15% 82%,rgba(255,255,255,.035),transparent 34%),
+        var(--navy);
+    }
+
+    .hero::before{
+      inset:0;
+      width:auto;
+      height:auto;
+      max-width:none;
+      max-height:none;
+      border:0;
+      border-radius:0;
+      opacity:.26;
+      background-image:
+        linear-gradient(rgba(242,239,232,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(242,239,232,.055) 1px,transparent 1px);
+      background-size:72px 72px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 82%);
+      -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.8),transparent 82%);
+    }
+
+    .hero::after{
+      right:-8vw;
+      top:-8vh;
+      width:62vw;
+      height:62vw;
+      max-width:840px;
+      max-height:840px;
+      background:radial-gradient(circle at 50% 50%,rgba(247,102,63,.19),rgba(247,102,63,.055) 35%,transparent 67%);
+      filter:blur(2px);
+    }
+
+    .hero .display{
+      max-width:9ch;
+      color:var(--cream);
+      background:linear-gradient(105deg,#fffdf7 0%,var(--cream) 54%,#ffc6b5 120%);
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow:0 22px 70px rgba(0,0,0,.15);
+    }
+
+    .hero .eyebrow{
+      max-width:60ch;
+      line-height:1.45;
+    }
+
+    .hero-mark::before{
+      content:"";
+      position:absolute;
+      width:84%;
+      aspect-ratio:1;
+      border-radius:50%;
+      border:1px solid rgba(242,239,232,.12);
+      box-shadow:
+        0 0 0 44px rgba(242,239,232,.025),
+        0 0 0 88px rgba(242,239,232,.018);
+      animation:memery-orbit 18s linear infinite;
+    }
+
+    .hero-mark::after{
+      content:"";
+      position:absolute;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--coral);
+      top:12%;
+      right:18%;
+      box-shadow:0 0 0 9px rgba(247,102,63,.12),0 0 35px rgba(247,102,63,.7);
+    }
+
+    @keyframes memery-orbit{
+      to{transform:rotate(360deg)}
+    }
+
+    .mini-card{
+      border-color:rgba(255,255,255,.18);
+      background:linear-gradient(145deg,rgba(35,41,71,.78),rgba(23,27,52,.9));
+      box-shadow:0 24px 70px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.08);
+    }
+
+    /* Section headings get a tiny editorial rule */
+    .section-head{
+      position:relative;
+    }
+
+    .section-head::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-27px;
+      height:1px;
+      background:linear-gradient(90deg,var(--coral) 0 72px,var(--line) 72px 100%);
+    }
+
+    /* Shared premium card surface */
+    .problem-card,
+    .why-item,
+    .engage-card,
+    .metric,
+    .case,
+    .step{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .problem-card::before,
+    .why-item::before,
+    .engage-card::before,
+    .metric::before,
+    .case::before,
+    .step::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:0;
+      background:radial-gradient(420px circle at 20% 0%,rgba(247,102,63,.085),transparent 42%);
+      transition:opacity .35s ease;
+    }
+
+    .problem-card:hover::before,
+    .why-item:hover::before,
+    .engage-card:hover::before,
+    .metric:hover::before,
+    .case:hover::before,
+    .step:hover::before{
+      opacity:1;
+    }
+
+    .problem-card,
+    .why-item,
+    .engage-card,
+    .metric{
+      transition:transform .28s cubic-bezier(.2,.75,.2,1),box-shadow .28s ease,border-color .28s ease;
+    }
+
+    .problem-card:hover,
+    .why-item:hover,
+    .engage-card:hover,
+    .metric:hover{
+      transform:translateY(-6px);
+      border-color:rgba(247,102,63,.22);
+      box-shadow:0 22px 60px rgba(23,27,52,.1);
+    }
+
+    .problem-card .num,
+    .why-item .num,
+    .step .num{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:1px solid rgba(247,102,63,.25);
+      background:rgba(247,102,63,.06);
+    }
+
+    .step .num{
+      border-color:rgba(247,102,63,.32);
+      background:rgba(247,102,63,.08);
+    }
+
+    /* Service cards: graphic rings and more depth, still brand-led */
+    .service{
+      isolation:isolate;
+      transition:transform .35s cubic-bezier(.2,.75,.2,1),box-shadow .35s ease;
+    }
+
+    .service::before{
+      content:"";
+      position:absolute;
+      width:430px;
+      height:430px;
+      right:-210px;
+      top:-190px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.17);
+      box-shadow:0 0 0 48px rgba(255,255,255,.025),0 0 0 96px rgba(255,255,255,.018);
+      z-index:-1;
+      transition:transform .5s ease;
+    }
+
+    .service::after{
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:33px;
+      z-index:-1;
+      pointer-events:none;
+      background:linear-gradient(140deg,rgba(255,255,255,.055),transparent 40%);
+    }
+
+    .service:hover{
+      transform:translateY(-7px);
+      box-shadow:0 32px 90px rgba(23,27,52,.17);
+    }
+
+    .service:hover::before{
+      transform:translate(-12px,18px) scale(1.03);
+    }
+
+    .service.content::before{
+      border-color:rgba(255,255,255,.26);
+    }
+
+    /* Method cards feel like one connected system */
+    .steps{
+      position:relative;
+    }
+
+    .steps::before{
+      content:"";
+      position:absolute;
+      top:46px;
+      left:7%;
+      right:7%;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(247,102,63,.4),rgba(242,239,232,.16),rgba(247,102,63,.4),transparent);
+      pointer-events:none;
+    }
+
+    .step{
+      backdrop-filter:blur(10px);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+      transition:transform .28s ease,background .28s ease,border-color .28s ease;
+    }
+
+    .step:hover{
+      transform:translateY(-5px);
+      background:rgba(255,255,255,.065);
+      border-color:rgba(247,102,63,.22);
+    }
+
+    /* Proof: slightly more editorial and less boxy */
+    .case{
+      box-shadow:0 22px 65px rgba(23,27,52,.07);
+    }
+
+    .case.ai{
+      background:
+        radial-gradient(circle at 90% 8%,rgba(255,255,255,.17),transparent 27%),
+        linear-gradient(145deg,#f7663f,#e85e3b);
+      box-shadow:0 28px 70px rgba(216,94,60,.19);
+    }
+
+    .case.ai::before{
+      background:radial-gradient(420px circle at 100% 0%,rgba(255,255,255,.16),transparent 48%);
+      opacity:1;
+    }
+
+    /* Metrics: make the proof feel more like a premium data display */
+    .metric{
+      background:linear-gradient(160deg,#fff,rgba(255,255,255,.76));
+    }
+
+    .metric strong{
+      background:linear-gradient(110deg,var(--coral),#ff9678);
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .metric::after{
+      content:"";
+      position:absolute;
+      width:92px;
+      height:92px;
+      right:-44px;
+      bottom:-45px;
+      border-radius:50%;
+      border:1px solid rgba(247,102,63,.16);
+      box-shadow:0 0 0 18px rgba(247,102,63,.03);
+    }
+
+    /* Sticky Why column gets a quiet visual anchor */
+    .why-copy{
+      padding-left:24px;
+      border-left:2px solid rgba(247,102,63,.28);
+    }
+
+    /* Contact: glass + halo border. No JS required. */
+    .cta{
+      background:
+        radial-gradient(circle at 75% 18%,rgba(247,102,63,.13),transparent 24%),
+        radial-gradient(circle at 14% 75%,rgba(255,255,255,.035),transparent 28%),
+        var(--navy);
+    }
+
+    .cta::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      background-size:64px 64px;
+      mask-image:linear-gradient(90deg,transparent,black 28%,black 72%,transparent);
+      -webkit-mask-image:linear-gradient(90deg,transparent,black 28%,black 72%,transparent);
+    }
+
+    .contact-card{
+      background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.045));
+      border-color:rgba(255,255,255,.17);
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.25),
+        inset 0 1px 0 rgba(255,255,255,.09);
+    }
+
+    .contact-card::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:31px;
+      padding:1px;
+      background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(247,102,63,.42),rgba(255,255,255,.06));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+      opacity:.7;
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select{
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus{
+      transform:translateY(-1px);
+    }
+
+    /* Slight staggering gives the existing JS reveal more polish */
+    .problem-grid > .reveal:nth-child(2),
+    .service-grid > .reveal:nth-child(2),
+    .why-list > .reveal:nth-child(2),
+    .engage-grid > .reveal:nth-child(2){transition-delay:.08s}
+
+    .problem-grid > .reveal:nth-child(3),
+    .why-list > .reveal:nth-child(3){transition-delay:.16s}
+
+    .steps > .reveal:nth-child(2),
+    .metric-grid > .reveal:nth-child(2){transition-delay:.05s}
+    .steps > .reveal:nth-child(3),
+    .metric-grid > .reveal:nth-child(3){transition-delay:.10s}
+    .steps > .reveal:nth-child(4),
+    .metric-grid > .reveal:nth-child(4){transition-delay:.15s}
+
+    @media (max-width:900px){
+      .steps::before{display:none}
+      .why-copy{padding-left:0;border-left:0}
+      .hero::before{background-size:52px 52px}
+    }
+
+    @media (max-width:600px){
+      body::before{opacity:.022}
+      .hero-mark::before{width:76%;box-shadow:0 0 0 28px rgba(242,239,232,.022),0 0 0 56px rgba(242,239,232,.014)}
+      .section-head::after{bottom:-20px}
+      .contact-card{border-radius:24px}
+      .contact-card::after{border-radius:25px}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .hero-mark::before{animation:none}
+      .btn::before{display:none}
+      .scroll-progress{display:none!important}
+    }
+
+
+    /* =========================================================
+       MEMERY SYMBOL — logo-faithful animated hero mark
+       ========================================================= */
+
+    .logo-scene{
+      overflow:visible;
+      isolation:isolate;
+    }
+
+    /* Replace the generic rotating orbit with quieter brand rings. */
+    .logo-scene::before,
+    .logo-scene::after{
+      content:none;
+    }
+
+    .logo-glow{
+      position:absolute;
+      width:min(570px,105%);
+      aspect-ratio:1;
+      border-radius:50%;
+      background:radial-gradient(circle at 54% 48%,rgba(247,102,63,.16),rgba(247,102,63,.055) 34%,rgba(242,239,232,.025) 52%,transparent 72%);
+      filter:blur(10px);
+      z-index:0;
+      animation:logoGlow 8s ease-in-out infinite;
+    }
+
+    .logo-ring{
+      position:absolute;
+      border-radius:50%;
+      border:1px solid rgba(242,239,232,.085);
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .ring-1{
+      width:min(440px,82%);
+      aspect-ratio:1;
+      animation:ringBreathe 9s ease-in-out infinite;
+    }
+
+    .ring-2{
+      width:min(330px,64%);
+      aspect-ratio:1;
+      animation:ringBreathe 9s ease-in-out infinite 1.4s;
+    }
+
+    .ring-3{
+      width:min(230px,46%);
+      aspect-ratio:1;
+      animation:ringBreathe 9s ease-in-out infinite 2.8s;
+    }
+
+    .memery-symbol{
+      position:relative;
+      width:min(430px,88%);
+      aspect-ratio:1;
+      z-index:2;
+      animation:symbolFloat 8s cubic-bezier(.45,0,.55,1) infinite;
+      filter:drop-shadow(0 28px 34px rgba(4,7,21,.18));
+    }
+
+    .logo-left,
+    .logo-right,
+    .logo-overlap,
+    .logo-bar{
+      position:absolute;
+      will-change:transform;
+      transform-origin:center;
+    }
+
+    /* The two wedges use clip-path to echo the actual Memery bow-tie mark. */
+    .logo-left{
+      left:3%;
+      top:18%;
+      width:66%;
+      height:64%;
+      background:linear-gradient(145deg,#fffdf7 0%,var(--cream) 76%);
+      clip-path:polygon(0 0,100% 50%,0 100%);
+      border-radius:10% 0 0 10%;
+      animation:leftWing 8.6s ease-in-out infinite;
+    }
+
+    .logo-right{
+      left:31%;
+      top:18%;
+      width:66%;
+      height:64%;
+      background:linear-gradient(215deg,#ff7955 0%,var(--coral) 68%,#ed5a35 100%);
+      clip-path:polygon(100% 0,0 50%,100% 100%);
+      border-radius:0 10% 10% 0;
+      animation:rightWing 8.6s ease-in-out infinite;
+    }
+
+    /* A translucent lens recreates the warm overlap in the supplied logo. */
+    .logo-overlap{
+      left:31%;
+      top:31%;
+      width:37%;
+      height:38%;
+      border-radius:28%;
+      background:rgba(250,126,86,.42);
+      mix-blend-mode:multiply;
+      transform:rotate(45deg);
+      filter:saturate(.9);
+      animation:overlapPulse 7s ease-in-out infinite;
+    }
+
+    .logo-bar{
+      right:0;
+      top:5%;
+      width:15%;
+      height:90%;
+      border-radius:999px;
+      background:linear-gradient(180deg,#ff7955 0%,var(--coral) 52%,#f35f3a 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 20px 48px rgba(247,102,63,.18);
+      animation:barFloat 8s ease-in-out infinite;
+    }
+
+    .logo-bar::before{
+      content:"";
+      position:absolute;
+      top:7%;
+      left:17%;
+      width:18%;
+      height:74%;
+      border-radius:999px;
+      background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0));
+      opacity:.6;
+    }
+
+    .mini-card{
+      z-index:4;
+      right:2%;
+      bottom:0;
+    }
+
+    @keyframes symbolFloat{
+      0%,100%{transform:translate3d(0,0,0) rotate(-.4deg)}
+      50%{transform:translate3d(0,-11px,0) rotate(.4deg)}
+    }
+
+    @keyframes leftWing{
+      0%,100%{transform:translate3d(0,0,0) scale(1)}
+      50%{transform:translate3d(-5px,-4px,0) scale(1.015)}
+    }
+
+    @keyframes rightWing{
+      0%,100%{transform:translate3d(0,0,0) scale(1)}
+      50%{transform:translate3d(6px,5px,0) scale(1.015)}
+    }
+
+    @keyframes overlapPulse{
+      0%,100%{transform:rotate(45deg) scale(.98);opacity:.68}
+      50%{transform:rotate(45deg) scale(1.04);opacity:.88}
+    }
+
+    @keyframes barFloat{
+      0%,100%{transform:translate3d(0,0,0)}
+      50%{transform:translate3d(0,-9px,0)}
+    }
+
+    @keyframes logoGlow{
+      0%,100%{transform:scale(.98);opacity:.72}
+      50%{transform:scale(1.045);opacity:1}
+    }
+
+    @keyframes ringBreathe{
+      0%,100%{transform:scale(.985);opacity:.45}
+      50%{transform:scale(1.035);opacity:.13}
+    }
+
+    @media (max-width:900px){
+      .memery-symbol{width:min(390px,82%)}
+      .logo-glow{width:min(490px,100%)}
+      .mini-card{right:4%;bottom:-2%}
+    }
+
+    @media (max-width:600px){
+      .hero-mark{min-height:340px}
+      .memery-symbol{width:min(300px,86%)}
+      .logo-glow{width:330px}
+      .ring-1{width:290px}
+      .ring-2{width:220px}
+      .ring-3{width:155px}
+      .mini-card{display:block;right:0;bottom:-8px;width:min(250px,84%);padding:18px}
+      .mini-card strong{font-size:.94rem}
+      .mini-card span{font-size:.82rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      .logo-glow,
+      .logo-ring,
+      .memery-symbol,
+      .logo-left,
+      .logo-right,
+      .logo-overlap,
+      .logo-bar{
+        animation:none!important;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <div class="nav-shell">
     <nav class="nav" aria-label="Primary navigation">
@@ -1158,7 +1863,7 @@
           </h1>
 
           <p class="lead">
-            Strategy, AI and storytelling for organisations with something worth remembering.
+            Strategy, segmentation, AI, storytelling and content for mission-driven organisations doing something worth remembering.
           </p>
 
           <div class="hero-actions">
@@ -1176,13 +1881,19 @@
         </div>
 
 
-        <div class="hero-mark" aria-hidden="true">
+        <div class="hero-mark logo-scene" aria-hidden="true">
 
-          <div class="shape a"></div>
+          <div class="logo-glow"></div>
+          <div class="logo-ring ring-1"></div>
+          <div class="logo-ring ring-2"></div>
+          <div class="logo-ring ring-3"></div>
 
-          <div class="shape b"></div>
-
-          <div class="shape c"></div>
+          <div class="memery-symbol">
+            <div class="logo-left"></div>
+            <div class="logo-right"></div>
+            <div class="logo-overlap"></div>
+            <div class="logo-bar"></div>
+          </div>
 
           <div class="mini-card">
 
@@ -1216,7 +1927,7 @@
 
           <div>
             <h2 class="h2">
-              Purpose-driven organisations have a lot to say. Often nobody remembers it.
+              Purpose-driven organisations have a lot to say. Creating mental availability in a sea of sameness.
             </h2>
           </div>
 
@@ -1335,9 +2046,9 @@
             </div>
 
             <ul>
-              <li>Customer and market segmentation studies</li>
-              <li>AI marketing playbooks and governance frameworks</li>
-              <li>Marketing strategy and growth / recruitment planning</li>
+              <li>Customer and market segmentation studies that identify the growth opportunities</li>
+              <li>AI marketing playbooks and governance frameworks to create and automate action</li>
+              <li>Marketing and communication strategies that engage your audience</li>
             </ul>
 
           </article>
@@ -1362,8 +2073,8 @@
             </div>
 
             <ul>
-              <li>Corporate podcasts — concept to production</li>
-              <li>Social content production and growth</li>
+              <li>Corporate podcasts — from concept to production</li>
+              <li>Social content production and publication</li>
               <li>Executive ghostwriting and thought-leadership</li>
             </ul>
 
@@ -1902,6 +2613,8 @@
           <form
             id="memery-contact-form"
             class="contact-form"
+            action="https://formspree.io/f/xwlpqagb"
+            method="POST"
           >
 
             <div class="form-row">
