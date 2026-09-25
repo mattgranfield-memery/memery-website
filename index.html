@@ -6,6 +6,7 @@
   <title>Memery — The marketing science of memorable</title>
   <meta name="description" content="Strategy, AI and storytelling for organisations with something worth remembering." />
   <meta name="theme-color" content="#171b34" />
+
   <style>
     :root{
       --navy:#171b34;
@@ -21,8 +22,11 @@
       --shadow:0 24px 70px rgba(23,27,52,.12);
       --max:1180px;
     }
+
     *{box-sizing:border-box}
+
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       color:var(--ink);
@@ -32,332 +36,1776 @@
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
+
     img{max-width:100%;display:block}
     a{color:inherit;text-decoration:none}
     button{font:inherit}
+
     ::selection{background:rgba(247,102,63,.26)}
-    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
-    .eyebrow{font-size:.78rem;line-height:1;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--coral)}
-    .display{font-size:clamp(3.3rem,8vw,8rem);line-height:.91;letter-spacing:-.068em;margin:0;font-weight:800}
-    .h2{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.98;letter-spacing:-.052em;margin:0;font-weight:780}
-    .lead{font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.55;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;padding:.95rem 1.2rem;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.25s ease;cursor:pointer}
-    .btn.primary{background:var(--coral);color:white;box-shadow:0 10px 30px rgba(247,102,63,.22)}
-    .btn.primary:hover{transform:translateY(-2px);background:#ff724e}
-    .btn.secondary{border-color:rgba(242,239,232,.35);color:var(--cream);background:rgba(255,255,255,.04)}
-    .btn.secondary:hover{border-color:rgba(242,239,232,.7);background:rgba(255,255,255,.08)}
-    .arrow{font-size:1.1em;transform:translateY(-1px)}
+
+    .wrap{
+      width:min(calc(100% - 40px),var(--max));
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      font-size:.78rem;
+      line-height:1;
+      font-weight:800;
+      letter-spacing:.17em;
+      text-transform:uppercase;
+      color:var(--coral);
+    }
+
+    .display{
+      font-size:clamp(3.3rem,8vw,8rem);
+      line-height:.91;
+      letter-spacing:-.068em;
+      margin:0;
+      font-weight:800;
+    }
+
+    .h2{
+      font-size:clamp(2.2rem,5vw,4.8rem);
+      line-height:.98;
+      letter-spacing:-.052em;
+      margin:0;
+      font-weight:780;
+    }
+
+    .lead{
+      font-size:clamp(1.05rem,1.8vw,1.35rem);
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.7rem;
+      padding:.95rem 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    .btn.primary{
+      background:var(--coral);
+      color:white;
+      box-shadow:0 10px 30px rgba(247,102,63,.22);
+    }
+
+    .btn.primary:hover{
+      transform:translateY(-2px);
+      background:#ff724e;
+    }
+
+    .btn.secondary{
+      border-color:rgba(242,239,232,.35);
+      color:var(--cream);
+      background:rgba(255,255,255,.04);
+    }
+
+    .btn.secondary:hover{
+      border-color:rgba(242,239,232,.7);
+      background:rgba(255,255,255,.08);
+    }
+
+    .arrow{
+      font-size:1.1em;
+      transform:translateY(-1px);
+    }
 
     /* NAV */
-    .nav-shell{position:fixed;z-index:50;top:18px;left:0;right:0;pointer-events:none}
+
+    .nav-shell{
+      position:fixed;
+      z-index:50;
+      top:18px;
+      left:0;
+      right:0;
+      pointer-events:none;
+    }
+
     .nav{
       pointer-events:auto;
       width:min(calc(100% - 32px),var(--max));
       margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
       padding:12px 14px 12px 18px;
       border-radius:999px;
       background:rgba(23,27,52,.86);
       border:1px solid rgba(255,255,255,.11);
       backdrop-filter:blur(18px);
-      box-shadow:0 12px 35px rgba(0,0,0,.15)
+      box-shadow:0 12px 35px rgba(0,0,0,.15);
     }
-    .brand img{width:160px;height:auto}
-    .navlinks{display:flex;align-items:center;gap:26px;color:rgba(242,239,232,.78);font-size:.92rem;font-weight:650}
-    .navlinks a:hover{color:white}
-    .nav-cta{padding:.7rem 1rem}
-    .menu{display:none;background:none;border:0;color:white;padding:.4rem .5rem;font-size:1.3rem}
+
+    .brand img{
+      width:160px;
+      height:auto;
+    }
+
+    .navlinks{
+      display:flex;
+      align-items:center;
+      gap:26px;
+      color:rgba(242,239,232,.78);
+      font-size:.92rem;
+      font-weight:650;
+    }
+
+    .navlinks a:hover{
+      color:white;
+    }
+
+    .nav-cta{
+      padding:.7rem 1rem;
+    }
+
+    .menu{
+      display:none;
+      background:none;
+      border:0;
+      color:white;
+      padding:.4rem .5rem;
+      font-size:1.3rem;
+    }
 
     /* HERO */
-    .hero{position:relative;min-height:100vh;background:var(--navy);color:var(--cream);display:grid;align-items:end;padding:150px 0 84px;overflow:hidden}
-    .hero::before{
-      content:"";position:absolute;inset:auto auto -18% -12%;width:62vw;height:62vw;max-width:760px;max-height:760px;border:1px solid rgba(242,239,232,.08);border-radius:50%;
-    }
-    .hero::after{
-      content:"";position:absolute;right:-5vw;top:8vh;width:45vw;height:45vw;max-width:610px;max-height:610px;border-radius:50%;background:radial-gradient(circle at 50% 50%, rgba(247,102,63,.2), transparent 66%);filter:blur(4px)
-    }
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:end;position:relative;z-index:2}
-    .hero .eyebrow{margin-bottom:24px}
-    .hero .lead{color:rgba(242,239,232,.72);max-width:720px;margin:28px 0 34px}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-mark{position:relative;min-height:500px;display:grid;place-items:center}
-    .shape{position:absolute;border-radius:34px;transform-origin:center;mix-blend-mode:screen}
-    .shape.a{width:76%;height:33%;background:rgba(242,239,232,.92);transform:rotate(34deg);left:2%;top:33%;animation:floatA 7s ease-in-out infinite}
-    .shape.b{width:76%;height:33%;background:rgba(247,102,63,.95);transform:rotate(-34deg);right:2%;top:33%;animation:floatB 8s ease-in-out infinite}
-    .shape.c{width:18%;height:83%;background:var(--coral);right:2%;top:8%;animation:floatC 8s ease-in-out infinite}
-    .mini-card{position:absolute;right:5%;bottom:3%;width:min(300px,73%);padding:22px 22px 20px;background:rgba(23,27,52,.82);border:1px solid rgba(255,255,255,.14);border-radius:22px;backdrop-filter:blur(14px);box-shadow:0 20px 60px rgba(0,0,0,.2)}
-    .mini-card strong{display:block;font-size:1.05rem;color:white;margin-bottom:6px}.mini-card span{font-size:.9rem;color:rgba(242,239,232,.66)}
-    @keyframes floatA{50%{transform:rotate(31deg) translateY(-8px)}}
-    @keyframes floatB{50%{transform:rotate(-31deg) translateY(9px)}}
-    @keyframes floatC{50%{transform:translateY(-10px)}}
 
-    section{padding:110px 0}
-    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px;align-items:end;margin-bottom:54px}
+    .hero{
+      position:relative;
+      min-height:100vh;
+      background:var(--navy);
+      color:var(--cream);
+      display:grid;
+      align-items:end;
+      padding:150px 0 84px;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto auto -18% -12%;
+      width:62vw;
+      height:62vw;
+      max-width:760px;
+      max-height:760px;
+      border:1px solid rgba(242,239,232,.08);
+      border-radius:50%;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      right:-5vw;
+      top:8vh;
+      width:45vw;
+      height:45vw;
+      max-width:610px;
+      max-height:610px;
+      border-radius:50%;
+      background:radial-gradient(circle at 50% 50%, rgba(247,102,63,.2), transparent 66%);
+      filter:blur(4px);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:end;
+      position:relative;
+      z-index:2;
+    }
+
+    .hero .eyebrow{
+      margin-bottom:24px;
+    }
+
+    .hero .lead{
+      color:rgba(242,239,232,.72);
+      max-width:720px;
+      margin:28px 0 34px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-mark{
+      position:relative;
+      min-height:500px;
+      display:grid;
+      place-items:center;
+    }
+
+    .shape{
+      position:absolute;
+      border-radius:34px;
+      transform-origin:center;
+      mix-blend-mode:screen;
+    }
+
+    .shape.a{
+      width:76%;
+      height:33%;
+      background:rgba(242,239,232,.92);
+      transform:rotate(34deg);
+      left:2%;
+      top:33%;
+      animation:floatA 7s ease-in-out infinite;
+    }
+
+    .shape.b{
+      width:76%;
+      height:33%;
+      background:rgba(247,102,63,.95);
+      transform:rotate(-34deg);
+      right:2%;
+      top:33%;
+      animation:floatB 8s ease-in-out infinite;
+    }
+
+    .shape.c{
+      width:18%;
+      height:83%;
+      background:var(--coral);
+      right:2%;
+      top:8%;
+      animation:floatC 8s ease-in-out infinite;
+    }
+
+    .mini-card{
+      position:absolute;
+      right:5%;
+      bottom:3%;
+      width:min(300px,73%);
+      padding:22px 22px 20px;
+      background:rgba(23,27,52,.82);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:22px;
+      backdrop-filter:blur(14px);
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+    }
+
+    .mini-card strong{
+      display:block;
+      font-size:1.05rem;
+      color:white;
+      margin-bottom:6px;
+    }
+
+    .mini-card span{
+      font-size:.9rem;
+      color:rgba(242,239,232,.66);
+    }
+
+    @keyframes floatA{
+      50%{transform:rotate(31deg) translateY(-8px)}
+    }
+
+    @keyframes floatB{
+      50%{transform:rotate(-31deg) translateY(9px)}
+    }
+
+    @keyframes floatC{
+      50%{transform:translateY(-10px)}
+    }
+
+    section{
+      padding:110px 0;
+    }
+
+    .section-head{
+      display:grid;
+      grid-template-columns:.7fr 1.3fr;
+      gap:60px;
+      align-items:end;
+      margin-bottom:54px;
+    }
 
     /* PROBLEM */
-    .problem{background:var(--cream)}
-    .problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .problem-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:32px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}
-    .problem-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .num{font-size:.84rem;font-weight:900;color:var(--coral);letter-spacing:.12em}
-    .problem-card h3{font-size:1.65rem;line-height:1.1;letter-spacing:-.035em;margin:28px 0 12px}.problem-card p{margin:0;color:var(--muted)}
+
+    .problem{
+      background:var(--cream);
+    }
+
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .problem-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:32px;
+      min-height:310px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:.25s ease;
+    }
+
+    .problem-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+    }
+
+    .num{
+      font-size:.84rem;
+      font-weight:900;
+      color:var(--coral);
+      letter-spacing:.12em;
+    }
+
+    .problem-card h3{
+      font-size:1.65rem;
+      line-height:1.1;
+      letter-spacing:-.035em;
+      margin:28px 0 12px;
+    }
+
+    .problem-card p{
+      margin:0;
+      color:var(--muted);
+    }
 
     /* SERVICES */
-    .services{background:var(--paper)}
-    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .service{position:relative;overflow:hidden;border-radius:34px;padding:46px;min-height:500px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}
-    .service.strategy{background:var(--navy);color:var(--cream)}
-    .service.content{background:var(--coral);color:white}
-    .service-badge{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;font-weight:900;opacity:.72}
-    .service h3{font-size:clamp(2.2rem,4vw,4.2rem);line-height:.95;letter-spacing:-.055em;margin:18px 0 24px;max-width:10ch}
-    .service ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}.service li{padding-top:12px;border-top:1px solid rgba(255,255,255,.2);font-weight:650}
-    .service p{max-width:56ch;margin:0;opacity:.78}
+
+    .services{
+      background:var(--paper);
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .service{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      padding:46px;
+      min-height:500px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:var(--shadow);
+    }
+
+    .service.strategy{
+      background:var(--navy);
+      color:var(--cream);
+    }
+
+    .service.content{
+      background:var(--coral);
+      color:white;
+    }
+
+    .service-badge{
+      font-size:.78rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      font-weight:900;
+      opacity:.72;
+    }
+
+    .service h3{
+      font-size:clamp(2.2rem,4vw,4.2rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+      margin:18px 0 24px;
+      max-width:10ch;
+    }
+
+    .service ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:12px;
+    }
+
+    .service li{
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.2);
+      font-weight:650;
+    }
+
+    .service p{
+      max-width:56ch;
+      margin:0;
+      opacity:.78;
+    }
 
     /* METHOD */
-    .method{background:var(--navy);color:var(--cream)}
-    .method .section-head .lead{color:rgba(242,239,232,.66)}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .step{padding:28px 26px;border-radius:24px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
-    .step .num{color:var(--coral)}
-    .step h3{font-size:1.45rem;margin:20px 0 8px;letter-spacing:-.03em}.step p{margin:0;color:rgba(242,239,232,.62)}
+
+    .method{
+      background:var(--navy);
+      color:var(--cream);
+    }
+
+    .method .section-head .lead{
+      color:rgba(242,239,232,.66);
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .step{
+      padding:28px 26px;
+      border-radius:24px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.09);
+      min-height:260px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .step .num{
+      color:var(--coral);
+    }
+
+    .step h3{
+      font-size:1.45rem;
+      margin:20px 0 8px;
+      letter-spacing:-.03em;
+    }
+
+    .step p{
+      margin:0;
+      color:rgba(242,239,232,.62);
+    }
 
     /* PROOF */
-    .proof{background:var(--cream)}
-    .proof-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;margin-top:28px}
-    .case{border-radius:32px;padding:42px;background:var(--paper);border:1px solid var(--line);min-height:470px;display:flex;flex-direction:column;justify-content:space-between}
-    .case.ai{background:var(--coral);color:white;border:0}
-    .case h3{font-size:clamp(2rem,3.4vw,3.8rem);line-height:1;letter-spacing:-.05em;margin:16px 0 20px}
-    .case p{max-width:62ch;color:var(--muted)}.case.ai p{color:rgba(255,255,255,.78)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px}.stat{padding:18px;border-top:1px solid var(--line)}.case.ai .stat{border-color:rgba(255,255,255,.25)}
-    .stat strong{display:block;font-size:2rem;letter-spacing:-.04em}.stat span{font-size:.82rem;color:var(--muted)}.case.ai .stat span{color:rgba(255,255,255,.7)}
+
+    .proof{
+      background:var(--cream);
+    }
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:22px;
+      margin-top:28px;
+    }
+
+    .case{
+      border-radius:32px;
+      padding:42px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      min-height:470px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .case.ai{
+      background:var(--coral);
+      color:white;
+      border:0;
+    }
+
+    .case h3{
+      font-size:clamp(2rem,3.4vw,3.8rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      margin:16px 0 20px;
+    }
+
+    .case p{
+      max-width:62ch;
+      color:var(--muted);
+    }
+
+    .case.ai p{
+      color:rgba(255,255,255,.78);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      margin-top:30px;
+    }
+
+    .stat{
+      padding:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .case.ai .stat{
+      border-color:rgba(255,255,255,.25);
+    }
+
+    .stat strong{
+      display:block;
+      font-size:2rem;
+      letter-spacing:-.04em;
+    }
+
+    .stat span{
+      font-size:.82rem;
+      color:var(--muted);
+    }
+
+    .case.ai .stat span{
+      color:rgba(255,255,255,.7);
+    }
 
     /* TRACK RECORD */
-    .track{background:var(--paper)}
-    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .metric{padding:34px 26px;border-radius:24px;border:1px solid var(--line);background:white;min-height:230px}
-    .metric strong{display:block;font-size:clamp(2.8rem,5vw,5.3rem);line-height:1;letter-spacing:-.06em;color:var(--coral);margin-bottom:14px}.metric span{display:block;font-weight:800}.metric small{display:block;color:var(--muted);margin-top:8px}
+
+    .track{
+      background:var(--paper);
+    }
+
+    .metric-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+
+    .metric{
+      padding:34px 26px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:white;
+      min-height:230px;
+    }
+
+    .metric strong{
+      display:block;
+      font-size:clamp(2.8rem,5vw,5.3rem);
+      line-height:1;
+      letter-spacing:-.06em;
+      color:var(--coral);
+      margin-bottom:14px;
+    }
+
+    .metric span{
+      display:block;
+      font-weight:800;
+    }
+
+    .metric small{
+      display:block;
+      color:var(--muted);
+      margin-top:8px;
+    }
 
     /* WHY */
-    .why{background:var(--cream)}
-    .why-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:50px;align-items:start}
-    .why-copy{position:sticky;top:120px}.why-copy .lead{max-width:43ch}
-    .why-list{display:grid;gap:16px}
-    .why-item{padding:32px;border-radius:26px;background:var(--paper);border:1px solid var(--line)}
-    .why-item h3{font-size:1.7rem;letter-spacing:-.035em;margin:18px 0 10px}.why-item p{margin:0;color:var(--muted)}
+
+    .why{
+      background:var(--cream);
+    }
+
+    .why-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:50px;
+      align-items:start;
+    }
+
+    .why-copy{
+      position:sticky;
+      top:120px;
+    }
+
+    .why-copy .lead{
+      max-width:43ch;
+    }
+
+    .why-list{
+      display:grid;
+      gap:16px;
+    }
+
+    .why-item{
+      padding:32px;
+      border-radius:26px;
+      background:var(--paper);
+      border:1px solid var(--line);
+    }
+
+    .why-item h3{
+      font-size:1.7rem;
+      letter-spacing:-.035em;
+      margin:18px 0 10px;
+    }
+
+    .why-item p{
+      margin:0;
+      color:var(--muted);
+    }
 
     /* ENGAGE */
-    .engage{background:var(--paper)}
-    .engage-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .engage-card{padding:38px;border-radius:28px;border:1px solid var(--line);background:white}
-    .engage-card h3{font-size:2rem;letter-spacing:-.04em;margin:10px 0 12px}.engage-card p{color:var(--muted)}
-    .engage-card ul{padding-left:18px;color:var(--muted);line-height:1.9}
+
+    .engage{
+      background:var(--paper);
+    }
+
+    .engage-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .engage-card{
+      padding:38px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:white;
+    }
+
+    .engage-card h3{
+      font-size:2rem;
+      letter-spacing:-.04em;
+      margin:10px 0 12px;
+    }
+
+    .engage-card p{
+      color:var(--muted);
+    }
+
+    .engage-card ul{
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.9;
+    }
 
     /* CTA */
-    .cta{background:var(--navy);color:var(--cream);padding:100px 0 58px;position:relative;overflow:hidden}
-    .cta::before{content:"";position:absolute;width:420px;height:420px;border-radius:80px;background:var(--coral);right:-120px;top:-160px;transform:rotate(36deg);opacity:.95}
-    .cta-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end;position:relative;z-index:2}
-    .cta p{color:rgba(242,239,232,.7);max-width:620px}.contact{display:grid;gap:10px;justify-items:start}.contact a{font-size:1.18rem;font-weight:750;border-bottom:1px solid rgba(242,239,232,.32);padding-bottom:3px}
-    footer{margin-top:76px;padding-top:24px;border-top:1px solid rgba(242,239,232,.15);display:flex;align-items:center;justify-content:space-between;gap:20px;color:rgba(242,239,232,.55);font-size:.88rem}
-    footer img{width:140px}
 
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.in{opacity:1;transform:none}
+    .cta{
+      background:var(--navy);
+      color:var(--cream);
+      padding:100px 0 58px;
+      position:relative;
+      overflow:hidden;
+    }
 
-    @media (max-width: 900px){
-      .navlinks{display:none;position:absolute;top:66px;left:16px;right:16px;background:rgba(23,27,52,.97);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:20px;flex-direction:column;align-items:flex-start;gap:16px}.navlinks.open{display:flex}.menu{display:block}.nav .nav-cta{display:none}
-      .hero{padding-top:125px}.hero-grid,.section-head,.proof-grid,.why-grid,.cta-grid{grid-template-columns:1fr}.hero-mark{min-height:360px;margin-top:10px}.hero-grid{gap:20px}
-      .problem-grid,.steps,.metric-grid{grid-template-columns:1fr 1fr}.service-grid,.engage-grid{grid-template-columns:1fr}.why-copy{position:static}.section-head{gap:22px}.service{min-height:460px}
+    .cta::before{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      border-radius:80px;
+      background:var(--coral);
+      right:-120px;
+      top:-160px;
+      transform:rotate(36deg);
+      opacity:.95;
     }
-    @media (max-width: 600px){
-      .wrap{width:min(calc(100% - 28px),var(--max))}.nav{width:calc(100% - 20px)}.brand img{width:132px}
-      section{padding:82px 0}.hero{padding-bottom:60px}.hero .display{font-size:clamp(3.05rem,16vw,5.4rem)}.hero-mark{min-height:300px}.mini-card{display:none}
-      .problem-grid,.steps,.metric-grid{grid-template-columns:1fr}.problem-card{min-height:250px}.service{padding:32px;min-height:450px}.case{padding:30px}.stats{grid-template-columns:1fr}.stat{padding-left:0}.engage-card{padding:30px}.cta::before{width:280px;height:280px}.cta{padding-top:80px}footer{align-items:flex-start;flex-direction:column}
+
+    .cta-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:60px;
+      align-items:end;
+      position:relative;
+      z-index:2;
     }
-    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shape,.reveal{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+    .cta p{
+      color:rgba(242,239,232,.7);
+      max-width:620px;
+    }
+
+    footer{
+      margin-top:76px;
+      padding-top:24px;
+      border-top:1px solid rgba(242,239,232,.15);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      color:rgba(242,239,232,.55);
+      font-size:.88rem;
+    }
+
+    footer img{
+      width:140px;
+    }
+
+    /* REVEAL */
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.in{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width:900px){
+      .navlinks{
+        display:none;
+        position:absolute;
+        top:66px;
+        left:16px;
+        right:16px;
+        background:rgba(23,27,52,.97);
+        border:1px solid rgba(255,255,255,.1);
+        border-radius:22px;
+        padding:20px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+      }
+
+      .navlinks.open{
+        display:flex;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .nav .nav-cta{
+        display:none;
+      }
+
+      .hero{
+        padding-top:125px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .proof-grid,
+      .why-grid,
+      .cta-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero-mark{
+        min-height:360px;
+        margin-top:10px;
+      }
+
+      .hero-grid{
+        gap:20px;
+      }
+
+      .problem-grid,
+      .steps,
+      .metric-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .service-grid,
+      .engage-grid{
+        grid-template-columns:1fr;
+      }
+
+      .why-copy{
+        position:static;
+      }
+
+      .section-head{
+        gap:22px;
+      }
+
+      .service{
+        min-height:460px;
+      }
+    }
+
+    @media (max-width:600px){
+      .wrap{
+        width:min(calc(100% - 28px),var(--max));
+      }
+
+      .nav{
+        width:calc(100% - 20px);
+      }
+
+      .brand img{
+        width:132px;
+      }
+
+      section{
+        padding:82px 0;
+      }
+
+      .hero{
+        padding-bottom:60px;
+      }
+
+      .hero .display{
+        font-size:clamp(3.05rem,16vw,5.4rem);
+      }
+
+      .hero-mark{
+        min-height:300px;
+      }
+
+      .mini-card{
+        display:none;
+      }
+
+      .problem-grid,
+      .steps,
+      .metric-grid{
+        grid-template-columns:1fr;
+      }
+
+      .problem-card{
+        min-height:250px;
+      }
+
+      .service{
+        padding:32px;
+        min-height:450px;
+      }
+
+      .case{
+        padding:30px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .stat{
+        padding-left:0;
+      }
+
+      .engage-card{
+        padding:30px;
+      }
+
+      .cta::before{
+        width:280px;
+        height:280px;
+      }
+
+      .cta{
+        padding-top:80px;
+      }
+
+      footer{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{
+        scroll-behavior:auto;
+      }
+
+      .shape,
+      .reveal{
+        animation:none!important;
+        transition:none!important;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="nav-shell">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Memery home"><img src="assets/memery-logo-cream.png" alt="Memery" /></a>
+
+      <a class="brand" href="#top" aria-label="Memery home">
+        <img src="assets/memery-logo-cream.png" alt="Memery" />
+      </a>
+
       <div class="navlinks" id="navlinks">
         <a href="#services">What we do</a>
         <a href="#proof">Proof</a>
         <a href="#why">Why Memery</a>
         <a href="#engage">Work with us</a>
       </div>
-      <a class="btn primary nav-cta" href="#contact">Start a project <span class="arrow">↗</span></a>
-      <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <a class="btn primary nav-cta" href="#contact">
+        Start a project <span class="arrow">↗</span>
+      </a>
+
+      <button
+        class="menu"
+        id="menu"
+        aria-label="Open navigation"
+        aria-expanded="false">
+        ☰
+      </button>
+
     </nav>
   </div>
 
+
   <main id="top">
+
     <section class="hero">
       <div class="wrap hero-grid">
+
         <div>
-          <div class="eyebrow">The marketing science of memorable</div>
-          <h1 class="display">Be easier<br>to remember.</h1>
-          <p class="lead">Strategy, AI and storytelling for organisations with something worth remembering.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#services">See what we do <span class="arrow">↓</span></a>
-            <a class="btn secondary" href="#contact">Start a conversation</a>
+
+          <div class="eyebrow">
+            The marketing science of memorable
           </div>
+
+          <h1 class="display">
+            Be easier<br>
+            to remember.
+          </h1>
+
+          <p class="lead">
+            Strategy, AI and storytelling for organisations with something worth remembering.
+          </p>
+
+          <div class="hero-actions">
+
+            <a class="btn primary" href="#services">
+              See what we do <span class="arrow">↓</span>
+            </a>
+
+            <a class="btn secondary" href="#contact">
+              Start a conversation
+            </a>
+
+          </div>
+
         </div>
+
+
         <div class="hero-mark" aria-hidden="true">
+
           <div class="shape a"></div>
+
           <div class="shape b"></div>
+
           <div class="shape c"></div>
-          <div class="mini-card"><strong>Strategy sets the direction.</strong><span>Story makes it stick.</span></div>
+
+          <div class="mini-card">
+
+            <strong>
+              Strategy sets the direction.
+            </strong>
+
+            <span>
+              Story makes it stick.
+            </span>
+
+          </div>
+
         </div>
+
       </div>
     </section>
+
 
     <section class="problem" id="problem">
+
       <div class="wrap">
+
         <div class="section-head reveal">
-          <div><div class="eyebrow">The problem</div></div>
-          <div><h2 class="h2">Purpose-driven organisations have a lot to say — and nobody remembers it.</h2></div>
+
+          <div>
+            <div class="eyebrow">
+              The problem
+            </div>
+          </div>
+
+          <div>
+            <h2 class="h2">
+              Purpose-driven organisations have a lot to say — and nobody remembers it.
+            </h2>
+          </div>
+
         </div>
+
+
         <div class="problem-grid">
-          <article class="problem-card reveal"><div class="num">01</div><div><h3>Mental availability is the real battleground.</h3><p>Growth comes from being easy to recall and easy to buy — not from one more campaign that nobody remembers a week later.</p></div></article>
-          <article class="problem-card reveal"><div class="num">02</div><div><h3>Most teams optimise the wrong half.</h3><p>Strategy without craft is invisible. Craft without strategy is noise. Rarely does one team own both.</p></div></article>
-          <article class="problem-card reveal"><div class="num">03</div><div><h3>AI changed the game. Most teams haven’t.</h3><p>The opportunity is bigger than faster copywriting: segmentation, governance, decision-making and personalisation at scale.</p></div></article>
+
+          <article class="problem-card reveal">
+
+            <div class="num">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Mental availability is the real battleground.
+              </h3>
+
+              <p>
+                Growth comes from being easy to recall and easy to buy — not from one more campaign that nobody remembers a week later.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="problem-card reveal">
+
+            <div class="num">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Most teams optimise the wrong half.
+              </h3>
+
+              <p>
+                Strategy without craft is invisible. Craft without strategy is noise. Rarely does one team own both.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="problem-card reveal">
+
+            <div class="num">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                AI changed the game. Most teams haven’t.
+              </h3>
+
+              <p>
+                The opportunity is bigger than faster copywriting: segmentation, governance, decision-making and personalisation at scale.
+              </p>
+
+            </div>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
+
 
     <section class="services" id="services">
+
       <div class="wrap">
+
         <div class="section-head reveal">
-          <div><div class="eyebrow">What we do</div></div>
-          <div><h2 class="h2">One flagship discipline. One delivery engine.</h2></div>
+
+          <div>
+            <div class="eyebrow">
+              What we do
+            </div>
+          </div>
+
+          <div>
+            <h2 class="h2">
+              One flagship discipline. One delivery engine.
+            </h2>
+          </div>
+
         </div>
+
+
         <div class="service-grid">
+
           <article class="service strategy reveal">
+
             <div>
-              <div class="service-badge">Flagship</div>
-              <h3>Strategy & AI-driven segmentation</h3>
-              <p>Find the audience that matters, understand what drives them, and build a practical, governed plan for reaching them.</p>
+
+              <div class="service-badge">
+                Flagship
+              </div>
+
+              <h3>
+                Strategy & AI-driven segmentation
+              </h3>
+
+              <p>
+                Find the audience that matters, understand what drives them, and build a practical, governed plan for reaching them.
+              </p>
+
             </div>
-            <ul><li>Customer & market segmentation studies</li><li>AI marketing playbooks & governance frameworks</li><li>Marketing strategy & growth / recruitment planning</li></ul>
+
+            <ul>
+              <li>Customer & market segmentation studies</li>
+              <li>AI marketing playbooks & governance frameworks</li>
+              <li>Marketing strategy & growth / recruitment planning</li>
+            </ul>
+
           </article>
+
+
           <article class="service content reveal">
+
             <div>
-              <div class="service-badge">Delivery engine</div>
-              <h3>Content & storytelling</h3>
-              <p>The craft that makes the strategy actually land — built to be remembered, not just published.</p>
+
+              <div class="service-badge">
+                Delivery engine
+              </div>
+
+              <h3>
+                Content & storytelling
+              </h3>
+
+              <p>
+                The craft that makes the strategy actually land — built to be remembered, not just published.
+              </p>
+
             </div>
-            <ul><li>Corporate podcasts — concept to production</li><li>Social content production & growth</li><li>Executive ghostwriting & thought-leadership</li></ul>
+
+            <ul>
+              <li>Corporate podcasts — concept to production</li>
+              <li>Social content production & growth</li>
+              <li>Executive ghostwriting & thought-leadership</li>
+            </ul>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
+
 
     <section class="method" id="method">
+
       <div class="wrap">
+
         <div class="section-head reveal">
-          <div><div class="eyebrow">How we work</div></div>
-          <div><h2 class="h2">Strategy sets the direction. Story makes it stick.</h2><p class="lead">A simple system for turning insight into work that earns recall.</p></div>
+
+          <div>
+            <div class="eyebrow">
+              How we work
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="h2">
+              Strategy sets the direction. Story makes it stick.
+            </h2>
+
+            <p class="lead">
+              A simple system for turning insight into work that earns recall.
+            </p>
+
+          </div>
+
         </div>
+
+
         <div class="steps">
-          <article class="step reveal"><div class="num">01</div><div><h3>Understand</h3><p>Segmentation and audience intent — who they are, what they need, what earns recall.</p></div></article>
-          <article class="step reveal"><div class="num">02</div><div><h3>Design</h3><p>Strategy and AI playbooks that turn insight into a practical, governed plan.</p></div></article>
-          <article class="step reveal"><div class="num">03</div><div><h3>Create</h3><p>Podcasts, social content and executive storytelling that carry the strategy into market.</p></div></article>
-          <article class="step reveal"><div class="num">04</div><div><h3>Measure</h3><p>Track brand memory, engagement and conversion. Refine, repeat, compound.</p></div></article>
+
+          <article class="step reveal">
+
+            <div class="num">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Understand
+              </h3>
+
+              <p>
+                Segmentation and audience intent — who they are, what they need, what earns recall.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step reveal">
+
+            <div class="num">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Design
+              </h3>
+
+              <p>
+                Strategy and AI playbooks that turn insight into a practical, governed plan.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step reveal">
+
+            <div class="num">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Create
+              </h3>
+
+              <p>
+                Podcasts, social content and executive storytelling that carry the strategy into market.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="step reveal">
+
+            <div class="num">
+              04
+            </div>
+
+            <div>
+
+              <h3>
+                Measure
+              </h3>
+
+              <p>
+                Track brand memory, engagement and conversion. Refine, repeat, compound.
+              </p>
+
+            </div>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
+
 
     <section class="proof" id="proof">
+
       <div class="wrap">
+
         <div class="section-head reveal">
-          <div><div class="eyebrow">Proof</div></div>
-          <div><h2 class="h2">From insight to funded strategy.</h2></div>
+
+          <div>
+            <div class="eyebrow">
+              Proof
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="h2">
+              From insight to funded strategy.
+            </h2>
+
+          </div>
+
         </div>
+
+
         <div class="proof-grid">
+
           <article class="case reveal">
+
             <div>
-              <div class="eyebrow">Customer segmentation</div>
-              <h3>3,000+ voices became 8 segments — then a live recruitment strategy.</h3>
-              <p>A national quantitative study of prospective students built eight named market segments. Those segments then became priority cohorts in the next annual Marketing and Student Recruitment Plan, directly shaping budget and campaign focus.</p>
+
+              <div class="eyebrow">
+                Customer segmentation
+              </div>
+
+              <h3>
+                3,000+ voices became 8 segments — then a live recruitment strategy.
+              </h3>
+
+              <p>
+                A national quantitative study of prospective students built eight named market segments. Those segments then became priority cohorts in the next annual Marketing and Student Recruitment Plan, directly shaping budget and campaign focus.
+              </p>
+
             </div>
-            <div class="stats"><div class="stat"><strong>3,077</strong><span>prospects surveyed</span></div><div class="stat"><strong>8</strong><span>named segments</span></div><div class="stat"><strong>1 yr</strong><span>to funded plan</span></div></div>
+
+            <div class="stats">
+
+              <div class="stat">
+                <strong>3,077</strong>
+                <span>prospects surveyed</span>
+              </div>
+
+              <div class="stat">
+                <strong>8</strong>
+                <span>named segments</span>
+              </div>
+
+              <div class="stat">
+                <strong>1 yr</strong>
+                <span>to funded plan</span>
+              </div>
+
+            </div>
+
           </article>
+
+
           <article class="case ai reveal">
+
             <div>
-              <div class="service-badge">AI strategy</div>
-              <h3>Most AI plans stop at faster copy. Ours starts with governance.</h3>
-              <p>Risk-tiered use cases, five levels of value, and Australian regulatory context — designed to answer what AI should do, what it shouldn’t, and what must stay human.</p>
+
+              <div class="service-badge">
+                AI strategy
+              </div>
+
+              <h3>
+                Most AI plans stop at faster copy. Ours starts with governance.
+              </h3>
+
+              <p>
+                Risk-tiered use cases, five levels of value, and Australian regulatory context — designed to answer what AI should do, what it shouldn’t, and what must stay human.
+              </p>
+
             </div>
-            <div class="stats"><div class="stat"><strong>5</strong><span>levels of AI value</span></div><div class="stat"><strong>4</strong><span>risk dimensions</span></div><div class="stat"><strong>AU</strong><span>context by design</span></div></div>
+
+            <div class="stats">
+
+              <div class="stat">
+                <strong>5</strong>
+                <span>levels of AI value</span>
+              </div>
+
+              <div class="stat">
+                <strong>4</strong>
+                <span>risk dimensions</span>
+              </div>
+
+              <div class="stat">
+                <strong>AU</strong>
+                <span>context by design</span>
+              </div>
+
+            </div>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
+
 
     <section class="track" id="track">
+
       <div class="wrap">
+
         <div class="section-head reveal">
-          <div><div class="eyebrow">Track record</div></div>
-          <div><h2 class="h2">Results, not theory.</h2></div>
+
+          <div>
+            <div class="eyebrow">
+              Track record
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="h2">
+              Results, not theory.
+            </h2>
+
+          </div>
+
         </div>
+
+
         <div class="metric-grid">
-          <article class="metric reveal"><strong>30%</strong><span>uplift in direct applications</span><small>Charles Sturt University</small></article>
-          <article class="metric reveal"><strong>1M+</strong><span>loyalty members built from zero</span><small>Mantra Group</small></article>
-          <article class="metric reveal"><strong>$75M</strong><span>annual earned media value</span><small>Brisbane Marketing</small></article>
-          <article class="metric reveal"><strong>$10M</strong><span>co-op partnership negotiated</span><small>Brisbane Airport Corporation</small></article>
+
+          <article class="metric reveal">
+
+            <strong>
+              30%
+            </strong>
+
+            <span>
+              uplift in direct applications
+            </span>
+
+            <small>
+              Charles Sturt University
+            </small>
+
+          </article>
+
+
+          <article class="metric reveal">
+
+            <strong>
+              1M+
+            </strong>
+
+            <span>
+              loyalty members built from zero
+            </span>
+
+            <small>
+              Mantra Group
+            </small>
+
+          </article>
+
+
+          <article class="metric reveal">
+
+            <strong>
+              $75M
+            </strong>
+
+            <span>
+              annual earned media value
+            </span>
+
+            <small>
+              Brisbane Marketing
+            </small>
+
+          </article>
+
+
+          <article class="metric reveal">
+
+            <strong>
+              $10M
+            </strong>
+
+            <span>
+              co-op partnership negotiated
+            </span>
+
+            <small>
+              Brisbane Airport Corporation
+            </small>
+
+          </article>
+
         </div>
+
       </div>
+
     </section>
+
 
     <section class="why" id="why">
+
       <div class="wrap why-grid">
-        <div class="why-copy reveal"><div class="eyebrow">Why Memery</div><h2 class="h2">Specialist knowledge. Genuine talent. Rarely both.</h2><p class="lead">We bring strategy, AI and content craft together so the thinking and the execution reinforce each other.</p></div>
-        <div class="why-list">
-          <article class="why-item reveal"><div class="num">01</div><h3>AI that holds up under scrutiny</h3><p>Not just prompts and faster copy. Risk-tiered, governed marketing playbooks built for real organisations and real consequences.</p></article>
-          <article class="why-item reveal"><div class="num">02</div><h3>Actual content talent</h3><p>A broadcaster’s ear for attention, social-native instincts and end-to-end production capability — not a marketer who also posts.</p></article>
-          <article class="why-item reveal"><div class="num">03</div><h3>Strategy and craft under one roof</h3><p>Most organisations split the thinking and making across teams that barely talk. We remove the seam.</p></article>
+
+        <div class="why-copy reveal">
+
+          <div class="eyebrow">
+            Why Memery
+          </div>
+
+          <h2 class="h2">
+            Specialist knowledge. Genuine talent. Rarely both.
+          </h2>
+
+          <p class="lead">
+            We bring strategy, AI and content craft together so the thinking and the execution reinforce each other.
+          </p>
+
         </div>
+
+
+        <div class="why-list">
+
+          <article class="why-item reveal">
+
+            <div class="num">
+              01
+            </div>
+
+            <h3>
+              AI that holds up under scrutiny
+            </h3>
+
+            <p>
+              Not just prompts and faster copy. Risk-tiered, governed marketing playbooks built for real organisations and real consequences.
+            </p>
+
+          </article>
+
+
+          <article class="why-item reveal">
+
+            <div class="num">
+              02
+            </div>
+
+            <h3>
+              Actual content talent
+            </h3>
+
+            <p>
+              A broadcaster’s ear for attention, social-native instincts and end-to-end production capability — not a marketer who also posts.
+            </p>
+
+          </article>
+
+
+          <article class="why-item reveal">
+
+            <div class="num">
+              03
+            </div>
+
+            <h3>
+              Strategy and craft under one roof
+            </h3>
+
+            <p>
+              Most organisations split the thinking and making across teams that barely talk. We remove the seam.
+            </p>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
+
 
     <section class="engage" id="engage">
+
       <div class="wrap">
-        <div class="section-head reveal"><div><div class="eyebrow">How we engage</div></div><div><h2 class="h2">Two ways to work with us.</h2></div></div>
-        <div class="engage-grid">
-          <article class="engage-card reveal"><div class="eyebrow">Project-based</div><h3>Strategy & playbooks</h3><p>Fixed scope, fixed price. A defined deliverable built for your organisation.</p><ul><li>Segmentation & market research</li><li>AI marketing & governance playbooks</li><li>Growth / recruitment strategy</li></ul></article>
-          <article class="engage-card reveal"><div class="eyebrow">Retainer / series</div><h3>Content & production</h3><p>Ongoing cadence. Content designed and produced as a running series, not a one-off.</p><ul><li>Corporate podcast series</li><li>Social content production</li><li>Executive newsletter / ghostwriting</li></ul></article>
+
+        <div class="section-head reveal">
+
+          <div>
+            <div class="eyebrow">
+              How we engage
+            </div>
+          </div>
+
+          <div>
+
+            <h2 class="h2">
+              Two ways to work with us.
+            </h2>
+
+          </div>
+
         </div>
+
+
+        <div class="engage-grid">
+
+          <article class="engage-card reveal">
+
+            <div class="eyebrow">
+              Project-based
+            </div>
+
+            <h3>
+              Strategy & playbooks
+            </h3>
+
+            <p>
+              Fixed scope, fixed price. A defined deliverable built for your organisation.
+            </p>
+
+            <ul>
+              <li>Segmentation & market research</li>
+              <li>AI marketing & governance playbooks</li>
+              <li>Growth / recruitment strategy</li>
+            </ul>
+
+          </article>
+
+
+          <article class="engage-card reveal">
+
+            <div class="eyebrow">
+              Retainer / series
+            </div>
+
+            <h3>
+              Content & production
+            </h3>
+
+            <p>
+              Ongoing cadence. Content designed and produced as a running series, not a one-off.
+            </p>
+
+            <ul>
+              <li>Corporate podcast series</li>
+              <li>Social content production</li>
+              <li>Executive newsletter / ghostwriting</li>
+            </ul>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
+
   </main>
 
+
   <section class="cta" id="contact">
+
     <div class="wrap">
+
       <div class="cta-grid reveal">
-        <div><div class="eyebrow">Memery — est. 2011</div><h2 class="h2">Let’s make something worth remembering.</h2><p class="lead">Strategy, AI and storytelling for organisations that want to be easier to recall, easier to choose and harder to ignore.</p></div>
-        <div class="contact"><a href="mailto:matt@thegranfields.com">matt@thegranfields.com ↗</a><a href="tel:+61401678419">0401 678 419 ↗</a></div>
+
+        <div>
+
+          <div class="eyebrow">
+            Memery — est. 2011
+          </div>
+
+          <h2 class="h2">
+            Let’s make something worth remembering.
+          </h2>
+
+          <p class="lead">
+            Strategy, AI and storytelling for organisations that want to be easier to recall, easier to choose and harder to ignore.
+          </p>
+
+        </div>
+
       </div>
-      <footer><img src="assets/memery-logo-cream.png" alt="Memery" /><div>Matt Granfield · Riley Rose Harper</div><div>© <span id="year"></span> Memery</div></footer>
+
+
+      <footer>
+
+        <img
+          src="assets/memery-logo-cream.png"
+          alt="Memery"
+        />
+
+        <div>
+          © <span id="year"></span> Memery
+        </div>
+
+      </footer>
+
     </div>
+
   </section>
 
+
   <script>
+
     const menu = document.getElementById('menu');
+
     const navlinks = document.getElementById('navlinks');
+
+
     menu.addEventListener('click', () => {
+
       const open = navlinks.classList.toggle('open');
-      menu.setAttribute('aria-expanded', String(open));
-      menu.textContent = open ? '✕' : '☰';
+
+      menu.setAttribute(
+        'aria-expanded',
+        String(open)
+      );
+
+      menu.textContent = open
+        ? '✕'
+        : '☰';
+
     });
-    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      navlinks.classList.remove('open'); menu.setAttribute('aria-expanded','false'); menu.textContent='☰';
-    }));
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach((entry)=>{ if(entry.isIntersecting) entry.target.classList.add('in'); });
-    },{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+
+    navlinks
+      .querySelectorAll('a')
+      .forEach(a =>
+        a.addEventListener('click', () => {
+
+          navlinks.classList.remove('open');
+
+          menu.setAttribute(
+            'aria-expanded',
+            'false'
+          );
+
+          menu.textContent = '☰';
+
+        })
+      );
+
+
+    document
+      .getElementById('year')
+      .textContent =
+      new Date().getFullYear();
+
+
+    const io =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if(entry.isIntersecting){
+
+                entry.target
+                  .classList
+                  .add('in');
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold:.12
+        }
+      );
+
+
+    document
+      .querySelectorAll('.reveal')
+      .forEach(
+        el => io.observe(el)
+      );
+
   </script>
+
 </body>
 </html>
