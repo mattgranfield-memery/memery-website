@@ -1,4 +1,4 @@
-name: Deploy latest site pages
+name: Standardise site navigation
 
 on:
   push:
@@ -11,18 +11,66 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  update-nav:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Restore latest HTML pages
-        shell: bash
+      - name: Update navigation on all pages
+        shell: python
         run: |
-          cat .deploy2/index.* | xxd -r -p | gzip --decompress > index.html
-          base64 --decode .deploy/podcast.html.gz.b64 | gzip --decompress > podcast.html
-          base64 --decode .deploy/ai-marketing.html.gz.b64 | gzip --decompress > ai-marketing.html
+          from pathlib import Path
+          import re
+
+          navlinks = '''<div class="navlinks" id="navlinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#services">What We Do</a>
+                <a href="index.html#track">Our Work</a>
+                <a href="podcast.html">Podcasts</a>
+                <a href="ai-marketing.html">Marketing AI</a>
+              </div>'''
+
+          compact_links = '''<div class="links"><a href="index.html">Home</a><a href="index.html#services">What We Do</a><a href="index.html#track">Our Work</a><a href="podcast.html">Podcasts</a><a href="ai-marketing.html">Marketing AI</a></div>'''
+
+          for name in ['index.html', 'podcast.html', 'ai-marketing.html']:
+              p = Path(name)
+              text = p.read_text(encoding='utf-8')
+
+              text, n = re.subn(
+                  r'<div class="navlinks" id="navlinks">.*?</div>',
+                  navlinks,
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+
+              if n == 0:
+                  text = re.sub(
+                      r'<div class="links">.*?</div>',
+                      compact_links,
+                      text,
+                      count=1,
+                      flags=re.S,
+                  )
+
+              text = re.sub(
+                  r'(<a class="btn primary nav-cta" href="#contact">).*?(</a>)',
+                  r'\1Talk to memery <span class="arrow">↗</span>\2',
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+
+              text = re.sub(
+                  r'(<a class="btn" href="#contact">).*?(</a>)',
+                  r'\1Talk to memery ↗\2',
+                  text,
+                  count=1,
+                  flags=re.S,
+              )
+
+              p.write_text(text, encoding='utf-8')
 
       - name: Remove temporary deployment files
         shell: bash
@@ -36,5 +84,5 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m 'Update site pages and standardise navigation'
+          git commit -m 'Standardise navigation across Memery site'
           git push
