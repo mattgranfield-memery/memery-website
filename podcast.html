@@ -1,11 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLCQ9TYW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-PVLCQ9TYW9');
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Corporate Podcast Production | Memery</title>
-  <meta name="description" content="Memery helps organisations create corporate podcasts people actually want to hear — from strategy and content ideation to recording, production, distribution and promotion." />
+  <title>Corporate Podcast Production | memery</title>
+  <meta name="description" content="memery helps organisations create corporate podcasts people actually want to hear — from strategy and content ideation to recording, production, distribution and promotion." />
   <meta name="theme-color" content="#171b34" />
 
   <style>
@@ -91,6 +101,17 @@
       color:var(--cream);font-size:1.5rem;font-weight:900;letter-spacing:-.06em
     }
     .brand-word i{font-style:normal;color:var(--coral)}
+
+    .brand-word .play-mark{
+      display:inline-block;
+      margin-left:.12em;
+      font-size:.48em;
+      line-height:1;
+      transform:translateY(-.08em);
+      letter-spacing:0;
+      color:var(--coral);
+    }
+
     .navlinks{
       display:flex;align-items:center;gap:25px;color:rgba(242,239,232,.78);
       font-size:.92rem;font-weight:700
@@ -385,17 +406,17 @@
 <body>
   <div class="nav-shell">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Memery home"><span class="brand-word">memery<i>.</i></span></a>
+      <a class="brand" href="index.html" aria-label="memery home"><span class="brand-word">memery<i class="play-mark" aria-hidden="true">▶</i></span></a>
 
       <div class="navlinks" id="navlinks">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">What We Do</a>
-      <a href="index.html#track">Our Work</a>
-      <a href="podcast.html">Podcasts</a>
-      <a href="ai-marketing.html">Marketing AI</a>
-    </div>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">What We Do</a>
+        <a href="index.html#track">Our Work</a>
+        <a href="podcast.html">Podcasts</a>
+        <a href="ai-marketing.html">Marketing AI</a>
+      </div>
 
-      <a class="btn primary nav-cta" href="#contact">Talk to memery <span class="arrow">↗</span></a>
+      <a class="btn primary nav-cta" href="#contact">Contact Us <span class="arrow">↗</span></a>
 
       <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
     </nav>
@@ -409,13 +430,13 @@
           <div class="eyebrow">Corporate podcast strategy + production</div>
           <h1 class="display">Make a podcast people actually want to hear.</h1>
           <p class="lead">
-            Memery creates podcasts for organisations that want more than another content channel.
+            memery creates podcasts for organisations that want more than another content channel.
             We help you turn ideas, expertise and conversations into a series that builds attention,
             trust, audience — and ultimately, commercial value.
           </p>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#contact">Talk to Memery <span class="arrow">↗</span></a>
+            <a class="btn primary" href="#contact">Contact Us <span class="arrow">↗</span></a>
             <a class="btn secondary" href="#guide">Get the free podcast guide</a>
           </div>
 
@@ -663,7 +684,7 @@
     <section class="proof" id="why-memery">
       <div class="wrap proof-grid">
         <div class="sticky reveal">
-          <div class="eyebrow">Why Memery?</div>
+          <div class="eyebrow">Why memery?</div>
           <h2 class="h2" style="margin-top:18px">We know how to make people keep listening.</h2>
           <p class="lead">
             Podcasting sits at the intersection of editorial judgement, broadcasting, storytelling,
@@ -710,7 +731,7 @@
             <h3>We can do the whole thing.</h3>
             <p>
               You do not need to assemble a strategist, producer, interviewer, editor, designer and distributor.
-              Memery can take the show from the first workshop through to the published series.
+              memery can take the show from the first workshop through to the published series.
             </p>
           </article>
 
@@ -770,8 +791,8 @@
 
     <section class="guide" id="guide">
       <div class="wrap guide-grid">
-        <div class="guide-cover reveal" aria-label="The Memery Guide to Starting a Corporate Podcast">
-          <div class="brand-text">memery<i>.</i></div>
+        <div class="guide-cover reveal" aria-label="The memery Guide to Starting a Corporate Podcast">
+          <div class="brand-text">memery<i class="play-mark" aria-hidden="true">▶</i></div>
           <h3>Starting a Corporate Podcast</h3>
           <p>How to create something people actually want to hear, and remember.</p>
         </div>
@@ -827,7 +848,7 @@
 
               <p class="tiny">
                 Enter your details and we’ll take you straight to the guide.
-                Memery may also contact you about podcast services; you can opt out at any time.
+                memery may also contact you about podcast services; you can opt out at any time.
               </p>
 
               <div class="success" id="guideSuccess" role="status" aria-live="polite"></div>
@@ -885,7 +906,7 @@
               <label for="contact-message">Tell us a little about the podcast</label>
               <textarea id="contact-message" name="message" placeholder="What are you hoping to achieve? Who is it for? What help do you need?"></textarea>
             </div>
-            <button class="btn primary" type="submit">Contact Memery <span class="arrow">↗</span></button>
+            <button class="btn primary" type="submit">Contact memery <span class="arrow">↗</span></button>
             <div class="success" id="contactSuccess">
               Thanks. This demo form is ready to connect to your preferred form handler or CRM.
             </div>
@@ -897,8 +918,8 @@
 
   <footer>
     <div class="wrap footer-row">
-      <a class="brand" href="index.html" aria-label="Memery home"><span class="brand-word">memery<i>.</i></span></a>
-      <div>© <span id="year"></span> Memery · memery.agency</div>
+      <a class="brand" href="index.html" aria-label="memery home"><span class="brand-word">memery<i class="play-mark" aria-hidden="true">▶</i></span></a>
+      <div>© <span id="year"></span> memery · memery.agency</div>
     </div>
   </footer>
 
@@ -978,7 +999,7 @@
     });
 
     /* CONTACT FORM
-       This submits to the same Formspree endpoint as the main Memery site.
+       This submits to the same Formspree endpoint as the main memery site.
     */
   </script>
 </body>
