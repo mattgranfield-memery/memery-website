@@ -20,14 +20,14 @@ jobs:
       - name: Restore latest HTML pages
         shell: bash
         run: |
-          base64 --decode .deploy/index.html.gz.b64 | gzip --decompress > index.html
+          cat .deploy2/index.* | xxd -r -p | gzip --decompress > index.html
           base64 --decode .deploy/podcast.html.gz.b64 | gzip --decompress > podcast.html
           base64 --decode .deploy/ai-marketing.html.gz.b64 | gzip --decompress > ai-marketing.html
 
       - name: Remove temporary deployment files
         shell: bash
         run: |
-          rm -rf .deploy
+          rm -rf .deploy .deploy2
           rm -f .github/workflows/deploy-site-pages.yml
 
       - name: Commit and push site update
