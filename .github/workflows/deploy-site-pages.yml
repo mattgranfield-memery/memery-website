@@ -1,0 +1,40 @@
+name: Deploy latest site pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-site-pages.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Restore latest HTML pages
+        shell: bash
+        run: |
+          base64 --decode .deploy/index.html.gz.b64 | gzip --decompress > index.html
+          base64 --decode .deploy/podcast.html.gz.b64 | gzip --decompress > podcast.html
+          base64 --decode .deploy/ai-marketing.html.gz.b64 | gzip --decompress > ai-marketing.html
+
+      - name: Remove temporary deployment files
+        shell: bash
+        run: |
+          rm -rf .deploy
+          rm -f .github/workflows/deploy-site-pages.yml
+
+      - name: Commit and push site update
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Update site pages and standardise navigation'
+          git push
