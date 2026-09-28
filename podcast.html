@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Corporate Podcast Production | Memery</title>
+  <meta name="description" content="Memery helps organisations create corporate podcasts people actually want to hear — from strategy and content ideation to recording, production, distribution and promotion." />
+  <meta name="theme-color" content="#171b34" />
+
+  <style>
+    :root{
+      --navy:#171b34;
+      --navy-2:#232947;
+      --coral:#f7663f;
+      --coral-dark:#d85e3c;
+      --cream:#f2efe8;
+      --paper:#fbf8f1;
+      --ink:#171b34;
+      --muted:#696b78;
+      --line:rgba(23,27,52,.14);
+      --radius:26px;
+      --shadow:0 24px 70px rgba(23,27,52,.12);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    ::selection{background:rgba(247,102,63,.26)}
+
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .eyebrow{
+      font-size:.78rem;line-height:1;font-weight:850;letter-spacing:.17em;
+      text-transform:uppercase;color:var(--coral)
+    }
+    .display{
+      font-size:clamp(3.45rem,8.1vw,7.8rem);
+      line-height:.9;letter-spacing:-.067em;margin:0;font-weight:820
+    }
+    .h2{
+      font-size:clamp(2.35rem,5vw,4.9rem);
+      line-height:.97;letter-spacing:-.052em;margin:0;font-weight:790
+    }
+    .lead{
+      font-size:clamp(1.05rem,1.8vw,1.34rem);
+      line-height:1.55;color:var(--muted)
+    }
+    .kicker{font-weight:850;letter-spacing:-.02em}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:.7rem;
+      padding:.98rem 1.28rem;border-radius:999px;font-weight:850;
+      border:1px solid transparent;transition:.25s ease;cursor:pointer
+    }
+    .btn.primary{background:var(--coral);color:white;box-shadow:0 10px 30px rgba(247,102,63,.22)}
+    .btn.primary:hover{transform:translateY(-2px);background:#ff724e}
+    .btn.secondary{
+      border-color:rgba(242,239,232,.35);color:var(--cream);
+      background:rgba(255,255,255,.04)
+    }
+    .btn.secondary:hover{border-color:rgba(242,239,232,.7);background:rgba(255,255,255,.08)}
+    .btn.dark{background:var(--navy);color:white}
+    .btn.dark:hover{transform:translateY(-2px);background:var(--navy-2)}
+    .arrow{font-size:1.1em;transform:translateY(-1px)}
+
+    /* NAV */
+    .nav-shell{
+      position:fixed;z-index:50;top:18px;left:0;right:0;pointer-events:none
+    }
+    .nav{
+      pointer-events:auto;width:min(calc(100% - 32px),var(--max));margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;gap:20px;
+      padding:12px 14px 12px 18px;border-radius:999px;
+      background:rgba(23,27,52,.86);border:1px solid rgba(255,255,255,.11);
+      backdrop-filter:blur(18px);box-shadow:0 12px 35px rgba(0,0,0,.15)
+    }
+        .brand-word{
+      color:var(--cream);font-size:1.5rem;font-weight:900;letter-spacing:-.06em
+    }
+    .brand-word i{font-style:normal;color:var(--coral)}
+    .navlinks{
+      display:flex;align-items:center;gap:25px;color:rgba(242,239,232,.78);
+      font-size:.92rem;font-weight:700
+    }
+    .navlinks a:hover{color:white}
+    .nav-cta{padding:.72rem 1rem}
+    .menu{display:none;background:none;border:0;color:white;padding:.4rem .5rem;font-size:1.3rem}
+
+    /* HERO */
+    .hero{
+      position:relative;min-height:100vh;background:var(--navy);color:var(--cream);
+      display:grid;align-items:center;padding:150px 0 86px;overflow:hidden
+    }
+    .hero::before{
+      content:"";position:absolute;width:70vw;height:70vw;max-width:850px;max-height:850px;
+      border:1px solid rgba(242,239,232,.075);border-radius:50%;left:-22vw;bottom:-35vw
+    }
+    .hero::after{
+      content:"";position:absolute;right:-12vw;top:-12vw;width:55vw;height:55vw;
+      max-width:720px;max-height:720px;border-radius:50%;
+      background:radial-gradient(circle at 50% 50%,rgba(247,102,63,.21),transparent 66%)
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:center;
+      position:relative;z-index:2
+    }
+    .hero .eyebrow{margin-bottom:24px}
+    .hero .lead{
+      color:rgba(242,239,232,.72);max-width:760px;margin:28px 0 32px
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-line{
+      display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;
+      color:rgba(242,239,232,.62);font-size:.9rem;font-weight:700
+    }
+    .trust-line span::before{content:"•";color:var(--coral);margin-right:9px}
+
+    .podcast-scene{position:relative;min-height:520px;display:grid;place-items:center}
+    .disc{
+      width:min(430px,88%);aspect-ratio:1;border-radius:50%;
+      background:
+        radial-gradient(circle at center, var(--navy) 0 10%, rgba(242,239,232,.96) 10.5% 14%,
+        var(--coral) 14.5% 16.5%, #252b4a 17% 44%, rgba(242,239,232,.9) 44.5% 46%,
+        #171b34 46.5% 100%);
+      box-shadow:0 40px 90px rgba(0,0,0,.3);animation:spin 24s linear infinite
+    }
+    .wave{
+      position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+      width:78%;height:120px;display:flex;align-items:center;justify-content:center;gap:9px
+    }
+    .wave i{
+      width:10px;border-radius:999px;background:var(--coral);
+      height:30px;box-shadow:0 0 0 1px rgba(255,255,255,.03);
+      animation:pulse 1.6s ease-in-out infinite
+    }
+    .wave i:nth-child(2n){height:68px;animation-delay:-.35s}
+    .wave i:nth-child(3n){height:96px;animation-delay:-.7s}
+    .wave i:nth-child(4n){height:48px;animation-delay:-1.05s}
+    .floating-note{
+      position:absolute;right:0;bottom:4%;max-width:295px;padding:22px;
+      border-radius:22px;background:rgba(23,27,52,.86);border:1px solid rgba(255,255,255,.14);
+      backdrop-filter:blur(14px);box-shadow:0 22px 70px rgba(0,0,0,.25)
+    }
+    .floating-note strong{display:block;color:white;margin-bottom:6px;font-size:1.05rem}
+    .floating-note span{color:rgba(242,239,232,.67);font-size:.9rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pulse{50%{transform:scaleY(.48);opacity:.7}}
+
+    section{padding:110px 0}
+    .section-head{
+      display:grid;grid-template-columns:.72fr 1.28fr;gap:60px;align-items:end;margin-bottom:54px
+    }
+
+    /* INTRO */
+    .intro{background:var(--cream)}
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .intro-card{
+      border:1px solid var(--line);background:var(--paper);border-radius:30px;padding:40px;
+      min-height:360px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .intro-card.accent{background:var(--coral);color:white;border:0}
+    .intro-card h3{
+      font-size:clamp(2rem,3.4vw,3.35rem);line-height:1;letter-spacing:-.045em;margin:12px 0 22px
+    }
+    .intro-card p{margin:0;color:var(--muted);max-width:56ch}
+    .intro-card.accent p{color:rgba(255,255,255,.82)}
+
+    /* WHY PODCAST */
+    .why-podcast{background:var(--paper)}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .benefit{
+      padding:32px;border:1px solid var(--line);border-radius:26px;background:white;
+      min-height:300px;transition:.25s ease
+    }
+    .benefit:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .num{font-size:.8rem;font-weight:900;letter-spacing:.13em;color:var(--coral)}
+    .benefit h3{font-size:1.65rem;line-height:1.1;letter-spacing:-.035em;margin:55px 0 12px}
+    .benefit p{margin:0;color:var(--muted)}
+
+    /* SERVICES */
+    .services{background:var(--navy);color:var(--cream)}
+    .services .lead{color:rgba(242,239,232,.67)}
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .service{
+      position:relative;overflow:hidden;padding:38px;border-radius:30px;
+      border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);
+      min-height:360px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .service:nth-child(2),.service:nth-child(5){background:var(--coral);border:0}
+    .service h3{font-size:2rem;letter-spacing:-.04em;margin:18px 0 12px}
+    .service p{margin:0;color:rgba(242,239,232,.67);max-width:52ch}
+    .service:nth-child(2) p,.service:nth-child(5) p{color:rgba(255,255,255,.82)}
+    .service small{font-weight:850;text-transform:uppercase;letter-spacing:.13em;opacity:.72}
+
+    /* PROCESS */
+    .process{background:var(--cream)}
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .step{
+      padding:28px 24px;border-radius:24px;background:var(--paper);border:1px solid var(--line);
+      min-height:270px;display:flex;flex-direction:column;justify-content:space-between
+    }
+    .step h3{font-size:1.35rem;letter-spacing:-.03em;margin:16px 0 8px}
+    .step p{margin:0;color:var(--muted);font-size:.94rem}
+
+    /* WHY MEMERY */
+    .proof{background:var(--paper)}
+    .proof-grid{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start
+    }
+    .sticky{position:sticky;top:125px}
+    .proof-list{display:grid;gap:16px}
+    .proof-item{
+      background:white;border:1px solid var(--line);border-radius:26px;padding:30px
+    }
+    .proof-item h3{font-size:1.55rem;letter-spacing:-.03em;margin:16px 0 8px}
+    .proof-item p{margin:0;color:var(--muted)}
+    .credential-strip{
+      margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)
+    }
+    .credential{padding:24px 22px 0 0}
+    .credential strong{display:block;font-size:1.08rem}
+    .credential span{font-size:.86rem;color:var(--muted)}
+
+    /* CONTENT MULTIPLIER */
+    .multiplier{background:var(--coral);color:white}
+    .multiplier-grid{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:62px;align-items:center
+    }
+    .multiplier .lead{color:rgba(255,255,255,.82)}
+    .content-stack{display:grid;gap:10px}
+    .content-row{
+      display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:center;
+      padding:18px 20px;border-radius:18px;background:rgba(23,27,52,.14);
+      border:1px solid rgba(255,255,255,.15)
+    }
+    .content-icon{
+      width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+      background:var(--navy);font-weight:900
+    }
+    .content-row strong{display:block}
+    .content-row span{display:block;color:rgba(255,255,255,.77);font-size:.9rem;margin-top:3px}
+
+    /* GUIDE */
+    .guide{background:var(--navy);color:var(--cream)}
+    .guide-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+    .guide-cover{
+      position:relative;aspect-ratio:4/5;max-width:430px;border-radius:28px;background:#11162d;
+      padding:42px;box-shadow:0 40px 90px rgba(0,0,0,.28);overflow:hidden
+    }
+    .guide-cover::before{
+      content:"";position:absolute;width:340px;height:110px;background:var(--coral);
+      transform:rotate(-38deg);right:-95px;bottom:75px;border-radius:28px
+    }
+    .guide-cover::after{
+      content:"";position:absolute;width:300px;height:100px;background:rgba(242,239,232,.92);
+      transform:rotate(38deg);right:-70px;bottom:120px;border-radius:28px
+    }
+    .guide-cover .brand-text{font-size:1.45rem;font-weight:900;letter-spacing:-.05em}
+    .guide-cover .brand-text i{font-style:normal;color:var(--coral)}
+    .guide-cover h3{
+      position:relative;z-index:2;font-size:clamp(2.6rem,5vw,4.4rem);line-height:.92;
+      letter-spacing:-.055em;margin:75px 0 18px;max-width:7ch
+    }
+    .guide-cover p{position:relative;z-index:2;color:rgba(242,239,232,.68);max-width:26ch}
+    .guide-copy .lead{color:rgba(242,239,232,.68)}
+    .checklist{display:grid;gap:10px;margin:26px 0 30px}
+    .checklist div{display:flex;gap:12px;align-items:flex-start;color:rgba(242,239,232,.8)}
+    .checklist div::before{content:"✓";color:var(--coral);font-weight:900}
+
+    /* FORMS */
+    .form-card{
+      padding:32px;border-radius:28px;background:rgba(255,255,255,.065);
+      border:1px solid rgba(255,255,255,.13);box-shadow:0 28px 70px rgba(0,0,0,.18)
+    }
+    .form{display:grid;gap:16px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px}
+    .field label{font-size:.82rem;font-weight:800;color:rgba(242,239,232,.8)}
+    .field input,.field textarea,.field select{
+      width:100%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.075);
+      color:var(--cream);padding:14px 15px;border-radius:14px;outline:none
+    }
+    .field input:focus,.field textarea:focus,.field select:focus{
+      border-color:rgba(247,102,63,.9);box-shadow:0 0 0 3px rgba(247,102,63,.14)
+    }
+    .field input::placeholder,.field textarea::placeholder{color:rgba(242,239,232,.4)}
+    .field textarea{min-height:120px;resize:vertical}
+    .tiny{font-size:.78rem;color:rgba(242,239,232,.5);margin:0}
+    .success{
+      display:none;padding:14px 16px;border-radius:14px;background:rgba(247,102,63,.15);
+      border:1px solid rgba(247,102,63,.45);font-weight:750
+    }
+
+    /* CONTACT */
+    .contact{
+      position:relative;background:var(--cream);overflow:hidden
+    }
+    .contact::after{
+      content:"";position:absolute;width:420px;height:420px;border-radius:80px;background:var(--coral);
+      right:-160px;top:-190px;transform:rotate(35deg)
+    }
+    .contact-grid{
+      display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start;position:relative;z-index:2
+    }
+    .contact .lead{max-width:45ch}
+    .contact .form-card{background:var(--navy);border:0}
+    .contact .form-card h3{color:var(--cream);font-size:1.65rem;margin:0 0 20px;letter-spacing:-.03em}
+
+    footer{
+      background:var(--navy);color:rgba(242,239,232,.55);padding:30px 0
+    }
+    .footer-row{
+      display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .navlinks{
+        display:none;position:absolute;top:66px;left:16px;right:16px;
+        background:rgba(23,27,52,.98);border:1px solid rgba(255,255,255,.1);
+        border-radius:22px;padding:20px;flex-direction:column;align-items:flex-start;gap:16px
+      }
+      .navlinks.open{display:flex}
+      .menu{display:block}
+      .nav .nav-cta{display:none}
+
+      .hero{padding-top:125px}
+      .hero-grid,.section-head,.intro-grid,.proof-grid,.multiplier-grid,.guide-grid,.contact-grid{
+        grid-template-columns:1fr
+      }
+      .podcast-scene{min-height:400px}
+      .benefits{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .sticky{position:static}
+      .guide-cover{margin:0 auto}
+    }
+
+    @media(max-width:620px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}
+      section{padding:82px 0}
+      .brand img{width:135px}
+      .brand-word{font-size:1.3rem}
+      .display{font-size:clamp(3rem,15vw,4.8rem)}
+      .hero{min-height:auto;padding-bottom:70px}
+      .hero-actions{display:grid}
+      .hero-actions .btn{width:100%}
+      .podcast-scene{min-height:340px}
+      .floating-note{right:2%;bottom:0}
+      .steps{grid-template-columns:1fr}
+      .credential-strip{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr}
+      .footer-row{align-items:flex-start;flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  
+    .btn:disabled{
+      opacity:.62;
+      cursor:wait;
+      transform:none!important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-shell">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Memery home"><span class="brand-word">memery<i>.</i></span></a>
+
+      <div class="navlinks" id="navlinks">
+        <a href="index.html">Home</a>
+        <a href="#why">Why podcasts</a>
+        <a href="#services">What we do</a>
+        <a href="#why-memery">Why Memery</a>
+        <a href="#guide">Free guide</a>
+      </div>
+
+      <a class="btn primary nav-cta" href="#contact">Talk to us <span class="arrow">↗</span></a>
+
+      <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Corporate podcast strategy + production</div>
+          <h1 class="display">Make a podcast people actually want to hear.</h1>
+          <p class="lead">
+            Memery creates podcasts for organisations that want more than another content channel.
+            We help you turn ideas, expertise and conversations into a series that builds attention,
+            trust, audience — and ultimately, commercial value.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact">Talk to Memery <span class="arrow">↗</span></a>
+            <a class="btn secondary" href="#guide">Get the free podcast guide</a>
+          </div>
+
+          <div class="trust-line">
+            <span>Commercial radio experience</span>
+            <span>Journalists & bestselling authors</span>
+            <span>Dozens of branded podcasts produced</span>
+          </div>
+        </div>
+
+        <div class="podcast-scene reveal" aria-hidden="true">
+          <div class="disc"></div>
+          <div class="wave">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="floating-note">
+            <strong>Record once. Create many times.</strong>
+            <span>One conversation can become the podcast, video, social clips, articles, newsletters and sales content.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="intro" id="why">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">Why podcasting?</div>
+          <div>
+            <h2 class="h2">Attention is useful.<br>Memory is better.</h2>
+            <p class="lead">
+              A good podcast gives brands something most marketing formats struggle to create:
+              sustained attention. Done properly, it can build familiarity, authority and trust over time —
+              while creating a growing library of content your sales and marketing teams can keep using.
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-grid">
+          <article class="intro-card reveal">
+            <div>
+              <div class="eyebrow">The opportunity</div>
+              <h3>Your audience will give you 30 minutes. If you earn it.</h3>
+            </div>
+            <p>
+              People do not voluntarily spend half an hour listening to an advertisement.
+              They will spend it on something useful, surprising, entertaining or genuinely interesting.
+              The job is to find the intersection between what your audience cares about, what your
+              organisation has credibility talking about, and what supports your strategy.
+            </p>
+          </article>
+
+          <article class="intro-card accent reveal">
+            <div>
+              <div class="eyebrow" style="color:white;opacity:.75">The mistake</div>
+              <h3>Don't make a corporate podcast.</h3>
+            </div>
+            <p>
+              Make a good podcast that happens to be made by a corporation.
+              If the idea starts with your products, awards and executives, the audience can feel it.
+              Start with the listener instead.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="why-podcast">
+      <div class="wrap">
+        <div class="benefits">
+          <article class="benefit reveal">
+            <div class="num">01</div>
+            <h3>Build category authority</h3>
+            <p>
+              Own a subject worth being known for. Over time, a strong series builds an association
+              between your organisation and the ideas, problems and expertise that matter in your category.
+            </p>
+          </article>
+
+          <article class="benefit reveal">
+            <div class="num">02</div>
+            <h3>Build relationships</h3>
+            <p>
+              Guests can be prospects, partners, customers and industry voices. A thoughtful interview
+              creates a useful reason to start or deepen a relationship — without beginning with a sales pitch.
+            </p>
+          </article>
+
+          <article class="benefit reveal">
+            <div class="num">03</div>
+            <h3>Build a content engine</h3>
+            <p>
+              The episode is only the beginning. One recording can feed YouTube, LinkedIn, Instagram,
+              articles, newsletters, search, thought leadership and sales conversations.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">What we do</div>
+          <div>
+            <h2 class="h2">From “we should start a podcast” to a complete series.</h2>
+            <p class="lead">
+              You can bring us a fully formed concept or almost nothing at all. We can build the strategy,
+              format, content, production system and distribution plan around your goals.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <article class="service reveal">
+            <small>01 — Strategy</small>
+            <div>
+              <h3>Concept & positioning</h3>
+              <p>
+                Audience definition, show territory, positioning, format, name, editorial angle,
+                season architecture and measures of success.
+              </p>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <small>02 — Content</small>
+            <div>
+              <h3>Ideas worth listening to</h3>
+              <p>
+                Season planning, episode ideas, guest strategy, interview research, scripting,
+                host preparation and editorial development.
+              </p>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <small>03 — Production</small>
+            <div>
+              <h3>Professional recording</h3>
+              <p>
+                In-person or remote recording, audio and video capture, editing, mixing,
+                sound design, music, artwork and quality control.
+              </p>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <small>04 — Hosting</small>
+            <div>
+              <h3>Sound human</h3>
+              <p>
+                We can coach your internal host or help provide professional hosting and interviewing.
+                Good conversation beats corporate polish every time.
+              </p>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <small>05 — Distribution</small>
+            <div>
+              <h3>Get it found</h3>
+              <p>
+                Hosting setup, RSS distribution, Spotify, Apple Podcasts, YouTube, episode packaging,
+                show notes, titles, transcripts and search optimisation.
+              </p>
+            </div>
+          </article>
+
+          <article class="service reveal">
+            <small>06 — Amplification</small>
+            <div>
+              <h3>Turn episodes into campaigns</h3>
+              <p>
+                Social video, audiograms, quote cards, articles, newsletters and reusable thought-leadership
+                content designed to keep the conversation moving.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="process">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div class="eyebrow">How it works</div>
+          <div>
+            <h2 class="h2">A simple path from idea to audience.</h2>
+            <p class="lead">
+              The exact process changes by project, but the principle is consistent:
+              decide what the show is for before anyone buys a microphone.
+            </p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <div class="num">01</div>
+            <div>
+              <h3>Define</h3>
+              <p>Audience, objective, territory and what you want the brand to become associated with.</p>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">02</div>
+            <div>
+              <h3>Design</h3>
+              <p>Format, host, guest strategy, show identity, episode structure and first-season plan.</p>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">03</div>
+            <div>
+              <h3>Produce</h3>
+              <p>Research, recording, editing, sound, video, artwork and polished final episodes.</p>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">04</div>
+            <div>
+              <h3>Launch</h3>
+              <p>Hosting, distribution, platform setup, metadata, launch assets and publishing cadence.</p>
+            </div>
+          </article>
+
+          <article class="step reveal">
+            <div class="num">05</div>
+            <div>
+              <h3>Multiply</h3>
+              <p>Turn the series into an ongoing stream of clips, articles, posts and commercial content.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="proof" id="why-memery">
+      <div class="wrap proof-grid">
+        <div class="sticky reveal">
+          <div class="eyebrow">Why Memery?</div>
+          <h2 class="h2" style="margin-top:18px">We know how to make people keep listening.</h2>
+          <p class="lead">
+            Podcasting sits at the intersection of editorial judgement, broadcasting, storytelling,
+            brand strategy and production. That is exactly where our team has spent its career.
+          </p>
+
+          <div class="credential-strip">
+            <div class="credential">
+              <strong>Radio</strong>
+              <span>Commercial broadcast experience</span>
+            </div>
+            <div class="credential">
+              <strong>Journalism</strong>
+              <span>Editorial instincts and interviewing skill</span>
+            </div>
+            <div class="credential">
+              <strong>Authors</strong>
+              <span>Bestselling storytellers and writers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proof-list">
+          <article class="proof-item reveal">
+            <div class="num">01</div>
+            <h3>We think like publishers, not content factories.</h3>
+            <p>
+              The question is never simply “what can we make?” It is “what would someone choose to spend
+              their time with?” That changes the concept, the guests, the questions and the edit.
+            </p>
+          </article>
+
+          <article class="proof-item reveal">
+            <div class="num">02</div>
+            <h3>We understand commercial outcomes.</h3>
+            <p>
+              We have created dozens of podcasts for commercial brands, helping them grow engaged audiences
+              and use those audiences to support demand, relationships and sales.
+            </p>
+          </article>
+
+          <article class="proof-item reveal">
+            <div class="num">03</div>
+            <h3>We can do the whole thing.</h3>
+            <p>
+              You do not need to assemble a strategist, producer, interviewer, editor, designer and distributor.
+              Memery can take the show from the first workshop through to the published series.
+            </p>
+          </article>
+
+          <article class="proof-item reveal">
+            <div class="num">04</div>
+            <h3>We know when to cut.</h3>
+            <p>
+              Great production is not about preserving every minute that was recorded.
+              It is about finding the best ideas, sharpening the pace and respecting the listener's time.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="multiplier">
+      <div class="wrap multiplier-grid">
+        <div class="reveal">
+          <div class="eyebrow" style="color:white;opacity:.75">More than a podcast</div>
+          <h2 class="h2" style="margin-top:18px">One recording.<br>A whole content program.</h2>
+          <p class="lead">
+            Publishing the episode is not distribution. A strong conversation can contain ten or twenty
+            smaller ideas worth putting in front of different audiences, in different formats, across different channels.
+          </p>
+        </div>
+
+        <div class="content-stack reveal">
+          <div class="content-row">
+            <div class="content-icon">▶</div>
+            <div><strong>Full episode</strong><span>Podcast apps + YouTube</span></div>
+          </div>
+          <div class="content-row">
+            <div class="content-icon">9:16</div>
+            <div><strong>Short video clips</strong><span>LinkedIn, Instagram, YouTube Shorts, TikTok</span></div>
+          </div>
+          <div class="content-row">
+            <div class="content-icon">“ ”</div>
+            <div><strong>Quotes & audiograms</strong><span>Social feeds + executive profiles</span></div>
+          </div>
+          <div class="content-row">
+            <div class="content-icon">Aa</div>
+            <div><strong>Articles & transcripts</strong><span>Your website + search engines</span></div>
+          </div>
+          <div class="content-row">
+            <div class="content-icon">✉</div>
+            <div><strong>Newsletter content</strong><span>Owned audience + lead nurture</span></div>
+          </div>
+          <div class="content-row">
+            <div class="content-icon">↗</div>
+            <div><strong>Sales enablement</strong><span>Expert answers, customer proof + conversation starters</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="guide" id="guide">
+      <div class="wrap guide-grid">
+        <div class="guide-cover reveal" aria-label="The Memery Guide to Starting a Corporate Podcast">
+          <div class="brand-text">memery<i>.</i></div>
+          <h3>Starting a Corporate Podcast</h3>
+          <p>How to create something people actually want to hear, and remember.</p>
+        </div>
+
+        <div class="guide-copy reveal">
+          <div class="eyebrow">Free guide</div>
+          <h2 class="h2" style="margin-top:18px">Before you buy the microphones, read this.</h2>
+          <p class="lead">
+            Download our practical guide to starting a corporate podcast. It covers the strategic,
+            creative and production decisions that make the difference between a show people subscribe to
+            and six episodes nobody hears.
+          </p>
+
+          <div class="checklist">
+            <div>How to define the audience and purpose</div>
+            <div>How to choose a format and host</div>
+            <div>How to plan a sustainable first season</div>
+            <div>Production, distribution and discoverability basics</div>
+            <div>How to turn every episode into wider content</div>
+            <div>What to measure beyond downloads</div>
+          </div>
+
+          <div class="form-card">
+            <form class="form" id="guideForm" action="https://formspree.io/f/xwlpqagb" method="POST">
+              <input type="hidden" name="lead_type" value="Podcast guide download">
+              <input type="hidden" name="source_page" value="Podcast landing page">
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="guide-name">Name</label>
+                  <input id="guide-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+                </div>
+
+                <div class="field">
+                  <label for="guide-company">Organisation</label>
+                  <input id="guide-company" name="company" type="text" autocomplete="organization" placeholder="Organisation">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="guide-email">Work email</label>
+                <input id="guide-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+              </div>
+
+              <div class="field">
+                <label for="guide-role">Role</label>
+                <input id="guide-role" name="role" type="text" autocomplete="organization-title" placeholder="Your role">
+              </div>
+
+              <button class="btn primary" id="guideSubmit" type="submit">
+                Get the free guide <span class="arrow">↓</span>
+              </button>
+
+              <p class="tiny">
+                Enter your details and we’ll take you straight to the guide.
+                Memery may also contact you about podcast services; you can opt out at any time.
+              </p>
+
+              <div class="success" id="guideSuccess" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="eyebrow">Start a conversation</div>
+          <h2 class="h2" style="margin-top:18px">Thinking about a podcast?</h2>
+          <p class="lead">
+            Whether you need a sounding board before you start, help fixing a show that is not working,
+            or someone to build the whole thing with you, tell us what you are thinking.
+          </p>
+          <p class="kicker">Make something worth remembering.</p>
+        </div>
+
+        <div class="form-card reveal">
+          <h3>Tell us about your idea.</h3>
+          <form class="form" id="contactForm" action="https://formspree.io/f/xwlpqagb" method="POST">
+            <input type="hidden" name="service" value="Podcast production">
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="contact-company">Organisation</label>
+                <input id="contact-company" name="company" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="contact-stage">Where are you up to?</label>
+                <select id="contact-stage" name="stage">
+                  <option value="">Choose one</option>
+                  <option>Just exploring the idea</option>
+                  <option>We have a concept</option>
+                  <option>We need production help</option>
+                  <option>We have an existing podcast</option>
+                  <option>We want the whole thing handled</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="contact-message">Tell us a little about the podcast</label>
+              <textarea id="contact-message" name="message" placeholder="What are you hoping to achieve? Who is it for? What help do you need?"></textarea>
+            </div>
+            <button class="btn primary" type="submit">Contact Memery <span class="arrow">↗</span></button>
+            <div class="success" id="contactSuccess">
+              Thanks. This demo form is ready to connect to your preferred form handler or CRM.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <a class="brand" href="index.html" aria-label="Memery home"><span class="brand-word">memery<i>.</i></span></a>
+      <div>© <span id="year"></span> Memery · memery.agency</div>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const navlinks = document.getElementById('navlinks');
+
+    menu.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.textContent = open ? '✕' : '☰';
+    });
+
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menu.setAttribute('aria-expanded','false');
+      menu.textContent = '☰';
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* GATED GUIDE FORM
+       Submit the lead to Formspree first.
+       Only after a successful submission is the visitor sent to the PDF.
+    */
+    const guideForm = document.getElementById('guideForm');
+    const guideSubmit = document.getElementById('guideSubmit');
+    const guideSuccess = document.getElementById('guideSuccess');
+
+    guideForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      guideSuccess.style.display = 'none';
+      guideSuccess.textContent = '';
+
+      const originalText = guideSubmit.innerHTML;
+      guideSubmit.disabled = true;
+      guideSubmit.textContent = 'Sending…';
+
+      try {
+        const response = await fetch(guideForm.action, {
+          method: 'POST',
+          body: new FormData(guideForm),
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Submission failed');
+        }
+
+        guideSuccess.textContent = 'Thanks — opening your guide now…';
+        guideSuccess.style.display = 'block';
+
+        setTimeout(() => {
+          window.location.href = 'memery-podcast-guide.pdf';
+        }, 450);
+
+      } catch (error) {
+        guideSuccess.textContent = 'Something went wrong. Please check your details and try again.';
+        guideSuccess.style.display = 'block';
+        guideSubmit.disabled = false;
+        guideSubmit.innerHTML = originalText;
+      }
+    });
+
+    /* CONTACT FORM
+       This submits to the same Formspree endpoint as the main Memery site.
+    */
+  </script>
+</body>
+</html>
