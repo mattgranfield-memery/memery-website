@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Memery — An agency specialising in the marketing science of being remembered</title>
+  <title>memery — An agency specialising in the marketing science of being remembered</title>
   <meta name="description" content="Strategy, AI and storytelling for organisations with something worth remembering." />
   <meta name="theme-color" content="#171b34" />
 
@@ -2041,6 +2041,246 @@
       }
     }
 
+  
+    /* PROOF — single feature card after removing the segmentation case */
+    .proof .proof-grid{
+      grid-template-columns:1fr;
+      max-width:860px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .proof .case{
+      min-height:390px;
+    }
+
+    /* TRACK RECORD CAROUSEL */
+    .track{
+      overflow:hidden;
+    }
+
+    .track-intro{
+      max-width:760px;
+      margin:-20px 0 34px;
+      color:var(--muted);
+      font-size:1.04rem;
+      line-height:1.65;
+    }
+
+    .track-carousel-shell{
+      position:relative;
+    }
+
+    .track-carousel{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      scrollbar-width:none;
+      overscroll-behavior-inline:contain;
+      padding:4px 2px 22px;
+    }
+
+    .track-carousel::-webkit-scrollbar{
+      display:none;
+    }
+
+    .track-card{
+      flex:0 0 min(410px,calc(100vw - 58px));
+      scroll-snap-align:start;
+      min-height:410px;
+      padding:34px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+      transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        border-color .28s ease;
+    }
+
+    .track-card::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      right:-120px;
+      top:-120px;
+      border:1px solid rgba(247,102,63,.14);
+      box-shadow:
+        0 0 0 34px rgba(247,102,63,.025),
+        0 0 0 68px rgba(247,102,63,.014);
+      pointer-events:none;
+    }
+
+    .track-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(247,102,63,.24);
+      box-shadow:0 24px 65px rgba(23,27,52,.10);
+    }
+
+    .track-card.featured{
+      background:var(--navy);
+      color:var(--cream);
+      border-color:transparent;
+    }
+
+    .track-card.featured::before{
+      border-color:rgba(255,255,255,.12);
+      box-shadow:
+        0 0 0 34px rgba(255,255,255,.025),
+        0 0 0 68px rgba(255,255,255,.015);
+    }
+
+    .track-card .track-label{
+      font-size:.76rem;
+      line-height:1;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.15em;
+      color:var(--coral);
+      margin-bottom:26px;
+    }
+
+    .track-card h3{
+      font-size:clamp(1.75rem,2.5vw,2.45rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+      margin:0 0 18px;
+      max-width:12ch;
+    }
+
+    .track-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+    }
+
+    .track-card.featured p{
+      color:rgba(242,239,232,.72);
+    }
+
+    .track-result{
+      margin-top:34px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+    }
+
+    .track-card.featured .track-result{
+      border-color:rgba(255,255,255,.14);
+    }
+
+    .track-result strong{
+      display:block;
+      font-size:clamp(2.2rem,4vw,3.8rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+      color:var(--coral);
+      margin-bottom:7px;
+    }
+
+    .track-result span{
+      display:block;
+      font-size:.9rem;
+      font-weight:800;
+      color:var(--ink);
+    }
+
+    .track-card.featured .track-result span{
+      color:var(--cream);
+    }
+
+    .track-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.45rem;
+      margin-top:20px;
+      color:var(--coral);
+      font-weight:850;
+    }
+
+    .track-controls{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      margin-top:16px;
+    }
+
+    .track-buttons{
+      display:flex;
+      gap:9px;
+    }
+
+    .track-arrow{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      border:1px solid var(--line);
+      background:white;
+      color:var(--navy);
+      display:grid;
+      place-items:center;
+      cursor:pointer;
+      font-size:1.15rem;
+      transition:.2s ease;
+    }
+
+    .track-arrow:hover{
+      transform:translateY(-2px);
+      border-color:rgba(247,102,63,.32);
+      color:var(--coral);
+    }
+
+    .track-progress{
+      flex:1;
+      max-width:290px;
+      height:3px;
+      border-radius:999px;
+      background:rgba(23,27,52,.10);
+      overflow:hidden;
+    }
+
+    .track-progress-bar{
+      display:block;
+      height:100%;
+      width:12%;
+      border-radius:inherit;
+      background:var(--coral);
+      transform-origin:left center;
+      transition:width .25s ease;
+    }
+
+    .track-count{
+      min-width:64px;
+      text-align:right;
+      color:var(--muted);
+      font-size:.84rem;
+      font-weight:800;
+    }
+
+    @media(max-width:600px){
+      .track-card{
+        min-height:390px;
+        padding:28px;
+      }
+
+      .track-controls{
+        gap:10px;
+      }
+
+      .track-progress{
+        max-width:none;
+      }
+    }
+
   </style>
 </head>
 
@@ -2501,7 +2741,7 @@
           <div>
 
             <h2 class="h2">
-              From insight to funded strategy.
+              AI strategy built for real organisations.
             </h2>
 
           </div>
@@ -2511,44 +2751,7 @@
 
         <div class="proof-grid">
 
-          <article class="case reveal">
-
-            <div>
-
-              <div class="eyebrow">
-                Customer segmentation
-              </div>
-
-              <h3>
-                3,000+ voices became 8 segments — then a live recruitment strategy.
-              </h3>
-
-              <p>
-                A national quantitative study of prospective students built eight named market segments. Those segments then became priority cohorts in the next annual Marketing and Student Recruitment Plan, directly shaping budget and campaign focus.
-              </p>
-
-            </div>
-
-            <div class="stats">
-
-              <div class="stat">
-                <strong>3,077</strong>
-                <span>prospects surveyed</span>
-              </div>
-
-              <div class="stat">
-                <strong>8</strong>
-                <span>named segments</span>
-              </div>
-
-              <div class="stat">
-                <strong>1 yr</strong>
-                <span>to funded plan</span>
-              </div>
-
-            </div>
-
-          </article>
+          
 
 
           <article class="case ai reveal">
@@ -2610,84 +2813,227 @@
           </div>
 
           <div>
-
             <h2 class="h2">
-              Results, not theory.
+              Work that moved people — and numbers.
             </h2>
-
           </div>
 
         </div>
 
-
-        <div class="metric-grid">
-
-          <article class="metric reveal">
-
-            <strong>
-              30%
-            </strong>
-
-            <span>
-              uplift in direct applications
-            </span>
-
-            <small>
-              Charles Sturt University
-            </small>
-
-          </article>
+        <p class="track-intro reveal">
+          Brand, PR, content and customer work across higher education, tourism,
+          financial services, hospitality, government and purpose-led organisations.
+        </p>
 
 
-          <article class="metric reveal">
+        <div class="track-carousel-shell reveal">
 
-            <strong>
-              1M+
-            </strong>
+          <div class="track-carousel" id="trackCarousel" aria-label="Selected marketing and communications work">
 
-            <span>
-              loyalty members built from zero
-            </span>
+            <article class="track-card featured">
 
-            <small>
-              Mantra Group
-            </small>
+              <div>
+                <div class="track-label">Charles Sturt University · Brand + podcast</div>
 
-          </article>
+                <h3>Career change became branded entertainment.</h3>
+
+                <p>
+                  Partnered with Mamamia to create <em>Pivot Club</em>, a custom podcast about
+                  people making major career and life changes — connecting Charles Sturt with
+                  the idea of taking the next step rather than interrupting audiences with an ad.
+                </p>
+
+                <a
+                  class="track-link"
+                  href="https://www.mamamia.com.au/podcasts/pivot-club/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Listen to Pivot Club <span class="arrow">↗</span>
+                </a>
+              </div>
+
+              <div class="track-result">
+                <strong>20%</strong>
+                <span>increase in university brand awareness</span>
+              </div>
+
+            </article>
 
 
-          <article class="metric reveal">
-
-            <strong>
-              $75M
-            </strong>
-
-            <span>
-              annual earned media value
-            </span>
-
-            <small>
-              Brisbane Marketing
-            </small>
-
-          </article>
+            
 
 
-          <article class="metric reveal">
+            <article class="track-card">
 
-            <strong>
-              $10M
-            </strong>
+              <div>
+                <div class="track-label">Charles Sturt University · First Nations storytelling</div>
 
-            <span>
-              co-op partnership negotiated
-            </span>
+                <h3>Documentary, social and live experience worked as one.</h3>
 
-            <small>
-              Brisbane Airport Corporation
-            </small>
+                <p>
+                  Built an integrated First Nations engagement program featuring a YouTube
+                  documentary series with Latrell Mitchell, social content, Indigenous
+                  storytelling, partnerships and live events.
+                </p>
+              </div>
 
-          </article>
+              <div class="track-result">
+                <strong>19%</strong>
+                <span>year-on-year rise in First Nations enrolments</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Brisbane Marketing · PR</div>
+
+                <h3>Earned attention at city scale.</h3>
+
+                <p>
+                  Led marketing and communications for Brisbane, building a high-output earned
+                  media operation while helping reshape the city’s destination brand and global
+                  value proposition.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>$75M</strong>
+                <span>annual earned media value</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Economic Development Queensland · Events + PR</div>
+
+                <h3>A riverfront precinct became a city event.</h3>
+
+                <p>
+                  Created the Brisbane riverfront Christmas Boat Parade with the maritime
+                  industry, LifeFlight and emergency services — using an event as both a
+                  visitation driver and a media story.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>50,000</strong>
+                <span>attendees at Northshore Hamilton</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Economic Development Queensland · Activation</div>
+
+                <h3>When visitation collapsed, we created reasons to come back.</h3>
+
+                <p>
+                  Used partnerships and unconventional activations — including a Disney
+                  drive-in experience — to generate social and traditional media attention
+                  and support Northshore businesses during COVID.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>500%</strong>
+                <span>increase in Northshore precinct visitation</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Mantra Group · Loyalty + direct marketing</div>
+
+                <h3>Built an owned audience from zero.</h3>
+
+                <p>
+                  Created and scaled Mantra+ across a national hotel portfolio, using loyalty,
+                  CRM and direct customer relationships to counter the shift towards
+                  third-party booking platforms.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>1M+</strong>
+                <span>loyalty members built from zero</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Heritage Bank · Digital acquisition</div>
+
+                <h3>Better journeys turned traffic into customers.</h3>
+
+                <p>
+                  Led digital acquisition and customer marketing across a large branch network,
+                  improving online application journeys for lending and credit card products
+                  alongside in-branch customer experience.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>2×</strong>
+                <span>online product acquisition conversion</span>
+              </div>
+
+            </article>
+
+
+            <article class="track-card">
+
+              <div>
+                <div class="track-label">Spare Keys · PR + supporter content</div>
+
+                <h3>A small social enterprise earned national attention.</h3>
+
+                <p>
+                  Built the story, media profile and supporter communications around a
+                  distinctive tech-for-good and crisis-accommodation model, earning national
+                  coverage across major Australian media.
+                </p>
+              </div>
+
+              <div class="track-result">
+                <strong>2×</strong>
+                <span>sector benchmark email engagement</span>
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <div class="track-controls" aria-label="Track record carousel controls">
+
+            <div class="track-buttons">
+              <button class="track-arrow" id="trackPrev" type="button" aria-label="Previous example">←</button>
+              <button class="track-arrow" id="trackNext" type="button" aria-label="Next example">→</button>
+            </div>
+
+            <div class="track-progress" aria-hidden="true">
+              <span class="track-progress-bar" id="trackProgress"></span>
+            </div>
+
+            <div class="track-count" id="trackCount" aria-live="polite">1 / 8</div>
+
+          </div>
 
         </div>
 
@@ -3159,6 +3505,69 @@
       .forEach(
         el => io.observe(el)
       );
+
+  
+
+    /* TRACK RECORD CAROUSEL */
+    const trackCarousel = document.getElementById('trackCarousel');
+    const trackPrev = document.getElementById('trackPrev');
+    const trackNext = document.getElementById('trackNext');
+    const trackProgress = document.getElementById('trackProgress');
+    const trackCount = document.getElementById('trackCount');
+
+    if(trackCarousel && trackPrev && trackNext){
+
+      const trackCards = Array.from(trackCarousel.querySelectorAll('.track-card'));
+
+      const cardStep = () => {
+        const first = trackCards[0];
+        if(!first) return trackCarousel.clientWidth;
+        const styles = getComputedStyle(trackCarousel);
+        const gap = parseFloat(styles.columnGap || styles.gap || 0);
+        return first.getBoundingClientRect().width + gap;
+      };
+
+      const updateTrackControls = () => {
+        const step = cardStep();
+        const index = Math.max(
+          0,
+          Math.min(
+            trackCards.length - 1,
+            Math.round(trackCarousel.scrollLeft / step)
+          )
+        );
+
+        trackCount.textContent = `${index + 1} / ${trackCards.length}`;
+        trackProgress.style.width = `${((index + 1) / trackCards.length) * 100}%`;
+      };
+
+      trackPrev.addEventListener('click', () => {
+        trackCarousel.scrollBy({
+          left:-cardStep(),
+          behavior:'smooth'
+        });
+      });
+
+      trackNext.addEventListener('click', () => {
+        const maxScroll = trackCarousel.scrollWidth - trackCarousel.clientWidth;
+
+        if(trackCarousel.scrollLeft >= maxScroll - 8){
+          trackCarousel.scrollTo({left:0,behavior:'smooth'});
+        }else{
+          trackCarousel.scrollBy({
+            left:cardStep(),
+            behavior:'smooth'
+          });
+        }
+      });
+
+      trackCarousel.addEventListener('scroll', () => {
+        window.requestAnimationFrame(updateTrackControls);
+      }, {passive:true});
+
+      window.addEventListener('resize', updateTrackControls);
+      updateTrackControls();
+    }
 
   </script>
 
