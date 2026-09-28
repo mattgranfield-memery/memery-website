@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLCQ9TYW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-PVLCQ9TYW9');
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>memery — An agency specialising in the marketing science of being remembered</title>
@@ -1679,7 +1689,7 @@
       transform-origin:center;
     }
 
-    /* The two wedges use clip-path to echo the actual Memery bow-tie mark. */
+    /* The two wedges use clip-path to echo the actual memery bow-tie mark. */
     .logo-left{
       left:3%;
       top:18%;
@@ -1825,6 +1835,15 @@
 
     .brand-wordmark .dot{
       color:var(--coral);
+    }
+
+    .brand-wordmark .play-mark{
+      display:inline-block;
+      margin-left:.12em;
+      font-size:.48em;
+      line-height:1;
+      transform:translateY(-.08em);
+      letter-spacing:0;
     }
 
     footer .brand-wordmark{
@@ -2281,7 +2300,384 @@
       }
     }
 
-  </style>
+  
+    /* LONG PROBLEM STATEMENT */
+    .problem-statement{
+      font-size:clamp(1.1rem,2.5vw,2.4rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+      max-width:28ch;
+    }
+
+    /* MARKETING AI FEATURE */
+    .ai-feature{
+      background:var(--cream);
+    }
+
+    .ai-feature-grid{
+      display:grid;
+      grid-template-columns:.78fr 1.22fr;
+      gap:56px;
+      align-items:start;
+    }
+
+    .ai-feature-copy{
+      position:sticky;
+      top:125px;
+    }
+
+    .ai-feature-copy .lead{
+      margin:24px 0 28px;
+      max-width:48ch;
+    }
+
+    .ai-feature-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:28px;
+    }
+
+    .ai-feature .btn.secondary{
+      color:var(--navy);
+      border-color:rgba(23,27,52,.18);
+      background:rgba(255,255,255,.35);
+    }
+
+    .ai-feature .btn.secondary:hover{
+      border-color:rgba(23,27,52,.35);
+      background:white;
+    }
+
+    .ai-service-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .ai-service-card{
+      padding:28px;
+      border-radius:24px;
+      border:1px solid var(--line);
+      background:var(--paper);
+      min-height:245px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .ai-service-card:nth-child(2),
+    .ai-service-card:nth-child(5){
+      background:var(--navy);
+      color:var(--cream);
+      border-color:transparent;
+    }
+
+    .ai-service-card h3{
+      font-size:1.45rem;
+      line-height:1.08;
+      letter-spacing:-.035em;
+      margin:16px 0 10px;
+    }
+
+    .ai-service-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .ai-service-card:nth-child(2) p,
+    .ai-service-card:nth-child(5) p{
+      color:rgba(242,239,232,.68);
+    }
+
+    .ai-service-card .num{
+      font-size:.78rem;
+      letter-spacing:.13em;
+    }
+
+    @media(max-width:900px){
+      .ai-feature-grid{
+        grid-template-columns:1fr;
+      }
+
+      .ai-feature-copy{
+        position:static;
+      }
+    }
+
+    @media(max-width:600px){
+      .ai-service-list{
+        grid-template-columns:1fr;
+      }
+
+      .ai-feature-actions{
+        display:grid;
+      }
+
+      .ai-feature-actions .btn{
+        width:100%;
+      }
+    }
+
+  
+    /* PURPOSE STATEMENT — editorial callout */
+    .purpose-wrap{
+      position:relative;
+      max-width:980px;
+      padding:34px 38px 36px;
+      border-radius:30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.72), rgba(255,255,255,.28)),
+        var(--paper);
+      border:1px solid rgba(23,27,52,.10);
+      box-shadow:0 22px 60px rgba(23,27,52,.08);
+      overflow:hidden;
+    }
+
+    .purpose-wrap::before{
+      content:"";
+      position:absolute;
+      width:220px;
+      height:220px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(247,102,63,.18), rgba(247,102,63,0) 68%);
+      right:-70px;
+      top:-95px;
+      pointer-events:none;
+    }
+
+    .purpose-wrap::after{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:7px;
+      height:100%;
+      background:var(--coral);
+    }
+
+    .purpose-kicker{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+      color:var(--coral);
+      font-size:.76rem;
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+
+    .purpose-kicker::before{
+      content:"";
+      width:34px;
+      height:2px;
+      background:var(--coral);
+      flex:0 0 auto;
+    }
+
+    .problem-statement{
+      position:relative;
+      z-index:1;
+      margin:0;
+      max-width:26ch;
+      font-size:clamp(1.45rem,3vw,2.8rem);
+      line-height:1.08;
+      letter-spacing:-.04em;
+      font-weight:760;
+    }
+
+    .problem-statement .accent{
+      color:var(--coral);
+    }
+
+    .problem-statement .underline{
+      position:relative;
+      white-space:nowrap;
+    }
+
+    .problem-statement .underline::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-.08em;
+      height:.18em;
+      border-radius:999px;
+      background:rgba(247,102,63,.20);
+      transform:rotate(-1.2deg);
+      z-index:-1;
+    }
+
+    .purpose-note{
+      position:relative;
+      z-index:1;
+      margin:22px 0 0;
+      max-width:62ch;
+      color:var(--muted);
+      font-size:.98rem;
+      line-height:1.65;
+    }
+
+    @media(max-width:600px){
+      .purpose-wrap{
+        padding:28px 24px 30px 28px;
+        border-radius:24px;
+      }
+
+      .problem-statement{
+        font-size:clamp(1.4rem,7vw,2.2rem);
+      }
+    }
+
+  
+    /* PROBLEM — STRATEGIC FRAMING */
+    .problem .section-head{
+      align-items:start;
+    }
+
+    .problem .section-head .lead{
+      max-width:62ch;
+      margin:22px 0 0;
+    }
+
+    .problem-punch{
+      margin:28px 0 0;
+      max-width:60ch;
+      font-size:1.08rem;
+      line-height:1.65;
+      color:var(--muted);
+    }
+
+    .problem-punch strong{
+      color:var(--ink);
+      font-weight:800;
+    }
+
+    .problem-grid{
+      margin-top:10px;
+    }
+
+    .problem-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .problem-card::after{
+      content:"";
+      position:absolute;
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(247,102,63,.13), transparent 68%);
+      right:-42px;
+      top:-42px;
+      pointer-events:none;
+    }
+
+    .problem-card .num{
+      position:relative;
+      z-index:1;
+    }
+
+    .problem-card h3,
+    .problem-card p{
+      position:relative;
+      z-index:1;
+    }
+
+    .problem-bridge{
+      margin-top:28px;
+      padding:34px 38px;
+      border-radius:28px;
+      background:var(--navy);
+      color:var(--cream);
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:28px;
+      align-items:start;
+      box-shadow:0 24px 70px rgba(23,27,52,.12);
+    }
+
+    .problem-bridge-mark{
+      font-size:1.35rem;
+      font-weight:900;
+      letter-spacing:-.06em;
+      color:var(--cream);
+      padding-top:2px;
+    }
+
+    .problem-bridge-mark::first-letter{
+      color:inherit;
+    }
+
+    .problem-bridge h3{
+      margin:0 0 10px;
+      font-size:1.6rem;
+      letter-spacing:-.035em;
+    }
+
+    .problem-bridge p{
+      margin:0;
+      max-width:70ch;
+      color:rgba(242,239,232,.72);
+    }
+
+    .problem-bridge-line{
+      margin-top:15px!important;
+      color:var(--cream)!important;
+      font-weight:850;
+      letter-spacing:-.02em;
+    }
+
+    @media(max-width:700px){
+      .problem-bridge{
+        grid-template-columns:1fr;
+        padding:30px 26px;
+      }
+    }
+
+  
+    /* FINAL OVERRIDE: problem labels */
+    .problem-card .num{
+      display:inline-block !important;
+      width:auto !important;
+      height:auto !important;
+      min-width:0 !important;
+      min-height:0 !important;
+      padding:0 !important;
+      border:0 !important;
+      border-radius:0 !important;
+      background:none !important;
+      box-shadow:none !important;
+      font-size:.78rem !important;
+      line-height:1.15 !important;
+      font-weight:900 !important;
+      letter-spacing:.12em !important;
+      text-transform:uppercase !important;
+      color:var(--coral) !important;
+      white-space:nowrap !important;
+      align-self:flex-start !important;
+    }
+
+
+    .mission-highlight{
+      display:inline;
+      padding:0 .06em;
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 24%,
+          rgba(247,102,63,.22) 24%,
+          rgba(247,102,63,.22) 88%,
+          transparent 88%
+        );
+      -webkit-box-decoration-break:clone;
+      box-decoration-break:clone;
+    }
+
+</style>
 </head>
 
 <body>
@@ -2291,17 +2687,17 @@
   <div class="nav-shell">
     <nav class="nav" aria-label="Primary navigation">
 
-      <a class="brand" href="#top" aria-label="Memery home"><span class="brand-wordmark">memery<span class="dot">.</span></span></a>
+      <a class="brand" href="#top" aria-label="memery home"><span class="brand-wordmark">memery<span class="dot play-mark" aria-hidden="true">▶</span></span></a>
 
       <div class="navlinks" id="navlinks">
-      <a href="index.html">Home</a>
-      <a href="index.html#services">What We Do</a>
-      <a href="index.html#track">Our Work</a>
-      <a href="podcast.html">Podcasts</a>
-      <a href="ai-marketing.html">Marketing AI</a>
-    </div>
+        <a href="index.html">Home</a>
+        <a href="index.html#services">What We Do</a>
+        <a href="index.html#track">Our Work</a>
+        <a href="podcast.html">Podcasts</a>
+        <a href="ai-marketing.html">Marketing AI</a>
+      </div>
 
-      <a class="btn primary nav-cta" href="#contact">Talk to memery <span class="arrow">↗</span></a>
+      <a class="btn primary nav-cta" href="#contact">Contact Us <span class="arrow">↗</span></a>
 
       <button
         class="menu"
@@ -2327,11 +2723,11 @@
           </div>
 
           <h1 class="display">
-            Be memorable.
+            Become memorable.
           </h1>
 
           <p class="lead">
-            Strategy, segmentation, AI, storytelling and content — including podcasts people actually want to hear — for mission-driven organisations doing something worth remembering.
+            Strategy, segmentation, AI, storytelling and content for mission-driven organisations doing something worth remembering.
           </p>
 
           <div class="hero-actions">
@@ -2357,16 +2753,24 @@
 
         <div class="section-head reveal">
 
-          <div>
-            <div class="eyebrow">
-              The problem
-            </div>
+          <div class="eyebrow">
+            The problem
           </div>
 
           <div>
-            <h2 class="h2">
-              Purpose-driven organisations have a lot to say. Creating mental availability in a sea of sameness.
-            </h2>
+            <h2 class="h2"><span class="mission-highlight">A mission does not make you memorable.</span></h2>
+
+            <p class="lead">
+              Purpose-driven organisations usually have plenty to say, plenty of people to serve and plenty of reasons to matter.
+              The problem is that meaning does not automatically translate into memory. When every audience is treated the same,
+              every priority becomes a message and every message competes for attention, the result is often marketing that is worthy —
+              but diffuse, generic and easy to forget.
+            </p>
+
+            <p class="problem-punch">
+              The challenge is not simply getting attention.
+              <strong>It is knowing who matters most, understanding what matters to them, deciding what you want each audience to remember — and then building the strategy, distinctive assets and content that make that memory more likely to form.</strong>
+            </p>
           </div>
 
         </div>
@@ -2375,67 +2779,68 @@
         <div class="problem-grid">
 
           <article class="problem-card reveal">
-
-            <div class="num">
-              01
-            </div>
+            <div class="num">Problem 01</div>
 
             <div>
-
-              <h3>
-                Mental availability is the real battleground.
-              </h3>
+              <h3>Too many audiences. Too many messages.</h3>
 
               <p>
-                Growth comes from being easy to recall and easy to buy — not from one more campaign that nobody remembers a week later.
+                Different people care about different things. Treating them as one broad audience usually leads to broad,
+                compromised messaging. Good segmentation helps identify the audiences that matter most, what drives them,
+                and the few ideas each group actually needs to remember.
               </p>
-
             </div>
-
           </article>
 
 
           <article class="problem-card reveal">
-
-            <div class="num">
-              02
-            </div>
+            <div class="num">Problem 02</div>
 
             <div>
-
-              <h3>
-                Most teams optimise the wrong half.
-              </h3>
+              <h3>A good mission can still look like everyone else</h3>
 
               <p>
-                Strategy without craft is invisible. Craft without strategy is noise. Rarely does one team own both.
+                Purpose is important, but it is rarely distinctive on its own. When organisations use the same category language,
+                proof points and visual conventions, even genuinely different organisations can become interchangeable.
+                The job is to build distinctive assets, associations and ideas that bring your organisation to mind.
               </p>
-
             </div>
-
           </article>
 
 
           <article class="problem-card reveal">
-
-            <div class="num">
-              03
-            </div>
+            <div class="num">Problem 03</div>
 
             <div>
-
-              <h3>
-                AI changed the game. Most teams haven’t.
-              </h3>
+              <h3>Content that gets seen — then forgotten</h3>
 
               <p>
-                The opportunity is bigger than faster copywriting: segmentation, governance, decision-making and personalisation at scale. Let's write your playbook.
+                Attention is only the first job. The harder one is creating work that connects with the right audience
+                and leaves something behind: a clear association, a distinctive idea, a reason to remember you later
+                when a decision, need or opportunity arises.
               </p>
-
             </div>
-
           </article>
 
+        </div>
+
+
+        <div class="problem-bridge reveal">
+          <div class="problem-bridge-mark">memery.</div>
+
+          <div>
+            <h3>That’s where memery comes in.</h3>
+
+            <p>
+              We help purpose-driven organisations work out who they most need to reach, what those audiences care about,
+              and what the organisation needs to be remembered for — then combine segmentation, marketing science, strategy, AI
+              and editorial-quality content to make that memory more likely.
+            </p>
+
+            <p class="problem-bridge-line">
+              Easier to notice. Easier to remember. Easier to choose.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -2605,190 +3010,119 @@
     </section>
 
 
-    <section class="method" id="method">
+    
 
-      <div class="wrap">
 
-        <div class="section-head reveal">
+    <section class="ai-feature" id="ai">
 
-          <div>
-            <div class="eyebrow">
-              How we work
-            </div>
+      <div class="wrap ai-feature-grid">
+
+        <div class="ai-feature-copy reveal">
+
+          <div class="eyebrow">
+            Marketing AI
           </div>
 
-          <div>
+          <h2 class="h2" style="margin-top:18px;">
+            Build an AI marketing playbook your team can actually use.
+          </h2>
 
-            <h2 class="h2">
-              Strategy sets the direction. Story makes it stick.
-            </h2>
+          <p class="lead">
+            We help marketing teams move beyond scattered experiments and prompt libraries
+            to a practical operating model for AI. That means working out where AI can create
+            real value, what should remain human, how it should be governed, and what to implement first.
+          </p>
 
-            <p class="lead">
-              A simple system for turning insight into work that earns recall.
+          <p>
+            Every playbook is built around your organisation — your team, workflows,
+            technology stack, data, governance environment and appetite for change.
+            The result is not an AI trends deck. It is a working plan.
+          </p>
+
+          <div class="ai-feature-actions">
+            <a class="btn primary" href="ai-marketing.html">
+              Explore Marketing AI <span class="arrow">↗</span>
+            </a>
+
+            <a class="btn secondary" href="ai-marketing.html#contact">
+              Build your AI playbook
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="ai-service-list">
+
+          <article class="ai-service-card reveal">
+            <div>
+              <div class="num">01 — DIAGNOSE</div>
+              <h3>AI maturity assessment</h3>
+            </div>
+            <p>
+              Map where the team sits today across tools, workflows, data,
+              automation, capability and governance — then define a realistic next level.
             </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="steps">
-
-          <article class="step reveal">
-
-            <div class="num">
-              01
-            </div>
-
-            <div>
-
-              <h3>
-                Understand
-              </h3>
-
-              <p>
-                Segmentation and audience intent — who they are, what they need, what earns recall.
-              </p>
-
-            </div>
-
           </article>
 
 
-          <article class="step reveal">
-
-            <div class="num">
-              02
-            </div>
-
+          <article class="ai-service-card reveal">
             <div>
-
-              <h3>
-                Design
-              </h3>
-
-              <p>
-                Strategy and AI playbooks that turn insight into a practical, governed plan.
-              </p>
-
+              <div class="num">02 — PRIORITISE</div>
+              <h3>Use-case catalogue</h3>
             </div>
-
+            <p>
+              Identify the highest-value applications across brand, campaigns,
+              content, CRM, performance marketing, PR, insight and operations.
+            </p>
           </article>
 
 
-          <article class="step reveal">
-
-            <div class="num">
-              03
-            </div>
-
+          <article class="ai-service-card reveal">
             <div>
-
-              <h3>
-                Create
-              </h3>
-
-              <p>
-                Podcasts, social content and executive storytelling that carry the strategy into market.
-              </p>
-
+              <div class="num">03 — GOVERN</div>
+              <h3>Risk & governance framework</h3>
             </div>
-
+            <p>
+              Define human sign-off, data boundaries, accountability,
+              escalation, review and the right level of governance for each use case.
+            </p>
           </article>
 
 
-          <article class="step reveal">
-
-            <div class="num">
-              04
-            </div>
-
+          <article class="ai-service-card reveal">
             <div>
-
-              <h3>
-                Measure
-              </h3>
-
-              <p>
-                Track brand memory, engagement and conversion. Refine, repeat, compound.
-              </p>
-
+              <div class="num">04 — BUILD</div>
+              <h3>Workflows, prompts & agents</h3>
             </div>
-
+            <p>
+              Turn good experiments into repeatable ways of working:
+              templates, SOPs, automations, prompt systems and agent concepts.
+            </p>
           </article>
 
-        </div>
 
-      </div>
-
-    </section>
-
-
-    <section class="proof" id="proof">
-
-      <div class="wrap">
-
-        <div class="section-head reveal">
-
-          <div>
-            <div class="eyebrow">
-              Proof
-            </div>
-          </div>
-
-          <div>
-
-            <h2 class="h2">
-              AI strategy built for real organisations.
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="proof-grid">
-
-          
-
-
-          <article class="case ai reveal">
-
+          <article class="ai-service-card reveal">
             <div>
-
-              <div class="service-badge">
-                AI strategy
-              </div>
-
-              <h3>
-                Most AI plans stop at faster copy. Ours starts with governance.
-              </h3>
-
-              <p>
-                Risk-tiered use cases, five levels of value, and Australian regulatory context — designed to answer what AI should do, what it shouldn’t, and what must stay human.
-              </p>
-
+              <div class="num">05 — DISCOVERABILITY</div>
+              <h3>GEO & AI search strategy</h3>
             </div>
+            <p>
+              Structure authoritative content so AI systems can understand,
+              retrieve and cite your organisation accurately.
+            </p>
+          </article>
 
-            <div class="stats">
 
-              <div class="stat">
-                <strong>5</strong>
-                <span>levels of AI value</span>
-              </div>
-
-              <div class="stat">
-                <strong>4</strong>
-                <span>risk dimensions</span>
-              </div>
-
-              <div class="stat">
-                <strong>AU</strong>
-                <span>context by design</span>
-              </div>
-
+          <article class="ai-service-card reveal">
+            <div>
+              <div class="num">06 — ENABLE</div>
+              <h3>Capability & 90-day roadmap</h3>
             </div>
-
+            <p>
+              Build team capability, choose the right pilots and create a staged
+              implementation roadmap that turns the playbook into operating practice.
+            </p>
           </article>
 
         </div>
@@ -2812,7 +3146,7 @@
 
           <div>
             <h2 class="h2">
-              Work that moved people — and numbers.
+              Work that moves people.
             </h2>
           </div>
 
@@ -2836,7 +3170,7 @@
                 <h3>Career change became branded entertainment.</h3>
 
                 <p>
-                  Partnered with Mamamia to create <em>Pivot Club</em>, a custom podcast about
+                  At Charles Sturt, we partnered with Mamamia to create <em>Pivot Club</em>, a custom podcast about
                   people making major career and life changes — connecting Charles Sturt with
                   the idea of taking the next step rather than interrupting audiences with an ad.
                 </p>
@@ -2870,9 +3204,8 @@
                 <h3>Documentary, social and live experience worked as one.</h3>
 
                 <p>
-                  Built an integrated First Nations engagement program featuring a YouTube
-                  documentary series with Latrell Mitchell, social content, Indigenous
-                  storytelling, partnerships and live events.
+                  The work combined a YouTube documentary series featuring an NRL superstar,
+                  social content, Indigenous storytelling, partnerships and live events.
                 </p>
               </div>
 
@@ -2892,7 +3225,7 @@
                 <h3>Earned attention at city scale.</h3>
 
                 <p>
-                  Led marketing and communications for Brisbane, building a high-output earned
+                  Leading marketing and communications for Brisbane meant building a high-output earned
                   media operation while helping reshape the city’s destination brand and global
                   value proposition.
                 </p>
@@ -2914,7 +3247,7 @@
                 <h3>A riverfront precinct became a city event.</h3>
 
                 <p>
-                  Created the Brisbane riverfront Christmas Boat Parade with the maritime
+                  The Brisbane riverfront Christmas Boat Parade was created with the maritime
                   industry, LifeFlight and emergency services — using an event as both a
                   visitation driver and a media story.
                 </p>
@@ -2936,7 +3269,7 @@
                 <h3>When visitation collapsed, we created reasons to come back.</h3>
 
                 <p>
-                  Used partnerships and unconventional activations — including a Disney
+                  Partnerships and unconventional activations — including a Disney
                   drive-in experience — to generate social and traditional media attention
                   and support Northshore businesses during COVID.
                 </p>
@@ -2958,7 +3291,7 @@
                 <h3>Built an owned audience from zero.</h3>
 
                 <p>
-                  Created and scaled Mantra+ across a national hotel portfolio, using loyalty,
+                  Mantra+ was created and scaled across a national hotel portfolio, using loyalty,
                   CRM and direct customer relationships to counter the shift towards
                   third-party booking platforms.
                 </p>
@@ -2977,10 +3310,10 @@
               <div>
                 <div class="track-label">Heritage Bank · Digital acquisition</div>
 
-                <h3>Better journeys turned traffic into customers.</h3>
+                <h3>Better journeys turned traffic into more customers.</h3>
 
                 <p>
-                  Led digital acquisition and customer marketing across a large branch network,
+                  Digital acquisition and customer marketing across a large branch network focused on
                   improving online application journeys for lending and credit card products
                   alongside in-branch customer experience.
                 </p>
@@ -3002,7 +3335,7 @@
                 <h3>A small social enterprise earned national attention.</h3>
 
                 <p>
-                  Built the story, media profile and supporter communications around a
+                  The story, media profile and supporter communications were built around a
                   distinctive tech-for-good and crisis-accommodation model, earning national
                   coverage across major Australian media.
                 </p>
@@ -3047,7 +3380,7 @@
         <div class="why-copy reveal">
 
           <div class="eyebrow">
-            Why Memery
+            Why memery
           </div>
 
           <h2 class="h2">
@@ -3212,7 +3545,7 @@
         <div class="contact-copy">
 
           <div class="eyebrow">
-            Memery — est. 2011
+            memery — est. 2011
           </div>
 
           <h2 class="h2">
@@ -3413,10 +3746,10 @@
 
       <footer>
 
-        <span class="brand-wordmark">memery<span class="dot">.</span></span>
+        <span class="brand-wordmark">memery<span class="dot play-mark" aria-hidden="true">▶</span></span>
 
         <div>
-          © <span id="year"></span> Memery
+          © <span id="year"></span> memery
         </div>
 
       </footer>
@@ -3515,55 +3848,141 @@
 
     if(trackCarousel && trackPrev && trackNext){
 
+      /* Keep the featured Pivot Club case first; randomise every case after it. */
+      const allTrackCards = Array.from(trackCarousel.querySelectorAll('.track-card'));
+      const featuredCard =
+        allTrackCards.find(card =>
+          card.querySelector('h3')?.textContent.trim() ===
+          'Career change became branded entertainment.'
+        ) || allTrackCards[0];
+
+      const shuffledCards = allTrackCards.filter(card => card !== featuredCard);
+
+      for(let i = shuffledCards.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
+      }
+
+      trackCarousel.appendChild(featuredCard);
+      shuffledCards.forEach(card => trackCarousel.appendChild(card));
+      trackCarousel.scrollLeft = 0;
+
       const trackCards = Array.from(trackCarousel.querySelectorAll('.track-card'));
 
       const cardStep = () => {
         const first = trackCards[0];
         if(!first) return trackCarousel.clientWidth;
+
         const styles = getComputedStyle(trackCarousel);
         const gap = parseFloat(styles.columnGap || styles.gap || 0);
+
         return first.getBoundingClientRect().width + gap;
       };
 
-      const updateTrackControls = () => {
+      const currentIndex = () => {
         const step = cardStep();
-        const index = Math.max(
+
+        return Math.max(
           0,
           Math.min(
             trackCards.length - 1,
             Math.round(trackCarousel.scrollLeft / step)
           )
         );
+      };
 
+      const updateTrackControls = () => {
+        const index = currentIndex();
         trackCount.textContent = `${index + 1} / ${trackCards.length}`;
         trackProgress.style.width = `${((index + 1) / trackCards.length) * 100}%`;
       };
 
-      trackPrev.addEventListener('click', () => {
-        trackCarousel.scrollBy({
-          left:-cardStep(),
-          behavior:'smooth'
-        });
-      });
-
-      trackNext.addEventListener('click', () => {
+      const goNext = () => {
         const maxScroll = trackCarousel.scrollWidth - trackCarousel.clientWidth;
 
         if(trackCarousel.scrollLeft >= maxScroll - 8){
-          trackCarousel.scrollTo({left:0,behavior:'smooth'});
+          trackCarousel.scrollTo({left:0, behavior:'smooth'});
         }else{
-          trackCarousel.scrollBy({
-            left:cardStep(),
+          trackCarousel.scrollBy({left:cardStep(), behavior:'smooth'});
+        }
+      };
+
+      const goPrev = () => {
+        if(trackCarousel.scrollLeft <= 8){
+          trackCarousel.scrollTo({
+            left:trackCarousel.scrollWidth - trackCarousel.clientWidth,
             behavior:'smooth'
           });
+        }else{
+          trackCarousel.scrollBy({left:-cardStep(), behavior:'smooth'});
         }
-      });
+      };
+
+      trackPrev.addEventListener('click', goPrev);
+      trackNext.addEventListener('click', goNext);
 
       trackCarousel.addEventListener('scroll', () => {
         window.requestAnimationFrame(updateTrackControls);
       }, {passive:true});
 
       window.addEventListener('resize', updateTrackControls);
+
+      /* Automatically advance. Pause while the user interacts. */
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let trackTimer = null;
+
+      const startTrackAutoplay = () => {
+        if(reduceMotion || trackTimer) return;
+        trackTimer = window.setInterval(goNext, 4200);
+      };
+
+      const stopTrackAutoplay = () => {
+        if(!trackTimer) return;
+        window.clearInterval(trackTimer);
+        trackTimer = null;
+      };
+
+      let trackSectionVisible = false;
+
+      const maybeStartTrackAutoplay = () => {
+        if(trackSectionVisible) startTrackAutoplay();
+      };
+
+      trackCarousel.addEventListener('mouseenter', stopTrackAutoplay);
+      trackCarousel.addEventListener('mouseleave', maybeStartTrackAutoplay);
+      trackCarousel.addEventListener('focusin', stopTrackAutoplay);
+      trackCarousel.addEventListener('focusout', maybeStartTrackAutoplay);
+      trackCarousel.addEventListener('touchstart', stopTrackAutoplay, {passive:true});
+      trackCarousel.addEventListener('touchend', maybeStartTrackAutoplay, {passive:true});
+
+      /*
+        Do not start cycling while the section is off-screen.
+        Begin only once the user actually reaches the track-record section,
+        and pause again if they scroll away from it.
+      */
+      const trackSection = document.getElementById('track');
+
+      if(trackSection){
+        const trackVisibilityObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              trackSectionVisible = entry.isIntersecting;
+
+              if(trackSectionVisible){
+                startTrackAutoplay();
+              }else{
+                stopTrackAutoplay();
+              }
+            });
+          },
+          {
+            threshold:.3
+          }
+        );
+
+        trackVisibilityObserver.observe(trackSection);
+      }
+
       updateTrackControls();
     }
 
