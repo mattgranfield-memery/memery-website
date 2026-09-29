@@ -2677,6 +2677,23 @@
       box-decoration-break:clone;
     }
 
+
+    /* GEO FEATURE */
+    .geo-feature{background:var(--navy);color:var(--cream);position:relative;overflow:hidden}
+    .geo-feature::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;border:1px solid rgba(247,102,63,.16);right:-280px;top:-250px;box-shadow:0 0 0 70px rgba(247,102,63,.025),0 0 0 140px rgba(247,102,63,.015);pointer-events:none}
+    .geo-feature-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center;position:relative;z-index:1}
+    .geo-feature-copy .lead{color:rgba(242,239,232,.72);margin:24px 0 20px;max-width:49ch}
+    .geo-feature-copy>p:not(.lead){color:rgba(242,239,232,.62);max-width:56ch}
+    .geo-feature-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .geo-feature .btn.secondary{color:var(--cream);border-color:rgba(242,239,232,.2);background:rgba(255,255,255,.04)}
+    .geo-feature .btn.secondary:hover{background:rgba(255,255,255,.09);border-color:rgba(242,239,232,.36)}
+    .geo-framework{display:grid;gap:10px}
+    .geo-step{display:grid;grid-template-columns:54px 1fr;gap:17px;align-items:start;padding:20px 22px;border-radius:20px;border:1px solid rgba(242,239,232,.12);background:rgba(255,255,255,.045)}
+    .geo-step-num{width:42px;height:42px;border-radius:50%;border:1px solid rgba(247,102,63,.5);color:var(--coral);display:grid;place-items:center;font-size:.76rem;font-weight:900;letter-spacing:.08em}
+    .geo-step h3{margin:1px 0 5px;font-size:1.12rem;letter-spacing:-.02em}
+    .geo-step p{margin:0;color:rgba(242,239,232,.6);font-size:.94rem;line-height:1.5}
+    @media(max-width:900px){.geo-feature-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 
@@ -2695,6 +2712,7 @@
         <a href="index.html#track">Our Work</a>
         <a href="podcast.html">Podcasts</a>
         <a href="ai-marketing.html">Marketing AI</a>
+        <a href="geo.html">Generative Engine Optimisation</a>
       </div>
 
       <a class="btn primary nav-cta" href="#contact">Contact Us <span class="arrow">↗</span></a>
@@ -3132,7 +3150,30 @@
     </section>
 
 
-    <section class="track" id="track">
+    
+    <section class="geo-feature" id="geo">
+      <div class="wrap geo-feature-grid">
+        <div class="geo-feature-copy reveal">
+          <div class="eyebrow">Generative Engine Optimisation</div>
+          <h2 class="h2" style="margin-top:18px;">Be findable, credible and recommendable in AI search.</h2>
+          <p class="lead">Search is changing from a list of links to a generated answer. GEO helps improve the chance that AI systems can find, understand, accurately represent, cite and recommend your organisation.</p>
+          <p>memery helps brands work out where they appear, what AI says about them, which sources shape the answer and why competitors are being selected instead — then builds a practical plan to improve visibility.</p>
+          <div class="geo-feature-actions">
+            <a class="btn primary" href="geo.html">Explore GEO <span class="arrow">↗</span></a>
+            <a class="btn secondary" href="geo.html#guide">Get the free AI Visibility Playbook</a>
+          </div>
+        </div>
+        <div class="geo-framework">
+          <article class="geo-step reveal"><div class="geo-step-num">01</div><div><h3>Discover</h3><p>Can AI-connected search systems access the pages and evidence that matter?</p></div></article>
+          <article class="geo-step reveal"><div class="geo-step-num">02</div><div><h3>Understand</h3><p>Is your category, audience, expertise and offer clear enough to represent accurately?</p></div></article>
+          <article class="geo-step reveal"><div class="geo-step-num">03</div><div><h3>Trust</h3><p>Do your claims have distinctive evidence, named expertise and independent corroboration?</p></div></article>
+          <article class="geo-step reveal"><div class="geo-step-num">04</div><div><h3>Cite</h3><p>Does your brand or content appear as a source when AI answers relevant questions?</p></div></article>
+          <article class="geo-step reveal"><div class="geo-step-num">05</div><div><h3>Recommend</h3><p>Are you accurately shortlisted when people ask AI who they should consider?</p></div></article>
+        </div>
+      </div>
+    </section>
+
+<section class="track" id="track">
 
       <div class="wrap">
 
@@ -3215,31 +3256,7 @@
               </div>
 
             </article>
-
-
-            <article class="track-card">
-
-              <div>
-                <div class="track-label">Brisbane Marketing · PR</div>
-
-                <h3>Earned attention at city scale.</h3>
-
-                <p>
-                  Leading marketing and communications for Brisbane meant building a high-output earned
-                  media operation while helping reshape the city’s destination brand and global
-                  value proposition.
-                </p>
-              </div>
-
-              <div class="track-result">
-                <strong>$75M</strong>
-                <span>annual earned media value</span>
-              </div>
-
-            </article>
-
-
-            <article class="track-card">
+<article class="track-card">
 
               <div>
                 <div class="track-label">Economic Development Queensland · Events + PR</div>
@@ -3371,87 +3388,6 @@
       </div>
 
     </section>
-
-
-    <section class="why" id="why">
-
-      <div class="wrap why-grid">
-
-        <div class="why-copy reveal">
-
-          <div class="eyebrow">
-            Why memery
-          </div>
-
-          <h2 class="h2">
-            Specialist knowledge. Genuine talent. Rarely both.
-          </h2>
-
-          <p class="lead">
-            We bring strategy, AI and content craft together so the thinking and the execution reinforce each other.
-          </p>
-
-        </div>
-
-
-        <div class="why-list">
-
-          <article class="why-item reveal">
-
-            <div class="num">
-              01
-            </div>
-
-            <h3>
-              AI that holds up under scrutiny
-            </h3>
-
-            <p>
-              Not just prompts and faster copy. Risk-tiered, governed marketing playbooks built for real organisations and real consequences.
-            </p>
-
-          </article>
-
-
-          <article class="why-item reveal">
-
-            <div class="num">
-              02
-            </div>
-
-            <h3>
-              Actual content talent
-            </h3>
-
-            <p>
-              Commercial radio, journalism, podcasting and bestselling writing experience, combined with social-native instincts and end-to-end production capability.
-            </p>
-
-          </article>
-
-
-          <article class="why-item reveal">
-
-            <div class="num">
-              03
-            </div>
-
-            <h3>
-              Strategy and craft under one roof
-            </h3>
-
-            <p>
-              Most organisations split the thinking and making across teams that barely talk. We remove the seam.
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
 
     <section class="engage" id="engage">
 
