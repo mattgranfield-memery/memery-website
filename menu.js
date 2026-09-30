@@ -8,29 +8,22 @@
   if (!mount) return;
 
   const items = [
-    { label: 'Home', href: 'index.html', files: ['index.html', ''] },
-    { label: 'Our Approach', href: 'index.html#problem' },
-    { label: 'Our Work', href: 'index.html#track' },
-    { label: 'Podcasts', href: 'podcast.html', files: ['podcast.html', 'podcast-marketing-report.html'] },
-    { label: 'Marketing AI', href: 'ai-marketing.html', files: ['ai-marketing.html'] },
-    { label: 'GEO/AEO', href: 'geo.html', files: ['geo.html'] },
-    { label: 'The Team', href: 'about.html', files: ['about.html'] }
+    { label:'Home', href:'index.html', files:['index.html',''] },
+    { label:'Our Approach', href:'index.html#problem' },
+    { label:'Our Work', href:'index.html#track' },
+    { label:'Podcasts', href:'podcast.html', files:['podcast.html','podcast-marketing-report.html'] },
+    { label:'Marketing AI', href:'ai-marketing.html', files:['ai-marketing.html'] },
+    { label:'GEO/AEO', href:'geo.html', files:['geo.html'] },
+    { label:'The Team', href:'about.html', files:['about.html'] }
   ];
 
-  const currentFile =
-    (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const currentFile = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-  const links = items
-    .map(item => {
-      const active = (item.files || []).includes(currentFile);
+  const links = items.map(item => {
+    const active = (item.files || []).includes(currentFile);
 
-      return `
-        <a href="${item.href}"${active ? ' aria-current="page"' : ''}>
-          ${item.label}
-        </a>
-      `;
-    })
-    .join('');
+    return `<a href="${item.href}"${active ? ' aria-current="page"' : ''}>${item.label}</a>`;
+  }).join('');
 
   const contactHref = document.getElementById('contact')
     ? '#contact'
@@ -48,6 +41,10 @@
 
         <div class="site-navlinks" id="site-navlinks">
           ${links}
+
+          <a class="site-nav-mobile-only" href="${contactHref}">
+            Contact Us
+          </a>
         </div>
 
         <a class="site-nav-cta" href="${contactHref}">
