@@ -2516,3 +2516,35 @@ body.page-about .about-bio a{text-decoration:underline}
 body.page-about .footer-row{align-items:flex-start;flex-direction:column}
 body.page-about .about-hero{padding-top:125px}
 }
+
+
+/* Podcast research promo — higher contrast feature panel */
+body.page-podcast .research-promo{
+  background:#4a315f;
+  color:#fbf8f1;
+}
+
+body.page-podcast .research-promo .eyebrow,
+body.page-podcast .research-promo .research-stat strong{
+  color:#ff7a57;
+}
+
+body.page-podcast .research-promo .lead,
+body.page-podcast .research-promo p,
+body.page-podcast .research-promo .research-stat span{
+  color:rgba(251,248,241,.82);
+}
+
+body.page-podcast .research-promo .research-stat{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.16);
+}
+
+body.page-podcast .research-promo .btn.secondary{
+  color:#fbf8f1;
+  border-color:rgba(251,248,241,.32);
+}
+
+body.page-podcast .research-promo .btn.secondary:hover{
+  background:rgba(255,255,255,.08);
+}
