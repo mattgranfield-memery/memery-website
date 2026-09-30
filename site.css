@@ -1,0 +1,198 @@
+/* =========================================================
+   MEMERY — SHARED SITE STYLES
+   Global tokens, reset, typography basics and shared header.
+   ========================================================= */
+
+:root{
+  --navy:#171b34;
+  --navy-2:#232947;
+  --coral:#f7663f;
+  --coral-dark:#d85e3c;
+  --cream:#f2efe8;
+  --paper:#fbf8f1;
+  --ink:#171b34;
+  --muted:#696b78;
+  --line:rgba(23,27,52,.14);
+  --radius:26px;
+  --shadow:0 24px 70px rgba(23,27,52,.12);
+  --max:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+::selection{background:rgba(247,102,63,.26)}
+
+.wrap{
+  width:min(calc(100% - 40px),var(--max));
+  margin:0 auto;
+}
+
+/* ---------- Shared header / navigation ---------- */
+
+#site-header{
+  position:relative;
+  z-index:1000;
+}
+
+.site-nav-shell{
+  position:fixed;
+  z-index:1000;
+  width:100%;
+  top:18px;
+  left:0;
+  padding:0 16px;
+  pointer-events:none;
+}
+
+.site-nav{
+  width:min(100%,var(--max));
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-height:58px;
+  padding:10px 12px 10px 18px;
+  border:1px solid rgba(242,239,232,.09);
+  border-radius:999px;
+  background:rgba(23,27,52,.95);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  pointer-events:auto;
+}
+
+.site-brand{
+  display:inline-flex;
+  align-items:center;
+  flex:0 0 auto;
+  color:var(--cream);
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.site-brand-word{
+  font-size:1.5rem;
+  line-height:1;
+  font-weight:900;
+  letter-spacing:-.06em;
+}
+
+.site-brand-play{
+  display:inline-block;
+  margin-left:.12em;
+  color:var(--coral);
+  font-size:.48em;
+  line-height:1;
+  letter-spacing:0;
+  transform:translateY(-.08em);
+}
+
+.site-navlinks{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  flex:1 1 auto;
+  min-width:0;
+  color:rgba(242,239,232,.78);
+  font-size:.82rem;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.site-navlinks a{
+  color:inherit;
+  text-decoration:none;
+  transition:color .18s ease;
+}
+
+.site-navlinks a:hover,
+.site-navlinks a[aria-current="page"]{
+  color:white;
+}
+
+.site-nav-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.45rem;
+  flex:0 0 auto;
+  padding:.72rem 1rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  background:var(--coral);
+  color:white;
+  font-size:.9rem;
+  font-weight:850;
+  line-height:1;
+  white-space:nowrap;
+  transition:transform .18s ease,filter .18s ease;
+}
+
+.site-nav-cta:hover{
+  transform:translateY(-1px);
+  filter:brightness(.96);
+}
+
+.site-menu{
+  display:none;
+  margin-left:auto;
+  padding:.4rem .5rem;
+  border:0;
+  background:none;
+  color:white;
+  font-size:1.3rem;
+  line-height:1;
+  cursor:pointer;
+}
+
+@media(max-width:1080px){
+  .site-navlinks{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:16px;
+    right:16px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    padding:14px;
+    border:1px solid rgba(242,239,232,.09);
+    border-radius:22px;
+    background:var(--navy);
+    box-shadow:0 22px 55px rgba(0,0,0,.22);
+    white-space:normal;
+  }
+
+  .site-navlinks.open{display:flex}
+  .site-navlinks a{width:100%;padding:11px 10px}
+  .site-nav-cta{margin-left:auto}
+  .site-menu{display:block}
+}
+
+@media(max-width:720px){
+  .wrap{width:min(calc(100% - 26px),var(--max))}
+  .site-nav-shell{top:12px;padding:0 10px}
+  .site-nav{min-height:54px;padding:9px 10px 9px 16px}
+  .site-brand-word{font-size:1.32rem}
+  .site-nav-cta{display:none}
+  .site-navlinks{top:64px;left:10px;right:10px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
