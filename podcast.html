@@ -400,6 +400,130 @@
       cursor:wait;
       transform:none!important;
     }
+  
+    /* PODCAST MARKETING REPORT PROMO */
+    .research-promo{
+      background:var(--navy);
+      color:var(--cream);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .research-promo::before{
+      content:"";
+      position:absolute;
+      width:560px;
+      height:560px;
+      border-radius:50%;
+      border:1px solid rgba(247,102,63,.17);
+      right:-220px;
+      top:-250px;
+      box-shadow:
+        0 0 0 65px rgba(247,102,63,.026),
+        0 0 0 130px rgba(247,102,63,.016);
+      pointer-events:none;
+    }
+
+    .research-promo-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:54px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .research-promo .lead{
+      color:rgba(242,239,232,.72);
+      max-width:50ch;
+      margin:23px 0 18px;
+    }
+
+    .research-promo p:not(.lead){
+      color:rgba(242,239,232,.62);
+      max-width:56ch;
+    }
+
+    .research-promo-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .research-promo .btn.secondary{
+      color:var(--cream);
+      border-color:rgba(242,239,232,.2);
+      background:rgba(255,255,255,.04);
+    }
+
+    .research-promo-stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .research-stat{
+      border:1px solid rgba(242,239,232,.12);
+      background:rgba(255,255,255,.045);
+      border-radius:22px;
+      padding:24px;
+      min-height:155px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .research-stat strong{
+      display:block;
+      color:var(--coral);
+      font-size:clamp(2rem,4vw,3rem);
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+
+    .research-stat span{
+      color:rgba(242,239,232,.72);
+      font-size:.92rem;
+      line-height:1.45;
+      max-width:24ch;
+    }
+
+    .research-stat.wide{
+      grid-column:1 / -1;
+      min-height:auto;
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .research-stat.wide strong{
+      font-size:1.45rem;
+      letter-spacing:-.035em;
+    }
+
+    @media(max-width:900px){
+      .research-promo-grid{
+        grid-template-columns:1fr;
+      }
+
+      .research-promo-stats{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:620px){
+      .research-promo-stats{
+        grid-template-columns:1fr;
+      }
+
+      .research-stat.wide{
+        grid-column:auto;
+        grid-template-columns:1fr;
+      }
+    }
+
   </style>
 </head>
 
@@ -540,7 +664,78 @@
     </section>
 
 
-    <section class="services" id="services">
+    
+    <section class="research-promo" id="podcast-research">
+      <div class="wrap research-promo-grid">
+
+        <div class="reveal">
+          <div class="eyebrow">New memery research / 2027</div>
+
+          <h2 class="h2" style="margin-top:18px;">
+            What actually works in podcast marketing?
+          </h2>
+
+          <p class="lead">
+            We reviewed 30 successful podcast marketing case studies, 30 failure patterns
+            and three distinct growth models to work out what separates useful audio strategy
+            from expensive corporate content.
+          </p>
+
+          <p>
+            The result is a practical field guide covering owned branded podcasts, paid podcast
+            advertising and executive guesting — including the patterns that work, the mistakes
+            that kill momentum and a framework for choosing the right model.
+          </p>
+
+          <div class="research-promo-actions">
+            <a class="btn primary" href="podcast-marketing-report.html">
+              Get the full report <span class="arrow">↗</span>
+            </a>
+
+            <a class="btn secondary" href="podcast-marketing-report.html#download">
+              See what’s inside
+            </a>
+          </div>
+        </div>
+
+
+        <div class="research-promo-stats reveal" aria-label="Podcast marketing research highlights">
+
+          <article class="research-stat">
+            <strong>30</strong>
+            <span>successful podcast marketing case studies analysed</span>
+          </article>
+
+          <article class="research-stat">
+            <strong>30</strong>
+            <span>failure modes and anti-patterns identified</span>
+          </article>
+
+          <article class="research-stat">
+            <strong>3</strong>
+            <span>growth models: owned, paid and executive guesting</span>
+          </article>
+
+          <article class="research-stat">
+            <strong>$2.86B</strong>
+            <span>US podcast ad revenue in 2025</span>
+          </article>
+
+          <article class="research-stat wide">
+            <strong>The big finding</strong>
+            <span>
+              The best podcast strategy is rarely “make a podcast”. It is choosing the right role
+              for audio, building something people actually want and measuring the behaviour that matters.
+            </span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+<section class="services" id="services">
       <div class="wrap">
         <div class="section-head reveal">
           <div class="eyebrow">What we do</div>
