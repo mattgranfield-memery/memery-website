@@ -2428,3 +2428,91 @@ body.page-podcast-report section{padding:75px 0}
 body.page-podcast-report .hero{min-height:auto;padding-top:130px}
 body.page-podcast-report .inside-grid, body.page-podcast-report .stat-grid, body.page-podcast-report .form-row{grid-template-columns:1fr}
 }
+
+
+/* ---------- about.html ---------- */
+body.page-about *{box-sizing:border-box}
+body.page-about{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+body.page-about a{color:inherit}
+body.page-about img{display:block;max-width:100%}
+body.page-about .wrap{width:min(1160px,calc(100% - 64px));margin:auto}
+body.page-about .about-header{background:var(--navy);color:white}
+body.page-about .about-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 0}
+body.page-about .about-logo{font-size:32px;letter-spacing:-1.7px;font-weight:800;text-decoration:none;line-height:1}
+body.page-about .about-logo span{font-size:20px;color:var(--accent);margin-left:7px;display:inline-block}
+body.page-about .about-links{display:flex;gap:28px;align-items:center;font-size:14px}
+body.page-about .about-links a{text-decoration:none}
+body.page-about .about-links a[aria-current]{border-bottom:2px solid var(--accent)}
+body.page-about a:focus-visible{outline:3px solid #9470dc;outline-offset:6px}
+body.page-about .skip{position:absolute;left:16px;top:-100px;background:white;padding:12px;z-index:10}
+body.page-about .skip:focus{top:12px}
+body.page-about .about-hero{background:var(--navy);color:white;padding:70px 0 88px}
+body.page-about .about-eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:12px;font-weight:700;margin:0 0 24px}
+body.page-about .about-hero h1{font-size:clamp(46px,7.1vw,92px);letter-spacing:-.06em;line-height:1.04;max-width:930px;margin:0 0 30px}
+body.page-about .about-hero h1 span{color:var(--accent)}
+body.page-about .about-lead{font-size:clamp(19px,2vw,23px);line-height:1.6;max-width:810px;margin:0}
+body.page-about .about-hero .about-lead{color:#e0dfeb}
+body.page-about .about-intro{display:grid;grid-template-columns:1fr 1.65fr;gap:70px;padding:72px 0;border-bottom:1px solid var(--line)}
+body.page-about .about-intro h2{font-size:clamp(28px,3.3vw,42px);line-height:1.15;letter-spacing:-.04em;margin:0}
+body.page-about .about-intro p{font-size:18px;margin:0 0 18px}
+body.page-about .about-intro p:last-child{margin:0}
+body.page-about .about-team{padding:64px 0 80px}
+body.page-about .about-team-heading{margin-bottom:48px}
+body.page-about .about-team-heading h2{font-size:40px;letter-spacing:-.04em;line-height:1.15;margin:0}
+body.page-about .about-person{display:grid;grid-template-columns:360px 1fr;gap:70px;align-items:start;margin-bottom:80px}
+body.page-about .about-person:last-child{margin-bottom:0}
+body.page-about .about-photo{border-radius:4px;background:#dfdee4;overflow:hidden;margin:0}
+body.page-about .about-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+body.page-about .about-photo.matt img{object-position:center}
+body.page-about .about-photo.riley img{object-position:50% 60%}
+body.page-about .about-photo figcaption{font-size:12px;letter-spacing:.09em;text-transform:uppercase;padding:15px 20px;background:var(--navy);color:white}
+body.page-about .about-bio h3{font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-.045em;margin:0 0 12px}
+body.page-about .about-role{font-size:16px;color:var(--muted);margin:0 0 27px}
+body.page-about .about-bio p{margin:0 0 18px;font-size:17px}
+body.page-about .about-bio .about-role{font-size:16px}
+body.page-about .about-bio .about-punch{border-left:3px solid #9470dc;padding-left:20px;font-weight:700;margin-top:25px}
+body.page-about .about-bio a{text-underline-offset:3px}
+body.page-about .about-cta{background:var(--accent);padding:64px 0}
+body.page-about .about-cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px}
+body.page-about .about-cta h2{font-size:clamp(32px,4vw,50px);line-height:1.12;letter-spacing:-.045em;margin:0 0 15px;max-width:650px}
+body.page-about .about-cta p{font-size:18px;margin:0;max-width:650px}
+body.page-about .about-button{display:inline-flex;text-decoration:none;white-space:nowrap;background:var(--navy);color:white;padding:17px 24px;border-radius:4px;font-size:15px;font-weight:700}
+body.page-about .about-footer{background:var(--navy);color:#d9d9e4;padding:30px 0}
+body.page-about .about-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:25px}
+body.page-about .about-footer small{font-size:12px}
+body.page-about .about-footer .about-logo{color:white;font-size:26px}
+@media (max-width:800px){
+body.page-about .wrap{width:calc(100% - 40px)}
+body.page-about .about-hero{padding:45px 0 60px}
+body.page-about .about-intro{grid-template-columns:1fr;gap:25px;padding:45px 0}
+body.page-about .about-person{grid-template-columns:240px 1fr;gap:30px}
+body.page-about .about-cta .wrap{display:block}
+body.page-about .about-button{margin-top:28px}
+}
+@media (max-width:600px){
+body.page-about .about-nav{padding:22px 0;flex-wrap:wrap}
+body.page-about .about-links{gap:20px;font-size:13px}
+body.page-about .about-logo{font-size:28px}
+body.page-about .about-hero h1{font-size:49px}
+body.page-about .about-team{padding:45px 0 55px}
+body.page-about .about-team-heading{margin-bottom:30px}
+body.page-about .about-person{grid-template-columns:1fr;gap:28px;margin-bottom:55px}
+body.page-about .about-photo{max-width:360px}
+body.page-about .about-photo.matt img{aspect-ratio:1/1}
+body.page-about .about-footer .wrap{align-items:flex-start;flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+
+}
+body.page-about{--paper:#f7f6f2;--muted:#595c6e;--line:#dcdce3}
+body.page-about .about-hero{padding-top:150px}
+body.page-about .about-photo img{height:auto;aspect-ratio:auto;object-fit:contain}
+body.page-about footer{background:var(--navy);color:rgba(242,239,232,.55);padding:30px 0}
+body.page-about .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+body.page-about .brand-word{font-size:1.6rem;font-weight:900;letter-spacing:-.06em;color:var(--cream)}
+body.page-about .play-mark{font-style:normal;font-size:.48em;color:var(--coral);margin-left:.12em;display:inline-block;transform:translateY(-.08em)}
+body.page-about .about-bio a{text-decoration:underline}
+@media (max-width:620px){
+body.page-about .footer-row{align-items:flex-start;flex-direction:column}
+body.page-about .about-hero{padding-top:125px}
+}
