@@ -8,28 +8,42 @@
   if (!mount) return;
 
   const items = [
-    { label:'Home', href:'index.html', files:['index.html',''] },
-    { label:'What We Do', href:'index.html#services' },
-    { label:'Our Work', href:'index.html#track' },
-    { label:'Podcasts', href:'podcast.html', files:['podcast.html','podcast-marketing-report.html'] },
-    { label:'Marketing AI', href:'ai-marketing.html', files:['ai-marketing.html'] },
-    { label:'Generative Engine Optimisation', href:'geo.html', files:['geo.html'] }
+    { label: 'Home', href: 'index.html', files: ['index.html', ''] },
+    { label: 'Our Approach', href: 'index.html#problem' },
+    { label: 'Our Work', href: 'index.html#track' },
+    { label: 'Podcasts', href: 'podcast.html', files: ['podcast.html', 'podcast-marketing-report.html'] },
+    { label: 'Marketing AI', href: 'ai-marketing.html', files: ['ai-marketing.html'] },
+    { label: 'GEO/AEO', href: 'geo.html', files: ['geo.html'] },
+    { label: 'The Team', href: 'about.html', files: ['about.html'] }
   ];
 
-  const currentFile = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const currentFile =
+    (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-  const links = items.map(item => {
-    const active = (item.files || []).includes(currentFile);
-    return `<a href="${item.href}"${active ? ' aria-current="page"' : ''}>${item.label}</a>`;
-  }).join('');
+  const links = items
+    .map(item => {
+      const active = (item.files || []).includes(currentFile);
 
-  const contactHref = document.getElementById('contact') ? '#contact' : 'index.html#contact';
+      return `
+        <a href="${item.href}"${active ? ' aria-current="page"' : ''}>
+          ${item.label}
+        </a>
+      `;
+    })
+    .join('');
+
+  const contactHref = document.getElementById('contact')
+    ? '#contact'
+    : 'index.html#contact';
 
   mount.innerHTML = `
     <div class="site-nav-shell">
       <nav class="site-nav" aria-label="Primary navigation">
+
         <a class="site-brand" href="index.html" aria-label="memery home">
-          <span class="site-brand-word">memery<span class="site-brand-play" aria-hidden="true">▶</span></span>
+          <span class="site-brand-word">
+            memery<span class="site-brand-play" aria-hidden="true">▶</span>
+          </span>
         </a>
 
         <div class="site-navlinks" id="site-navlinks">
@@ -47,32 +61,47 @@
           aria-label="Open navigation"
           aria-expanded="false"
           aria-controls="site-navlinks"
-        >☰</button>
+        >
+          ☰
+        </button>
+
       </nav>
-    </div>`;
+    </div>
+  `;
 
   const menu = document.getElementById('site-menu');
   const navlinks = document.getElementById('site-navlinks');
+
   if (!menu || !navlinks) return;
 
   const closeMenu = () => {
     navlinks.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
-    menu.setAttribute('aria-label','Open navigation');
+    menu.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-label', 'Open navigation');
     menu.textContent = '☰';
   };
 
   menu.addEventListener('click', () => {
     const open = navlinks.classList.toggle('open');
+
     menu.setAttribute('aria-expanded', String(open));
-    menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    menu.setAttribute(
+      'aria-label',
+      open ? 'Close navigation' : 'Open navigation'
+    );
+
     menu.textContent = open ? '✕' : '☰';
   });
 
-  navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  navlinks
+    .querySelectorAll('a')
+    .forEach(link => link.addEventListener('click', closeMenu));
 
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && navlinks.classList.contains('open')) {
+    if (
+      event.key === 'Escape' &&
+      navlinks.classList.contains('open')
+    ) {
       closeMenu();
       menu.focus();
     }
