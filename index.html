@@ -20,6 +20,171 @@
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="components.css">
   <script src="menu.js" defer></script>
+
+<style>
+  /* Homepage visual enhancements — scoped additions only */
+  .problem-card{overflow:hidden}
+
+  .problem-card-visual{
+    position:relative;
+    margin:-1px -1px 24px;
+    border-radius:22px 22px 16px 16px;
+    overflow:hidden;
+    aspect-ratio:1200/760;
+    background:#0c131f;
+    border:1px solid rgba(23,27,52,.10);
+  }
+
+  .problem-card-visual img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+  }
+
+  .problem-card:hover .problem-card-visual img{
+    transform:scale(1.025);
+  }
+
+  .problem-card .num{margin-top:2px}
+
+  .ai-playbook-visual{
+    position:relative;
+    align-self:center;
+    min-width:0;
+  }
+
+  .ai-playbook-frame{
+    position:relative;
+    border-radius:28px;
+    overflow:hidden;
+    background:#0c131f;
+    border:1px solid rgba(242,239,232,.12);
+    box-shadow:0 28px 80px rgba(5,8,18,.28);
+  }
+
+  .ai-playbook-frame::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(247,102,63,.10);
+    border-radius:inherit;
+  }
+
+  .ai-playbook-frame img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+
+  .ai-playbook-caption{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    align-items:center;
+    margin-top:14px;
+    color:var(--muted);
+    font-size:.82rem;
+  }
+
+  .ai-playbook-caption strong{
+    color:var(--ink);
+    font-weight:800;
+  }
+
+  .track-card{
+    overflow:hidden;
+    padding:0 !important;
+    background:#fff;
+    border:1px solid rgba(23,27,52,.12);
+    border-radius:28px;
+    box-shadow:0 20px 55px rgba(23,27,52,.08);
+  }
+
+  .track-card.featured{
+    background:#fff;
+    color:inherit;
+  }
+
+  .track-card-media{
+    position:relative;
+    aspect-ratio:16/10;
+    overflow:hidden;
+    background:#e7e2d9;
+  }
+
+  .track-card-media img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:transform .65s cubic-bezier(.2,.7,.2,1);
+  }
+
+  .track-card:hover .track-card-media img{
+    transform:scale(1.035);
+  }
+
+  .track-card-media::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(23,27,52,0) 52%,rgba(23,27,52,.06) 100%);
+    pointer-events:none;
+  }
+
+  .track-card-body{
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    min-height:100%;
+  }
+
+  .track-card-copy{
+    display:grid;
+    gap:14px;
+  }
+
+  .track-card .track-label,
+  .track-card h3,
+  .track-card p{
+    margin:0;
+  }
+
+  .track-card .track-link{
+    margin-top:4px;
+  }
+
+  .track-card .track-result{
+    margin-top:auto;
+    padding-top:18px;
+    border-top:1px solid rgba(23,27,52,.10);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .track-card .track-result strong{
+    font-size:2.5rem;
+    line-height:.95;
+    letter-spacing:-.05em;
+  }
+
+  .track-card .track-result span{
+    max-width:24ch;
+  }
+
+  @media (max-width:900px){
+    .problem-card-visual{margin-bottom:20px}
+    .ai-playbook-visual{margin-top:28px}
+    .ai-playbook-caption{align-items:flex-start;flex-direction:column}
+    .track-card .track-result strong{font-size:2.2rem}
+  }
+</style>
+
 </head>
 
 <body class="page-home">
@@ -34,10 +199,6 @@
       <div class="wrap hero-grid">
 
         <div>
-
-          <div class="eyebrow">
-            We are an agency that specialises in the marketing science of being remembered.
-          </div>
 
           <h1 class="display">
             Become memorable.
@@ -84,12 +245,7 @@
               If your brand can’t be found by AI, can’t earn attention in the feed, and can’t create content people genuinely choose to spend time with,
               you’re already falling behind.
             </p>
-
-            <p class="problem-punch">
-              The challenge is not simply getting attention.
-              <strong>It is knowing who matters most, understanding what matters to them, deciding what you want each audience to remember — and then building the strategy, distinctive assets and content that make that memory more likely to form.</strong>
-            </p>
-          </div>
+</div>
 
         </div>
 
@@ -97,6 +253,9 @@
         <div class="problem-grid">
 
           <article class="problem-card reveal">
+            <div class="problem-card-visual">
+              <img src="assets/problem-01-customer-insight.png" alt="Audience research visual showing a statistically meaningful sample separating into distinct behavioural segments and evidence-based drivers of choice.">
+            </div>
             <div class="num">Problem 01</div>
 
             <div>
@@ -113,6 +272,9 @@
 
 
           <article class="problem-card reveal">
+            <div class="problem-card-visual">
+              <img src="assets/problem-02-attention-split.png" alt="Visual showing the modern attention split between rapid short-form mobile video and long-form podcast listening.">
+            </div>
             <div class="num">Problem 02</div>
 
             <div>
@@ -130,6 +292,9 @@
 
 
           <article class="problem-card reveal">
+            <div class="problem-card-visual">
+              <img src="assets/problem-03-ai-shortlist.png" alt="Visual showing brands passing through an AI recommendation funnel into a machine-generated shortlist.">
+            </div>
             <div class="num">Problem 03</div>
 
             <div>
@@ -378,80 +543,17 @@
 
         </div>
 
-
-        <div class="ai-service-list">
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">01 — DIAGNOSE</div>
-              <h3>AI maturity assessment</h3>
-            </div>
-            <p>
-              Map where the team sits today across tools, workflows, data,
-              automation, capability and governance — then define a realistic next level.
-            </p>
-          </article>
-
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">02 — PRIORITISE</div>
-              <h3>Use-case catalogue</h3>
-            </div>
-            <p>
-              Identify the highest-value applications across brand, campaigns,
-              content, CRM, performance marketing, PR, insight and operations.
-            </p>
-          </article>
-
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">03 — GOVERN</div>
-              <h3>Risk & governance framework</h3>
-            </div>
-            <p>
-              Define human sign-off, data boundaries, accountability,
-              escalation, review and the right level of governance for each use case.
-            </p>
-          </article>
-
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">04 — BUILD</div>
-              <h3>Workflows, prompts & agents</h3>
-            </div>
-            <p>
-              Turn good experiments into repeatable ways of working:
-              templates, SOPs, automations, prompt systems and agent concepts.
-            </p>
-          </article>
-
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">05 — DISCOVERABILITY</div>
-              <h3>GEO & AI search strategy</h3>
-            </div>
-            <p>
-              Structure authoritative content so AI systems can understand,
-              retrieve and cite your organisation accurately.
-            </p>
-          </article>
-
-
-          <article class="ai-service-card reveal">
-            <div>
-              <div class="num">06 — ENABLE</div>
-              <h3>Capability & 90-day roadmap</h3>
-            </div>
-            <p>
-              Build team capability, choose the right pilots and create a staged
-              implementation roadmap that turns the playbook into operating practice.
-            </p>
-          </article>
-
+        <div class="ai-playbook-visual reveal">
+          <div class="ai-playbook-frame">
+            <img
+              src="assets/ai-marketing-playbook.png"
+              alt="Memery AI Playbook showing Diagnose, Prioritise, Govern, Build, Discoverability and Enable."
+            >
+          </div>
+          <div class="ai-playbook-caption">
+            <span><strong>Memery AI Playbook</strong> — from strategy to real-world impact.</span>
+            <a class="service-link" href="ai-marketing.html">See the full approach <span class="arrow">↗</span></a>
+          </div>
         </div>
 
       </div>
@@ -513,170 +615,134 @@
           <div class="track-carousel" id="trackCarousel" aria-label="Selected marketing and communications work">
 
             <article class="track-card featured">
-
-              <div>
-                <div class="track-label">Charles Sturt University · Brand + podcast</div>
-
-                <h3>Career change became branded entertainment</h3>
-
-                <p>
-                  We worked with Dentsu and Mamamia on a custom podcast that told the stories of women who pivoted their careers.
-                  Metro brand awareness went from 30-40% and applications hit an all time high.
-                </p>
-
-                <a
-                  class="track-link"
-                  href="https://www.mamamia.com.au/podcasts/pivot-club/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Listen to the Pivot Club <span class="arrow">↗</span>
-                </a>
+              <div class="track-card-media">
+                <img src="assets/track-pivot.png" alt="Mamamia Pivot Club campaign artwork showing a woman reclining on an office chair with bold Pivot Club typography.">
               </div>
-
-              <div class="track-result">
-                <strong>33%</strong>
-                <span>increase in metro brand awareness</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Charles Sturt University · Brand + podcast</div>
+                  <h3>Career change became branded entertainment</h3>
+                  <p>
+                    We worked with Dentsu and Mamamia on a custom podcast that told the stories of women who pivoted their careers.
+                    Metro brand awareness went from 30-40% and applications hit an all time high.
+                  </p>
+                  <a class="track-link" href="https://www.mamamia.com.au/podcasts/pivot-club/" target="_blank" rel="noopener">
+                    Listen to the Pivot Club <span class="arrow">↗</span>
+                  </a>
+                </div>
+                <div class="track-result">
+                  <strong>33%</strong>
+                  <span>increase in metro brand awareness</span>
+                </div>
               </div>
-
             </article>
-
-
-            
-
 
             <article class="track-card">
-
-              <div>
-                <div class="track-label">Charles Sturt University · First Nations storytelling</div>
-
-                <h3>Documentary, social and live experience worked as one.</h3>
-
-                <p>
-                  The work combined a YouTube documentary series featuring an NRL superstar,
-                  social content, Indigenous storytelling, partnerships and live events.
-                </p>
+              <div class="track-card-media">
+                <img src="assets/track-first-nations.png" alt="First Nations storytelling campaign image showing a classroom interaction between a teacher and students.">
               </div>
-
-              <div class="track-result">
-                <strong>19%</strong>
-                <span>year-on-year rise in First Nations enrolments</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Charles Sturt University · First Nations storytelling</div>
+                  <h3>Documentary, social and live experience worked as one.</h3>
+                  <p>
+                    The work combined a YouTube documentary series featuring an NRL superstar,
+                    social content, Indigenous storytelling, partnerships and live events.
+                  </p>
+                </div>
+                <div class="track-result">
+                  <strong>19%</strong>
+                  <span>year-on-year rise in First Nations enrolments</span>
+                </div>
               </div>
-
             </article>
-<article class="track-card">
-
-              <div>
-                <div class="track-label">Economic Development Queensland · Events + PR</div>
-
-                <h3>A riverfront precinct became a city event.</h3>
-
-                <p>
-                  The Brisbane riverfront Christmas Boat Parade was created with the maritime
-                  industry, LifeFlight and emergency services — using an event as both a
-                  visitation driver and a media story.
-                </p>
-              </div>
-
-              <div class="track-result">
-                <strong>50,000</strong>
-                <span>attendees at Northshore Hamilton</span>
-              </div>
-
-            </article>
-
 
             <article class="track-card">
-
-              <div>
-                <div class="track-label">Economic Development Queensland · Activation</div>
-
-                <h3>When visitation collapsed, we created reasons to come back.</h3>
-
-                <p>
-                  Partnerships and unconventional activations — including a Disney
-                  drive-in experience — to generate social and traditional media attention
-                  and support Northshore businesses during COVID.
-                </p>
+              <div class="track-card-media">
+                <img src="assets/track-boat-parade.jpg" alt="Brisbane Christmas Boat Parade photograph showing Santa and a toy soldier on a decorated boat at sunset.">
               </div>
-
-              <div class="track-result">
-                <strong>500%</strong>
-                <span>increase in Northshore precinct visitation</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Economic Development Queensland · Events + PR</div>
+                  <h3>A riverfront precinct became a city event.</h3>
+                  <p>
+                    The Brisbane riverfront Christmas Boat Parade was created with the maritime
+                    industry, LifeFlight and emergency services — using an event as both a
+                    visitation driver and a media story.
+                  </p>
+                </div>
+                <div class="track-result">
+                  <strong>50,000</strong>
+                  <span>attendees at Northshore Hamilton</span>
+                </div>
               </div>
-
             </article>
 
-
             <article class="track-card">
-
-              <div>
-                <div class="track-label">Mantra Group · Loyalty + direct marketing</div>
-
-                <h3>Built an owned audience from zero.</h3>
-
-                <p>
-                  Mantra+ was created and scaled across a national hotel portfolio, using loyalty,
-                  CRM and direct customer relationships to counter the shift towards
-                  third-party booking platforms.
-                </p>
+              <div class="track-card-media">
+                <img src="assets/track-disney-drive-in.jpg" alt="Disney drive-in activation photograph showing cars gathered around a large outdoor cinema screen at night.">
               </div>
-
-              <div class="track-result">
-                <strong>1M+</strong>
-                <span>loyalty members built from zero</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Economic Development Queensland · Activation</div>
+                  <h3>When visitation collapsed, we created reasons to come back.</h3>
+                  <p>
+                    Partnerships and unconventional activations — including a Disney
+                    drive-in experience — to generate social and traditional media attention
+                    and support Northshore businesses during COVID.
+                  </p>
+                </div>
+                <div class="track-result">
+                  <strong>500%</strong>
+                  <span>increase in Northshore precinct visitation</span>
+                </div>
               </div>
-
             </article>
 
-
             <article class="track-card">
-
-              <div>
-                <div class="track-label">Heritage Bank · Digital acquisition</div>
-
-                <h3>Better journeys turned traffic into more customers.</h3>
-
-                <p>
-                  Digital acquisition and customer marketing across a large branch network focused on
-                  improving online application journeys for lending and credit card products
-                  alongside in-branch customer experience.
-                </p>
+              <div class="track-card-media">
+                <img src="assets/track-mantra-plus.png" alt="Mantra hotels website screen showing the loyalty-led hotel booking experience.">
               </div>
-
-              <div class="track-result">
-                <strong>2×</strong>
-                <span>online product acquisition conversion</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Mantra Group · Loyalty + direct marketing</div>
+                  <h3>Built an owned audience from zero.</h3>
+                  <p>
+                    Mantra+ was created and scaled across a national hotel portfolio, using loyalty,
+                    CRM and direct customer relationships to counter the shift towards
+                    third-party booking platforms.
+                  </p>
+                </div>
+                <div class="track-result">
+                  <strong>1M+</strong>
+                  <span>loyalty members built from zero</span>
+                </div>
               </div>
-
             </article>
 
-
-            <article class="track-card">
-
-              <div>
-                <div class="track-label">Spare Keys · PR + supporter content</div>
-
-                <h3>A small social enterprise earned national attention.</h3>
-
-                <p>
-                  The story, media profile and supporter communications were built around a
-                  distinctive tech-for-good and crisis-accommodation model, earning national
-                  coverage across major Australian media.
-                </p>
+            <article class="track-card sparekeys">
+              <div class="track-card-media">
+                <img src="assets/track-tedx.png" alt="TEDx Brisbane stage during Matt Granfield's talk The world needs small ideas too.">
               </div>
-
-              <div class="track-result">
-                <strong>2×</strong>
-                <span>sector benchmark email engagement</span>
+              <div class="track-card-body">
+                <div class="track-card-copy">
+                  <div class="track-label">Spare Keys · PR + supporter content</div>
+                  <h3>A small social enterprise earned national attention.</h3>
+                  <p>
+                    The story, media profile and supporter communications were built around a distinctive tech-for-good and crisis-accommodation model, earning national coverage across major Australian media, culminating in a TEDx talk.
+                  </p>
+                </div>
+                <div class="track-result">
+                  <strong>2×</strong>
+                  <span>sector benchmark email engagement</span>
+                </div>
               </div>
-
             </article>
 
           </div>
 
 
-          <div class="track-controls" aria-label="Track record carousel controls">
+          <div class="track-controls"  aria-label="Track record carousel controls">
 
             <div class="track-buttons">
               <button class="track-arrow" id="trackPrev" type="button" aria-label="Previous example">←</button>
@@ -687,7 +753,7 @@
               <span class="track-progress-bar" id="trackProgress"></span>
             </div>
 
-            <div class="track-count" id="trackCount" aria-live="polite">1 / 8</div>
+            <div class="track-count" id="trackCount" aria-live="polite">1 / 6</div>
 
           </div>
 
@@ -818,7 +884,7 @@
           <form
             id="memery-contact-form"
             class="contact-form"
-            action="https://formspree.io/f/xwlpqagb"
+            action="https\://formspree.io/f/xwlpqagb"
             method="POST"
           >
 
@@ -884,7 +950,7 @@
                 name="email"
                 type="email"
                 autocomplete="email"
-                placeholder="you@organisation.com"
+                placeholder="you\@organisation.com"
                 required
                 data-fs-field
               />
@@ -922,11 +988,11 @@
                 </option>
 
                 <option value="AI strategy and playbooks">
-                  AI strategy &amp; playbooks
+                  AI strategy & playbooks
                 </option>
 
                 <option value="Content and storytelling">
-                  Content &amp; storytelling
+                  Content & storytelling
                 </option>
 
                 <option value="Podcast production">
@@ -1214,3 +1280,4 @@
 
 </body>
 </html>
+
