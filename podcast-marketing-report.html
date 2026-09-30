@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>What Actually Works in Podcast Marketing | memery</title>
+  <meta
+    name="description"
+    content="Download memery's research-led field guide to owned branded podcasts, paid podcast advertising and executive podcast guesting."
+  >
+  <meta name="theme-color" content="#171b34">
+
+  <style>
+    :root{
+      --navy:#171b34;
+      --navy-2:#232947;
+      --coral:#f7663f;
+      --coral-dark:#d85e3c;
+      --cream:#f2efe8;
+      --paper:#fbf8f1;
+      --ink:#171b34;
+      --muted:#696b78;
+      --line:rgba(23,27,52,.14);
+      --max:1180px;
+      --shadow:0 24px 70px rgba(23,27,52,.12);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--paper);
+      color:var(--ink);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+
+    .brand-word{
+      color:var(--cream);
+      font-size:1.5rem;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-.06em;
+      white-space:nowrap;
+    }
+    .brand-word .play{
+      display:inline-block;
+      color:var(--coral);
+      font-size:.48em;
+      margin-left:.12em;
+      transform:translateY(-.08em);
+    }
+
+    .eyebrow{
+      color:var(--coral);
+      font-size:.78rem;
+      font-weight:900;
+      line-height:1;
+      text-transform:uppercase;
+      letter-spacing:.17em;
+    }
+
+    .display{
+      margin:18px 0 0;
+      font-size:clamp(3.4rem,7.4vw,7rem);
+      line-height:.91;
+      letter-spacing:-.065em;
+      font-weight:850;
+    }
+
+    .h2{
+      margin:0;
+      font-size:clamp(2.1rem,4vw,4rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+      font-weight:800;
+    }
+
+    .lead{
+      font-size:clamp(1.05rem,1.8vw,1.3rem);
+      line-height:1.58;
+      color:var(--muted);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.45rem;
+      border:1px solid transparent;
+      border-radius:999px;
+      padding:.9rem 1.14rem;
+      font-weight:850;
+      cursor:pointer;
+    }
+    .btn.primary{background:var(--coral);color:white}
+    .btn.primary:hover{background:var(--coral-dark)}
+    .btn.secondary{
+      color:var(--cream);
+      border-color:rgba(242,239,232,.2);
+      background:rgba(255,255,255,.04);
+    }
+
+    .nav-shell{
+      position:fixed;
+      z-index:50;
+      width:100%;
+      top:18px;
+      padding:0 16px;
+    }
+    .nav{
+      width:min(100%,var(--max));
+      margin:auto;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:10px 12px 10px 18px;
+      border-radius:999px;
+      background:rgba(23,27,52,.94);
+      border:1px solid rgba(242,239,232,.08);
+      backdrop-filter:blur(16px);
+      box-shadow:0 18px 50px rgba(0,0,0,.18);
+    }
+    .navlinks{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:18px;
+      flex:1;
+      color:rgba(242,239,232,.78);
+      font-size:.82rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .navlinks a:hover{color:white}
+    .nav-cta{
+      background:var(--coral);
+      color:white;
+      border-radius:999px;
+      padding:.72rem 1rem;
+      font-weight:850;
+      white-space:nowrap;
+    }
+    .menu{
+      display:none;
+      margin-left:auto;
+      background:none;
+      border:0;
+      color:white;
+      font-size:1.3rem;
+      cursor:pointer;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:var(--navy);
+      color:var(--cream);
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      align-items:center;
+      padding:150px 0 90px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        linear-gradient(rgba(242,239,232,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(242,239,232,.035) 1px,transparent 1px);
+      background-size:64px 64px;
+      mask-image:linear-gradient(to bottom,transparent 5%,black 28%,black 84%,transparent 100%);
+    }
+    .hero::after{
+      content:"";
+      width:720px;
+      height:720px;
+      border:1px solid rgba(247,102,63,.16);
+      border-radius:50%;
+      position:absolute;
+      right:-330px;
+      top:-250px;
+      box-shadow:
+        0 0 0 75px rgba(247,102,63,.02),
+        0 0 0 150px rgba(247,102,63,.012);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr .9fr;
+      gap:64px;
+      align-items:center;
+      position:relative;
+      z-index:2;
+    }
+    .hero .lead{
+      color:rgba(242,239,232,.72);
+      margin-top:26px;
+      max-width:650px;
+    }
+
+    .report-preview{
+      background:var(--cream);
+      color:var(--ink);
+      border-radius:30px;
+      padding:34px;
+      box-shadow:0 30px 80px rgba(0,0,0,.22);
+      transform:rotate(2deg);
+      position:relative;
+    }
+    .report-preview::after{
+      content:"";
+      position:absolute;
+      inset:12px -12px -12px 12px;
+      border-radius:30px;
+      border:1px solid rgba(242,239,232,.18);
+      z-index:-1;
+    }
+    .preview-brand{
+      font-weight:900;
+      letter-spacing:-.05em;
+      font-size:1.25rem;
+    }
+    .preview-brand span{color:var(--coral)}
+    .preview-kicker{
+      margin-top:52px;
+      color:var(--coral);
+      text-transform:uppercase;
+      letter-spacing:.13em;
+      font-size:.72rem;
+      font-weight:900;
+    }
+    .preview-title{
+      margin:15px 0 18px;
+      font-size:clamp(2rem,4vw,3.2rem);
+      line-height:.94;
+      letter-spacing:-.055em;
+      font-weight:850;
+    }
+    .preview-line{
+      height:4px;
+      width:42%;
+      background:var(--coral);
+      margin:24px 0;
+    }
+    .preview-copy{color:var(--muted)}
+
+    section{padding:100px 0}
+
+    .summary-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:56px;
+      align-items:start;
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+    }
+    .stat{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:26px;
+    }
+    .stat strong{
+      color:var(--coral);
+      display:block;
+      font-size:2.6rem;
+      line-height:1;
+      letter-spacing:-.05em;
+    }
+    .stat span{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.93rem;
+    }
+
+    .inside{
+      background:var(--cream);
+    }
+    .inside-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      margin-top:38px;
+    }
+    .inside-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:25px;
+      padding:27px;
+    }
+    .inside-card small{
+      color:var(--coral);
+      font-size:.74rem;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .inside-card h3{
+      margin:14px 0 8px;
+      font-size:1.4rem;
+      line-height:1.08;
+      letter-spacing:-.03em;
+    }
+    .inside-card p{margin:0;color:var(--muted)}
+
+    .download{
+      background:var(--navy);
+      color:var(--cream);
+    }
+    .download-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:56px;
+      align-items:start;
+    }
+    .download .lead{color:rgba(242,239,232,.7)}
+
+    .form-card{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(242,239,232,.13);
+      border-radius:28px;
+      padding:30px;
+    }
+    .form-card h3{
+      margin:0 0 8px;
+      font-size:1.6rem;
+      letter-spacing:-.03em;
+    }
+    .form-note{
+      margin:0 0 21px;
+      color:rgba(242,239,232,.58);
+      font-size:.91rem;
+    }
+    .form{display:grid;gap:14px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:7px}
+    label{
+      color:rgba(242,239,232,.78);
+      font-size:.78rem;
+      font-weight:800;
+    }
+    input{
+      width:100%;
+      padding:13px 14px;
+      border-radius:13px;
+      border:1px solid rgba(242,239,232,.16);
+      background:rgba(255,255,255,.07);
+      color:var(--cream);
+      outline:none;
+    }
+    input:focus{border-color:rgba(247,102,63,.7)}
+    .tiny{
+      margin:0;
+      color:rgba(242,239,232,.45);
+      font-size:.77rem;
+    }
+    .status{
+      display:none;
+      margin:0;
+      color:rgba(242,239,232,.75);
+      font-size:.87rem;
+    }
+    .status.show{display:block}
+    .status.error{color:#ffb6a2}
+    .download-link{
+      display:none;
+      margin-top:4px;
+    }
+
+    footer{
+      background:var(--navy);
+      color:rgba(242,239,232,.58);
+      padding:28px 0;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    @media(max-width:1050px){
+      .navlinks{
+        display:none;
+        position:absolute;
+        left:16px;
+        right:16px;
+        top:70px;
+        background:var(--navy);
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        border-radius:22px;
+        padding:14px;
+        box-shadow:var(--shadow);
+      }
+      .navlinks.open{display:flex}
+      .navlinks a{width:100%;padding:11px 10px}
+      .menu{display:block}
+      .nav-cta{margin-left:auto}
+      .hero-grid,.summary-grid,.download-grid{grid-template-columns:1fr}
+      .inside-grid{grid-template-columns:1fr 1fr}
+      .report-preview{max-width:600px}
+    }
+
+    @media(max-width:700px){
+      .wrap{width:min(calc(100% - 26px),var(--max))}
+      section{padding:75px 0}
+      .hero{min-height:auto;padding-top:130px}
+      .inside-grid,.stat-grid,.form-row{grid-template-columns:1fr}
+      .nav-cta{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-shell">
+    <nav class="nav" aria-label="Primary navigation">
+
+      <a href="index.html" aria-label="memery home">
+        <span class="brand-word">memery<span class="play" aria-hidden="true">▶</span></span>
+      </a>
+
+      <div class="navlinks" id="navlinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">What We Do</a>
+        <a href="index.html#track">Our Work</a>
+        <a href="podcast.html">Podcasts</a>
+        <a href="ai-marketing.html">Marketing AI</a>
+        <a href="geo.html">Generative Engine Optimisation</a>
+      </div>
+
+      <a class="nav-cta" href="podcast.html#contact">Contact Us ↗</a>
+      <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    </nav>
+  </div>
+
+
+  <main>
+
+    <section class="hero">
+      <div class="wrap hero-grid">
+
+        <div>
+          <div class="eyebrow">memery research / 2027</div>
+
+          <h1 class="display">
+            What actually works in podcast marketing?
+          </h1>
+
+          <p class="lead">
+            We analysed 30 successful podcast marketing case studies, 30 failure patterns
+            and three distinct growth models to understand what separates useful audio strategy
+            from expensive corporate content.
+          </p>
+
+          <div style="margin-top:30px;">
+            <a class="btn primary" href="#download">Get the full report ↓</a>
+          </div>
+        </div>
+
+
+        <div class="report-preview" aria-label="Preview of the podcast marketing report">
+          <div class="preview-brand">memery<span>▶</span></div>
+          <div class="preview-kicker">The memery field guide / 2027</div>
+          <div class="preview-title">What actually works in podcast marketing.</div>
+          <div class="preview-line"></div>
+          <div class="preview-copy">
+            Owned branded podcasts. Paid sponsorships. Executive guesting.
+            Thirty success cases. Thirty failure patterns. One practical framework.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section>
+      <div class="wrap summary-grid">
+
+        <div>
+          <div class="eyebrow">The case for podcasting</div>
+          <h2 class="h2" style="margin-top:18px;">Audio has become a serious marketing channel.</h2>
+
+          <p class="lead">
+            Podcast reach is at record levels, advertising revenue has rebounded and video has
+            changed what a podcast looks like. But the research also shows that simply producing
+            audio is no guarantee of commercial value.
+          </p>
+        </div>
+
+        <div class="stat-grid">
+          <article class="stat"><strong>$2.86B</strong><span>US podcast advertising revenue in 2025</span></article>
+          <article class="stat"><strong>+17.6%</strong><span>year-on-year US podcast ad revenue growth in 2025</span></article>
+          <article class="stat"><strong>58%</strong><span>of Americans aged 12+ consumed a podcast monthly in 2026</span></article>
+          <article class="stat"><strong>45%</strong><span>consumed podcasts weekly</span></article>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="inside">
+      <div class="wrap">
+
+        <div class="eyebrow">Inside the report</div>
+
+        <h2 class="h2" style="margin-top:18px;max-width:900px;">
+          Three ways to use podcasts. Very different reasons to choose each.
+        </h2>
+
+        <div class="inside-grid">
+
+          <article class="inside-card">
+            <small>01 / Owned</small>
+            <h3>Branded podcasts</h3>
+            <p>When building a subscriber asset, category authority and deep engagement makes sense — and why so many corporate shows fade early.</p>
+          </article>
+
+          <article class="inside-card">
+            <small>02 / Paid</small>
+            <h3>Podcast advertising</h3>
+            <p>What makes host-read sponsorships and targeted audio media work, where attribution goes wrong and how to avoid expensive reach with weak relevance.</p>
+          </article>
+
+          <article class="inside-card">
+            <small>03 / Earned</small>
+            <h3>Executive guesting</h3>
+            <p>How leaders can borrow established audience trust, build authority and generate durable referral and search value without owning a show.</p>
+          </article>
+
+          <article class="inside-card">
+            <small>30 successes</small>
+            <h3>Case studies</h3>
+            <p>Real examples from brands and businesses using audio for category leadership, customer acquisition, reputation and audience growth.</p>
+          </article>
+
+          <article class="inside-card">
+            <small>30 failures</small>
+            <h3>Anti-patterns</h3>
+            <p>The recurring mistakes: product-pitch drift, podfade, poor audience fit, weak distribution, vanity metrics, creative fatigue and more.</p>
+          </article>
+
+          <article class="inside-card">
+            <small>Practical framework</small>
+            <h3>What to do next</h3>
+            <p>A decision model, integrated audio strategy, measurement framework and checklist to use before spending money on a podcast programme.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="download" id="download">
+      <div class="wrap download-grid">
+
+        <div>
+          <div class="eyebrow">Free report</div>
+
+          <h2 class="h2" style="margin-top:18px;color:var(--cream);">
+            Get the full Podcast Marketing Playbook.
+          </h2>
+
+          <p class="lead">
+            Enter your details and the 26-page PDF will be unlocked immediately.
+          </p>
+
+          <p style="color:rgba(242,239,232,.58);max-width:50ch;">
+            The report includes the market context, primary research findings, case-study patterns,
+            failure modes, strategic comparison matrix, measurement framework and practical checklist.
+          </p>
+        </div>
+
+
+        <div class="form-card">
+
+          <h3>Download the report.</h3>
+          <p class="form-note">Your report will unlock after the form is submitted successfully.</p>
+
+          <form
+            class="form"
+            id="podcast-report-form"
+            action="https://formspree.io/f/xwlpqagb"
+            method="POST"
+          >
+
+            <input type="hidden" name="lead_type" value="Podcast Marketing Playbook download">
+            <input type="hidden" name="source_page" value="Podcast marketing report landing page">
+
+            <div class="form-row">
+              <div class="field">
+                <label for="report-name">Name</label>
+                <input id="report-name" name="name" type="text" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label for="report-email">Work email</label>
+                <input id="report-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="report-org">Organisation</label>
+                <input id="report-org" name="organisation" type="text" autocomplete="organization" required>
+              </div>
+
+              <div class="field">
+                <label for="report-role">Role</label>
+                <input id="report-role" name="role" type="text" autocomplete="organization-title" required>
+              </div>
+            </div>
+
+            <button class="btn primary" id="report-submit" type="submit">
+              Get the full report ↗
+            </button>
+
+            <p class="tiny">
+              We’ll use your details to provide the report and may occasionally send relevant memery updates.
+            </p>
+
+            <p class="status" id="report-status" aria-live="polite"></p>
+
+            <a
+              id="report-download"
+              class="btn secondary download-link"
+              href="memery-podcast-marketing-playbook-2027.pdf"
+              download
+            >
+              Download the Podcast Marketing Playbook ↓
+            </a>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="wrap footer-row">
+      <a href="index.html" aria-label="memery home">
+        <span class="brand-word">memery<span class="play" aria-hidden="true">▶</span></span>
+      </a>
+      <div>© <span id="year"></span> memery · memery.agency</div>
+    </div>
+  </footer>
+
+
+  <script>
+    const menu = document.getElementById('menu');
+    const navlinks = document.getElementById('navlinks');
+
+    menu.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.textContent = open ? '✕' : '☰';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('podcast-report-form');
+    const status = document.getElementById('report-status');
+    const submit = document.getElementById('report-submit');
+    const download = document.getElementById('report-download');
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      status.className = 'status show';
+      status.textContent = 'Submitting your details…';
+
+      try{
+        const response = await fetch(form.action, {
+          method:'POST',
+          body:new FormData(form),
+          headers:{'Accept':'application/json'}
+        });
+
+        if(!response.ok){
+          throw new Error('Form submission failed');
+        }
+
+        status.className = 'status show';
+        status.textContent =
+          'Thanks — your report is ready. If it does not download automatically, use the button below.';
+
+        download.style.display = 'inline-flex';
+        submit.textContent = 'Report unlocked ✓';
+
+        window.setTimeout(() => {
+          download.click();
+        }, 300);
+
+      }catch(error){
+        status.className = 'status show error';
+        status.textContent = 'Something went wrong. Please try again.';
+        submit.disabled = false;
+        submit.textContent = 'Get the full report ↗';
+      }
+    });
+  </script>
+
+</body>
+</html>
