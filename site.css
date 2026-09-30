@@ -196,3 +196,14 @@ button,input,select,textarea{font:inherit}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
 }
+
+
+/* Logo contrast fix */
+.site-nav .site-brand,
+.site-nav .site-brand-word{
+  color:#fff !important;
+}
+
+.site-nav .site-brand-play{
+  color:var(--coral) !important;
+}
