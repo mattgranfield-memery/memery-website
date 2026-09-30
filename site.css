@@ -18,8 +18,13 @@
   --max:1180px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
@@ -31,15 +36,32 @@ body{
   overflow-x:hidden;
 }
 
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit}
-::selection{background:rgba(247,102,63,.26)}
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+::selection{
+  background:rgba(247,102,63,.26);
+}
 
 .wrap{
   width:min(calc(100% - 40px),var(--max));
   margin:0 auto;
 }
+
 
 /* ---------- Shared header / navigation ---------- */
 
@@ -120,6 +142,12 @@ button,input,select,textarea{font:inherit}
   transition:color .18s ease;
 }
 
+/* Contact Us is hidden inside the nav on desktop.
+   The separate coral CTA is used instead. */
+.site-nav-mobile-only{
+  display:none;
+}
+
 .site-navlinks a:hover,
 .site-navlinks a[aria-current="page"]{
   color:white;
@@ -160,7 +188,11 @@ button,input,select,textarea{font:inherit}
   cursor:pointer;
 }
 
+
+/* ---------- Tablet / hamburger navigation ---------- */
+
 @media(max-width:1080px){
+
   .site-navlinks{
     display:none;
     position:absolute;
@@ -178,27 +210,74 @@ button,input,select,textarea{font:inherit}
     white-space:normal;
   }
 
-  .site-navlinks.open{display:flex}
-  .site-navlinks a{width:100%;padding:11px 10px}
-  .site-nav-cta{margin-left:auto}
-  .site-menu{display:block}
+  .site-navlinks.open{
+    display:flex;
+  }
+
+  .site-navlinks a{
+    width:100%;
+    padding:11px 10px;
+  }
+
+  .site-nav-cta{
+    margin-left:auto;
+  }
+
+  .site-menu{
+    display:block;
+  }
 }
+
+
+/* ---------- Mobile ---------- */
 
 @media(max-width:720px){
-  .wrap{width:min(calc(100% - 26px),var(--max))}
-  .site-nav-shell{top:12px;padding:0 10px}
-  .site-nav{min-height:54px;padding:9px 10px 9px 16px}
-  .site-brand-word{font-size:1.32rem}
-  .site-nav-cta{display:none}
-  .site-navlinks{top:64px;left:10px;right:10px}
+
+  .wrap{
+    width:min(calc(100% - 26px),var(--max));
+  }
+
+  .site-nav-shell{
+    top:12px;
+    padding:0 10px;
+  }
+
+  .site-nav{
+    min-height:54px;
+    padding:9px 10px 9px 16px;
+  }
+
+  .site-brand-word{
+    font-size:1.32rem;
+  }
+
+  /* Hide desktop Contact Us button */
+  .site-nav-cta{
+    display:none;
+  }
+
+  .site-navlinks{
+    top:64px;
+    left:10px;
+    right:10px;
+  }
+
+  /* Show Contact Us inside hamburger menu */
+  .site-navlinks a.site-nav-mobile-only{
+    display:block;
+  }
 }
+
 
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
+  html{
+    scroll-behavior:auto;
+  }
 }
 
 
-/* Logo contrast fix */
+/* ---------- Logo contrast fix ---------- */
+
 .site-nav .site-brand,
 .site-nav .site-brand-word{
   color:#fff !important;
