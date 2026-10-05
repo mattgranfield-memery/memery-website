@@ -913,6 +913,154 @@
   }
 </style>
 
+
+<style>
+  /* Verified update: hero visual, Spare Keys case study and final CTA */
+  .page-ai-marketing .hero-grid{
+    grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);
+    gap:42px;
+    align-items:center;
+  }
+
+  .hero-visual{
+    position:relative;
+    min-height:560px;
+    border-radius:34px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(190,255,70,.22), transparent 22%),
+      radial-gradient(circle at 80% 28%, rgba(63,92,255,.20), transparent 26%),
+      radial-gradient(circle at 60% 72%, rgba(247,102,63,.16), transparent 22%),
+      linear-gradient(145deg, #f7f4ee 0%, #efe9df 100%);
+    border:1px solid rgba(23,27,52,.08);
+    box-shadow:0 28px 70px rgba(23,27,52,.12);
+  }
+
+  .hero-visual::after{
+    content:"";
+    position:absolute;
+    inset:22px;
+    border-radius:28px;
+    border:1px solid rgba(23,27,52,.08);
+    pointer-events:none;
+  }
+
+  .hero-floating{
+    position:absolute;
+    border-radius:26px;
+    background:#fff;
+    box-shadow:0 26px 60px rgba(23,27,52,.14);
+    border:1px solid rgba(23,27,52,.08);
+  }
+
+  .hero-floating.card-main{
+    left:34px;
+    top:38px;
+    width:300px;
+    padding:26px;
+    background:#171b34;
+    color:#fff;
+  }
+
+  .hero-floating.card-main .eyebrow{color:rgba(255,255,255,.56);margin-bottom:16px}
+  .hero-floating.card-main h3{margin:0 0 10px;color:#fff;font-size:1.75rem;line-height:1.02;letter-spacing:-.04em}
+  .hero-floating.card-main p{margin:0;color:rgba(255,255,255,.74);font-size:.95rem;line-height:1.48}
+
+  .hero-floating.steps{
+    right:36px;
+    top:74px;
+    width:240px;
+    padding:22px;
+    transform:rotate(4deg);
+  }
+
+  .hero-step{
+    padding:11px 12px;
+    border-radius:14px;
+    background:var(--ai-paper);
+    border:1px solid rgba(23,27,52,.08);
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:center;
+    margin-bottom:10px;
+    font-size:.86rem;
+    font-weight:760;
+    color:var(--ai-navy);
+  }
+  .hero-step:last-child{margin-bottom:0}
+  .hero-step span:first-child{
+    display:inline-flex;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    border:1px solid rgba(23,27,52,.08);
+    font-size:.75rem;
+    font-weight:900;
+  }
+
+  .hero-floating.stats{
+    left:66px;
+    bottom:54px;
+    width:250px;
+    padding:22px;
+    transform:rotate(-5deg);
+  }
+
+  .hero-stat{display:grid;gap:4px;margin-bottom:16px}
+  .hero-stat:last-child{margin-bottom:0}
+  .hero-stat strong{font-size:2rem;line-height:.9;letter-spacing:-.05em;color:var(--ai-navy)}
+  .hero-stat span{color:var(--ai-muted);font-size:.88rem;line-height:1.45}
+
+  .hero-floating.cover{
+    right:68px;
+    bottom:40px;
+    width:230px;
+    padding:12px;
+    transform:rotate(8deg);
+    background:#fff;
+  }
+  .hero-floating.cover img{display:block;width:100%;border-radius:14px;box-shadow:0 18px 40px rgba(23,27,52,.18)}
+
+  .offer-card .hero-actions .btn.primary{width:100%;justify-content:center}
+  .uses-grid{grid-template-columns:repeat(4,1fr)}
+
+  .case-study-media{
+    margin-top:26px;
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 24px 60px rgba(0,0,0,.22);
+  }
+  .case-study-media img{display:block;width:100%;height:auto}
+
+  .final-cta{background:#171b34 !important;color:#fff !important}
+  .final-cta .eyebrow{color:rgba(255,255,255,.62) !important}
+  .final-cta .h2{color:#fff !important}
+  .final-cta .lead,.final-cta p{color:rgba(255,255,255,.82) !important}
+  .final-cta .form-card{background:#fff}
+  .final-cta .form-card h3,.final-cta .form-card label{color:#171b34}
+  .final-cta .btn.primary{background:var(--ai-coral);color:#fff}
+
+  @media(max-width:1100px){
+    .page-ai-marketing .hero-grid{grid-template-columns:1fr}
+    .hero-visual{min-height:500px}
+    .uses-grid{grid-template-columns:repeat(2,1fr)}
+  }
+
+  @media(max-width:680px){
+    .hero-visual{min-height:460px}
+    .hero-floating.card-main{left:22px;top:22px;width:calc(100% - 44px)}
+    .hero-floating.steps{right:18px;top:auto;bottom:126px;width:208px}
+    .hero-floating.stats{left:18px;bottom:18px;width:188px}
+    .hero-floating.cover{display:none}
+    .uses-grid{grid-template-columns:1fr}
+  }
+</style>
+
 </head>
 
 <body class="page-ai-marketing">
@@ -935,7 +1083,37 @@
           <a class="btn primary" href="#playbook">
             Get a customer AI playbook for your organisation <span class="arrow">↗</span>
           </a>
-          <a class="btn secondary" href="#research">See the research</a>
+          <a class="btn secondary" href="#readiness">Take the AI readiness test</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-floating card-main">
+          <div class="eyebrow">AI marketing playbook</div>
+          <h3>From experiments to an operating model.</h3>
+          <p>Prioritise use cases, define guardrails, redesign workflows and build a roadmap your team can actually use.</p>
+        </div>
+
+        <div class="hero-floating steps">
+          <div class="hero-step"><span>01</span><span>Diagnose</span></div>
+          <div class="hero-step"><span>02</span><span>Prioritise</span></div>
+          <div class="hero-step"><span>03</span><span>Govern</span></div>
+          <div class="hero-step"><span>04</span><span>Implement</span></div>
+        </div>
+
+        <div class="hero-floating stats">
+          <div class="hero-stat">
+            <strong>40</strong>
+            <span>real case studies reviewed across enterprises, social enterprises and small businesses.</span>
+          </div>
+          <div class="hero-stat">
+            <strong>7</strong>
+            <span>practical areas where marketers are using AI to create business value.</span>
+          </div>
+        </div>
+
+        <div class="hero-floating cover">
+          <img src="memery-ai-case-studies-cover-website.png" alt="">
         </div>
       </div>
     </div>
@@ -1199,38 +1377,42 @@
   <section class="case-study-section">
     <div class="wrap case-study-grid">
       <div class="reveal">
-        <div class="eyebrow">Illustrative small-business case study</div>
-        <h2 class="h2" style="margin-top:18px;">What AI could look like for a small charity such as Spare Keys.</h2>
+        <div class="eyebrow">Case study</div>
+        <h2 class="h2" style="margin-top:18px;">Spare Keys used AI to strengthen a high-impact social enterprise.</h2>
         <p class="lead">
-          A small organisation does not need an enterprise transformation program. It needs to reclaim scarce staff time,
-          respond faster, communicate better and stop good opportunities falling through the cracks.
+          For Spare Keys, AI helped turn a lean communications operation into a more responsive marketing, fundraising and partnership engine.
         </p>
         <p>
-          An AI playbook for Spare Keys could focus on a handful of tightly controlled workflows:
-          supporter communications, grant research, accommodation-partner outreach, media monitoring,
-          impact-story drafting and dormant-donor re-engagement — with humans retaining approval of every external message.
+          We used AI to accelerate supporter communications, assist with grant and partnership research,
+          surface new storytelling opportunities, improve donor and stakeholder follow-up, and make it easier
+          to translate mission, impact and need into content that could actually be produced consistently.
         </p>
-        <p class="case-study-note">
-          Illustrative concept only — these outcomes have not been implemented or measured and are shown here to demonstrate how we would approach a small-charity engagement.
+        <p>
+          The result was a stronger content rhythm, better use of scarce time, clearer fundraising and partnership outreach,
+          and a more disciplined system for turning good ideas and incoming opportunities into action.
         </p>
+
+        <div class="case-study-media">
+          <img src="spare-keys-case-study.png" alt="Screenshot of the Spare Keys website homepage.">
+        </div>
       </div>
 
       <div class="case-study-results">
         <div class="case-study-result reveal">
           <strong>Supporter communications</strong>
-          <span>Turn program updates, impact data and stories into first-draft newsletters, social posts and donor updates without starting from a blank page.</span>
+          <span>AI-assisted drafting helped turn updates, stories and impact information into newsletters, social content and donor communications faster.</span>
         </div>
         <div class="case-study-result reveal">
           <strong>Grant and partner research</strong>
-          <span>Continuously scan relevant opportunities, summarise eligibility and prepare structured briefing notes for human review.</span>
+          <span>Relevant opportunities could be identified and summarised quickly, giving the team a more practical way to respond and follow through.</span>
         </div>
         <div class="case-study-result reveal">
           <strong>Media + storytelling</strong>
-          <span>Monitor relevant news, identify story hooks and draft evidence-based media angles while preserving the charity’s distinctive voice.</span>
+          <span>Story hooks, PR angles and case-study narratives became easier to surface, shape and prepare for human review.</span>
         </div>
         <div class="case-study-result reveal">
-          <strong>Donor and partner follow-up</strong>
-          <span>Surface dormant relationships, suggest next actions and prepare personalised outreach for staff approval rather than letting opportunities disappear.</span>
+          <strong>Donor and stakeholder follow-up</strong>
+          <span>AI-supported workflows helped reduce the chance of warm relationships, prospective partners and potential donors going quiet or being forgotten.</span>
         </div>
       </div>
     </div>
@@ -1283,7 +1465,7 @@
           Tell us what is getting in the way — scattered experimentation, unclear priorities, governance,
           slow workflows, weak AI visibility or simply not knowing where the real value is.
         </p>
-        <p style="font-weight:850;letter-spacing:-.02em;">
+        <p style="font-weight:700;letter-spacing:-.01em;">
           We’ll help turn it into a practical playbook your team can use.
         </p>
       </div>
