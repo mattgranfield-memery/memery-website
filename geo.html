@@ -696,6 +696,7 @@
       padding:13px 14px;
       background:#fff;
       font:inherit;
+      color:var(--geo-ink);
     }
 
     .page-geo .field textarea{
@@ -709,32 +710,112 @@
       margin:2px 0 0;
     }
 
-    /* PLAYBOOK */
+    /* GEO PLAYBOOK */
 
-    .page-geo .guide-card{
+    .page-geo .geo-guide-section{
+      background:var(--geo-paper);
+    }
+
+    .page-geo .geo-guide-card{
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:32px;
+      grid-template-columns:1.15fr .85fr;
+      gap:48px;
       align-items:center;
-      background:#fff;
-      border:1px solid rgba(23,27,52,.1);
-      border-radius:28px;
+      padding:48px;
+      border-radius:32px;
+      background:var(--geo-ink);
+      color:#fff;
+      box-shadow:0 24px 70px rgba(23,27,52,.14);
+    }
+
+    .page-geo .geo-guide-copy{
+      min-width:0;
+    }
+
+    .page-geo .geo-guide-copy .eyebrow{
+      color:var(--geo-coral);
+    }
+
+    .page-geo .geo-guide-copy .h2{
+      color:#fff;
+      margin-top:18px;
+      max-width:600px;
+    }
+
+    .page-geo .geo-guide-copy .lead{
+      color:rgba(255,255,255,.76);
+      max-width:620px;
+    }
+
+    .page-geo .geo-guide-points{
+      list-style:none;
+      padding:0;
+      margin:30px 0 0;
+      display:grid;
+      gap:16px;
+    }
+
+    .page-geo .geo-guide-points li{
+      position:relative;
+      padding-left:24px;
+      color:#fff;
+      line-height:1.55;
+    }
+
+    .page-geo .geo-guide-points li::before{
+      content:"↗";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--geo-coral);
+      font-weight:900;
+    }
+
+    .page-geo .geo-guide-download{
+      min-height:300px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:28px;
       padding:34px;
-    }
-
-    .page-geo .guide-points{
-      margin:24px 0 0;
-      padding-left:20px;
-    }
-
-    .page-geo .guide-points li{
-      margin:8px 0;
-    }
-
-    .page-geo .guide-side{
+      border-radius:26px;
       background:var(--geo-cream);
-      border-radius:20px;
-      padding:24px;
+      color:var(--geo-ink);
+    }
+
+    .page-geo .geo-guide-kicker{
+      display:block;
+      margin-bottom:14px;
+      color:var(--geo-coral);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .page-geo .geo-guide-download h3{
+      margin:0 0 14px;
+      color:var(--geo-ink);
+      font-size:clamp(26px,2.5vw,38px);
+      line-height:1.05;
+      letter-spacing:-.035em;
+    }
+
+    .page-geo .geo-guide-download p{
+      margin:0;
+      color:#555b70;
+      font-size:16px;
+      line-height:1.55;
+    }
+
+    .page-geo .geo-guide-download .btn{
+      align-self:flex-start;
+    }
+
+    .page-geo .geo-guide-download .btn.primary{
+      background:var(--geo-coral);
+      border-color:var(--geo-coral);
+      color:#fff;
     }
 
     /* FINAL CTA */
@@ -777,6 +858,7 @@
       font-weight:900;
       font-size:26px;
       letter-spacing:-.04em;
+      color:#fff;
     }
 
     .page-geo .footer-brand i{
@@ -794,7 +876,6 @@
       .page-geo .case-shell,
       .page-geo .measure-grid,
       .page-geo .snapshot-grid,
-      .page-geo .guide-card,
       .page-geo .section-head{
         grid-template-columns:1fr;
       }
@@ -809,6 +890,16 @@
 
       .page-geo .grid5{
         grid-template-columns:repeat(3,1fr);
+      }
+
+      .page-geo .geo-guide-card{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:34px;
+      }
+
+      .page-geo .geo-guide-download{
+        min-height:0;
       }
     }
 
@@ -851,16 +942,22 @@
       .page-geo .hero-card{
         padding:26px;
       }
+
+      .page-geo .geo-guide-card{
+        padding:26px;
+        border-radius:24px;
+      }
+
+      .page-geo .geo-guide-download{
+        padding:24px;
+      }
     }
   </style>
 </head>
 
 <body class="page-geo">
 
-  <!--
-    SHARED SITE MENU
-    menu.js injects the same navigation used across the rest of the site.
-  -->
+  <!-- Shared navigation populated by menu.js -->
   <div id="site-header"></div>
 
   <main id="top">
@@ -1151,6 +1248,7 @@
         </div>
 
         <div class="problem-list">
+
           <div class="problem-item">
             Competitors appear in ChatGPT and you don’t.
           </div>
@@ -1178,8 +1276,8 @@
           <div class="problem-item">
             You have no repeatable way to measure AI visibility.
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -1579,7 +1677,7 @@
     </section>
 
 
-    <!-- ANTI HYPE -->
+    <!-- ANTI-HYPE -->
     <section class="cream">
       <div class="wrap">
 
@@ -1957,17 +2055,18 @@
 
 
     <!-- PLAYBOOK -->
-    <section id="guide">
+    <section id="guide" class="geo-guide-section">
       <div class="wrap">
 
-        <div class="guide-card">
+        <div class="geo-guide-card">
 
-          <div>
+          <div class="geo-guide-copy">
+
             <div class="eyebrow">
               Free 2027 field guide
             </div>
 
-            <h2 class="h2" style="margin-top:18px;">
+            <h2 class="h2">
               The AI Visibility Playbook.
             </h2>
 
@@ -1976,7 +2075,8 @@
               credible and recommendable in generative search.
             </p>
 
-            <ul class="guide-points">
+            <ul class="geo-guide-points">
+
               <li>
                 A clear working definition of GEO without the hype.
               </li>
@@ -1997,19 +2097,29 @@
               <li>
                 An AI visibility scorecard and practical first 90 days.
               </li>
+
             </ul>
+
           </div>
 
-          <div class="guide-side">
+          <div class="geo-guide-download">
 
-            <h3 class="h3">
-              Read it. Share it. Put the framework to work.
-            </h3>
+            <div>
 
-            <p>
-              The ideas should travel. The commercial conversation starts
-              when you want to know how your own brand performs.
-            </p>
+              <span class="geo-guide-kicker">
+                Free download
+              </span>
+
+              <h3>
+                Read it. Share it. Put the framework to work.
+              </h3>
+
+              <p>
+                The ideas should travel. The commercial conversation starts
+                when you want to understand how your own brand performs.
+              </p>
+
+            </div>
 
             <a
               class="btn primary"
@@ -2022,11 +2132,12 @@
           </div>
 
         </div>
+
       </div>
     </section>
 
 
-    <!-- FINAL CONTACT FORM -->
+    <!-- FINAL CONTACT -->
     <section class="final-cta" id="contact">
       <div class="wrap">
 
@@ -2189,6 +2300,7 @@
             </p>
 
           </form>
+
         </div>
 
       </div>
