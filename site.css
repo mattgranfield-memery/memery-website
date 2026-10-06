@@ -268,6 +268,13 @@ textarea{
   }
 }
 
+.eyebrow{
+  font-size:clamp(13px,1vw,15px);
+  line-height:1.45;
+  font-weight:850;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
 
 @media(prefers-reduced-motion:reduce){
   html{
