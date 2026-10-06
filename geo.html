@@ -1,48 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLCQ9TYW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PVLCQ9TYW9');
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>GEO & AEO Services | AI Visibility | memery</title>
+  <title>GEO & AEO Agency Australia | AI Search Visibility | memery</title>
 
   <meta
     name="description"
-    content="memery helps brands improve visibility in ChatGPT, Gemini, Google AI and other generative experiences through AI visibility audits, GEO and AEO strategy, content, corroboration and measurement."
+    content="Improve your visibility in ChatGPT, Gemini, Claude, Google AI, Grok, DeepSeek and other AI search experiences. memery provides GEO, AEO and AI visibility audits, content strategy, third-party authority and measurement."
   >
 
   <meta name="theme-color" content="#171b34">
 
-  <!-- Shared site styles -->
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="components.css">
-
-  <!-- Shared site navigation -->
   <script src="menu.js" defer></script>
 
+  <!--
+    GEO PAGE-SPECIFIC STYLES
+    Shared typography/navigation remain in site.css + components.css
+  -->
   <style>
+
     :root{
       --geo-ink:#171b34;
       --geo-ink-2:#242a4a;
       --geo-cream:#f7f3ea;
       --geo-paper:#fffdf8;
-      --geo-white:#ffffff;
       --geo-muted:#667085;
       --geo-line:#d9dce6;
-      --geo-coral:#ff6b4a;
+      --geo-coral:#ff6545;
       --geo-amber:#ffb85a;
       --geo-sky:#dcecff;
       --geo-shadow:0 20px 60px rgba(23,27,52,.12);
       --geo-max:1180px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box}
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{scroll-behavior:smooth}
 
     body.page-geo{
       margin:0;
@@ -51,8 +58,8 @@
     }
 
     .page-geo img{
-      max-width:100%;
       display:block;
+      max-width:100%;
     }
 
     .page-geo .wrap{
@@ -73,21 +80,12 @@
       color:#fff;
     }
 
-    .page-geo .dark .lead,
-    .page-geo .dark .small{
-      color:#cdd2e3;
-    }
-
-    .page-geo .eyebrow{
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      font-weight:900;
-      font-size:12px;
-      color:var(--geo-coral);
+    .page-geo .dark .lead{
+      color:rgba(255,255,255,.72);
     }
 
     .page-geo .display{
-      font-size:clamp(50px,7vw,92px);
+      font-size:clamp(52px,7vw,92px);
       line-height:.94;
       letter-spacing:-.055em;
       margin:18px 0 28px;
@@ -95,9 +93,9 @@
     }
 
     .page-geo .h2{
-      font-size:clamp(34px,4.4vw,60px);
+      font-size:clamp(36px,4.5vw,60px);
       line-height:1;
-      letter-spacing:-.04em;
+      letter-spacing:-.045em;
       margin:0 0 20px;
     }
 
@@ -110,13 +108,14 @@
 
     .page-geo .lead{
       font-size:clamp(18px,2vw,22px);
-      line-height:1.5;
+      line-height:1.52;
       color:#343a56;
-      max-width:760px;
+      max-width:780px;
     }
 
     .page-geo .small{
       font-size:14px;
+      line-height:1.5;
       color:var(--geo-muted);
     }
 
@@ -147,29 +146,65 @@
 
     .page-geo .btn.secondary{
       background:transparent;
+      color:var(--geo-ink);
     }
 
     .page-geo .btn.secondary:hover{
       background:#fff;
     }
 
-    /* HERO */
+    .page-geo .section-head{
+      display:grid;
+      grid-template-columns:.68fr 1.32fr;
+      gap:50px;
+      align-items:start;
+      margin-bottom:42px;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
 
     .page-geo .hero{
-      padding:90px 0 76px;
-      background:
-        linear-gradient(
-          180deg,
-          #fffdf8 0%,
-          #f9f4ea 100%
-        );
+      padding:90px 0 72px;
+      background:linear-gradient(180deg,#fffdf8 0%,#f9f4ea 100%);
     }
 
     .page-geo .hero-grid{
       display:grid;
-      grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);
+      grid-template-columns:minmax(0,1.18fr) minmax(340px,.82fr);
       gap:56px;
       align-items:center;
+    }
+
+    .page-geo .hero-copy{
+      max-width:830px;
+    }
+
+    .page-geo .hero-stat-copy{
+      margin-top:24px;
+      max-width:790px;
+    }
+
+    .page-geo .hero-stat-copy p{
+      font-size:18px;
+      line-height:1.58;
+      color:#343a56;
+      margin:0 0 14px;
+    }
+
+    .page-geo .hero-stat-copy strong{
+      color:var(--geo-ink);
+    }
+
+    .page-geo .hero-source-note{
+      display:block;
+      margin-top:17px;
+      font-size:11px;
+      line-height:1.45;
+      color:#7b8090;
+      max-width:760px;
     }
 
     .page-geo .hero-actions{
@@ -177,6 +212,21 @@
       flex-wrap:wrap;
       gap:12px;
       margin-top:30px;
+    }
+
+    .page-geo .hero-free{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:8px;
+      padding:8px 11px;
+      border-radius:999px;
+      background:rgba(255,101,69,.10);
+      color:#cf4227;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.08em;
     }
 
     .page-geo .hero-card{
@@ -229,17 +279,10 @@
       font-size:14px;
     }
 
-    /* SECTION HEADS */
 
-    .page-geo .section-head{
-      display:grid;
-      grid-template-columns:.7fr 1.3fr;
-      gap:50px;
-      align-items:start;
-      margin-bottom:42px;
-    }
-
-    /* CUSTOMER PROMPTS */
+    /* =========================================================
+       PROMPT / COMMERCIAL SHIFT
+       ========================================================= */
 
     .page-geo .problem-prompts{
       display:grid;
@@ -261,94 +304,92 @@
       padding:16px 18px;
       border-radius:22px 22px 6px 22px;
       font-weight:750;
-      line-height:1.35;
+      line-height:1.4;
       margin-bottom:18px;
     }
 
-    /* AUDIT */
+    .page-geo .prompt-card strong{
+      display:block;
+      font-size:18px;
+      line-height:1.3;
+    }
 
-    .page-geo .audit-block{
+    .page-geo .prompt-card p{
+      color:#5c6275;
+      line-height:1.5;
+    }
+
+
+    /* =========================================================
+       FREE AI VISIBILITY AUDIT
+       ========================================================= */
+
+    .page-geo .audit-section{
+      background:var(--geo-cream);
+    }
+
+    .page-geo .audit-grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:36px;
+      grid-template-columns:.9fr 1.1fr;
+      gap:44px;
       align-items:start;
     }
 
-    .page-geo .deliverables{
+    .page-geo .free-badge{
+      display:inline-flex;
+      align-items:center;
+      padding:7px 10px;
+      border-radius:999px;
+      background:var(--geo-coral);
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .page-geo .audit-points{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:12px;
-      margin-top:24px;
+      margin-top:25px;
     }
 
-    .page-geo .deliverables div{
-      border:1px solid rgba(23,27,52,.13);
+    .page-geo .audit-point{
+      background:#fff;
+      border:1px solid rgba(23,27,52,.10);
       border-radius:16px;
-      padding:14px 16px;
-      font-weight:750;
-      background:#fff;
-    }
-
-    .page-geo .scorecard{
-      background:#fff;
-      border:1px solid rgba(23,27,52,.08);
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--geo-shadow);
-    }
-
-    .page-geo .score-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:20px;
-      padding-bottom:22px;
-      border-bottom:1px solid var(--geo-line);
-    }
-
-    .page-geo .score{
-      font-size:64px;
-      font-weight:900;
-      letter-spacing:-.05em;
-      line-height:.9;
-    }
-
-    .page-geo .score span{
-      font-size:22px;
-      color:var(--geo-muted);
-    }
-
-    .page-geo .score-table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:18px;
+      padding:15px 16px;
+      font-weight:760;
       font-size:14px;
     }
 
-    .page-geo .score-table th,
-    .page-geo .score-table td{
-      text-align:left;
-      padding:13px 8px;
-      border-bottom:1px solid #eceef4;
+    .page-geo .audit-form-card{
+      background:#fff;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--geo-shadow);
+      border:1px solid rgba(23,27,52,.08);
     }
 
-    .page-geo .score-table th{
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.08em;
+    .page-geo .audit-form-card h3{
+      font-size:30px;
+      letter-spacing:-.035em;
+      line-height:1.05;
+      margin:0 0 10px;
+    }
+
+    .page-geo .audit-form-card > p{
+      margin:0 0 22px;
       color:var(--geo-muted);
+      line-height:1.5;
     }
 
-    .page-geo .status-good{
-      font-weight:800;
-    }
 
-    .page-geo .status-miss{
-      color:#b42318;
-      font-weight:800;
-    }
-
-    /* PROBLEMS */
+    /* =========================================================
+       PROBLEMS
+       ========================================================= */
 
     .page-geo .problem-list{
       display:grid;
@@ -364,7 +405,10 @@
       font-weight:750;
     }
 
-    /* FRAMEWORK */
+
+    /* =========================================================
+       FRAMEWORK
+       ========================================================= */
 
     .page-geo .grid5{
       display:grid;
@@ -394,9 +438,13 @@
       margin:0;
       color:var(--geo-muted);
       font-size:14px;
+      line-height:1.45;
     }
 
-    /* SERVICES */
+
+    /* =========================================================
+       SERVICES
+       ========================================================= */
 
     .page-geo .service-grid{
       display:grid;
@@ -421,13 +469,18 @@
 
     .page-geo .service-card h3{
       margin:16px 0 10px;
+      color:#fff;
     }
 
     .page-geo .service-card p{
       color:#cfd3df;
+      line-height:1.5;
     }
 
-    /* CASE STUDY */
+
+    /* =========================================================
+       CASE STUDY
+       ========================================================= */
 
     .page-geo .case-shell{
       display:grid;
@@ -440,11 +493,24 @@
       background:var(--geo-ink);
       color:#fff;
       border-radius:28px;
-      padding:34px;
+      padding:36px;
+    }
+
+    .page-geo .case-copy .eyebrow{
+      color:var(--geo-coral);
+    }
+
+    .page-geo .case-copy .h2{
+      color:#fff;
+      margin-top:18px;
     }
 
     .page-geo .case-copy .lead{
       color:#d3d7e3;
+    }
+
+    .page-geo .case-copy p{
+      line-height:1.55;
     }
 
     .page-geo .case-tags{
@@ -477,15 +543,16 @@
     }
 
     .page-geo .case-caption{
-      padding:12px 16px;
+      padding:13px 16px;
       font-size:12px;
+      line-height:1.5;
       color:var(--geo-muted);
     }
 
     .page-geo details.case-more{
-      margin-top:18px;
+      margin-top:20px;
       border-top:1px solid rgba(255,255,255,.15);
-      padding-top:16px;
+      padding-top:18px;
     }
 
     .page-geo details.case-more summary{
@@ -504,72 +571,19 @@
       font-size:20px;
     }
 
-    .page-geo details[open].case-more summary::after{
+    .page-geo details.case-more[open] summary::after{
       content:"–";
     }
 
     .page-geo .case-more-body{
-      padding-top:14px;
+      padding-top:16px;
       color:#d9dce6;
     }
 
-    .page-geo .case-more-body p{
-      margin-top:0;
-    }
 
-    /* MEASUREMENT */
-
-    .page-geo .measure-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:50px;
-      align-items:start;
-    }
-
-    .page-geo .metric-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .page-geo .metric{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      padding:18px 0;
-      border-bottom:1px solid rgba(23,27,52,.12);
-    }
-
-    .page-geo .metric strong{
-      font-size:18px;
-    }
-
-    .page-geo .metric span{
-      max-width:60%;
-      color:var(--geo-muted);
-      text-align:right;
-    }
-
-    /* ROADMAP */
-
-    .page-geo .roadmap{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
-
-    .page-geo .roadmap article{
-      background:#fff;
-      border:1px solid rgba(23,27,52,.1);
-      border-radius:22px;
-      padding:26px;
-    }
-
-    .page-geo .roadmap strong{
-      font-size:38px;
-      color:var(--geo-coral);
-    }
-
-    /* CONFIDENCE */
+    /* =========================================================
+       EVIDENCE / ANTI-HYPE
+       ========================================================= */
 
     .page-geo .confidence{
       display:grid;
@@ -585,13 +599,25 @@
     }
 
     .page-geo .confidence article > strong{
-      font-size:12px;
+      font-size:13px;
       text-transform:uppercase;
-      letter-spacing:.12em;
+      letter-spacing:.1em;
       color:var(--geo-coral);
     }
 
-    /* SEO AEO GEO */
+    .page-geo .confidence h3{
+      margin:18px 0 10px;
+    }
+
+    .page-geo .confidence p{
+      line-height:1.5;
+      color:#595f72;
+    }
+
+
+    /* =========================================================
+       SEO / AEO / GEO
+       ========================================================= */
 
     .page-geo .compare{
       display:grid;
@@ -611,106 +637,23 @@
       font-weight:900;
       letter-spacing:-.04em;
       margin-bottom:16px;
+      color:var(--geo-coral);
     }
 
-    /* FAQ */
-
-    .page-geo .faq{
-      display:grid;
-      gap:10px;
-      max-width:920px;
+    .page-geo .compare h3{
+      font-size:21px;
+      line-height:1.15;
     }
 
-    .page-geo .faq details{
-      background:#fff;
-      border:1px solid rgba(23,27,52,.11);
-      border-radius:18px;
-      padding:18px 20px;
+    .page-geo .compare p{
+      color:#5b6174;
+      line-height:1.5;
     }
 
-    .page-geo .faq summary{
-      font-weight:850;
-      cursor:pointer;
-    }
 
-    .page-geo .faq p{
-      color:#4f556b;
-    }
-
-    /* FORMS */
-
-    .page-geo .snapshot{
-      background:linear-gradient(
-        135deg,
-        var(--geo-ink) 0%,
-        #2b3157 100%
-      );
-      color:#fff;
-    }
-
-    .page-geo .snapshot-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:36px;
-      align-items:start;
-    }
-
-    .page-geo .snapshot .lead{
-      color:#d4d8e6;
-    }
-
-    .page-geo .form-card{
-      background:#fff;
-      color:var(--geo-ink);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--geo-shadow);
-    }
-
-    .page-geo .form{
-      display:grid;
-      gap:14px;
-    }
-
-    .page-geo .form-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
-
-    .page-geo .field label{
-      display:block;
-      font-size:12px;
-      font-weight:850;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin-bottom:7px;
-    }
-
-    .page-geo .field input,
-    .page-geo .field textarea,
-    .page-geo .field select{
-      width:100%;
-      border:1px solid #ccd0db;
-      border-radius:12px;
-      padding:13px 14px;
-      background:#fff;
-      font:inherit;
-      color:var(--geo-ink);
-    }
-
-    .page-geo .field textarea{
-      min-height:110px;
-      resize:vertical;
-    }
-
-    .page-geo .tiny{
-      font-size:11px;
-      color:#747a8e;
-      margin:2px 0 0;
-    }
-
-    /* GEO PLAYBOOK */
+    /* =========================================================
+       PLAYBOOK
+       ========================================================= */
 
     .page-geo .geo-guide-section{
       background:var(--geo-paper);
@@ -726,10 +669,6 @@
       background:var(--geo-ink);
       color:#fff;
       box-shadow:0 24px 70px rgba(23,27,52,.14);
-    }
-
-    .page-geo .geo-guide-copy{
-      min-width:0;
     }
 
     .page-geo .geo-guide-copy .eyebrow{
@@ -766,7 +705,6 @@
       content:"↗";
       position:absolute;
       left:0;
-      top:0;
       color:var(--geo-coral);
       font-weight:900;
     }
@@ -787,9 +725,9 @@
       display:block;
       margin-bottom:14px;
       color:var(--geo-coral);
-      font-size:12px;
+      font-size:13px;
       font-weight:900;
-      letter-spacing:.12em;
+      letter-spacing:.1em;
       text-transform:uppercase;
     }
 
@@ -804,36 +742,171 @@
     .page-geo .geo-guide-download p{
       margin:0;
       color:#555b70;
-      font-size:16px;
       line-height:1.55;
     }
 
     .page-geo .geo-guide-download .btn{
       align-self:flex-start;
-    }
-
-    .page-geo .geo-guide-download .btn.primary{
       background:var(--geo-coral);
       border-color:var(--geo-coral);
       color:#fff;
     }
 
-    /* FINAL CTA */
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .page-geo .faq-section{
+      background:var(--geo-cream);
+    }
+
+    .page-geo .faq-intro{
+      max-width:790px;
+      margin-bottom:36px;
+    }
+
+    .page-geo .faq-list{
+      max-width:1000px;
+      display:grid;
+      gap:10px;
+    }
+
+    .page-geo .faq-list details{
+      background:#fff;
+      border:1px solid rgba(23,27,52,.11);
+      border-radius:18px;
+      padding:0 22px;
+    }
+
+    .page-geo .faq-list summary{
+      position:relative;
+      list-style:none;
+      cursor:pointer;
+      padding:20px 36px 20px 0;
+      font-size:18px;
+      line-height:1.35;
+      font-weight:850;
+    }
+
+    .page-geo .faq-list summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .page-geo .faq-list summary::after{
+      content:"+";
+      position:absolute;
+      right:0;
+      top:16px;
+      color:var(--geo-coral);
+      font-size:26px;
+      font-weight:700;
+    }
+
+    .page-geo .faq-list details[open] summary::after{
+      content:"–";
+    }
+
+    .page-geo .faq-answer{
+      padding:0 40px 20px 0;
+      color:#52586b;
+      line-height:1.65;
+    }
+
+    .page-geo .faq-answer p:first-child{
+      margin-top:0;
+    }
+
+    .page-geo .faq-answer p:last-child{
+      margin-bottom:0;
+    }
+
+
+    /* =========================================================
+       FORMS
+       ========================================================= */
+
+    .page-geo .form{
+      display:grid;
+      gap:14px;
+    }
+
+    .page-geo .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .page-geo .field label{
+      display:block;
+      font-size:12px;
+      font-weight:850;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:7px;
+    }
+
+    .page-geo .field input,
+    .page-geo .field textarea,
+    .page-geo .field select{
+      width:100%;
+      border:1px solid #ccd0db;
+      border-radius:12px;
+      padding:13px 14px;
+      background:#fff;
+      color:var(--geo-ink);
+      font:inherit;
+    }
+
+    .page-geo .field textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .page-geo .tiny{
+      font-size:11px;
+      line-height:1.45;
+      color:#747a8e;
+      margin:2px 0 0;
+    }
+
+
+    /* =========================================================
+       FINAL CTA
+       ========================================================= */
 
     .page-geo .final-cta{
-      padding:90px 0;
       background:var(--geo-coral);
+      padding:88px 0;
+    }
+
+    .page-geo .final-cta-grid{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:40px;
+      align-items:center;
     }
 
     .page-geo .final-cta .h2{
       max-width:820px;
+      margin-top:18px;
     }
 
     .page-geo .final-cta .lead{
-      color:#33251f;
+      color:#40271f;
     }
 
-    /* FOOTER */
+    .page-geo .final-cta .btn{
+      background:var(--geo-ink);
+      border-color:var(--geo-ink);
+      color:#fff;
+      white-space:nowrap;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     .page-geo footer{
       padding:30px 0;
@@ -868,21 +941,23 @@
       margin-left:4px;
     }
 
-    /* RESPONSIVE */
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
 
     @media(max-width:960px){
+
       .page-geo .hero-grid,
-      .page-geo .audit-block,
+      .page-geo .audit-grid,
       .page-geo .case-shell,
-      .page-geo .measure-grid,
-      .page-geo .snapshot-grid,
-      .page-geo .section-head{
+      .page-geo .section-head,
+      .page-geo .final-cta-grid{
         grid-template-columns:1fr;
       }
 
       .page-geo .problem-prompts,
       .page-geo .service-grid,
-      .page-geo .roadmap,
       .page-geo .confidence,
       .page-geo .compare{
         grid-template-columns:1fr 1fr;
@@ -901,9 +976,11 @@
       .page-geo .geo-guide-download{
         min-height:0;
       }
+
     }
 
     @media(max-width:680px){
+
       .page-geo section{
         padding:64px 0;
       }
@@ -914,32 +991,21 @@
 
       .page-geo .problem-prompts,
       .page-geo .service-grid,
-      .page-geo .roadmap,
       .page-geo .confidence,
       .page-geo .compare,
       .page-geo .grid5,
       .page-geo .problem-list,
-      .page-geo .deliverables,
+      .page-geo .audit-points,
       .page-geo .form-row{
         grid-template-columns:1fr;
       }
 
-      .page-geo .metric{
-        display:block;
-      }
-
-      .page-geo .metric span{
-        display:block;
-        max-width:none;
-        margin-top:6px;
-        text-align:left;
-      }
-
       .page-geo .display{
-        font-size:clamp(48px,16vw,72px);
+        font-size:clamp(48px,15vw,72px);
       }
 
-      .page-geo .hero-card{
+      .page-geo .hero-card,
+      .page-geo .case-copy{
         padding:26px;
       }
 
@@ -951,22 +1017,142 @@
       .page-geo .geo-guide-download{
         padding:24px;
       }
+
+      .page-geo .faq-list summary{
+        font-size:17px;
+      }
+
     }
+
   </style>
+
+
+  <!-- FAQ STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Generative Engine Optimisation or GEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generative Engine Optimisation, or GEO, is the practice of improving the likelihood that AI systems can find, understand, accurately represent, cite and recommend an organisation when answering relevant questions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Answer Engine Optimisation or AEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Answer Engine Optimisation, or AEO, focuses on making information easy for search engines and AI systems to extract and use as a direct answer to a question."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between SEO, AEO and GEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO improves visibility in conventional search results. AEO helps content become a direct answer to a question. GEO focuses more broadly on how generative AI systems understand, cite, describe and recommend a brand. The disciplines overlap substantially."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can GEO make my business appear in ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No agency can guarantee inclusion in ChatGPT or any other AI answer. GEO can improve the quality, clarity, accessibility and independent corroboration of the information AI systems can use, and visibility can then be measured over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you optimise for ChatGPT, Gemini, Claude and other AI assistants?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Effective AI visibility work can include technical search foundations, entity clarity, answerable content, original evidence, third-party corroboration, digital PR, structured information and repeated testing of relevant customer prompts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GEO replace SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Strong SEO foundations remain important because AI systems often rely on crawlable and retrievable web information. GEO extends that work into brand understanding, citations, corroboration and recommendation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you measure AI visibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI visibility can be measured using a repeatable set of customer prompts and tracking metrics such as prompt coverage, brand mentions, citations, recommendation rate, accuracy, competitor visibility and qualified referral traffic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is an AI visibility audit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An AI visibility audit tests how a brand appears across relevant AI platforms and customer prompts, identifies competitors and sources appearing in the answers, checks factual accuracy and highlights practical opportunities to improve visibility."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do backlinks help GEO and AEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Links can still contribute to search authority and discovery, but GEO also depends on the broader evidence about a brand across credible third-party sources. A backlink alone does not guarantee an AI citation or recommendation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does schema markup improve AI visibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Structured data can make information easier for machines to interpret, but schema is not a guaranteed GEO ranking factor or shortcut to being cited by AI systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an llms.txt file for GEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is currently no evidence that an llms.txt file is a universal requirement for AI visibility. It may be useful in some contexts, but it should not replace crawlability, high-quality content, clear entities and credible external evidence."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does GEO take to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no universal timetable. Changes may depend on crawling, retrieval systems, source updates, platform behaviour and the strength of the wider public evidence around a brand. GEO should be measured through repeat testing rather than promised against a fixed ranking deadline."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body class="page-geo">
 
-  <!-- Shared navigation populated by menu.js -->
+  <!-- menu.js populates the shared site navigation -->
   <div id="site-header"></div>
 
   <main id="top">
 
-    <!-- HERO -->
+
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
+
     <section class="hero">
+
       <div class="wrap hero-grid">
 
-        <div>
+        <div class="hero-copy">
+
           <div class="eyebrow">
             Generative Engine Optimisation + Answer Engine Optimisation
           </div>
@@ -975,30 +1161,58 @@
             Be the brand AI knows, trusts and recommends.
           </h1>
 
-          <p class="lead">
-            Your customers are increasingly asking ChatGPT, Gemini,
-            Google and other AI platforms what to buy, where to go
-            and who to choose.
-          </p>
+          <div class="hero-stat-copy">
 
-          <p class="lead">
-            We show you whether your brand appears in those answers,
-            why competitors may be recommended instead, and what you
-            can realistically do about it.
-          </p>
+            <p>
+              Google still controls almost <strong>90% of global search</strong>,
+              but the click is disappearing: in the first four months of 2026,
+              <strong>68% of US Google searches ended without a click anywhere.</strong>
+            </p>
+
+            <p>
+              Meanwhile, discovery is spreading across AI assistants.
+              ChatGPT reports <strong>1.2 billion weekly users</strong> and Gemini
+              has passed <strong>1 billion monthly users</strong>. In August 2026,
+              web-traffic estimates put Claude at roughly
+              <strong>950 million visits</strong>, DeepSeek at
+              <strong>354 million</strong> and Grok at
+              <strong>210 million</strong>.
+            </p>
+
+            <p>
+              memery helps brands understand where they appear across this new
+              discovery layer, why competitors are being surfaced instead,
+              which sources influence the answer and what can realistically
+              be done to improve visibility.
+            </p>
+
+          </div>
+
+          <span class="hero-source-note">
+            Sources: Statcounter Global Stats, September 2026; Similarweb/SparkToro
+            zero-click research, 2026; OpenAI DevDay 2026; Google Gemini,
+            August 2026; Similarweb web-traffic estimates, August 2026.
+            User counts and website visits are different measures and are shown
+            here to illustrate the scale of the shift in discovery behaviour.
+          </span>
 
           <div class="hero-actions">
-            <a class="btn primary" href="#audit">
-              Check your AI visibility <span>↗</span>
+
+            <a class="btn primary" href="#free-audit">
+              Get your free AI Visibility Audit <span>↗</span>
             </a>
 
             <a class="btn secondary" href="#guide">
               Get the AI Visibility Playbook
             </a>
+
           </div>
+
         </div>
 
+
         <aside class="hero-card">
+
           <div class="label">
             The customer journey has changed
           </div>
@@ -1007,26 +1221,25 @@
 
             <div class="journey-row">
               <b>OLD</b>
+
               <div>
                 <strong>Search results</strong>
-                <span>
-                  Question → links → website → decision
-                </span>
+                <span>Question → links → website → decision</span>
               </div>
             </div>
 
             <div class="journey-row">
               <b>NEW</b>
+
               <div>
                 <strong>Generated answers</strong>
-                <span>
-                  Question → synthesis → follow-up → shortlist
-                </span>
+                <span>Question → synthesis → follow-up → shortlist</span>
               </div>
             </div>
 
             <div class="journey-row">
               <b>GEO</b>
+
               <div>
                 <strong>Improve AI visibility</strong>
                 <span>
@@ -1036,17 +1249,24 @@
             </div>
 
           </div>
+
         </aside>
 
       </div>
+
     </section>
 
 
-    <!-- COMMERCIAL SHIFT -->
+    <!-- ======================================================
+         CUSTOMER JOURNEY
+         ====================================================== -->
+
     <section>
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <div class="eyebrow">
               Search behaviour is changing
@@ -1054,20 +1274,25 @@
           </div>
 
           <div>
+
             <h2 class="h2">
               Your customers aren’t just searching anymore. They’re asking.
             </h2>
 
             <p class="lead">
-              Generative AI can answer the question, compare the options
-              and produce a shortlist before someone ever reaches your website.
+              AI can answer the question, compare the options and produce
+              a shortlist before someone ever reaches your website.
             </p>
+
           </div>
+
         </div>
+
 
         <div class="problem-prompts">
 
           <article class="prompt-card">
+
             <div class="bubble">
               “What’s the best university in Australia for nursing
               if getting a job is my priority?”
@@ -1078,12 +1303,15 @@
             </strong>
 
             <p>
-              The answer may cite sources, compare institutions and recommend
-              a shortlist without the user opening a traditional search result.
+              The answer can compare organisations and recommend a shortlist
+              before the user opens a traditional search result.
             </p>
+
           </article>
 
+
           <article class="prompt-card">
+
             <div class="bubble">
               “Which accounting firm should a mid-sized Brisbane
               company use?”
@@ -1095,11 +1323,14 @@
 
             <p>
               AI needs enough public evidence to understand who you serve,
-              what you’re good at and why you belong in the answer.
+              what you are good at and why you belong in the answer.
             </p>
+
           </article>
 
+
           <article class="prompt-card">
+
             <div class="bubble">
               “What are the best project management platforms
               for construction companies?”
@@ -1113,130 +1344,239 @@
               Being indexed is different from being mentioned.
               Being mentioned is different from being recommended.
             </p>
+
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- AUDIT -->
-    <section class="cream" id="audit">
-      <div class="wrap audit-block">
+    <!-- ======================================================
+         FREE AI VISIBILITY AUDIT
+         ====================================================== -->
+
+    <section class="audit-section" id="free-audit">
+
+      <div class="wrap audit-grid">
 
         <div>
+
+          <span class="free-badge">
+            Free initial audit
+          </span>
+
           <div class="eyebrow">
-            Start with evidence
+            AI Visibility Audit
           </div>
 
           <h2 class="h2" style="margin-top:18px;">
-            AI Visibility Audit.
+            Find out whether AI recommends you — before you spend money fixing it.
           </h2>
 
           <p class="lead">
-            Before we optimise anything, we establish what is actually
-            happening.
+            We’ll run a representative sample of the questions your customers
+            are likely to ask and show you what AI systems currently say about
+            your organisation.
           </p>
 
           <p>
-            We build a prompt panel around your customers, category and
-            competitors, then test how your organisation appears across
-            relevant AI experiences.
+            The free audit is designed to establish whether there is actually
+            an AI visibility problem worth solving.
           </p>
 
-          <p>
-            That gives you a baseline for visibility, recommendation,
-            citations, accuracy and the sources shaping the answer.
-          </p>
+          <div class="audit-points">
 
-          <div class="deliverables">
-            <div>AI Visibility Benchmark</div>
-            <div>Competitor Share of Voice</div>
-            <div>Prompt Opportunity Map</div>
-            <div>Citation + Source Analysis</div>
-            <div>Accuracy Audit</div>
-            <div>Prioritised Action Plan</div>
+            <div class="audit-point">
+              Relevant customer prompts
+            </div>
+
+            <div class="audit-point">
+              Brand visibility
+            </div>
+
+            <div class="audit-point">
+              Competitors being recommended
+            </div>
+
+            <div class="audit-point">
+              Factual accuracy
+            </div>
+
+            <div class="audit-point">
+              Sources influencing answers
+            </div>
+
+            <div class="audit-point">
+              Initial opportunities
+            </div>
+
           </div>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">
-              Get an AI Visibility Audit <span>↗</span>
-            </a>
-          </div>
         </div>
 
-        <aside class="scorecard">
 
-          <div class="score-top">
-            <div>
-              <div class="eyebrow">
-                Example audit
+        <div class="audit-form-card">
+
+          <h3>
+            Request your free AI Visibility Audit.
+          </h3>
+
+          <p>
+            Tell us about your organisation and the competitors or questions
+            you care about most.
+          </p>
+
+          <form
+            class="form"
+            action="https://formspree.io/f/xwlpqagb"
+            method="POST"
+          >
+
+            <input
+              type="hidden"
+              name="lead_type"
+              value="Free AI Visibility Audit"
+            >
+
+            <input
+              type="hidden"
+              name="source_page"
+              value="GEO landing page"
+            >
+
+
+            <div class="form-row">
+
+              <div class="field">
+                <label for="audit-name">
+                  Name
+                </label>
+
+                <input
+                  id="audit-name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                >
               </div>
 
-              <h3 style="margin:10px 0 0;">
-                AI Visibility Score
-              </h3>
+
+              <div class="field">
+                <label for="audit-email">
+                  Work email
+                </label>
+
+                <input
+                  id="audit-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
             </div>
 
-            <div class="score">
-              37<span>/100</span>
+
+            <div class="form-row">
+
+              <div class="field">
+                <label for="audit-org">
+                  Organisation
+                </label>
+
+                <input
+                  id="audit-org"
+                  name="organisation"
+                  type="text"
+                  autocomplete="organization"
+                  required
+                >
+              </div>
+
+
+              <div class="field">
+                <label for="audit-website">
+                  Website
+                </label>
+
+                <input
+                  id="audit-website"
+                  name="website"
+                  type="url"
+                  placeholder="https://"
+                  required
+                >
+              </div>
+
             </div>
-          </div>
 
-          <table class="score-table">
-            <thead>
-              <tr>
-                <th>Prompt</th>
-                <th>Your brand</th>
-                <th>Competitor</th>
-              </tr>
-            </thead>
 
-            <tbody>
-              <tr>
-                <td>Best X for Y</td>
-                <td class="status-miss">Not surfaced</td>
-                <td class="status-good">Recommended</td>
-              </tr>
+            <div class="field">
 
-              <tr>
-                <td>X with strongest Y</td>
-                <td class="status-good">Mentioned</td>
-                <td>Not surfaced</td>
-              </tr>
+              <label for="audit-competitors">
+                Who do you compete with?
+              </label>
 
-              <tr>
-                <td>Compare X vs Y</td>
-                <td class="status-miss">Inaccurate</td>
-                <td class="status-good">Cited</td>
-              </tr>
+              <input
+                id="audit-competitors"
+                name="competitors"
+                type="text"
+                placeholder="Up to three competitors"
+              >
 
-              <tr>
-                <td>Who should I choose?</td>
-                <td class="status-miss">Not surfaced</td>
-                <td class="status-good">Recommended</td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
 
-          <p class="small" style="margin-bottom:0;">
-            Illustrative example. Real audits use a customised prompt panel,
-            competitor set and platform mix.
-          </p>
-        </aside>
+
+            <div class="field">
+
+              <label for="audit-message">
+                What would you most like to understand?
+              </label>
+
+              <textarea
+                id="audit-message"
+                name="message"
+                placeholder="For example: why do competitors appear when people ask for the best provider in our category?"
+              ></textarea>
+
+            </div>
+
+
+            <button class="btn primary" type="submit">
+              Get my free AI Visibility Audit <span>↗</span>
+            </button>
+
+            <p class="tiny">
+              We’ll use your details to prepare the audit and respond to your enquiry.
+            </p>
+
+          </form>
+
+        </div>
 
       </div>
+
     </section>
 
 
-    <!-- PROBLEMS -->
+    <!-- ======================================================
+         PROBLEMS WE SOLVE
+         ====================================================== -->
+
     <section>
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <div class="eyebrow">
-              You might need us if…
+              You might need GEO if…
             </div>
           </div>
 
@@ -1245,7 +1585,9 @@
               The problem rarely announces itself as “GEO”.
             </h2>
           </div>
+
         </div>
+
 
         <div class="problem-list">
 
@@ -1262,11 +1604,11 @@
           </div>
 
           <div class="problem-item">
-            Your website gets cited, but your brand still isn’t recommended.
+            Your website gets cited but your brand still isn’t recommended.
           </div>
 
           <div class="problem-item">
-            You don’t know which customer prompts actually matter.
+            You don’t know which AI prompts actually influence your customers.
           </div>
 
           <div class="problem-item">
@@ -1274,26 +1616,38 @@
           </div>
 
           <div class="problem-item">
+            Competitors dominate third-party comparison and recommendation sources.
+          </div>
+
+          <div class="problem-item">
             You have no repeatable way to measure AI visibility.
           </div>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- FRAMEWORK -->
+    <!-- ======================================================
+         FRAMEWORK
+         ====================================================== -->
+
     <section class="cream">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <div class="eyebrow">
-              The framework
+              Our GEO framework
             </div>
           </div>
 
           <div>
+
             <h2 class="h2">
               Five jobs for AI visibility.
             </h2>
@@ -1302,146 +1656,212 @@
               We follow the path from being available as a source
               to being confidently shortlisted.
             </p>
+
           </div>
+
         </div>
+
 
         <div class="grid5">
 
           <article class="framework-card">
             <div class="big">01</div>
             <h3>Discover</h3>
-            <p>
-              Can relevant systems access the right information?
-            </p>
+            <p>Can relevant systems access the right information?</p>
           </article>
 
           <article class="framework-card">
             <div class="big">02</div>
             <h3>Understand</h3>
-            <p>
-              Is your brand, offer and expertise unambiguous?
-            </p>
+            <p>Is your brand, offer and expertise unambiguous?</p>
           </article>
 
           <article class="framework-card">
             <div class="big">03</div>
             <h3>Trust</h3>
-            <p>
-              Is the information distinctive, evidenced and corroborated?
-            </p>
+            <p>Is the information distinctive, evidenced and corroborated?</p>
           </article>
 
           <article class="framework-card">
             <div class="big">04</div>
             <h3>Cite</h3>
-            <p>
-              Does the brand or its content appear as a source?
-            </p>
+            <p>Does the brand or its content appear as a source?</p>
           </article>
 
           <article class="framework-card">
             <div class="big">05</div>
             <h3>Recommend</h3>
-            <p>
-              Is the brand shortlisted accurately for relevant needs?
-            </p>
+            <p>Is the brand shortlisted accurately for relevant needs?</p>
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- SERVICES -->
+    <!-- ======================================================
+         SERVICES
+         ====================================================== -->
+
     <section class="dark" id="services">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <div class="eyebrow">
-              What happens after the audit
+              GEO + AEO services
             </div>
           </div>
 
           <div>
+
             <h2 class="h2">
               Fix what is actually getting in the way.
             </h2>
 
             <p class="lead">
-              GEO isn’t a single trick. Depending on the evidence,
-              the work may sit across search, content, brand clarity,
-              reputation, digital PR and measurement.
+              GEO isn’t a single trick. The problem may sit across technical
+              search, content, brand clarity, reputation, digital PR,
+              third-party evidence or measurement.
             </p>
+
           </div>
+
         </div>
+
 
         <div class="service-grid">
 
           <article class="service-card">
-            <div class="num">01 — Discoverability</div>
-            <h3>Technical + source audit</h3>
+
+            <div class="num">
+              01 — Discoverability
+            </div>
+
+            <h3>
+              Technical GEO + SEO
+            </h3>
+
             <p>
-              Indexation, canonical pages, internal linking, crawler access,
-              readable evidence, structured data and the fundamentals
-              that affect retrieval.
+              Review indexation, canonical pages, internal linking,
+              crawler access, site architecture, structured data and other
+              fundamentals that influence whether useful material can be found.
             </p>
+
           </article>
 
-          <article class="service-card">
-            <div class="num">02 — Clarity</div>
-            <h3>Entity + proposition clarity</h3>
-            <p>
-              Make your category, audience, geography, expertise and offer
-              easier to understand consistently across the public web.
-            </p>
-          </article>
 
           <article class="service-card">
-            <div class="num">03 — Evidence</div>
-            <h3>Answerability + content strategy</h3>
+
+            <div class="num">
+              02 — Clarity
+            </div>
+
+            <h3>
+              Entity + proposition clarity
+            </h3>
+
             <p>
-              Create genuinely useful comparisons, constraints, case outcomes,
-              research, expert answers and original data worth citing.
+              Make your organisation, category, audiences, geography,
+              expertise, products and services easier for search and AI systems
+              to understand consistently.
             </p>
+
           </article>
 
-          <article class="service-card">
-            <div class="num">04 — Reputation</div>
-            <h3>Corroboration + earned authority</h3>
-            <p>
-              Strengthen the public record through credible media, partner,
-              customer and specialist validation — not manufactured mentions.
-            </p>
-          </article>
 
           <article class="service-card">
-            <div class="num">05 — Distribution</div>
-            <h3>Third-party recommendation strategy</h3>
+
+            <div class="num">
+              03 — Answers
+            </div>
+
+            <h3>
+              AEO + answerable content
+            </h3>
+
             <p>
-              Identify where credible independent recommendation signals can
-              be created, strengthened or corrected across the sources AI
-              systems draw on.
+              Build pages around the questions customers actually ask,
+              with clear answers, comparisons, definitions, constraints,
+              evidence and useful supporting detail.
             </p>
+
           </article>
 
+
           <article class="service-card">
-            <div class="num">06 — Measurement</div>
-            <h3>Ongoing AI visibility monitoring</h3>
+
+            <div class="num">
+              04 — Evidence
+            </div>
+
+            <h3>
+              Research + citation-worthy content
+            </h3>
+
             <p>
-              Retest the same high-value prompts, competitor set,
-              citations and accuracy over time and connect changes
-              to qualified demand.
+              Create original data, expert material, case outcomes,
+              methodologies and distinctive evidence that gives other sources
+              — and AI systems — something worth citing.
             </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="num">
+              05 — Authority
+            </div>
+
+            <h3>
+              Third-party corroboration
+            </h3>
+
+            <p>
+              Strengthen the public record through legitimate media,
+              specialist sites, industry bodies, partners, customers,
+              comparison sources and other credible independent evidence.
+            </p>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <div class="num">
+              06 — Measurement
+            </div>
+
+            <h3>
+              AI visibility monitoring
+            </h3>
+
+            <p>
+              Track repeatable customer prompts, competitor visibility,
+              mentions, citations, recommendation behaviour, factual accuracy
+              and relevant AI referral traffic over time.
+            </p>
+
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- CASE STUDY -->
+    <!-- ======================================================
+         CSU CASE STUDY
+         ====================================================== -->
+
     <section id="case-study">
+
       <div class="wrap case-shell">
 
         <div class="case-copy">
@@ -1455,8 +1875,8 @@
           </h2>
 
           <p class="lead">
-            For many “best university” queries, AI answers are strongly shaped
-            by widely cited third-party ranking and comparison sources.
+            Broad “best university” answers can be heavily influenced by
+            widely cited global rankings and comparison sources.
           </p>
 
           <p>
@@ -1473,13 +1893,15 @@
           </div>
 
           <p>
-            Rather than trying to out-rank research-intensive universities
+            Instead of trying to compete with research-intensive universities
             on their strongest ground, we focused on credible independent
             evidence supporting the attribute Charles Sturt could genuinely
             own: helping students graduate into work.
           </p>
 
+
           <details class="case-more">
+
             <summary>
               Read the full case study
             </summary>
@@ -1488,16 +1910,15 @@
 
               <p>
                 Global university rankings such as Times Higher Education
-                and QS are highly visible, highly cited sources and can
-                strongly influence how AI systems answer broad
-                “best university” questions.
+                and QS are prominent sources in the information ecosystem
+                surrounding university comparison.
               </p>
 
               <p>
-                Their methodologies place substantial weight on research,
-                reputation and international profile — useful measures,
-                but not always the measures prospective students care
-                about most.
+                Their methodologies place significant weight on research,
+                reputation and international profile. Those are useful
+                measures, but they are not necessarily the attributes
+                prospective students care about most.
               </p>
 
               <p>
@@ -1505,12 +1926,15 @@
               </p>
 
               <p>
-                We identified the course categories and customer prompts
-                where employment outcomes, starting salary and practical
-                career prospects were more meaningful decision criteria.
-                We then strengthened the third-party evidence base around
-                those claims and made it easier for AI systems to
-                corroborate them.
+                We identified courses and customer questions where employment
+                outcomes, starting salary and practical career prospects were
+                more meaningful decision criteria.
+              </p>
+
+              <p>
+                We then looked for credible independent sources that could
+                substantiate those strengths and strengthened the wider public
+                evidence available to search and generative systems.
               </p>
 
               <p>
@@ -1518,170 +1942,55 @@
                 In our testing, AI responses began distinguishing between
                 <strong>research prestige</strong> and
                 <strong>graduate employment outcomes</strong>,
-                and surfaced Charles Sturt as a strong choice where getting
-                into the profession was the priority.
+                surfacing Charles Sturt as a strong choice when entering the
+                profession was the priority.
               </p>
 
               <p>
                 <strong>The lesson:</strong>
-                GEO is not about persuading AI that a brand is “best”
-                in every sense. It is about making sure AI understands
-                what the brand is genuinely best at — and can find credible
-                third-party evidence to support that recommendation.
+                GEO is not about trying to persuade an AI system that your
+                organisation is “best” at everything. It is about helping the
+                system understand what you are genuinely strong at and giving
+                it credible evidence with which to support that recommendation.
               </p>
 
             </div>
+
           </details>
 
         </div>
 
+
         <figure class="case-image">
+
           <img
             src="csu-chatgpt.PNG"
-            alt="Example AI answer recommending Charles Sturt University for nursing based on graduate employment outcomes"
+            alt="AI answer recommending Charles Sturt University for nursing based on graduate employment outcomes"
           >
 
           <figcaption class="case-caption">
-            Example from our testing: the answer separates research prestige
-            from employment outcomes and recommends Charles Sturt on the latter.
+            Example from our testing: the generated answer distinguishes
+            research prestige from graduate employment outcomes and surfaces
+            Charles Sturt around the latter.
           </figcaption>
+
         </figure>
 
       </div>
+
     </section>
 
 
-    <!-- MEASUREMENT -->
+    <!-- ======================================================
+         EVIDENCE / NO FALSE CERTAINTY
+         ====================================================== -->
+
     <section class="cream">
-      <div class="wrap measure-grid">
 
-        <div>
-          <div class="eyebrow">
-            Measurement
-          </div>
-
-          <h2 class="h2" style="margin-top:18px;">
-            Mentioned isn’t recommended.
-          </h2>
-
-          <p class="lead">
-            And recommended isn’t chosen.
-          </p>
-
-          <p>
-            We separate AI visibility metrics from actual business outcomes
-            so a rising mention count doesn’t get mistaken for commercial
-            impact.
-          </p>
-        </div>
-
-        <div class="metric-list">
-
-          <div class="metric">
-            <strong>Prompt coverage</strong>
-            <span>
-              How often your brand appears across relevant prompts.
-            </span>
-          </div>
-
-          <div class="metric">
-            <strong>Mention share</strong>
-            <span>
-              Your mentions compared with tracked competitors.
-            </span>
-          </div>
-
-          <div class="metric">
-            <strong>Citation share</strong>
-            <span>
-              How often your domains appear among tracked category citations.
-            </span>
-          </div>
-
-          <div class="metric">
-            <strong>Recommendation rate</strong>
-            <span>
-              How often the brand is actually shortlisted.
-            </span>
-          </div>
-
-          <div class="metric">
-            <strong>Accuracy rate</strong>
-            <span>
-              Whether factual claims made about the brand are correct.
-            </span>
-          </div>
-
-          <div class="metric">
-            <strong>Qualified demand</strong>
-            <span>
-              AI referrals, branded search, enquiries and conversions
-              where attribution allows.
-            </span>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- 90 DAYS -->
-    <section>
       <div class="wrap">
 
         <div class="section-head">
-          <div>
-            <div class="eyebrow">
-              A practical starting point
-            </div>
-          </div>
 
-          <div>
-            <h2 class="h2">
-              Your first 90 days.
-            </h2>
-          </div>
-        </div>
-
-        <div class="roadmap">
-
-          <article>
-            <strong>1–30</strong>
-            <h3>Understand</h3>
-            <p>
-              Select prompts and competitors, capture repeated answers,
-              audit accuracy and sources, and define the gaps that matter most.
-            </p>
-          </article>
-
-          <article>
-            <strong>31–60</strong>
-            <h3>Improve</h3>
-            <p>
-              Fix technical and factual issues, strengthen priority pages
-              around real questions and publish genuinely useful evidence.
-            </p>
-          </article>
-
-          <article>
-            <strong>61–90</strong>
-            <h3>Expand</h3>
-            <p>
-              Strengthen third-party corroboration, retest the same prompt
-              panel and compare visibility, accuracy and qualified demand.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ANTI-HYPE -->
-    <section class="cream">
-      <div class="wrap">
-
-        <div class="section-head">
           <div>
             <div class="eyebrow">
               No false certainty
@@ -1689,63 +1998,102 @@
           </div>
 
           <div>
+
             <h2 class="h2">
-              We separate evidence from hype.
+              GEO is emerging. We separate evidence from hype.
             </h2>
 
             <p class="lead">
-              Nobody outside the platforms knows the exact weighting
-              behind every AI answer.
+              Nobody outside the platforms knows the precise weighting behind
+              every generated answer.
             </p>
 
             <p>
-              So we distinguish what platform guidance confirms,
-              what appears strategically reasonable, and what still
-              needs to be tested.
+              We distinguish what platforms confirm, what appears strategically
+              sensible, and what needs to be tested rather than presented
+              as fact.
             </p>
+
           </div>
+
         </div>
+
 
         <div class="confidence">
 
           <article>
-            <strong>Confirmed</strong>
-            <h3>Search fundamentals still matter.</h3>
+
+            <strong>
+              Confirmed
+            </strong>
+
+            <h3>
+              Search fundamentals still matter.
+            </h3>
+
             <p>
-              Core search eligibility and technical fundamentals remain
-              relevant to retrieval and visibility.
+              Crawlability, indexation, useful content and conventional search
+              fundamentals remain important to many AI-assisted search
+              experiences.
             </p>
+
           </article>
 
-          <article>
-            <strong>Reasonable</strong>
-            <h3>Clarity and evidence help representation.</h3>
-            <p>
-              Clear answers, distinctive evidence and credible independent
-              support make a brand easier to understand and verify.
-            </p>
-          </article>
 
           <article>
-            <strong>Test it</strong>
-            <h3>A tactic is not a ranking factor.</h3>
+
+            <strong>
+              Reasonable
+            </strong>
+
+            <h3>
+              Clarity and evidence make verification easier.
+            </h3>
+
             <p>
-              Schema, formatting or standalone AI files may be useful
-              in context, but none should be sold as a guaranteed
-              citation shortcut.
+              Specific claims, well-structured information and credible
+              independent corroboration make an organisation easier to
+              understand and verify.
             </p>
+
+          </article>
+
+
+          <article>
+
+            <strong>
+              Test it
+            </strong>
+
+            <h3>
+              A tactic is not automatically a ranking factor.
+            </h3>
+
+            <p>
+              Schema, formatting, llms.txt and similar tactics can be useful in
+              context. None should be sold as a guaranteed shortcut to an AI
+              citation or recommendation.
+            </p>
+
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- SEO AEO GEO -->
+    <!-- ======================================================
+         SEO / AEO / GEO
+         ====================================================== -->
+
     <section>
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <div class="eyebrow">
               SEO, AEO + GEO
@@ -1753,309 +2101,90 @@
           </div>
 
           <div>
+
             <h2 class="h2">
               Different labels. Overlapping disciplines.
             </h2>
 
             <p class="lead">
-              We don’t optimise them in isolation.
-              Strong search foundations, clear answers,
-              credible evidence and external authority support all three.
+              You do not need three disconnected search strategies.
+              Strong technical foundations, useful answers, credible evidence
+              and external authority support all three.
             </p>
+
           </div>
+
         </div>
+
 
         <div class="compare">
 
           <article>
-            <div class="abbr">SEO</div>
-            <h3>Search Engine Optimisation</h3>
+
+            <div class="abbr">
+              SEO
+            </div>
+
+            <h3>
+              Search Engine Optimisation
+            </h3>
+
             <p>
-              Help people find you through conventional search results.
+              Improve the visibility of webpages in conventional search
+              results and earn relevant organic traffic.
             </p>
+
           </article>
+
 
           <article>
-            <div class="abbr">AEO</div>
-            <h3>Answer Engine Optimisation</h3>
+
+            <div class="abbr">
+              AEO
+            </div>
+
+            <h3>
+              Answer Engine Optimisation
+            </h3>
+
             <p>
-              Make your information easy for search and AI systems
-              to extract as a useful answer.
+              Make information clear and structured enough to be extracted
+              and used as a direct answer to a customer question.
             </p>
+
           </article>
+
 
           <article>
-            <div class="abbr">GEO</div>
-            <h3>Generative Engine Optimisation</h3>
+
+            <div class="abbr">
+              GEO
+            </div>
+
+            <h3>
+              Generative Engine Optimisation
+            </h3>
+
             <p>
-              Improve the likelihood that generative systems understand,
-              cite and recommend your organisation.
+              Improve the likelihood that generative AI systems understand,
+              accurately represent, cite and recommend your organisation.
             </p>
+
           </article>
 
         </div>
+
       </div>
+
     </section>
 
 
-    <!-- FAQ -->
-    <section class="cream">
-      <div class="wrap">
+    <!-- ======================================================
+         PLAYBOOK
+         ====================================================== -->
 
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">
-              FAQ
-            </div>
-          </div>
-
-          <div>
-            <h2 class="h2">
-              The questions worth asking before you buy GEO.
-            </h2>
-          </div>
-        </div>
-
-        <div class="faq">
-
-          <details>
-            <summary>
-              Can you guarantee we’ll appear in ChatGPT?
-            </summary>
-
-            <p>
-              No. AI products use different models, retrieval systems
-              and sources, and outputs can vary. We can improve the quality
-              and availability of the signals they rely on, then measure
-              whether visibility changes.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              Is GEO just SEO with a new name?
-            </summary>
-
-            <p>
-              No — but there is significant overlap.
-              Technical search foundations still matter.
-              GEO adds the broader problem of entity clarity,
-              third-party corroboration, citation, answer quality
-              and recommendation behaviour.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              Which AI platforms do you test?
-            </summary>
-
-            <p>
-              We choose the platform mix based on the audience and category
-              rather than treating every AI product as equally important.
-              That may include ChatGPT, Gemini, Google AI experiences,
-              Perplexity, Copilot and others.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              How quickly can results change?
-            </summary>
-
-            <p>
-              It varies. Some changes can appear quickly in retrieval-driven
-              answers; others depend on crawling, source adoption,
-              model updates or a broader change in the public evidence
-              about your brand.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              Do we need schema, llms.txt or special “AI content”?
-            </summary>
-
-            <p>
-              Sometimes technical formats are useful, but none is a universal
-              shortcut. We start with the actual visibility problem,
-              the sources influencing answers and the quality of the evidence
-              before prescribing tactics.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              How do you measure GEO?
-            </summary>
-
-            <p>
-              With a repeatable prompt panel and separate metrics for coverage,
-              mentions, citations, recommendation, accuracy and — where
-              possible — qualified demand.
-            </p>
-          </details>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- FREE SNAPSHOT -->
-    <section class="snapshot" id="snapshot">
-      <div class="wrap snapshot-grid">
-
-        <div>
-          <div class="eyebrow">
-            Free mini benchmark
-          </div>
-
-          <h2 class="h2">
-            How visible is your brand to AI?
-          </h2>
-
-          <p class="lead">
-            Tell us who you are and who you compete with.
-            We’ll use a small representative prompt panel to give you an
-            initial view of where your brand appears, who gets recommended
-            instead and where the obvious gaps are.
-          </p>
-
-          <p class="small">
-            This is a diagnostic snapshot, not a substitute for the full audit.
-          </p>
-        </div>
-
-        <div class="form-card">
-
-          <h3 class="h3">
-            Request your AI Visibility Snapshot
-          </h3>
-
-          <form
-            class="form"
-            action="https://formspree.io/f/xwlpqagb"
-            method="POST"
-          >
-
-            <input
-              type="hidden"
-              name="lead_type"
-              value="AI Visibility Snapshot request"
-            >
-
-            <input
-              type="hidden"
-              name="source_page"
-              value="GEO landing page"
-            >
-
-            <div class="form-row">
-
-              <div class="field">
-                <label for="snap-name">
-                  Name
-                </label>
-
-                <input
-                  id="snap-name"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  required
-                >
-              </div>
-
-              <div class="field">
-                <label for="snap-email">
-                  Work email
-                </label>
-
-                <input
-                  id="snap-email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                >
-              </div>
-
-            </div>
-
-            <div class="field">
-              <label for="snap-org">
-                Organisation
-              </label>
-
-              <input
-                id="snap-org"
-                name="organisation"
-                type="text"
-                autocomplete="organization"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="snap-url">
-                Website
-              </label>
-
-              <input
-                id="snap-url"
-                name="website"
-                type="url"
-                placeholder="https://"
-                required
-              >
-            </div>
-
-            <div class="field">
-              <label for="snap-competitors">
-                Competitors
-              </label>
-
-              <input
-                id="snap-competitors"
-                name="competitors"
-                type="text"
-                placeholder="Up to three competitors"
-              >
-            </div>
-
-            <div class="field">
-              <label for="snap-question">
-                What would you most like to know?
-              </label>
-
-              <textarea
-                id="snap-question"
-                name="question"
-                placeholder="For example: why do competitors appear in recommendations when we don't?"
-              ></textarea>
-            </div>
-
-            <button
-              class="btn primary"
-              type="submit"
-            >
-              Request my snapshot <span>↗</span>
-            </button>
-
-            <p class="tiny">
-              We’ll use your details to prepare the snapshot and may
-              occasionally send relevant memery updates.
-            </p>
-
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PLAYBOOK -->
     <section id="guide" class="geo-guide-section">
+
       <div class="wrap">
 
         <div class="geo-guide-card">
@@ -2090,17 +2219,17 @@
               </li>
 
               <li>
-                Metrics for mentions, citations, recommendations
-                and factual accuracy.
+                Metrics for mentions, citations, recommendations and accuracy.
               </li>
 
               <li>
-                An AI visibility scorecard and practical first 90 days.
+                An AI visibility scorecard and practical action framework.
               </li>
 
             </ul>
 
           </div>
+
 
           <div class="geo-guide-download">
 
@@ -2116,7 +2245,7 @@
 
               <p>
                 The ideas should travel. The commercial conversation starts
-                when you want to understand how your own brand performs.
+                when you want to know how your own brand performs.
               </p>
 
             </div>
@@ -2134,182 +2263,653 @@
         </div>
 
       </div>
+
     </section>
 
 
-    <!-- FINAL CONTACT -->
-    <section class="final-cta" id="contact">
+    <!-- ======================================================
+         COMPREHENSIVE SEO / GEO / AEO FAQ
+         ====================================================== -->
+
+    <section class="faq-section" id="faq">
+
       <div class="wrap">
 
-        <div
-          class="eyebrow"
-          style="color:#4a281f;"
-        >
-          AI Visibility Audit
+        <div class="faq-intro">
+
+          <div class="eyebrow">
+            GEO + AEO FAQs
+          </div>
+
+          <h2 class="h2" style="margin-top:18px;">
+            Generative search questions, answered plainly.
+          </h2>
+
+          <p class="lead">
+            GEO terminology is moving quickly and not everyone uses the same
+            definitions. These are the questions we hear most often from
+            marketers trying to understand AI search visibility.
+          </p>
+
         </div>
 
-        <h2 class="h2">
-          When customers ask AI who to choose, do you make the shortlist?
-        </h2>
 
-        <p class="lead">
-          We’ll show you where your brand appears,
-          who gets recommended instead,
-          which sources influence the answer
-          and what you can do next.
-        </p>
+        <div class="faq-list">
 
-        <div
-          class="form-card"
-          style="margin-top:30px;max-width:820px;"
-        >
 
-          <h3 class="h3">
-            Start the conversation.
-          </h3>
+          <details>
 
-          <form
-            class="form"
-            action="https://formspree.io/f/xwlpqagb"
-            method="POST"
-          >
+            <summary>
+              What is Generative Engine Optimisation (GEO)?
+            </summary>
 
-            <input
-              type="hidden"
-              name="service"
-              value="Generative Engine Optimisation / AI Visibility Audit"
-            >
+            <div class="faq-answer">
 
-            <input
-              type="hidden"
-              name="source_page"
-              value="GEO landing page final CTA"
-            >
+              <p>
+                Generative Engine Optimisation is the practice of improving the
+                likelihood that generative AI systems can find, understand,
+                accurately represent, cite and recommend your organisation when
+                answering relevant questions.
+              </p>
 
-            <div class="form-row">
-
-              <div class="field">
-                <label for="contact-name">
-                  Name
-                </label>
-
-                <input
-                  id="contact-name"
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  required
-                >
-              </div>
-
-              <div class="field">
-                <label for="contact-email">
-                  Work email
-                </label>
-
-                <input
-                  id="contact-email"
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  required
-                >
-              </div>
+              <p>
+                GEO can involve technical SEO, content, entity clarity,
+                structured information, original evidence, digital PR,
+                third-party corroboration and ongoing measurement.
+              </p>
 
             </div>
 
-            <div class="form-row">
+          </details>
 
-              <div class="field">
-                <label for="contact-org">
-                  Organisation
-                </label>
 
-                <input
-                  id="contact-org"
-                  name="organisation"
-                  type="text"
-                  autocomplete="organization"
-                >
-              </div>
+          <details>
 
-              <div class="field">
-                <label for="contact-priority">
-                  What are you trying to understand?
-                </label>
+            <summary>
+              What is Answer Engine Optimisation (AEO)?
+            </summary>
 
-                <select
-                  id="contact-priority"
-                  name="priority"
-                >
-                  <option value="">
-                    Choose one
-                  </option>
+            <div class="faq-answer">
 
-                  <option>
-                    Whether we appear in AI recommendations
-                  </option>
+              <p>
+                Answer Engine Optimisation focuses on making information easy
+                for search engines and AI systems to extract and use as a
+                direct answer.
+              </p>
 
-                  <option>
-                    Why competitors appear instead of us
-                  </option>
-
-                  <option>
-                    Which sources influence AI answers
-                  </option>
-
-                  <option>
-                    Whether AI describes our brand accurately
-                  </option>
-
-                  <option>
-                    How to improve our GEO / AEO visibility
-                  </option>
-
-                  <option>
-                    We need a full AI Visibility Audit
-                  </option>
-                </select>
-              </div>
+              <p>
+                It usually emphasises clear question-led headings, concise
+                answers, useful supporting detail and machine-readable
+                structure.
+              </p>
 
             </div>
 
-            <div class="field">
-              <label for="contact-message">
-                Anything else we should know?
-              </label>
+          </details>
 
-              <textarea
-                id="contact-message"
-                name="message"
-                rows="5"
-                placeholder="Tell us about your category, competitors or the AI visibility problem you want to solve."
-              ></textarea>
+
+          <details>
+
+            <summary>
+              What is the difference between GEO, AEO and SEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                SEO traditionally focuses on earning visibility and clicks from
+                ranked search results. AEO focuses on becoming a useful direct
+                answer. GEO looks more broadly at whether generative systems
+                understand, cite, describe and recommend your organisation.
+              </p>
+
+              <p>
+                In practice there is considerable overlap. Good GEO normally
+                sits on top of good SEO rather than replacing it.
+              </p>
+
             </div>
 
-            <button
-              class="btn primary"
-              type="submit"
-            >
-              Get an AI Visibility Audit
-              <span>↗</span>
-            </button>
+          </details>
 
-            <p class="tiny">
-              We’ll use your details to respond to your enquiry.
-            </p>
 
-          </form>
+          <details>
+
+            <summary>
+              Is GEO the same thing as AI SEO or LLM SEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                These labels are often used to describe broadly similar work.
+                You may also see terms such as AI Search Optimisation, LLMO,
+                Generative Search Optimisation and Answer Engine Optimisation.
+              </p>
+
+              <p>
+                The terminology matters less than the underlying problem:
+                whether customers can discover your brand accurately when they
+                use AI to research, compare and make decisions.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does GEO replace traditional SEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                No. Search-engine fundamentals remain important because many AI
+                search experiences retrieve information from the public web.
+                Pages still need to be crawlable, indexable, authoritative and
+                genuinely useful.
+              </p>
+
+              <p>
+                GEO adds another layer: how your organisation is understood
+                across the broader information ecosystem and whether there is
+                enough credible evidence for an AI system to mention, cite or
+                recommend it.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Why does AI recommend my competitors instead of my business?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                There may be several reasons. A competitor may have clearer
+                category positioning, stronger content, more authoritative
+                third-party coverage, better review or directory presence,
+                more distinctive evidence, or simply more consistent public
+                information.
+              </p>
+
+              <p>
+                The useful question is not “how do we hack ChatGPT?” but
+                “what evidence is the system finding that makes another
+                organisation easier to recommend?”
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How do I get my business mentioned in ChatGPT?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                There is no guaranteed submission process for getting a brand
+                recommended by ChatGPT. The practical approach is to improve
+                the information environment around your organisation:
+                technically accessible pages, clear positioning, useful
+                answers, credible evidence and independent corroboration.
+              </p>
+
+              <p>
+                You then test relevant customer prompts repeatedly to see
+                whether representation changes.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How do I optimise for Gemini and Google AI Overviews?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Start with strong Google Search fundamentals. Google has said
+                that existing SEO best practices continue to apply to its AI
+                search features.
+              </p>
+
+              <p>
+                From there, focus on clear, useful and well-supported answers,
+                strong entity information and content that directly satisfies
+                the questions people are asking.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Can you optimise a website specifically for Claude, Grok or DeepSeek?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                You can improve the public information available to these
+                systems, but it would be misleading to promise a unique
+                guaranteed optimisation formula for an individual model.
+              </p>
+
+              <p>
+                Different products combine model knowledge, search, retrieval
+                and external sources differently. That is why we test the
+                platforms relevant to the audience rather than assuming one
+                tactic works identically everywhere.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              What content works best for GEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Useful GEO content tends to answer real questions clearly and
+                contain information worth using: original research, expert
+                knowledge, comparisons, definitions, evidence, case studies,
+                limitations, methodologies, prices where appropriate and
+                specific factual claims.
+              </p>
+
+              <p>
+                Generic keyword copy that merely repeats what every competitor
+                says gives an AI system very little reason to cite you.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Are FAQ pages good for GEO and AEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                They can be. A useful FAQ mirrors genuine customer questions
+                and provides clear, self-contained answers. That makes the
+                content easier for humans and machines to interpret.
+              </p>
+
+              <p>
+                An FAQ should not be created simply to stuff keywords onto a
+                page. The answers still need to be useful, accurate and
+                relevant.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does schema markup help GEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Structured data can help machines understand what a page and
+                its entities represent. Appropriate Organization, Product,
+                Service, Article, Person and other schema types may therefore
+                support clarity.
+              </p>
+
+              <p>
+                But schema should not be treated as a magic GEO ranking factor.
+                Adding markup does not guarantee that ChatGPT, Gemini or another
+                AI product will cite or recommend your organisation.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Do I need an llms.txt file?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Not necessarily. llms.txt is an emerging convention rather
+                than a universal requirement for appearing in AI answers.
+              </p>
+
+              <p>
+                It may prove useful in particular contexts, but it should not
+                distract from higher-value work such as crawlability, entity
+                clarity, useful content and credible external evidence.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Do backlinks still matter for GEO and AEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Links remain relevant to traditional search authority and can
+                also help content and brands become discoverable. But AI
+                visibility involves more than backlink counts.
+              </p>
+
+              <p>
+                A relevant article, independent comparison, industry citation,
+                expert reference, review or partner page may provide meaningful
+                corroborating information even when the value is not captured
+                by a conventional backlink metric.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Does digital PR help with GEO?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                It can. Genuine media coverage, expert commentary, independent
+                research and authoritative third-party references expand the
+                public evidence around a brand.
+              </p>
+
+              <p>
+                The objective should be credible corroboration, not mass
+                production of low-quality mentions designed to manipulate
+                AI systems.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Do reviews and directories affect AI recommendations?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                They can be relevant, particularly when customers are asking
+                comparative or local questions. AI systems may encounter
+                reviews, directories, marketplaces, industry sites and other
+                third-party sources when gathering evidence.
+              </p>
+
+              <p>
+                The importance of any source varies by category and platform,
+                which is why source analysis is part of an AI visibility audit.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Can GEO improve local search visibility?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                Yes, where AI is being used to answer local recommendation
+                questions such as “best accountant near me” or “which
+                restaurant should I choose in Brisbane?”
+              </p>
+
+              <p>
+                Local entity information, business profiles, reviews,
+                location-specific pages and independent local references may
+                all contribute to how a business is represented.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How do you measure GEO performance?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                There is no universally accepted single GEO ranking.
+                We prefer a panel of repeatable customer prompts and separate
+                measures for brand appearance, competitor visibility,
+                citations, recommendation rate, factual accuracy and the
+                sources used in answers.
+              </p>
+
+              <p>
+                Where possible, those measures should then be considered
+                alongside AI referral traffic, branded search, qualified leads
+                and commercial outcomes.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              What is an AI Visibility Audit?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                An AI Visibility Audit establishes how an organisation currently
+                appears when customers ask relevant questions across generative
+                search and AI assistants.
+              </p>
+
+              <p>
+                It can identify whether the brand appears, how it is described,
+                which competitors are recommended, what sources are being used,
+                where information is inaccurate and what opportunities deserve
+                investigation.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              How long does GEO take to work?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                There is no responsible universal answer. Some retrieval-driven
+                changes can surface relatively quickly, while other improvements
+                depend on crawling, source adoption, platform changes or the
+                gradual strengthening of third-party evidence.
+              </p>
+
+              <p>
+                GEO should therefore be treated as a measured test-and-learn
+                program rather than a promise to achieve a particular ranking
+                within a fixed number of weeks.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Can you guarantee first place in ChatGPT or Google AI?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                No. Any agency making that promise should be treated cautiously.
+                AI outputs can vary between users, prompts, sessions, models,
+                retrieval systems and time periods.
+              </p>
+
+              <p>
+                What can be done is to establish a baseline, improve the quality
+                and credibility of the information ecosystem around your brand,
+                and measure whether visibility and representation improve.
+              </p>
+
+            </div>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              Is GEO worth investing in yet?
+            </summary>
+
+            <div class="faq-answer">
+
+              <p>
+                That depends on your audience. The first question should be
+                whether customers in your category are using AI to research,
+                compare or shortlist providers.
+              </p>
+
+              <p>
+                That is why we start with a free visibility audit rather than
+                assuming every organisation immediately needs a large GEO
+                program.
+              </p>
+
+            </div>
+
+          </details>
 
         </div>
 
       </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FINAL CTA — SAME OFFER, NOT A SECOND PRODUCT
+         ====================================================== -->
+
+    <section class="final-cta">
+
+      <div class="wrap final-cta-grid">
+
+        <div>
+
+          <div class="eyebrow" style="color:#4a281f;">
+            Free AI Visibility Audit
+          </div>
+
+          <h2 class="h2">
+            When customers ask AI who to choose, do you make the shortlist?
+          </h2>
+
+          <p class="lead">
+            Find out where your brand appears, who gets recommended instead
+            and which sources are shaping the answer.
+          </p>
+
+        </div>
+
+        <div>
+          <a class="btn primary" href="#free-audit">
+            Get your free audit <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+
     </section>
 
   </main>
 
 
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
   <footer>
+
     <div class="wrap footer-row">
 
       <a
@@ -2325,6 +2925,7 @@
       </div>
 
     </div>
+
   </footer>
 
 
