@@ -1,1540 +1,427 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVLCQ9TYW9"></script>
-  <script>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PVLCQ9TYW9"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
     gtag('config', 'G-PVLCQ9TYW9');
   </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Marketing Playbooks &amp; Strategy | memery</title>
+<meta content="Memery helps marketing teams build practical AI playbooks, identify high-value use cases, improve AI readiness and turn experimentation into measurable marketing and business value." name="description"/>
+<meta content="#171b34" name="theme-color"/>
+<link href="site.css?v=20261006-3" rel="stylesheet"/>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<script defer="" src="menu.js"></script>
 
-  <title>AI Marketing Playbooks & Strategy | memery</title>
-  <meta name="description" content="Memery helps marketing teams build practical AI playbooks, identify high-value use cases, improve AI readiness and turn experimentation into measurable marketing and business value." />
-  <meta name="theme-color" content="#171b34" />
 
-  <link rel="stylesheet" href="site.css">
-  <link rel="stylesheet" href="components.css">
-  <script src="menu.js" defer></script>
 
-  <style>
-    :root{
-      --ai-teal:#12a99d;
-      --ai-teal-dark:#0f766e;
-      --ai-amber:#f6b44b;
-      --ai-paper:#fbf8f1;
-      --ai-navy:#171b34;
-      --ai-coral:#f7663f;
-      --ai-muted:#696b78;
-      --ai-line:rgba(23,27,52,.12);
-    }
-
-    .page-ai-marketing .hero{padding-bottom:72px}
-    .page-ai-marketing .hero-grid{align-items:center}
-
-    .ai-hero-panel{
-      position:relative;
-      min-height:520px;
-      border-radius:32px;
-      overflow:hidden;
-      background:
-        radial-gradient(circle at 30% 30%,rgba(247,102,63,.34),transparent 23%),
-        radial-gradient(circle at 70% 65%,rgba(18,169,157,.24),transparent 25%),
-        linear-gradient(145deg,#11162b,#232947 66%,#15192f);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 34px 90px rgba(8,11,24,.34);
-    }
-
-    .ai-hero-panel::before,
-    .ai-hero-panel::after{
-      content:"";
-      position:absolute;
-      border:1px solid rgba(255,255,255,.20);
-      border-radius:50%;
-      inset:12%;
-    }
-
-    .ai-hero-panel::after{
-      inset:26%;
-      border-color:rgba(247,102,63,.42);
-    }
-
-    .ai-hero-core{
-      position:absolute;
-      width:104px;
-      height:104px;
-      border-radius:26px;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%) rotate(9deg);
-      background:var(--ai-coral);
-      box-shadow:0 20px 60px rgba(247,102,63,.42);
-    }
-
-    .ai-hero-node{
-      position:absolute;
-      width:17px;
-      height:17px;
-      border-radius:50%;
-      background:var(--ai-teal);
-      box-shadow:0 0 0 8px rgba(18,169,157,.12);
-    }
-
-    .ai-hero-node.n1{left:18%;top:30%}
-    .ai-hero-node.n2{right:15%;top:42%;background:var(--ai-amber)}
-    .ai-hero-node.n3{left:30%;bottom:16%;background:#fff}
-    .ai-hero-node.n4{right:28%;bottom:20%;background:var(--ai-coral)}
-
-    .hero-thesis{
-      position:absolute;
-      left:28px;
-      right:28px;
-      bottom:28px;
-      padding:20px 22px;
-      border-radius:20px;
-      background:rgba(251,248,241,.94);
-      color:var(--ai-navy);
-      box-shadow:0 16px 44px rgba(0,0,0,.20);
-    }
-
-    .hero-thesis strong{display:block;font-size:1rem;margin-bottom:5px}
-    .hero-thesis span{display:block;font-size:.92rem;line-height:1.45}
-
-    .hero-actions.triple{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-actions.triple .btn{margin:0}
-
-    .proof-strip{
-      border-top:1px solid var(--ai-line);
-      border-bottom:1px solid var(--ai-line);
-      background:#fff;
-    }
-
-    .proof-strip-grid{
-      display:grid;
-      grid-template-columns:1.5fr repeat(3,1fr);
-      gap:1px;
-      background:var(--ai-line);
-    }
-
-    .proof-strip-grid > div{
-      background:#fff;
-      padding:30px 28px;
-    }
-
-    .proof-strip-copy strong{
-      display:block;
-      font-size:1.22rem;
-      letter-spacing:-.02em;
-    }
-
-    .proof-strip-copy p{margin:8px 0 0;color:var(--ai-muted)}
-
-    .proof-stat strong{
-      display:block;
-      font-size:2.5rem;
-      line-height:.9;
-      letter-spacing:-.06em;
-      color:var(--ai-navy);
-    }
-
-    .proof-stat span{
-      display:block;
-      margin-top:8px;
-      color:var(--ai-muted);
-      font-size:.9rem;
-      line-height:1.35;
-    }
-
-    .section-intro{max-width:760px}
-    .section-intro .lead{max-width:680px}
-
-    .quiz-section{background:var(--ai-paper)}
-    .quiz-shell{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:38px;
-      align-items:start;
-    }
-
-    .quiz-aside{
-      position:sticky;
-      top:110px;
-      padding:30px;
-      border-radius:28px;
-      background:var(--ai-navy);
-      color:#fff;
-    }
-
-    .quiz-aside .eyebrow{color:rgba(255,255,255,.65)}
-    .quiz-aside h2{color:#fff}
-    .quiz-aside p{color:rgba(255,255,255,.74)}
-    .quiz-score-mini{
-      margin-top:24px;
-      padding-top:20px;
-      border-top:1px solid rgba(255,255,255,.15);
-      font-size:.88rem;
-      line-height:1.5;
-    }
-
-    .quiz-card{
-      padding:30px;
-      border:1px solid var(--ai-line);
-      border-radius:28px;
-      background:#fff;
-      box-shadow:0 20px 50px rgba(23,27,52,.06);
-    }
-
-    .quiz-progress{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:22px;
-      color:var(--ai-muted);
-      font-size:.86rem;
-    }
-
-    .quiz-progress-bar{
-      flex:1;
-      height:8px;
-      border-radius:999px;
-      overflow:hidden;
-      background:#eee9df;
-    }
-
-    .quiz-progress-fill{
-      height:100%;
-      width:10%;
-      background:var(--ai-coral);
-      border-radius:inherit;
-      transition:width .25s ease;
-    }
-
-    .quiz-question h3{
-      margin:0 0 20px;
-      font-size:1.4rem;
-      line-height:1.16;
-      letter-spacing:-.03em;
-    }
-
-    .quiz-options{display:grid;gap:10px}
-    .quiz-option{
-      width:100%;
-      text-align:left;
-      border:1px solid var(--ai-line);
-      background:#fff;
-      border-radius:16px;
-      padding:15px 16px;
-      cursor:pointer;
-      color:var(--ai-navy);
-      font:inherit;
-      transition:.18s ease;
-    }
-
-    .quiz-option:hover{
-      border-color:rgba(247,102,63,.7);
-      transform:translateY(-1px);
-    }
-
-    .quiz-option.selected{
-      border-color:var(--ai-coral);
-      background:rgba(247,102,63,.07);
-      box-shadow:inset 0 0 0 1px rgba(247,102,63,.18);
-    }
-
-    .quiz-nav{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:22px;
-    }
-
-    .quiz-result{display:none}
-    .quiz-result.show{display:block}
-    .quiz-result-score{
-      font-size:4rem;
-      line-height:.9;
-      letter-spacing:-.07em;
-      font-weight:900;
-      color:var(--ai-coral);
-      margin:16px 0 10px;
-    }
-
-    .quiz-result h3{font-size:1.65rem;margin:0 0 8px}
-    .quiz-result p{color:var(--ai-muted)}
-    .quiz-recos{
-      display:grid;
-      gap:10px;
-      margin:22px 0;
-    }
-
-    .quiz-reco{
-      padding:14px 16px;
-      border-radius:14px;
-      background:var(--ai-paper);
-      border:1px solid rgba(23,27,52,.08);
-    }
-
-    .maturity-section{background:#fff}
-    .maturity-bar{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border:1px solid var(--ai-line);
-      border-radius:26px;
-      overflow:hidden;
-      margin-top:30px;
-    }
-
-    .maturity-step{
-      padding:26px;
-      min-height:190px;
-      border-right:1px solid var(--ai-line);
-      position:relative;
-    }
-
-    .maturity-step:last-child{border-right:0}
-    .maturity-step .num{color:var(--ai-coral);font-weight:850;font-size:.82rem}
-    .maturity-step h3{margin:34px 0 10px;font-size:1.25rem}
-    .maturity-step p{margin:0;color:var(--ai-muted);font-size:.92rem;line-height:1.5}
-    .maturity-step.active{
-      background:var(--ai-navy);
-      color:#fff;
-    }
-    .maturity-step.active p{color:rgba(255,255,255,.72)}
-    .maturity-step.active .num{color:var(--ai-amber)}
-
-    .playbook-product{background:var(--ai-navy);color:#fff}
-    .playbook-product .eyebrow{color:rgba(255,255,255,.62)}
-    .playbook-product .h2{color:#fff}
-    .playbook-product .lead{color:rgba(255,255,255,.72)}
-    .playbook-product-grid{
-      display:grid;
-      grid-template-columns:.92fr 1.08fr;
-      gap:44px;
-      align-items:center;
-    }
-
-    .playbook-mock{
-      border-radius:30px;
-      padding:28px;
-      background:linear-gradient(145deg,#fbf8f1,#ece5d9);
-      color:var(--ai-navy);
-      box-shadow:0 30px 80px rgba(0,0,0,.30);
-      transform:rotate(-2deg);
-    }
-
-    .playbook-mock-top{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      align-items:start;
-      padding-bottom:20px;
-      border-bottom:1px solid rgba(23,27,52,.13);
-    }
-
-    .playbook-mock-mark{
-      font-weight:900;
-      letter-spacing:-.04em;
-      font-size:1.3rem;
-    }
-
-    .playbook-mock h3{
-      font-size:2rem;
-      margin:36px 0 18px;
-      line-height:1.05;
-      letter-spacing:-.05em;
-    }
-
-    .playbook-mock-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-
-    .playbook-mock-grid div{
-      padding:14px;
-      background:#fff;
-      border-radius:14px;
-      font-size:.86rem;
-      font-weight:750;
-      border:1px solid rgba(23,27,52,.08);
-    }
-
-    .deliverables{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:28px;
-    }
-
-    .deliverable{
-      padding:18px;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.13);
-      background:rgba(255,255,255,.04);
-    }
-
-    .deliverable strong{display:block;margin-bottom:6px;color:#fff}
-    .deliverable span{font-size:.88rem;color:rgba(255,255,255,.66);line-height:1.45}
-
-    .jobs-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      margin-top:30px;
-    }
-
-    .job-card{
-      padding:24px;
-      min-height:230px;
-      border:1px solid var(--ai-line);
-      border-radius:22px;
-      background:#fff;
-    }
-
-    .job-card .job-verb{
-      display:inline-flex;
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(18,169,157,.10);
-      color:var(--ai-teal-dark);
-      font-weight:850;
-      font-size:.78rem;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-    }
-
-    .job-card h3{margin:22px 0 10px}
-    .job-card p{margin:0;color:var(--ai-muted);line-height:1.52}
-
-    .cases-section{background:var(--ai-paper)}
-    .cases-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-      margin-top:30px;
-    }
-
-    .case-card{
-      background:#fff;
-      border:1px solid var(--ai-line);
-      border-radius:22px;
-      padding:22px;
-      min-height:250px;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .case-card .evidence{
-      display:inline-block;
-      align-self:flex-start;
-      padding:5px 8px;
-      border-radius:999px;
-      font-size:.72rem;
-      font-weight:850;
-      background:#eef5ef;
-      color:#2f6b44;
-    }
-
-    .case-card.evidence-b .evidence{background:#fff4dc;color:#8b5b00}
-    .case-card h3{font-size:1.08rem;margin:18px 0 8px}
-    .case-card .case-result{
-      font-size:1.7rem;
-      letter-spacing:-.04em;
-      font-weight:900;
-      margin:auto 0 6px;
-    }
-    .case-card p{margin:0;color:var(--ai-muted);font-size:.88rem;line-height:1.45}
-
-    .guide-gate{background:#fff}
-    .guide-gate-grid{
-      display:grid;
-      grid-template-columns:.72fr 1.28fr;
-      gap:42px;
-      align-items:center;
-    }
-
-    .guide-cover-wrap{
-      position:relative;
-      max-width:420px;
-      margin:auto;
-    }
-
-    .guide-cover-wrap::before{
-      content:"";
-      position:absolute;
-      inset:16px -18px -18px 18px;
-      border-radius:20px;
-      background:var(--ai-teal);
-      opacity:.18;
-    }
-
-    .guide-cover{
-      position:relative;
-      width:100%;
-      display:block;
-      border-radius:16px;
-      box-shadow:0 28px 70px rgba(23,27,52,.20);
-      border:1px solid rgba(23,27,52,.10);
-    }
-
-    .guide-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:9px;
-      margin:20px 0 0;
-    }
-
-    .guide-meta span{
-      padding:7px 10px;
-      border-radius:999px;
-      background:var(--ai-paper);
-      border:1px solid rgba(23,27,52,.08);
-      font-size:.78rem;
-      font-weight:750;
-    }
-
-    .lead-form{
-      margin-top:24px;
-      padding:24px;
-      border:1px solid var(--ai-line);
-      border-radius:22px;
-      background:var(--ai-paper);
-    }
-
-    .lead-form .form-row{margin-bottom:12px}
-    .guide-status{display:none;margin-top:12px;font-size:.9rem}
-    .guide-status.show{display:block}
-    .guide-status.error{color:#a73024}
-
-    .anti-theatre{
-      background:linear-gradient(135deg,#f7f0e6,#fff);
-    }
-
-    .anti-grid{
-      display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      gap:42px;
-      align-items:start;
-    }
-
-    .anti-list{
-      display:grid;
-      gap:12px;
-    }
-
-    .anti-item{
-      padding:18px 20px;
-      border-radius:18px;
-      border:1px solid var(--ai-line);
-      background:#fff;
-      display:grid;
-      grid-template-columns:28px 1fr;
-      gap:12px;
-      align-items:start;
-    }
-
-    .anti-x{
-      width:28px;height:28px;border-radius:50%;
-      display:grid;place-items:center;
-      background:rgba(247,102,63,.10);
-      color:var(--ai-coral);
-      font-weight:900;
-    }
-
-    .anti-item strong{display:block;margin-bottom:4px}
-    .anti-item span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
-
-    .engagement{
-      background:#fff;
-    }
-
-    .engagement-steps{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-      margin-top:30px;
-    }
-
-    .engagement-step{
-      padding:24px;
-      border-radius:22px;
-      background:var(--ai-paper);
-      border:1px solid rgba(23,27,52,.08);
-    }
-
-    .engagement-step .num{color:var(--ai-coral);font-size:.8rem;font-weight:900}
-    .engagement-step h3{margin:24px 0 8px;font-size:1.14rem}
-    .engagement-step p{margin:0;color:var(--ai-muted);font-size:.9rem;line-height:1.48}
-
-    .founder-strip{
-      background:var(--ai-navy);
-      color:#fff;
-    }
-
-    .founder-grid{
-      display:grid;
-      grid-template-columns:.75fr 1.25fr;
-      gap:40px;
-      align-items:center;
-    }
-
-    .founder-badge{
-      min-height:300px;
-      border-radius:30px;
-      padding:30px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      background:
-        radial-gradient(circle at 30% 25%,rgba(18,169,157,.38),transparent 30%),
-        radial-gradient(circle at 75% 38%,rgba(247,102,63,.38),transparent 27%),
-        #232947;
-      border:1px solid rgba(255,255,255,.12);
-    }
-
-    .founder-badge .mark{
-      font-size:3rem;
-      letter-spacing:-.08em;
-      font-weight:900;
-    }
-
-    .founder-strip .eyebrow{color:rgba(255,255,255,.6)}
-    .founder-strip .h2{color:#fff}
-    .founder-strip p{color:rgba(255,255,255,.72)}
-
-    .credential-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:20px;
-    }
-
-    .credential-row span{
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      font-size:.8rem;
-      color:#fff;
-    }
-
-    .faq-list{
-      max-width:900px;
-      margin:30px auto 0;
-      display:grid;
-      gap:10px;
-    }
-
-    .faq-list details{
-      border:1px solid var(--ai-line);
-      border-radius:18px;
-      padding:0 20px;
-      background:#fff;
-    }
-
-    .faq-list summary{
-      cursor:pointer;
-      font-weight:820;
-      padding:18px 0;
-      list-style:none;
-      position:relative;
-      padding-right:28px;
-    }
-
-    .faq-list summary::-webkit-details-marker{display:none}
-    .faq-list summary::after{
-      content:"+";
-      position:absolute;
-      right:0;
-      top:15px;
-      font-size:1.35rem;
-      color:var(--ai-coral);
-    }
-
-    .faq-list details[open] summary::after{content:"–"}
-    .faq-list details p{margin:0 0 18px;color:var(--ai-muted);line-height:1.58}
-
-    .final-cta{background:var(--ai-coral);color:#fff}
-    .final-cta .eyebrow{color:rgba(255,255,255,.72)}
-    .final-cta .h2{color:#fff}
-    .final-cta .lead{color:rgba(255,255,255,.86)}
-    .final-cta .btn.primary{background:#fff;color:var(--ai-navy)}
-    .final-cta .btn.secondary{border-color:rgba(255,255,255,.55);color:#fff}
-
-    @media (max-width:980px){
-      .proof-strip-grid,
-      .quiz-shell,
-      .playbook-product-grid,
-      .guide-gate-grid,
-      .anti-grid,
-      .founder-grid{grid-template-columns:1fr}
-
-      .proof-strip-grid{background:#fff}
-      .proof-strip-grid > div{border-bottom:1px solid var(--ai-line)}
-      .quiz-aside{position:static}
-      .cases-grid{grid-template-columns:1fr 1fr}
-      .jobs-grid{grid-template-columns:1fr 1fr}
-      .engagement-steps{grid-template-columns:1fr 1fr}
-      .maturity-bar{grid-template-columns:1fr 1fr}
-      .maturity-step:nth-child(2){border-right:0}
-      .maturity-step{border-bottom:1px solid var(--ai-line)}
-      .maturity-step:nth-child(3),
-      .maturity-step:nth-child(4){border-bottom:0}
-    }
-
-    @media (max-width:680px){
-      .ai-hero-panel{min-height:390px}
-      .hero-thesis{left:18px;right:18px;bottom:18px}
-      .cases-grid,
-      .jobs-grid,
-      .engagement-steps,
-      .deliverables,
-      .playbook-mock-grid,
-      .maturity-bar{grid-template-columns:1fr}
-      .maturity-step{border-right:0;border-bottom:1px solid var(--ai-line)!important}
-      .maturity-step:last-child{border-bottom:0!important}
-      .quiz-card,.quiz-aside{padding:22px}
-      .guide-gate-grid{gap:28px}
-      .proof-stat strong{font-size:2rem}
-    }
-  </style>
-
-
-  <style>
-    /* Fix: AI Marketing Playbook deliverable cards */
-    .playbook-product .deliverables .deliverable{
-      background:rgba(255,255,255,.07) !important;
-      border:1px solid rgba(255,255,255,.16) !important;
-      color:#fff !important;
-      box-shadow:none !important;
-    }
-
-    .playbook-product .deliverables .deliverable strong{
-      display:block;
-      color:#fff !important;
-      opacity:1 !important;
-      visibility:visible !important;
-      font-weight:850 !important;
-    }
-
-    .playbook-product .deliverables .deliverable span{
-      display:block;
-      color:rgba(255,255,255,.72) !important;
-      opacity:1 !important;
-      visibility:visible !important;
-    }
-  </style>
-
-
-<style>
-  /* AI landing page v6 */
-  .page-ai-marketing .hero-grid{
-    grid-template-columns:minmax(0,860px);
-    justify-content:start;
-  }
-  .page-ai-marketing .hero .lead{max-width:760px}
-  .page-ai-marketing .hero-actions{margin-top:28px}
-  .page-ai-marketing .hero{padding-bottom:64px}
-
-  .offer-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:44px;
-    align-items:start;
-  }
-
-  .offer-card{
-    background:var(--ai-navy);
-    color:#fff;
-    border-radius:30px;
-    padding:34px;
-    box-shadow:0 28px 70px rgba(23,27,52,.16);
-  }
-  .offer-card .eyebrow{color:rgba(255,255,255,.58)}
-  .offer-card h3{
-    margin:16px 0 10px;
-    color:#fff;
-    font-size:1.9rem;
-    line-height:1.05;
-    letter-spacing:-.04em;
-  }
-  .offer-card p{color:rgba(255,255,255,.72)}
-  .offer-list{display:grid;gap:10px;margin:22px 0 0}
-  .offer-list div{
-    padding:13px 14px;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.05);
-    border-radius:14px;
-    color:#fff;
-    font-size:.92rem;
-  }
-
-  .uses-section{background:var(--ai-paper)}
-  .uses-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:16px;
-    margin-top:30px;
-  }
-  .use-card{
-    background:#fff;
-    border:1px solid var(--ai-line);
-    border-radius:22px;
-    padding:24px;
-    min-height:230px;
-  }
-  .use-card .kicker{
-    display:inline-flex;
-    padding:6px 9px;
-    border-radius:999px;
-    background:rgba(18,169,157,.10);
-    color:var(--ai-teal-dark);
-    font-weight:850;
-    font-size:.76rem;
-    letter-spacing:.05em;
-    text-transform:uppercase;
-  }
-  .use-card h3{margin:20px 0 10px;font-size:1.18rem}
-  .use-card p{margin:0;color:var(--ai-muted);line-height:1.5}
-
-  .research-section{background:#fff}
-  .research-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:start;
-  }
-  .research-points{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:26px;
-  }
-  .research-point{
-    padding:20px;
-    border:1px solid var(--ai-line);
-    border-radius:18px;
-    background:var(--ai-paper);
-  }
-  .research-point strong{
-    display:block;
-    font-size:1.45rem;
-    line-height:1;
-    letter-spacing:-.04em;
-    color:var(--ai-navy);
-    margin-bottom:9px;
-  }
-  .research-point span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
-
-  .guide-panel{
-    border-radius:30px;
-    padding:28px;
-    background:var(--ai-navy);
-    color:#fff;
-  }
-  .guide-panel .guide-cover{
-    width:100%;
-    max-width:390px;
-    margin:0 auto 24px;
-    display:block;
-    border-radius:15px;
-    box-shadow:0 25px 70px rgba(0,0,0,.32);
-  }
-  .guide-panel h3{color:#fff;font-size:1.65rem;margin:0 0 10px}
-  .guide-panel p{color:rgba(255,255,255,.72)}
-  .guide-panel .field label{color:#fff}
-  .guide-panel .tiny{color:rgba(255,255,255,.60)}
-
-  .quiz-section{background:var(--ai-paper)}
-
-  .why-section{background:#fff}
-  .why-grid{
-    display:grid;
-    grid-template-columns:.82fr 1.18fr;
-    gap:44px;
-    align-items:start;
-  }
-  .experience-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-  }
-  .experience-card{
-    border:1px solid var(--ai-line);
-    border-radius:20px;
-    padding:22px;
-    background:var(--ai-paper);
-  }
-  .experience-card strong{display:block;margin-bottom:7px}
-  .experience-card span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
-
-  .case-study-section{background:var(--ai-navy);color:#fff}
-  .case-study-section .eyebrow{color:rgba(255,255,255,.60)}
-  .case-study-section .h2{color:#fff}
-  .case-study-section .lead{color:rgba(255,255,255,.74)}
-  .case-study-grid{
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:42px;
-    align-items:start;
-  }
-  .case-study-results{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-  }
-  .case-study-result{
-    padding:20px;
-    border-radius:18px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.12);
-  }
-  .case-study-result strong{display:block;color:#fff;margin-bottom:6px}
-  .case-study-result span{color:rgba(255,255,255,.70);font-size:.9rem;line-height:1.45}
-  .case-study-note{
-    margin-top:16px;
-    color:rgba(255,255,255,.54);
-    font-size:.78rem;
-  }
-
-  .faq-section{background:var(--ai-paper)}
-
-  @media(max-width:980px){
-    .offer-grid,.research-grid,.why-grid,.case-study-grid{grid-template-columns:1fr}
-    .uses-grid{grid-template-columns:1fr 1fr}
-  }
-  @media(max-width:680px){
-    .uses-grid,.research-points,.experience-grid,.case-study-results{grid-template-columns:1fr}
-  }
-</style>
-
-
-<style>
-  /* Verified update: hero visual, Spare Keys case study and final CTA */
-  .page-ai-marketing .hero-grid{
-    grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);
-    gap:42px;
-    align-items:center;
-  }
-
-  .hero-visual{
-    position:relative;
-    min-height:560px;
-    border-radius:34px;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(190,255,70,.22), transparent 22%),
-      radial-gradient(circle at 80% 28%, rgba(63,92,255,.20), transparent 26%),
-      radial-gradient(circle at 60% 72%, rgba(247,102,63,.16), transparent 22%),
-      linear-gradient(145deg, #f7f4ee 0%, #efe9df 100%);
-    border:1px solid rgba(23,27,52,.08);
-    box-shadow:0 28px 70px rgba(23,27,52,.12);
-  }
-
-  .hero-visual::after{
-    content:"";
-    position:absolute;
-    inset:22px;
-    border-radius:28px;
-    border:1px solid rgba(23,27,52,.08);
-    pointer-events:none;
-  }
-
-  .hero-floating{
-    position:absolute;
-    border-radius:26px;
-    background:#fff;
-    box-shadow:0 26px 60px rgba(23,27,52,.14);
-    border:1px solid rgba(23,27,52,.08);
-  }
-
-  .hero-floating.card-main{
-    left:34px;
-    top:38px;
-    width:300px;
-    padding:26px;
-    background:#171b34;
-    color:#fff;
-  }
-
-  .hero-floating.card-main .eyebrow{color:rgba(255,255,255,.56);margin-bottom:16px}
-  .hero-floating.card-main h3{margin:0 0 10px;color:#fff;font-size:1.75rem;line-height:1.02;letter-spacing:-.04em}
-  .hero-floating.card-main p{margin:0;color:rgba(255,255,255,.74);font-size:.95rem;line-height:1.48}
-
-  .hero-floating.steps{
-    right:36px;
-    top:74px;
-    width:240px;
-    padding:22px;
-    transform:rotate(4deg);
-  }
-
-  .hero-step{
-    padding:11px 12px;
-    border-radius:14px;
-    background:var(--ai-paper);
-    border:1px solid rgba(23,27,52,.08);
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    align-items:center;
-    margin-bottom:10px;
-    font-size:.86rem;
-    font-weight:760;
-    color:var(--ai-navy);
-  }
-  .hero-step:last-child{margin-bottom:0}
-  .hero-step span:first-child{
-    display:inline-flex;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    align-items:center;
-    justify-content:center;
-    background:#fff;
-    border:1px solid rgba(23,27,52,.08);
-    font-size:.75rem;
-    font-weight:900;
-  }
-
-  .hero-floating.stats{
-    left:66px;
-    bottom:54px;
-    width:250px;
-    padding:22px;
-    transform:rotate(-5deg);
-  }
-
-  .hero-stat{display:grid;gap:4px;margin-bottom:16px}
-  .hero-stat:last-child{margin-bottom:0}
-  .hero-stat strong{font-size:2rem;line-height:.9;letter-spacing:-.05em;color:var(--ai-navy)}
-  .hero-stat span{color:var(--ai-muted);font-size:.88rem;line-height:1.45}
-
-  .hero-floating.cover{
-    right:68px;
-    bottom:40px;
-    width:230px;
-    padding:12px;
-    transform:rotate(8deg);
-    background:#fff;
-  }
-  .hero-floating.cover img{display:block;width:100%;border-radius:14px;box-shadow:0 18px 40px rgba(23,27,52,.18)}
-
-  .offer-card .hero-actions .btn.primary{width:100%;justify-content:center}
-  .uses-grid{grid-template-columns:repeat(4,1fr)}
-
-  .case-study-media{
-    margin-top:26px;
-    border-radius:24px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 24px 60px rgba(0,0,0,.22);
-  }
-  .case-study-media img{display:block;width:100%;height:auto}
-
-  .final-cta{background:#171b34 !important;color:#fff !important}
-  .final-cta .eyebrow{color:rgba(255,255,255,.62) !important}
-  .final-cta .h2{color:#fff !important}
-  .final-cta .lead,.final-cta p{color:rgba(255,255,255,.82) !important}
-  .final-cta .form-card{background:#fff}
-  .final-cta .form-card h3,.final-cta .form-card label{color:#171b34}
-  .final-cta .btn.primary{background:var(--ai-coral);color:#fff}
-
-  @media(max-width:1100px){
-    .page-ai-marketing .hero-grid{grid-template-columns:1fr}
-    .hero-visual{min-height:500px}
-    .uses-grid{grid-template-columns:repeat(2,1fr)}
-  }
-
-  @media(max-width:680px){
-    .hero-visual{min-height:460px}
-    .hero-floating.card-main{left:22px;top:22px;width:calc(100% - 44px)}
-    .hero-floating.steps{right:18px;top:auto;bottom:126px;width:208px}
-    .hero-floating.stats{left:18px;bottom:18px;width:188px}
-    .hero-floating.cover{display:none}
-    .uses-grid{grid-template-columns:1fr}
-  }
-</style>
 
 </head>
-
 <body class="page-ai-marketing">
-
-  <div id="site-header"></div>
-
+<div id="site-header"></div>
 <main id="top">
-
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <div class="eyebrow">AI strategy for marketing teams</div>
-        <h1 class="display">Build an AI-native marketing function.</h1>
-        <p class="lead">
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="reveal">
+<div class="eyebrow">AI strategy for marketing teams</div>
+<h1 class="display">Build an AI-native marketing function.</h1>
+<p class="lead">
           Most marketing teams are already using AI. Very few have redesigned how their marketing function actually works.
           memery helps teams turn scattered experimentation into a practical operating model: where AI can create value,
           what should stay human, how it should be governed, and what to implement next.
         </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#playbook">
+<div class="hero-actions">
+<a class="btn primary" href="#playbook">
             Get a customer AI playbook for your organisation <span class="arrow">↗</span>
-          </a>
-          <a class="btn secondary" href="#readiness">Take the AI readiness test</a>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal" aria-hidden="true">
-        <div class="hero-floating card-main">
-          <div class="eyebrow">AI marketing playbook</div>
-          <h3>From experiments to an operating model.</h3>
-          <p>Prioritise use cases, define guardrails, redesign workflows and build a roadmap your team can actually use.</p>
-        </div>
-
-        <div class="hero-floating steps">
-          <div class="hero-step"><span>01</span><span>Diagnose</span></div>
-          <div class="hero-step"><span>02</span><span>Prioritise</span></div>
-          <div class="hero-step"><span>03</span><span>Govern</span></div>
-          <div class="hero-step"><span>04</span><span>Implement</span></div>
-        </div>
-
-        <div class="hero-floating stats">
-          <div class="hero-stat">
-            <strong>40</strong>
-            <span>real case studies reviewed across enterprises, social enterprises and small businesses.</span>
-          </div>
-          <div class="hero-stat">
-            <strong>7</strong>
-            <span>practical areas where marketers are using AI to create business value.</span>
-          </div>
-        </div>
-
-        <div class="hero-floating cover">
-          <img src="memery-ai-case-studies-cover-website.png" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="playbook">
-    <div class="wrap offer-grid">
-      <div class="reveal">
-        <div class="eyebrow">What we do</div>
-        <h2 class="h2" style="margin-top:18px;">We help marketing teams turn AI into an operating model.</h2>
-        <p class="lead">
+</a>
+<a class="btn secondary" href="#readiness">Take the AI readiness test</a>
+</div>
+</div>
+<div class="ai-native-hero-visual reveal"><img alt="AI-native marketing team collaborating with AI assistants across research, content, optimisation and measurement." height="1199" src="ai-native-marketing-team.png" width="1312"/></div>
+</div>
+</section>
+<section id="playbook">
+<div class="wrap offer-grid">
+<div class="reveal">
+<div class="eyebrow">What we do</div>
+<h2 class="h2 mt-18">We help marketing teams turn AI into an operating model.</h2>
+<p class="lead">
           The problem usually isn’t access to AI. It is deciding where it genuinely belongs in marketing,
           which use cases are worth backing, what data and guardrails are required, and how the team should work differently.
         </p>
-        <p>
+<p>
           We work with organisations to diagnose the opportunity, identify and prioritise use cases,
           design governance and workflows, build capability, and turn that into a practical implementation roadmap.
         </p>
-      </div>
-
-      <div class="offer-card reveal">
-        <div class="eyebrow">Your AI Marketing Playbook</div>
-        <h3>A practical plan built around your organisation.</h3>
-        <p>
+</div>
+<div class="offer-card reveal">
+<div class="eyebrow">Your AI Marketing Playbook</div>
+<h3>A practical plan built around your organisation.</h3>
+<p>
           Not a generic trends deck and not a prompt library. We create a bespoke playbook around your customers,
           marketing model, technology, data, risk environment and commercial priorities.
         </p>
-        <div class="offer-list">
-          <div>AI maturity and readiness assessment</div>
-          <div>Prioritised marketing use-case portfolio</div>
-          <div>Governance, data and human-control rules</div>
-          <div>Workflow, automation and agent opportunities</div>
-          <div>Capability and operating-model recommendations</div>
-          <div>90-day pilot and implementation roadmap</div>
-        </div>
-        <div class="hero-actions" style="margin-top:24px;">
-          <a class="btn primary" href="#contact">Get a customer AI playbook for your organisation <span class="arrow">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="uses-section" id="uses">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">How marketers are actually using AI</div>
-        <div class="section-intro">
-          <h2 class="h2">The opportunity is much bigger than faster copy.</h2>
-          <p class="lead">
+<div class="offer-list">
+<div>AI maturity and readiness assessment</div>
+<div>Prioritised marketing use-case portfolio</div>
+<div>Governance, data and human-control rules</div>
+<div>Workflow, automation and agent opportunities</div>
+<div>Capability and operating-model recommendations</div>
+<div>90-day pilot and implementation roadmap</div>
+</div>
+<div class="hero-actions mt-24">
+<a class="btn primary" href="#contact">Get a customer AI playbook for your organisation <span class="arrow">↗</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="uses-section" id="uses">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="eyebrow">How marketers are actually using AI</div>
+<div class="section-intro">
+<h2 class="h2">The opportunity is much bigger than faster copy.</h2>
+<p class="lead">
             Across the 40 case studies we reviewed, the strongest applications fall into seven practical areas —
             from production and personalisation to measurement, discovery and AI-assisted selling.
           </p>
-        </div>
-      </div>
-
-      <div class="uses-grid">
-        <article class="use-card reveal">
-          <span class="kicker">01</span>
-          <h3>Build content engines</h3>
-          <p>Generate, localise and adapt high-volume content inside approved brand assets, review gates and claims rules.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">02</span>
-          <h3>Personalise performance</h3>
-          <p>Use AI to choose audiences, bids, creative, offers and messages — then prove incremental lift rather than trusting the dashboard.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">03</span>
-          <h3>Make next-best decisions</h3>
-          <p>Move from fixed journeys and broad segments towards decisions about the best message, offer, timing or action for each customer.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">04</span>
-          <h3>Win the new discovery layer</h3>
-          <p>Improve the likelihood that ChatGPT, Gemini, Claude, Perplexity and AI-powered search systems can understand, cite and recommend you.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">05</span>
-          <h3>Make insight always-on</h3>
-          <p>Compress research synthesis, increase measurement cadence and connect customer evidence to faster marketing decisions.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">06</span>
-          <h3>Build agents around workflows</h3>
-          <p>Connect repeatable tasks to real systems, approved knowledge, explicit checkpoints and accountable human owners.</p>
-        </article>
-        <article class="use-card reveal">
-          <span class="kicker">07</span>
-          <h3>Buy capability without another salary</h3>
-          <p>For smaller businesses, AI can provide the equivalent of extra marketing, CRM, research, content or development capability without enterprise infrastructure.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="research-section" id="research">
-    <div class="wrap research-grid">
-      <div class="reveal">
-        <div class="eyebrow">What 40 real case studies tell us</div>
-        <h2 class="h2" style="margin-top:18px;">The winners start with a bottleneck, not a tool.</h2>
-        <p class="lead">
+</div>
+</div>
+<div class="uses-grid">
+<article class="use-card reveal">
+<span class="kicker">01</span>
+<h3>Build content engines</h3>
+<p>Generate, localise and adapt high-volume content inside approved brand assets, review gates and claims rules.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">02</span>
+<h3>Personalise performance</h3>
+<p>Use AI to choose audiences, bids, creative, offers and messages — then prove incremental lift rather than trusting the dashboard.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">03</span>
+<h3>Make next-best decisions</h3>
+<p>Move from fixed journeys and broad segments towards decisions about the best message, offer, timing or action for each customer.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">04</span>
+<h3>Win the new discovery layer</h3>
+<p>Improve the likelihood that ChatGPT, Gemini, Claude, Perplexity and AI-powered search systems can understand, cite and recommend you.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">05</span>
+<h3>Make insight always-on</h3>
+<p>Compress research synthesis, increase measurement cadence and connect customer evidence to faster marketing decisions.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">06</span>
+<h3>Build agents around workflows</h3>
+<p>Connect repeatable tasks to real systems, approved knowledge, explicit checkpoints and accountable human owners.</p>
+</article>
+<article class="use-card reveal">
+<span class="kicker">07</span>
+<h3>Buy capability without another salary</h3>
+<p>For smaller businesses, AI can provide the equivalent of extra marketing, CRM, research, content or development capability without enterprise infrastructure.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="research-section" id="research">
+<div class="wrap research-grid">
+<div class="reveal">
+<div class="eyebrow">What 40 real case studies tell us</div>
+<h2 class="h2 mt-18">The winners start with a bottleneck, not a tool.</h2>
+<p class="lead">
           We reviewed 40 live examples from 2026 — a mix of major enterprises, growth companies,
           small businesses and solopreneurs — and graded the evidence behind every claim.
         </p>
-        <p>
+<p>
           The consistent pattern is that AI creates value when it solves a measurable marketing or business problem,
           is grounded in good data and context, and is tested against reality.
         </p>
-
-        <div class="research-points">
-          <div class="research-point">
-            <strong>40</strong>
-            <span>case studies across enterprise, growth and small-business marketing.</span>
-          </div>
-          <div class="research-point">
-            <strong>7</strong>
-            <span>practical marketing themes covering production, performance, decisions, discovery, insight, agents and small-business leverage.</span>
-          </div>
-          <div class="research-point">
-            <strong>A / B / C</strong>
-            <span>evidence grades so readers can distinguish accountable disclosures from vendor-led claims.</span>
-          </div>
-          <div class="research-point">
-            <strong>Keep / kill / scale</strong>
-            <span>a practical test-and-learn approach rather than assuming every AI pilot deserves to survive.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="guide-panel reveal">
-        <img class="guide-cover" src="memery-ai-case-studies-cover-website.png" alt="Cover of the Memery field guide: 40 Case Studies of Organisations Growing Their Business with Marketing AI.">
-        <h3>Get the 40-case-study field guide.</h3>
-        <p>
+<div class="research-points">
+<div class="research-point">
+<strong>40</strong>
+<span>case studies across enterprise, growth and small-business marketing.</span>
+</div>
+<div class="research-point">
+<strong>7</strong>
+<span>practical marketing themes covering production, performance, decisions, discovery, insight, agents and small-business leverage.</span>
+</div>
+<div class="research-point">
+<strong>A / B / C</strong>
+<span>evidence grades so readers can distinguish accountable disclosures from vendor-led claims.</span>
+</div>
+<div class="research-point">
+<strong>Keep / kill / scale</strong>
+<span>a practical test-and-learn approach rather than assuming every AI pilot deserves to survive.</span>
+</div>
+</div>
+</div>
+<div class="guide-panel reveal">
+<img alt="Cover of the Memery field guide: 40 Case Studies of Organisations Growing Their Business with Marketing AI." class="guide-cover" src="memery-ai-case-studies-cover-website.png"/>
+<h3>Get the 40-case-study field guide.</h3>
+<p>
           Real case studies from 2026, evidence graded, with practical plays for large organisations and small businesses alike.
         </p>
-
-        <form class="form" id="ai-guide-form" action="https://formspree.io/f/xwlpqagb" method="POST">
-          <input type="hidden" name="lead_type" value="40 AI marketing case studies download">
-          <input type="hidden" name="source_page" value="AI marketing landing page">
-
-          <div class="form-row">
-            <div class="field">
-              <label for="guide-name">Name</label>
-              <input id="guide-name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="guide-email">Work email</label>
-              <input id="guide-email" name="email" type="email" autocomplete="email" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="field">
-              <label for="guide-company">Organisation</label>
-              <input id="guide-company" name="organisation" type="text" autocomplete="organization" required>
-            </div>
-            <div class="field">
-              <label for="guide-role">Role</label>
-              <input id="guide-role" name="role" type="text" autocomplete="organization-title" required>
-            </div>
-          </div>
-
-          <button class="btn primary" id="ai-guide-submit" type="submit">
+<form action="https://formspree.io/f/xwlpqagb" class="form" id="ai-guide-form" method="POST">
+<input name="lead_type" type="hidden" value="40 AI marketing case studies download"/>
+<input name="source_page" type="hidden" value="AI marketing landing page"/>
+<div class="form-row">
+<div class="field">
+<label for="guide-name">Name</label>
+<input autocomplete="name" id="guide-name" name="name" required="" type="text"/>
+</div>
+<div class="field">
+<label for="guide-email">Work email</label>
+<input autocomplete="email" id="guide-email" name="email" required="" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="field">
+<label for="guide-company">Organisation</label>
+<input autocomplete="organization" id="guide-company" name="organisation" required="" type="text"/>
+</div>
+<div class="field">
+<label for="guide-role">Role</label>
+<input autocomplete="organization-title" id="guide-role" name="role" required="" type="text"/>
+</div>
+</div>
+<button class="btn primary" id="ai-guide-submit" type="submit">
             Get the free field guide <span class="arrow">↗</span>
-          </button>
-          <p class="tiny">Enter your details and the PDF will open immediately after submission.</p>
-          <p class="guide-status" id="ai-guide-status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="quiz-section" id="readiness">
-    <div class="wrap quiz-shell">
-      <aside class="quiz-aside reveal">
-        <div class="eyebrow">AI readiness test</div>
-        <h2 class="h2" style="margin-top:16px;">How ready is your marketing team?</h2>
-        <p>
+</button>
+<p class="tiny">Enter your details and the PDF will open immediately after submission.</p>
+<p aria-live="polite" class="guide-status" id="ai-guide-status"></p>
+</form>
+</div>
+</div>
+</section>
+<section class="quiz-section" id="readiness">
+<div class="wrap quiz-shell">
+<aside class="quiz-aside reveal">
+<div class="eyebrow">AI readiness test</div>
+<h2 class="h2 mt-16">How ready is your marketing team?</h2>
+<p>
           Ten quick questions across strategy, governance, data, workflows, measurement and AI knowledge.
           You get the result immediately — no email required.
         </p>
-        <div class="quiz-score-mini">
-          <strong>Four readiness levels</strong><br>
+<div class="quiz-score-mini">
+<strong>Four readiness levels</strong><br/>
           Experimenting · Organising · Scaling · AI-native
         </div>
-      </aside>
-
-      <div class="quiz-card reveal" id="quizCard">
-        <div class="quiz-progress">
-          <span id="quizProgressText">Question 1 of 10</span>
-          <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
-        </div>
-
-        <div id="quizQuestionWrap">
-          <div class="quiz-question">
-            <h3 id="quizQuestion"></h3>
-            <div class="quiz-options" id="quizOptions"></div>
-          </div>
-          <div class="quiz-nav">
-            <button class="btn secondary" type="button" id="quizBack" disabled>Back</button>
-            <button class="btn primary" type="button" id="quizNext" disabled>Next</button>
-          </div>
-        </div>
-
-        <div class="quiz-result" id="quizResult">
-          <div class="eyebrow">Your AI readiness</div>
-          <div class="quiz-result-score" id="quizScore">0/30</div>
-          <h3 id="quizStage"></h3>
-          <p id="quizSummary"></p>
-          <div class="quiz-recos" id="quizRecos"></div>
-          <div class="hero-actions" style="margin-top:22px;">
-            <a class="btn primary" href="#contact">Talk to us about improving your score <span class="arrow">↗</span></a>
-            <button class="btn secondary" type="button" id="quizRestart">Retake the test</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="why-section" id="why">
-    <div class="wrap why-grid">
-      <div class="reveal">
-        <div class="eyebrow">Why memery</div>
-        <h2 class="h2" style="margin-top:18px;">Marketing experience first. AI expertise applied where it creates value.</h2>
-        <p class="lead">
+</aside>
+<div class="quiz-card reveal" id="quizCard">
+<div class="quiz-progress">
+<span id="quizProgressText">Question 1 of 10</span>
+<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+</div>
+<div id="quizQuestionWrap">
+<div class="quiz-question">
+<h3 id="quizQuestion"></h3>
+<div class="quiz-options" id="quizOptions"></div>
+</div>
+<div class="quiz-nav">
+<button class="btn secondary" disabled="" id="quizBack" type="button">Back</button>
+<button class="btn primary" disabled="" id="quizNext" type="button">Next</button>
+</div>
+</div>
+<div class="quiz-result" id="quizResult">
+<div class="eyebrow">Your AI readiness</div>
+<div class="quiz-result-score" id="quizScore">0/30</div>
+<h3 id="quizStage"></h3>
+<p id="quizSummary"></p>
+<div class="quiz-recos" id="quizRecos"></div>
+<div class="hero-actions mt-22">
+<a class="btn primary" href="#contact">Talk to us about improving your score <span class="arrow">↗</span></a>
+<button class="btn secondary" id="quizRestart" type="button">Retake the test</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="why-section" id="why">
+<div class="wrap why-grid">
+<div class="reveal">
+<div class="eyebrow">Why memery</div>
+<h2 class="h2 mt-18">Marketing experience first. AI expertise applied where it creates value.</h2>
+<p class="lead">
           We combine senior marketing, customer experience, brand, digital, content, search and communications experience with hands-on AI implementation.
         </p>
-        <p>
+<p>
           That means we understand the operating reality around the technology: competing priorities, stakeholder risk,
           brand governance, customer journeys, media investment, organisational capability and the need to prove commercial impact.
         </p>
-      </div>
-
-      <div class="experience-grid">
-        <div class="experience-card reveal">
-          <strong>Senior marketing leadership</strong>
-          <span>Experience leading complex marketing, customer and communications functions rather than advising from outside the discipline.</span>
-        </div>
-        <div class="experience-card reveal">
-          <strong>Hands-on AI implementation</strong>
-          <span>Practical experience applying AI to marketing workflows, visibility, research, content, customer experience and capability development.</span>
-        </div>
-        <div class="experience-card reveal">
-          <strong>Evidence over hype</strong>
-          <span>We distinguish proven results from vendor claims, build baselines and encourage controlled testing before scaling.</span>
-        </div>
-        <div class="experience-card reveal">
-          <strong>Strategy through execution</strong>
-          <span>From operating model and governance through to workflows, content systems, GEO and implementation planning.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="case-study-section">
-    <div class="wrap case-study-grid">
-      <div class="reveal">
-        <div class="eyebrow">Case study</div>
-        <h2 class="h2" style="margin-top:18px;">Spare Keys used AI to strengthen a high-impact social enterprise.</h2>
-        <p class="lead">
+</div>
+<div class="experience-grid">
+<div class="experience-card reveal">
+<strong>Senior marketing leadership</strong>
+<span>Experience leading complex marketing, customer and communications functions rather than advising from outside the discipline.</span>
+</div>
+<div class="experience-card reveal">
+<strong>Hands-on AI implementation</strong>
+<span>Practical experience applying AI to marketing workflows, visibility, research, content, customer experience and capability development.</span>
+</div>
+<div class="experience-card reveal">
+<strong>Evidence over hype</strong>
+<span>We distinguish proven results from vendor claims, build baselines and encourage controlled testing before scaling.</span>
+</div>
+<div class="experience-card reveal">
+<strong>Strategy through execution</strong>
+<span>From operating model and governance through to workflows, content systems, GEO and implementation planning.</span>
+</div>
+</div>
+</div>
+</section>
+<section class="case-study-section">
+<div class="wrap case-study-grid">
+<div class="reveal">
+<div class="eyebrow">Case study</div>
+<h2 class="h2 mt-18">Spare Keys used AI to strengthen a high-impact social enterprise.</h2>
+<p class="lead">
           For Spare Keys, AI helped turn a lean communications operation into a more responsive marketing, fundraising and partnership engine.
         </p>
-        <p>
+<p>
           We used AI to accelerate supporter communications, assist with grant and partnership research,
           surface new storytelling opportunities, improve donor and stakeholder follow-up, and make it easier
           to translate mission, impact and need into content that could actually be produced consistently.
         </p>
-        <p>
+<p>
           The result was a stronger content rhythm, better use of scarce time, clearer fundraising and partnership outreach,
           and a more disciplined system for turning good ideas and incoming opportunities into action.
         </p>
-
-        <div class="case-study-media">
-          <img src="spare-keys-case-study.png" alt="Screenshot of the Spare Keys website homepage.">
-        </div>
-      </div>
-
-      <div class="case-study-results">
-        <div class="case-study-result reveal">
-          <strong>Supporter communications</strong>
-          <span>AI-assisted drafting helped turn updates, stories and impact information into newsletters, social content and donor communications faster.</span>
-        </div>
-        <div class="case-study-result reveal">
-          <strong>Grant and partner research</strong>
-          <span>Relevant opportunities could be identified and summarised quickly, giving the team a more practical way to respond and follow through.</span>
-        </div>
-        <div class="case-study-result reveal">
-          <strong>Media + storytelling</strong>
-          <span>Story hooks, PR angles and case-study narratives became easier to surface, shape and prepare for human review.</span>
-        </div>
-        <div class="case-study-result reveal">
-          <strong>Donor and stakeholder follow-up</strong>
-          <span>AI-supported workflows helped reduce the chance of warm relationships, prospective partners and potential donors going quiet or being forgotten.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="faq-section">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <div class="eyebrow">Questions buyers usually ask</div>
-        <div class="section-intro"><h2 class="h2">AI marketing FAQs.</h2></div>
-      </div>
-
-      <div class="faq-list">
-        <details class="reveal">
-          <summary>Do we need an AI playbook if people are already using ChatGPT or Copilot?</summary>
-          <p>Usually that is exactly when a playbook becomes useful. Individual experimentation can create productivity gains, but it does not automatically create shared priorities, safe data practices, repeatable workflows, measurement or organisational capability.</p>
-        </details>
-        <details class="reveal">
-          <summary>Is the playbook mainly for large organisations?</summary>
-          <p>No. The level of complexity changes with the organisation. Enterprise teams may need governance, data integration and decision engines; smaller organisations often get faster value from practical workflows that reclaim time, recover leads and add capabilities they could not otherwise staff.</p>
-        </details>
-        <details class="reveal">
-          <summary>Will you recommend specific AI platforms?</summary>
-          <p>Yes, when tool choice matters. But we start with the marketing problem, data, workflow, evidence and risk — not a preferred vendor.</p>
-        </details>
-        <details class="reveal">
-          <summary>Can this work in an organisation with strict privacy or governance requirements?</summary>
-          <p>Yes. Governance is part of the playbook: approved tools, sensitive-data boundaries, human approval, disclosure, record keeping, IP considerations and escalation.</p>
-        </details>
-        <details class="reveal">
-          <summary>How do we know AI is actually improving marketing?</summary>
-          <p>We define the baseline first. Depending on the use case, that might mean cost and hours per asset, cycle time, incremental conversion, AI visibility, research turnaround, customer outcomes or another measure that can be tested against the current process.</p>
-        </details>
-        <details class="reveal">
-          <summary>What happens after the playbook is delivered?</summary>
-          <p>The playbook includes a practical implementation roadmap with priority pilots, owners, controls, measures and scale-or-kill decisions. memery can also help implement selected workflows and capability changes.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="contact final-cta" id="contact">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <div class="eyebrow">Make AI useful</div>
-        <h2 class="h2" style="margin-top:18px;">Build the AI marketing function you actually need.</h2>
-        <p class="lead">
+<div class="case-study-media">
+<img alt="Screenshot of the Spare Keys website homepage." src="spare-keys-case-study.png"/>
+</div>
+</div>
+<div class="case-study-results">
+<div class="case-study-result reveal">
+<strong>Supporter communications</strong>
+<span>AI-assisted drafting helped turn updates, stories and impact information into newsletters, social content and donor communications faster.</span>
+</div>
+<div class="case-study-result reveal">
+<strong>Grant and partner research</strong>
+<span>Relevant opportunities could be identified and summarised quickly, giving the team a more practical way to respond and follow through.</span>
+</div>
+<div class="case-study-result reveal">
+<strong>Media + storytelling</strong>
+<span>Story hooks, PR angles and case-study narratives became easier to surface, shape and prepare for human review.</span>
+</div>
+<div class="case-study-result reveal">
+<strong>Donor and stakeholder follow-up</strong>
+<span>AI-supported workflows helped reduce the chance of warm relationships, prospective partners and potential donors going quiet or being forgotten.</span>
+</div>
+</div>
+</div>
+</section>
+<section class="faq-section">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="eyebrow">Questions buyers usually ask</div>
+<div class="section-intro"><h2 class="h2">AI marketing FAQs.</h2></div>
+</div>
+<div class="faq-list">
+<details class="reveal">
+<summary>Do we need an AI playbook if people are already using ChatGPT or Copilot?</summary>
+<p>Usually that is exactly when a playbook becomes useful. Individual experimentation can create productivity gains, but it does not automatically create shared priorities, safe data practices, repeatable workflows, measurement or organisational capability.</p>
+</details>
+<details class="reveal">
+<summary>Is the playbook mainly for large organisations?</summary>
+<p>No. The level of complexity changes with the organisation. Enterprise teams may need governance, data integration and decision engines; smaller organisations often get faster value from practical workflows that reclaim time, recover leads and add capabilities they could not otherwise staff.</p>
+</details>
+<details class="reveal">
+<summary>Will you recommend specific AI platforms?</summary>
+<p>Yes, when tool choice matters. But we start with the marketing problem, data, workflow, evidence and risk — not a preferred vendor.</p>
+</details>
+<details class="reveal">
+<summary>Can this work in an organisation with strict privacy or governance requirements?</summary>
+<p>Yes. Governance is part of the playbook: approved tools, sensitive-data boundaries, human approval, disclosure, record keeping, IP considerations and escalation.</p>
+</details>
+<details class="reveal">
+<summary>How do we know AI is actually improving marketing?</summary>
+<p>We define the baseline first. Depending on the use case, that might mean cost and hours per asset, cycle time, incremental conversion, AI visibility, research turnaround, customer outcomes or another measure that can be tested against the current process.</p>
+</details>
+<details class="reveal">
+<summary>What happens after the playbook is delivered?</summary>
+<p>The playbook includes a practical implementation roadmap with priority pilots, owners, controls, measures and scale-or-kill decisions. memery can also help implement selected workflows and capability changes.</p>
+</details>
+</div>
+</div>
+</section>
+<section class="contact final-cta" id="contact">
+<div class="wrap contact-grid">
+<div class="reveal">
+<div class="eyebrow">Make AI useful</div>
+<h2 class="h2 mt-18">Build the AI marketing function you actually need.</h2>
+<p class="lead">
           Tell us what is getting in the way — scattered experimentation, unclear priorities, governance,
           slow workflows, weak AI visibility or simply not knowing where the real value is.
         </p>
-        <p style="font-weight:700;letter-spacing:-.01em;">
+<p class="final-cta-note">
           We’ll help turn it into a practical playbook your team can use.
         </p>
-      </div>
-
-      <div class="form-card reveal">
-        <h3>Start the conversation.</h3>
-        <form class="form" action="https://formspree.io/f/xwlpqagb" method="POST">
-          <input type="hidden" name="service" value="AI marketing playbook">
-          <div class="form-row">
-            <div class="field">
-              <label for="contact-name">Name</label>
-              <input id="contact-name" name="name" type="text" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="contact-email">Email</label>
-              <input id="contact-email" name="email" type="email" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="contact-company">Organisation</label>
-              <input id="contact-company" name="company" type="text" autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="contact-stage">Where are you up to?</label>
-              <select id="contact-stage" name="stage">
-                <option value="">Choose one</option>
-                <option>We are just starting with AI</option>
-                <option>Individuals are already experimenting</option>
-                <option>We have approved tools but no clear strategy</option>
-                <option>We need use cases and governance</option>
-                <option>We want to integrate AI into real workflows</option>
-                <option>We need a full AI marketing playbook</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="contact-note">What would you like AI to improve?</label>
-            <textarea id="contact-note" name="message" rows="5" placeholder="A bottleneck, opportunity, workflow, team issue or business problem is a good place to start."></textarea>
-          </div>
-          <button class="btn primary" type="submit">
+</div>
+<div class="form-card reveal">
+<h3>Start the conversation.</h3>
+<form action="https://formspree.io/f/xwlpqagb" class="form" method="POST">
+<input name="service" type="hidden" value="AI marketing playbook"/>
+<div class="form-row">
+<div class="field">
+<label for="contact-name">Name</label>
+<input autocomplete="name" id="contact-name" name="name" required="" type="text"/>
+</div>
+<div class="field">
+<label for="contact-email">Email</label>
+<input autocomplete="email" id="contact-email" name="email" required="" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="field">
+<label for="contact-company">Organisation</label>
+<input autocomplete="organization" id="contact-company" name="company" type="text"/>
+</div>
+<div class="field">
+<label for="contact-stage">Where are you up to?</label>
+<select id="contact-stage" name="stage">
+<option value="">Choose one</option>
+<option>We are just starting with AI</option>
+<option>Individuals are already experimenting</option>
+<option>We have approved tools but no clear strategy</option>
+<option>We need use cases and governance</option>
+<option>We want to integrate AI into real workflows</option>
+<option>We need a full AI marketing playbook</option>
+</select>
+</div>
+</div>
+<div class="field">
+<label for="contact-note">What would you like AI to improve?</label>
+<textarea id="contact-note" name="message" placeholder="A bottleneck, opportunity, workflow, team issue or business problem is a good place to start." rows="5"></textarea>
+</div>
+<button class="btn primary" type="submit">
             Talk to us about your AI marketing <span class="arrow">↗</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
+</button>
+</form>
+</div>
+</div>
+</section>
 </main>
-
-
-  <footer>
-
-    <div class="wrap footer-row">
-
-      <a href="index.html" aria-label="memery home">
-        <span class="brand-word">memery<i class="play-mark" aria-hidden="true">▶</i></span>
-      </a>
-
-      <div>
+<footer>
+<div class="wrap footer-row">
+<a aria-label="memery home" href="index.html">
+<span class="brand-word">memery<i aria-hidden="true" class="play-mark">▶</i></span>
+</a>
+<div>
         © <span id="year"></span> memery · memery.agency
       </div>
-
-    </div>
-
-  </footer>
-
-
-  <script>
+</div>
+</footer>
+<script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const io = new IntersectionObserver(entries => {
@@ -1830,7 +717,5 @@
       });
     }
   </script>
-
 </body>
 </html>
-

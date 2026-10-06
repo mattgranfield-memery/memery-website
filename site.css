@@ -703,67 +703,61 @@ body.page-podcast .research-stat.wide strong{font-size:1.45rem; letter-spacing:-
 }
 
 /* ---------- ai-marketing.html ---------- */
-body.page-ai-marketing *{box-sizing:border-box}
-body.page-ai-marketing{margin:0; color:var(--ink); background:var(--paper); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
-body.page-ai-marketing a{color:inherit;text-decoration:none}
-body.page-ai-marketing button, body.page-ai-marketing input, body.page-ai-marketing textarea, body.page-ai-marketing select{font:inherit}
-body.page-ai-marketing ::selection{background:rgba(247,102,63,.26)}
-body.page-ai-marketing .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
-body.page-ai-marketing .eyebrow{font-size:.78rem; line-height:1; font-weight:850; letter-spacing:.17em; text-transform:uppercase; color:var(--coral);}
-body.page-ai-marketing .display{font-size:clamp(3.45rem,8vw,7.7rem); line-height:.9; letter-spacing:-.067em; margin:0; font-weight:820;}
-body.page-ai-marketing .h2{font-size:clamp(2.35rem,5vw,4.8rem); line-height:.97; letter-spacing:-.052em; margin:0; font-weight:790;}
-body.page-ai-marketing .lead{font-size:clamp(1.05rem,1.8vw,1.34rem); line-height:1.55; color:var(--muted);}
-body.page-ai-marketing .btn{display:inline-flex; align-items:center; justify-content:center; gap:.7rem; padding:.98rem 1.28rem; border-radius:999px; font-weight:850; border:1px solid transparent; transition:.25s ease; cursor:pointer;}
-body.page-ai-marketing .btn.primary{background:var(--coral); color:white; box-shadow:0 10px 30px rgba(247,102,63,.22);}
+/* AI Marketing page-specific rules. Shared reset, navigation and base tokens live above. */
+body.page-ai-marketing .eyebrow{font-size:.78rem;line-height:1;font-weight:850;letter-spacing:.17em;text-transform:uppercase;color:var(--coral)}
+body.page-ai-marketing .display{font-size:clamp(3.45rem,8vw,7.7rem);line-height:.9;letter-spacing:-.067em;margin:0;font-weight:820}
+body.page-ai-marketing .h2{font-size:clamp(2.35rem,5vw,4.8rem);line-height:.97;letter-spacing:-.052em;margin:0;font-weight:790}
+body.page-ai-marketing .lead{font-size:clamp(1.05rem,1.8vw,1.34rem);line-height:1.55;color:var(--muted)}
+body.page-ai-marketing .btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;padding:.98rem 1.28rem;border-radius:999px;font-weight:850;border:1px solid transparent;transition:.25s ease;cursor:pointer}
+body.page-ai-marketing .btn.primary{background:var(--coral);color:white;box-shadow:0 10px 30px rgba(247,102,63,.22)}
 body.page-ai-marketing .btn.primary:hover{transform:translateY(-2px);background:#ff724e}
-body.page-ai-marketing .btn.secondary{border-color:rgba(242,239,232,.35); color:var(--cream); background:rgba(255,255,255,.04);}
-body.page-ai-marketing .btn.secondary:hover{border-color:rgba(242,239,232,.7); background:rgba(255,255,255,.08);}
+body.page-ai-marketing .btn.secondary{border-color:rgba(242,239,232,.35);color:var(--cream);background:rgba(255,255,255,.04)}
+body.page-ai-marketing .btn.secondary:hover{border-color:rgba(242,239,232,.7);background:rgba(255,255,255,.08)}
 body.page-ai-marketing .arrow{font-size:1.1em;transform:translateY(-1px)}
-body.page-ai-marketing .nav{pointer-events:auto; width:min(calc(100% - 32px),var(--max)); margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:12px 14px 12px 18px; border-radius:999px; background:rgba(23,27,52,.86); border:1px solid rgba(255,255,255,.11); backdrop-filter:blur(18px); box-shadow:0 12px 35px rgba(0,0,0,.15);}
-body.page-ai-marketing .hero{position:relative; min-height:100vh; background:var(--navy); color:var(--cream); display:grid; align-items:center; padding:150px 0 86px; overflow:hidden;}
-body.page-ai-marketing .hero::before{content:""; position:absolute; inset:0; opacity:.22; background-image: linear-gradient(rgba(242,239,232,.055) 1px,transparent 1px), linear-gradient(90deg,rgba(242,239,232,.055) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 86%);}
-body.page-ai-marketing .hero::after{content:""; position:absolute; right:-10vw; top:-10vw; width:58vw; height:58vw; max-width:820px; max-height:820px; border-radius:50%; background:radial-gradient(circle at 50% 50%,rgba(247,102,63,.2),rgba(247,102,63,.04) 40%,transparent 68%);}
-body.page-ai-marketing .hero-grid{display:grid; grid-template-columns:1.08fr .92fr; gap:70px; align-items:center; position:relative; z-index:2;}
+body.page-ai-marketing .hero{position:relative;min-height:100vh;background:var(--navy);color:var(--cream);display:grid;align-items:center;padding:150px 0 86px;overflow:hidden}
+body.page-ai-marketing .hero::before{content:"";position:absolute;inset:0;opacity:.22;background-image:linear-gradient(rgba(242,239,232,.055) 1px,transparent 1px), linear-gradient(90deg,rgba(242,239,232,.055) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 86%)}
+body.page-ai-marketing .hero::after{content:"";position:absolute;right:-10vw;top:-10vw;width:58vw;height:58vw;max-width:820px;max-height:820px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(247,102,63,.2),rgba(247,102,63,.04) 40%,transparent 68%)}
+body.page-ai-marketing .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:70px;align-items:center;position:relative;z-index:2}
 body.page-ai-marketing .hero .eyebrow{margin-bottom:24px}
-body.page-ai-marketing .hero .lead{color:rgba(242,239,232,.72); max-width:760px; margin:28px 0 32px;}
+body.page-ai-marketing .hero .lead{color:rgba(242,239,232,.72);max-width:760px;margin:28px 0 32px}
 body.page-ai-marketing .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-body.page-ai-marketing .trust-line{display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:28px; color:rgba(242,239,232,.62); font-size:.9rem; font-weight:700;}
+body.page-ai-marketing .trust-line{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;color:rgba(242,239,232,.62);font-size:.9rem;font-weight:700}
 body.page-ai-marketing .trust-line span::before{content:"•";color:var(--coral);margin-right:9px}
-body.page-ai-marketing .ai-scene{position:relative; min-height:520px; display:grid; place-items:center;}
-body.page-ai-marketing .ai-orbit{position:absolute; border-radius:50%; border:1px solid rgba(242,239,232,.1);}
+body.page-ai-marketing .ai-scene{position:relative;min-height:520px;display:grid;place-items:center}
+body.page-ai-marketing .ai-orbit{position:absolute;border-radius:50%;border:1px solid rgba(242,239,232,.1)}
 body.page-ai-marketing .ai-orbit.o1{width:430px;height:430px}
 body.page-ai-marketing .ai-orbit.o2{width:330px;height:330px}
 body.page-ai-marketing .ai-orbit.o3{width:230px;height:230px}
-body.page-ai-marketing .ai-core{position:relative; width:min(320px,74%); aspect-ratio:1; border-radius:34px; background: linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025)), var(--navy-2); border:1px solid rgba(255,255,255,.12); box-shadow:0 35px 100px rgba(0,0,0,.28); display:grid; place-items:center; transform:rotate(6deg); overflow:hidden;}
-body.page-ai-marketing .ai-core::before, body.page-ai-marketing .ai-core::after{content:""; position:absolute; width:74%; height:26%; border-radius:999px;}
-body.page-ai-marketing .ai-core::before{background:var(--cream); transform:rotate(35deg);}
-body.page-ai-marketing .ai-core::after{background:var(--coral); transform:rotate(-35deg); mix-blend-mode:screen;}
-body.page-ai-marketing .ai-node{position:absolute; width:17px; height:17px; border-radius:50%; background:var(--coral); box-shadow:0 0 0 9px rgba(247,102,63,.12),0 0 35px rgba(247,102,63,.48);}
+body.page-ai-marketing .ai-core{position:relative;width:min(320px,74%);aspect-ratio:1;border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025)), var(--navy-2);border:1px solid rgba(255,255,255,.12);box-shadow:0 35px 100px rgba(0,0,0,.28);display:grid;place-items:center;transform:rotate(6deg);overflow:hidden}
+body.page-ai-marketing .ai-core::before, body.page-ai-marketing .ai-core::after{content:"";position:absolute;width:74%;height:26%;border-radius:999px}
+body.page-ai-marketing .ai-core::before{background:var(--cream);transform:rotate(35deg)}
+body.page-ai-marketing .ai-core::after{background:var(--coral);transform:rotate(-35deg);mix-blend-mode:screen}
+body.page-ai-marketing .ai-node{position:absolute;width:17px;height:17px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 9px rgba(247,102,63,.12),0 0 35px rgba(247,102,63,.48)}
 body.page-ai-marketing .ai-node.n1{top:11%;right:14%}
 body.page-ai-marketing .ai-node.n2{bottom:15%;left:11%;width:11px;height:11px}
 body.page-ai-marketing .ai-node.n3{top:43%;left:2%;width:8px;height:8px}
-body.page-ai-marketing .floating-note{position:absolute; right:0; bottom:2%; max-width:310px; padding:22px; border-radius:22px; background:rgba(23,27,52,.9); border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(14px); box-shadow:0 22px 70px rgba(0,0,0,.25);}
+body.page-ai-marketing .floating-note{position:absolute;right:0;bottom:2%;max-width:310px;padding:22px;border-radius:22px;background:rgba(23,27,52,.9);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);box-shadow:0 22px 70px rgba(0,0,0,.25)}
 body.page-ai-marketing .floating-note strong{display:block;color:white;margin-bottom:6px;font-size:1.05rem}
 body.page-ai-marketing .floating-note span{color:rgba(242,239,232,.67);font-size:.9rem}
 body.page-ai-marketing section{padding:110px 0}
-body.page-ai-marketing .section-head{display:grid; grid-template-columns:.72fr 1.28fr; gap:60px; align-items:end; margin-bottom:54px;}
+body.page-ai-marketing .section-head{display:grid;grid-template-columns:.72fr 1.28fr;gap:60px;align-items:end;margin-bottom:54px}
 body.page-ai-marketing .positioning{background:var(--cream)}
 body.page-ai-marketing .positioning-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-body.page-ai-marketing .position-card{border:1px solid var(--line); background:var(--paper); border-radius:30px; padding:40px; min-height:355px; display:flex; flex-direction:column; justify-content:space-between;}
+body.page-ai-marketing .position-card{border:1px solid var(--line);background:var(--paper);border-radius:30px;padding:40px;min-height:355px;display:flex;flex-direction:column;justify-content:space-between}
 body.page-ai-marketing .position-card.accent{background:var(--coral);color:white;border:0}
-body.page-ai-marketing .position-card h3{font-size:clamp(2rem,3.4vw,3.3rem); line-height:1; letter-spacing:-.045em; margin:12px 0 22px;}
+body.page-ai-marketing .position-card h3{font-size:clamp(2rem,3.4vw,3.3rem);line-height:1;letter-spacing:-.045em;margin:12px 0 22px}
 body.page-ai-marketing .position-card p{margin:0;color:var(--muted);max-width:56ch}
 body.page-ai-marketing .position-card.accent p{color:rgba(255,255,255,.82)}
 body.page-ai-marketing .ladder{background:var(--paper)}
 body.page-ai-marketing .levels{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-body.page-ai-marketing .level{padding:28px 23px; border:1px solid var(--line); border-radius:24px; background:white; min-height:280px; display:flex; flex-direction:column; justify-content:space-between;}
-body.page-ai-marketing .level strong{display:block; color:var(--coral); font-size:2.4rem; line-height:1; letter-spacing:-.05em;}
+body.page-ai-marketing .level{padding:28px 23px;border:1px solid var(--line);border-radius:24px;background:white;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+body.page-ai-marketing .level strong{display:block;color:var(--coral);font-size:2.4rem;line-height:1;letter-spacing:-.05em}
 body.page-ai-marketing .level h3{font-size:1.35rem;letter-spacing:-.03em;margin:14px 0 8px}
 body.page-ai-marketing .level p{margin:0;color:var(--muted);font-size:.92rem}
 body.page-ai-marketing .services{background:var(--navy);color:var(--cream)}
 body.page-ai-marketing .services .lead{color:rgba(242,239,232,.67)}
 body.page-ai-marketing .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-body.page-ai-marketing .service{position:relative; overflow:hidden; padding:38px; border-radius:30px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); min-height:340px; display:flex; flex-direction:column; justify-content:space-between;}
+body.page-ai-marketing .service{position:relative;overflow:hidden;padding:38px;border-radius:30px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);min-height:340px;display:flex;flex-direction:column;justify-content:space-between}
 body.page-ai-marketing .service:nth-child(2), body.page-ai-marketing .service:nth-child(5){background:var(--coral);border:0}
 body.page-ai-marketing .service h3{font-size:2rem;letter-spacing:-.04em;margin:18px 0 12px}
 body.page-ai-marketing .service p{margin:0;color:rgba(242,239,232,.67);max-width:52ch}
@@ -771,73 +765,252 @@ body.page-ai-marketing .service:nth-child(2) p, body.page-ai-marketing .service:
 body.page-ai-marketing .service small{font-weight:850;text-transform:uppercase;letter-spacing:.13em;opacity:.72}
 body.page-ai-marketing .usecases{background:var(--cream)}
 body.page-ai-marketing .usecase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-body.page-ai-marketing .usecase{background:var(--paper); border:1px solid var(--line); border-radius:25px; padding:28px; min-height:310px; display:flex; flex-direction:column; justify-content:space-between;}
-body.page-ai-marketing .risk{display:inline-flex; align-self:flex-start; padding:7px 10px; border-radius:999px; background:rgba(247,102,63,.08); color:var(--coral); font-size:.72rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase;}
+body.page-ai-marketing .usecase{background:var(--paper);border:1px solid var(--line);border-radius:25px;padding:28px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between}
+body.page-ai-marketing .risk{display:inline-flex;align-self:flex-start;padding:7px 10px;border-radius:999px;background:rgba(247,102,63,.08);color:var(--coral);font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
 body.page-ai-marketing .usecase h3{font-size:1.55rem;line-height:1.08;letter-spacing:-.035em;margin:22px 0 10px}
 body.page-ai-marketing .usecase p{margin:0;color:var(--muted)}
 body.page-ai-marketing .usecase .result{font-weight:850;color:var(--ink);margin-top:18px}
 body.page-ai-marketing .playbook{background:var(--paper)}
 body.page-ai-marketing .playbook-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:55px;align-items:start}
 body.page-ai-marketing .sticky{position:sticky;top:125px}
-body.page-ai-marketing .deliverables{display:grid;gap:14px}
-body.page-ai-marketing .deliverable{padding:28px; background:white; border:1px solid var(--line); border-radius:24px;}
+body.page-ai-marketing .deliverables{display:grid;gap:12px;grid-template-columns:1fr 1fr;margin-top:28px}
+body.page-ai-marketing .deliverable{padding:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.13);border-radius:18px}
 body.page-ai-marketing .deliverable h3{font-size:1.45rem;letter-spacing:-.03em;margin:12px 0 8px}
 body.page-ai-marketing .deliverable p{margin:0;color:var(--muted)}
 body.page-ai-marketing .process{background:var(--coral);color:white}
 body.page-ai-marketing .process .lead{color:rgba(255,255,255,.82)}
 body.page-ai-marketing .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-body.page-ai-marketing .step{padding:28px 23px; border-radius:24px; background:rgba(23,27,52,.13); border:1px solid rgba(255,255,255,.16); min-height:260px; display:flex; flex-direction:column; justify-content:space-between;}
+body.page-ai-marketing .step{padding:28px 23px;border-radius:24px;background:rgba(23,27,52,.13);border:1px solid rgba(255,255,255,.16);min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
 body.page-ai-marketing .step .num{font-size:.8rem;font-weight:900;letter-spacing:.13em;color:white;opacity:.72}
 body.page-ai-marketing .step h3{font-size:1.35rem;letter-spacing:-.03em;margin:16px 0 8px}
 body.page-ai-marketing .step p{margin:0;color:rgba(255,255,255,.78);font-size:.94rem}
 body.page-ai-marketing .roadmap{background:var(--navy);color:var(--cream)}
 body.page-ai-marketing .roadmap .lead{color:rgba(242,239,232,.68)}
 body.page-ai-marketing .roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-body.page-ai-marketing .roadmap-card{padding:32px; border-radius:26px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.045); min-height:330px;}
-body.page-ai-marketing .roadmap-card strong{display:block; font-size:2.5rem; color:var(--coral); letter-spacing:-.05em; margin-bottom:18px;}
+body.page-ai-marketing .roadmap-card{padding:32px;border-radius:26px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);min-height:330px}
+body.page-ai-marketing .roadmap-card strong{display:block;font-size:2.5rem;color:var(--coral);letter-spacing:-.05em;margin-bottom:18px}
 body.page-ai-marketing .roadmap-card h3{font-size:1.7rem;margin:0 0 15px;letter-spacing:-.03em}
 body.page-ai-marketing .roadmap-card ul{padding-left:18px;color:rgba(242,239,232,.7);line-height:1.75}
 body.page-ai-marketing .why{background:var(--cream)}
-body.page-ai-marketing .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+body.page-ai-marketing .why-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:44px;align-items:start}
 body.page-ai-marketing .why-list{display:grid;gap:15px}
-body.page-ai-marketing .why-item{padding:30px; border:1px solid var(--line); background:var(--paper); border-radius:25px;}
+body.page-ai-marketing .why-item{padding:30px;border:1px solid var(--line);background:var(--paper);border-radius:25px}
 body.page-ai-marketing .why-item h3{font-size:1.5rem;letter-spacing:-.03em;margin:14px 0 8px}
 body.page-ai-marketing .why-item p{margin:0;color:var(--muted)}
-body.page-ai-marketing .guide-teaser{background:var(--paper);}
-body.page-ai-marketing .guide-teaser-card{background:var(--navy); color:var(--cream); border-radius:34px; padding:52px; display:grid; grid-template-columns:.9fr 1.1fr; gap:54px; align-items:start; position:relative; overflow:hidden;}
-body.page-ai-marketing .guide-teaser-card::after{content:""; position:absolute; width:390px; height:390px; border-radius:50%; background:radial-gradient(circle,rgba(247,102,63,.18),transparent 66%); right:-120px; top:-160px; pointer-events:none;}
-body.page-ai-marketing .guide-teaser-card > *{position:relative; z-index:2;}
-body.page-ai-marketing .guide-teaser-card .lead{color:rgba(242,239,232,.72); max-width:650px;}
-body.page-ai-marketing .guide-points{display:grid; gap:11px; margin:28px 0 0; padding:0; list-style:none;}
-body.page-ai-marketing .guide-points li{display:flex; gap:11px; align-items:flex-start; color:rgba(242,239,232,.82); line-height:1.5;}
-body.page-ai-marketing .guide-points li::before{content:"↗"; color:var(--coral); font-weight:900; flex:0 0 auto;}
-body.page-ai-marketing .guide-form-card{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.13); border-radius:26px; padding:28px; box-shadow:0 24px 60px rgba(0,0,0,.14);}
-body.page-ai-marketing .guide-form-card h3{margin:0 0 8px; color:var(--cream); font-size:1.55rem; letter-spacing:-.03em;}
-body.page-ai-marketing .guide-form-card .guide-small{margin:0 0 20px; color:rgba(242,239,232,.58); font-size:.9rem; line-height:1.5;}
-body.page-ai-marketing .guide-status{display:none; margin:10px 0 0; font-size:.86rem; color:rgba(242,239,232,.78);}
+body.page-ai-marketing .guide-teaser{background:var(--paper)}
+body.page-ai-marketing .guide-teaser-card{background:var(--navy);color:var(--cream);border-radius:34px;padding:52px;display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:start;position:relative;overflow:hidden}
+body.page-ai-marketing .guide-teaser-card::after{content:"";position:absolute;width:390px;height:390px;border-radius:50%;background:radial-gradient(circle,rgba(247,102,63,.18),transparent 66%);right:-120px;top:-160px;pointer-events:none}
+body.page-ai-marketing .guide-teaser-card > *{position:relative;z-index:2}
+body.page-ai-marketing .guide-teaser-card .lead{color:rgba(242,239,232,.72);max-width:650px}
+body.page-ai-marketing .guide-points{display:grid;gap:11px;margin:28px 0 0;padding:0;list-style:none}
+body.page-ai-marketing .guide-points li{display:flex;gap:11px;align-items:flex-start;color:rgba(242,239,232,.82);line-height:1.5}
+body.page-ai-marketing .guide-points li::before{content:"↗";color:var(--coral);font-weight:900;flex:0 0 auto}
+body.page-ai-marketing .guide-form-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.14)}
+body.page-ai-marketing .guide-form-card h3{margin:0 0 8px;color:var(--cream);font-size:1.55rem;letter-spacing:-.03em}
+body.page-ai-marketing .guide-form-card .guide-small{margin:0 0 20px;color:rgba(242,239,232,.58);font-size:.9rem;line-height:1.5}
+body.page-ai-marketing .guide-status{display:none;margin:10px 0 0;font-size:.9rem;color:rgba(242,239,232,.78);margin-top:12px}
 body.page-ai-marketing .guide-status.show{display:block}
-body.page-ai-marketing .guide-status.error{color:#ffb6a2}
-body.page-ai-marketing .contact{position:relative; background:var(--cream); overflow:hidden;}
-body.page-ai-marketing .contact::after{content:""; position:absolute; width:420px; height:420px; border-radius:80px; background:var(--coral); right:-160px; top:-190px; transform:rotate(35deg);}
-body.page-ai-marketing .contact-grid{display:grid; grid-template-columns:.82fr 1.18fr; gap:70px; align-items:start; position:relative; z-index:2;}
+body.page-ai-marketing .guide-status.error{color:#a73024}
+body.page-ai-marketing .contact{position:relative;background:var(--cream);overflow:hidden}
+body.page-ai-marketing .contact::after{content:"";position:absolute;width:420px;height:420px;border-radius:80px;background:var(--coral);right:-160px;top:-190px;transform:rotate(35deg)}
+body.page-ai-marketing .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px;align-items:start;position:relative;z-index:2}
 body.page-ai-marketing .contact .lead{max-width:47ch}
-body.page-ai-marketing .form-card{padding:32px; border-radius:28px; background:var(--navy); border:0; box-shadow:0 28px 70px rgba(23,27,52,.16);}
+body.page-ai-marketing .form-card{padding:32px;border-radius:28px;background:var(--navy);border:0;box-shadow:0 28px 70px rgba(23,27,52,.16)}
 body.page-ai-marketing .form-card h3{color:var(--cream);font-size:1.65rem;margin:0 0 20px;letter-spacing:-.03em}
 body.page-ai-marketing .form{display:grid;gap:16px}
 body.page-ai-marketing .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 body.page-ai-marketing .field{display:grid;gap:7px}
 body.page-ai-marketing .field label{font-size:.82rem;font-weight:800;color:rgba(242,239,232,.8)}
-body.page-ai-marketing .field input, body.page-ai-marketing .field textarea, body.page-ai-marketing .field select{width:100%; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.075); color:var(--cream); padding:14px 15px; border-radius:14px; outline:none;}
-body.page-ai-marketing .field input:focus, body.page-ai-marketing .field textarea:focus, body.page-ai-marketing .field select:focus{border-color:rgba(247,102,63,.9); box-shadow:0 0 0 3px rgba(247,102,63,.14);}
+body.page-ai-marketing .field input, body.page-ai-marketing .field textarea, body.page-ai-marketing .field select{width:100%;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.075);color:var(--cream);padding:14px 15px;border-radius:14px;outline:none}
+body.page-ai-marketing .field input:focus, body.page-ai-marketing .field textarea:focus, body.page-ai-marketing .field select:focus{border-color:rgba(247,102,63,.9);box-shadow:0 0 0 3px rgba(247,102,63,.14)}
 body.page-ai-marketing .field textarea{min-height:125px;resize:vertical}
 body.page-ai-marketing .field select option{color:var(--navy);background:white}
 body.page-ai-marketing .tiny{font-size:.78rem;color:rgba(242,239,232,.5);margin:0}
-body.page-ai-marketing footer{background:var(--navy); color:rgba(242,239,232,.55); padding:30px 0;}
+body.page-ai-marketing footer{background:var(--navy);color:rgba(242,239,232,.55);padding:30px 0}
 body.page-ai-marketing .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
 body.page-ai-marketing .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 body.page-ai-marketing .reveal.in{opacity:1;transform:none}
+.page-ai-marketing .hero{padding-bottom:64px}
+.page-ai-marketing .hero-grid{align-items:center;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);justify-content:start;gap:42px}
+body.page-ai-marketing .hero-actions.triple{display:flex;flex-wrap:wrap;gap:12px}
+body.page-ai-marketing .hero-actions.triple .btn{margin:0}
+body.page-ai-marketing .proof-strip{border-top:1px solid var(--ai-line);border-bottom:1px solid var(--ai-line);background:#fff}
+body.page-ai-marketing .proof-strip-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:1px;background:var(--ai-line)}
+body.page-ai-marketing .proof-strip-grid > div{background:#fff;padding:30px 28px}
+body.page-ai-marketing .proof-strip-copy strong{display:block;font-size:1.22rem;letter-spacing:-.02em}
+body.page-ai-marketing .proof-strip-copy p{margin:8px 0 0;color:var(--ai-muted)}
+body.page-ai-marketing .proof-stat strong{display:block;font-size:2.5rem;line-height:.9;letter-spacing:-.06em;color:var(--ai-navy)}
+body.page-ai-marketing .proof-stat span{display:block;margin-top:8px;color:var(--ai-muted);font-size:.9rem;line-height:1.35}
+body.page-ai-marketing .section-intro{max-width:760px}
+body.page-ai-marketing .section-intro .lead{max-width:680px}
+body.page-ai-marketing .quiz-section{background:var(--ai-paper)}
+body.page-ai-marketing .quiz-shell{display:grid;grid-template-columns:.85fr 1.15fr;gap:38px;align-items:start}
+body.page-ai-marketing .quiz-aside{position:sticky;top:110px;padding:30px;border-radius:28px;background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .quiz-aside .eyebrow{color:rgba(255,255,255,.65)}
+body.page-ai-marketing .quiz-aside h2{color:#fff}
+body.page-ai-marketing .quiz-aside p{color:rgba(255,255,255,.74)}
+body.page-ai-marketing .quiz-score-mini{margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);font-size:.88rem;line-height:1.5}
+body.page-ai-marketing .quiz-card{padding:30px;border:1px solid var(--ai-line);border-radius:28px;background:#fff;box-shadow:0 20px 50px rgba(23,27,52,.06)}
+body.page-ai-marketing .quiz-progress{display:flex;align-items:center;gap:12px;margin-bottom:22px;color:var(--ai-muted);font-size:.86rem}
+body.page-ai-marketing .quiz-progress-bar{flex:1;height:8px;border-radius:999px;overflow:hidden;background:#eee9df}
+body.page-ai-marketing .quiz-progress-fill{height:100%;width:10%;background:var(--ai-coral);border-radius:inherit;transition:width .25s ease}
+body.page-ai-marketing .quiz-question h3{margin:0 0 20px;font-size:1.4rem;line-height:1.16;letter-spacing:-.03em}
+body.page-ai-marketing .quiz-options{display:grid;gap:10px}
+body.page-ai-marketing .quiz-option{width:100%;text-align:left;border:1px solid var(--ai-line);background:#fff;border-radius:16px;padding:15px 16px;cursor:pointer;color:var(--ai-navy);font:inherit;transition:.18s ease}
+body.page-ai-marketing .quiz-option:hover{border-color:rgba(247,102,63,.7);transform:translateY(-1px)}
+body.page-ai-marketing .quiz-option.selected{border-color:var(--ai-coral);background:rgba(247,102,63,.07);box-shadow:inset 0 0 0 1px rgba(247,102,63,.18)}
+body.page-ai-marketing .quiz-nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+body.page-ai-marketing .quiz-result{display:none}
+body.page-ai-marketing .quiz-result.show{display:block}
+body.page-ai-marketing .quiz-result-score{font-size:4rem;line-height:.9;letter-spacing:-.07em;font-weight:900;color:var(--ai-coral);margin:16px 0 10px}
+body.page-ai-marketing .quiz-result h3{font-size:1.65rem;margin:0 0 8px}
+body.page-ai-marketing .quiz-result p{color:var(--ai-muted)}
+body.page-ai-marketing .quiz-recos{display:grid;gap:10px;margin:22px 0}
+body.page-ai-marketing .quiz-reco{padding:14px 16px;border-radius:14px;background:var(--ai-paper);border:1px solid rgba(23,27,52,.08)}
+body.page-ai-marketing .maturity-section{background:#fff}
+body.page-ai-marketing .maturity-bar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--ai-line);border-radius:26px;overflow:hidden;margin-top:30px}
+body.page-ai-marketing .maturity-step{padding:26px;min-height:190px;border-right:1px solid var(--ai-line);position:relative}
+body.page-ai-marketing .maturity-step:last-child{border-right:0}
+body.page-ai-marketing .maturity-step .num{color:var(--ai-coral);font-weight:850;font-size:.82rem}
+body.page-ai-marketing .maturity-step h3{margin:34px 0 10px;font-size:1.25rem}
+body.page-ai-marketing .maturity-step p{margin:0;color:var(--ai-muted);font-size:.92rem;line-height:1.5}
+body.page-ai-marketing .maturity-step.active{background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .maturity-step.active p{color:rgba(255,255,255,.72)}
+body.page-ai-marketing .maturity-step.active .num{color:var(--ai-amber)}
+body.page-ai-marketing .playbook-product{background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .playbook-product .eyebrow{color:rgba(255,255,255,.62)}
+body.page-ai-marketing .playbook-product .h2{color:#fff}
+body.page-ai-marketing .playbook-product .lead{color:rgba(255,255,255,.72)}
+body.page-ai-marketing .playbook-product-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;align-items:center}
+body.page-ai-marketing .playbook-mock{border-radius:30px;padding:28px;background:linear-gradient(145deg,#fbf8f1,#ece5d9);color:var(--ai-navy);box-shadow:0 30px 80px rgba(0,0,0,.30);transform:rotate(-2deg)}
+body.page-ai-marketing .playbook-mock-top{display:flex;justify-content:space-between;gap:20px;align-items:start;padding-bottom:20px;border-bottom:1px solid rgba(23,27,52,.13)}
+body.page-ai-marketing .playbook-mock-mark{font-weight:900;letter-spacing:-.04em;font-size:1.3rem}
+body.page-ai-marketing .playbook-mock h3{font-size:2rem;margin:36px 0 18px;line-height:1.05;letter-spacing:-.05em}
+body.page-ai-marketing .playbook-mock-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+body.page-ai-marketing .playbook-mock-grid div{padding:14px;background:#fff;border-radius:14px;font-size:.86rem;font-weight:750;border:1px solid rgba(23,27,52,.08)}
+body.page-ai-marketing .deliverable strong{display:block;margin-bottom:6px;color:#fff}
+body.page-ai-marketing .deliverable span{font-size:.88rem;color:rgba(255,255,255,.66);line-height:1.45}
+body.page-ai-marketing .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+body.page-ai-marketing .job-card{padding:24px;min-height:230px;border:1px solid var(--ai-line);border-radius:22px;background:#fff}
+body.page-ai-marketing .job-card .job-verb{display:inline-flex;padding:7px 10px;border-radius:999px;background:rgba(18,169,157,.10);color:var(--ai-teal-dark);font-weight:850;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+body.page-ai-marketing .job-card h3{margin:22px 0 10px}
+body.page-ai-marketing .job-card p{margin:0;color:var(--ai-muted);line-height:1.52}
+body.page-ai-marketing .cases-section{background:var(--ai-paper)}
+body.page-ai-marketing .cases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+body.page-ai-marketing .case-card{background:#fff;border:1px solid var(--ai-line);border-radius:22px;padding:22px;min-height:250px;display:flex;flex-direction:column}
+body.page-ai-marketing .case-card .evidence{display:inline-block;align-self:flex-start;padding:5px 8px;border-radius:999px;font-size:.72rem;font-weight:850;background:#eef5ef;color:#2f6b44}
+body.page-ai-marketing .case-card.evidence-b .evidence{background:#fff4dc;color:#8b5b00}
+body.page-ai-marketing .case-card h3{font-size:1.08rem;margin:18px 0 8px}
+body.page-ai-marketing .case-card .case-result{font-size:1.7rem;letter-spacing:-.04em;font-weight:900;margin:auto 0 6px}
+body.page-ai-marketing .case-card p{margin:0;color:var(--ai-muted);font-size:.88rem;line-height:1.45}
+body.page-ai-marketing .guide-gate{background:#fff}
+body.page-ai-marketing .guide-gate-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}
+body.page-ai-marketing .guide-cover-wrap{position:relative;max-width:420px;margin:auto}
+body.page-ai-marketing .guide-cover-wrap::before{content:"";position:absolute;inset:16px -18px -18px 18px;border-radius:20px;background:var(--ai-teal);opacity:.18}
+body.page-ai-marketing .guide-cover{position:relative;width:100%;display:block;border-radius:16px;box-shadow:0 28px 70px rgba(23,27,52,.20);border:1px solid rgba(23,27,52,.10)}
+body.page-ai-marketing .guide-meta{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}
+body.page-ai-marketing .guide-meta span{padding:7px 10px;border-radius:999px;background:var(--ai-paper);border:1px solid rgba(23,27,52,.08);font-size:.78rem;font-weight:750}
+body.page-ai-marketing .lead-form{margin-top:24px;padding:24px;border:1px solid var(--ai-line);border-radius:22px;background:var(--ai-paper)}
+body.page-ai-marketing .lead-form .form-row{margin-bottom:12px}
+body.page-ai-marketing .anti-theatre{background:linear-gradient(135deg,#f7f0e6,#fff)}
+body.page-ai-marketing .anti-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;align-items:start}
+body.page-ai-marketing .anti-list{display:grid;gap:12px}
+body.page-ai-marketing .anti-item{padding:18px 20px;border-radius:18px;border:1px solid var(--ai-line);background:#fff;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+body.page-ai-marketing .anti-x{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(247,102,63,.10);color:var(--ai-coral);font-weight:900}
+body.page-ai-marketing .anti-item strong{display:block;margin-bottom:4px}
+body.page-ai-marketing .anti-item span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
+body.page-ai-marketing .engagement{background:#fff}
+body.page-ai-marketing .engagement-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+body.page-ai-marketing .engagement-step{padding:24px;border-radius:22px;background:var(--ai-paper);border:1px solid rgba(23,27,52,.08)}
+body.page-ai-marketing .engagement-step .num{color:var(--ai-coral);font-size:.8rem;font-weight:900}
+body.page-ai-marketing .engagement-step h3{margin:24px 0 8px;font-size:1.14rem}
+body.page-ai-marketing .engagement-step p{margin:0;color:var(--ai-muted);font-size:.9rem;line-height:1.48}
+body.page-ai-marketing .founder-strip{background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .founder-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:40px;align-items:center}
+body.page-ai-marketing .founder-badge{min-height:300px;border-radius:30px;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(circle at 30% 25%,rgba(18,169,157,.38),transparent 30%),
+        radial-gradient(circle at 75% 38%,rgba(247,102,63,.38),transparent 27%),
+        #232947;border:1px solid rgba(255,255,255,.12)}
+body.page-ai-marketing .founder-badge .mark{font-size:3rem;letter-spacing:-.08em;font-weight:900}
+body.page-ai-marketing .founder-strip .eyebrow{color:rgba(255,255,255,.6)}
+body.page-ai-marketing .founder-strip .h2{color:#fff}
+body.page-ai-marketing .founder-strip p{color:rgba(255,255,255,.72)}
+body.page-ai-marketing .credential-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+body.page-ai-marketing .credential-row span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.8rem;color:#fff}
+body.page-ai-marketing .faq-list{max-width:900px;margin:30px auto 0;display:grid;gap:10px}
+body.page-ai-marketing .faq-list details{border:1px solid var(--ai-line);border-radius:18px;padding:0 20px;background:#fff}
+body.page-ai-marketing .faq-list summary{cursor:pointer;font-weight:820;padding:18px 0;list-style:none;position:relative;padding-right:28px}
+body.page-ai-marketing .faq-list summary::-webkit-details-marker{display:none}
+body.page-ai-marketing .faq-list summary::after{content:"+";position:absolute;right:0;top:15px;font-size:1.35rem;color:var(--ai-coral)}
+body.page-ai-marketing .faq-list details[open] summary::after{content:"–"}
+body.page-ai-marketing .faq-list details p{margin:0 0 18px;color:var(--ai-muted);line-height:1.58}
+body.page-ai-marketing .final-cta{background:#171b34!important;color:#fff!important}
+body.page-ai-marketing .final-cta .eyebrow{color:rgba(255,255,255,.62)!important}
+body.page-ai-marketing .final-cta .h2{color:#fff!important}
+body.page-ai-marketing .final-cta .lead{color:rgba(255,255,255,.86)}
+body.page-ai-marketing .final-cta .btn.primary{background:var(--ai-coral);color:#fff}
+body.page-ai-marketing .final-cta .btn.secondary{border-color:rgba(255,255,255,.55);color:#fff}
+body.page-ai-marketing .playbook-product .deliverables .deliverable{background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.16)!important;color:#fff!important;box-shadow:none!important}
+body.page-ai-marketing .playbook-product .deliverables .deliverable strong{display:block;color:#fff!important;opacity:1!important;visibility:visible!important;font-weight:850!important}
+body.page-ai-marketing .playbook-product .deliverables .deliverable span{display:block;color:rgba(255,255,255,.72)!important;opacity:1!important;visibility:visible!important}
+.page-ai-marketing .hero .lead{max-width:760px}
+.page-ai-marketing .hero-actions{margin-top:28px}
+body.page-ai-marketing .offer-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:start}
+body.page-ai-marketing .offer-card{background:var(--ai-navy);color:#fff;border-radius:30px;padding:34px;box-shadow:0 28px 70px rgba(23,27,52,.16)}
+body.page-ai-marketing .offer-card .eyebrow{color:rgba(255,255,255,.58)}
+body.page-ai-marketing .offer-card h3{margin:16px 0 10px;color:#fff;font-size:1.9rem;line-height:1.05;letter-spacing:-.04em}
+body.page-ai-marketing .offer-card p{color:rgba(255,255,255,.72)}
+body.page-ai-marketing .offer-list{display:grid;gap:10px;margin:22px 0 0}
+body.page-ai-marketing .offer-list div{padding:13px 14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);border-radius:14px;color:#fff;font-size:.92rem}
+body.page-ai-marketing .uses-section{background:var(--ai-paper)}
+body.page-ai-marketing .uses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+body.page-ai-marketing .use-card{background:#fff;border:1px solid var(--ai-line);border-radius:22px;padding:24px;min-height:230px}
+body.page-ai-marketing .use-card .kicker{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(18,169,157,.10);color:var(--ai-teal-dark);font-weight:850;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase}
+body.page-ai-marketing .use-card h3{margin:20px 0 10px;font-size:1.18rem}
+body.page-ai-marketing .use-card p{margin:0;color:var(--ai-muted);line-height:1.5}
+body.page-ai-marketing .research-section{background:#fff}
+body.page-ai-marketing .research-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+body.page-ai-marketing .research-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
+body.page-ai-marketing .research-point{padding:20px;border:1px solid var(--ai-line);border-radius:18px;background:var(--ai-paper)}
+body.page-ai-marketing .research-point strong{display:block;font-size:1.45rem;line-height:1;letter-spacing:-.04em;color:var(--ai-navy);margin-bottom:9px}
+body.page-ai-marketing .research-point span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
+body.page-ai-marketing .guide-panel{border-radius:30px;padding:28px;background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .guide-panel .guide-cover{width:100%;max-width:390px;margin:0 auto 24px;display:block;border-radius:15px;box-shadow:0 25px 70px rgba(0,0,0,.32)}
+body.page-ai-marketing .guide-panel h3{color:#fff;font-size:1.65rem;margin:0 0 10px}
+body.page-ai-marketing .guide-panel p{color:rgba(255,255,255,.72)}
+body.page-ai-marketing .guide-panel .field label{color:#fff}
+body.page-ai-marketing .guide-panel .tiny{color:rgba(255,255,255,.60)}
+body.page-ai-marketing .why-section{background:#fff}
+body.page-ai-marketing .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+body.page-ai-marketing .experience-card{border:1px solid var(--ai-line);border-radius:20px;padding:22px;background:var(--ai-paper)}
+body.page-ai-marketing .experience-card strong{display:block;margin-bottom:7px}
+body.page-ai-marketing .experience-card span{color:var(--ai-muted);font-size:.9rem;line-height:1.45}
+body.page-ai-marketing .case-study-section{background:var(--ai-navy);color:#fff}
+body.page-ai-marketing .case-study-section .eyebrow{color:rgba(255,255,255,.60)}
+body.page-ai-marketing .case-study-section .h2{color:#fff}
+body.page-ai-marketing .case-study-section .lead{color:rgba(255,255,255,.74)}
+body.page-ai-marketing .case-study-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:start}
+body.page-ai-marketing .case-study-results{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+body.page-ai-marketing .case-study-result{padding:20px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+body.page-ai-marketing .case-study-result strong{display:block;color:#fff;margin-bottom:6px}
+body.page-ai-marketing .case-study-result span{color:rgba(255,255,255,.70);font-size:.9rem;line-height:1.45}
+body.page-ai-marketing .case-study-note{margin-top:16px;color:rgba(255,255,255,.54);font-size:.78rem}
+body.page-ai-marketing .faq-section{background:var(--ai-paper)}
+body.page-ai-marketing .offer-card .hero-actions .btn.primary{width:100%;justify-content:center}
+body.page-ai-marketing .case-study-media{margin-top:26px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 24px 60px rgba(0,0,0,.22)}
+body.page-ai-marketing .case-study-media img{display:block;width:100%;height:auto}
+body.page-ai-marketing .final-cta .lead, body.page-ai-marketing .final-cta p{color:rgba(255,255,255,.82)!important}
+body.page-ai-marketing .final-cta .form-card{background:#fff}
+body.page-ai-marketing .final-cta .form-card h3, body.page-ai-marketing .final-cta .form-card label{color:#171b34}
+body.page-ai-marketing .ai-native-hero-visual{position:relative;display:grid;place-items:center;min-height:520px;padding:8px 0;isolation:isolate}
+body.page-ai-marketing .ai-native-hero-visual::before{content:"";position:absolute;inset:12% 8% 8%;border-radius:50%;background:radial-gradient(circle,rgba(247,102,63,.20) 0%,rgba(18,169,157,.10) 38%,transparent 70%);filter:blur(34px);z-index:-1;pointer-events:none}
+body.page-ai-marketing .ai-native-hero-visual img{display:block;width:min(680px,110%);max-width:none;height:auto;filter:drop-shadow(0 28px 36px rgba(0,0,0,.22));transform:translateX(1%)}
+body.page-ai-marketing .mt-16{margin-top:16px}
+body.page-ai-marketing .mt-18{margin-top:18px}
+body.page-ai-marketing .mt-22{margin-top:22px}
+body.page-ai-marketing .mt-24{margin-top:24px}
+body.page-ai-marketing .final-cta-note{font-weight:700;letter-spacing:-.01em}
 @media (max-width:980px){
-  body.page-ai-marketing .hero-grid, body.page-ai-marketing .section-head, body.page-ai-marketing .positioning-grid, body.page-ai-marketing .playbook-grid, body.page-ai-marketing .why-grid, body.page-ai-marketing .contact-grid{grid-template-columns:1fr;}
+  body.page-ai-marketing .hero-grid, body.page-ai-marketing .section-head, body.page-ai-marketing .positioning-grid, body.page-ai-marketing .playbook-grid, body.page-ai-marketing .why-grid, body.page-ai-marketing .contact-grid{grid-template-columns:1fr}
   body.page-ai-marketing .levels{grid-template-columns:repeat(2,1fr)}
   body.page-ai-marketing .service-grid{grid-template-columns:1fr}
   body.page-ai-marketing .usecase-grid{grid-template-columns:1fr 1fr}
@@ -845,6 +1018,19 @@ body.page-ai-marketing .reveal.in{opacity:1;transform:none}
   body.page-ai-marketing .roadmap-grid{grid-template-columns:1fr}
   body.page-ai-marketing .sticky{position:static}
   body.page-ai-marketing .guide-teaser-card{grid-template-columns:1fr}
+  body.page-ai-marketing .proof-strip-grid, body.page-ai-marketing .quiz-shell, body.page-ai-marketing .playbook-product-grid, body.page-ai-marketing .guide-gate-grid, body.page-ai-marketing .anti-grid, body.page-ai-marketing .founder-grid{grid-template-columns:1fr}
+  body.page-ai-marketing .proof-strip-grid{background:#fff}
+  body.page-ai-marketing .proof-strip-grid > div{border-bottom:1px solid var(--ai-line)}
+  body.page-ai-marketing .quiz-aside{position:static}
+  body.page-ai-marketing .cases-grid{grid-template-columns:1fr 1fr}
+  body.page-ai-marketing .jobs-grid{grid-template-columns:1fr 1fr}
+  body.page-ai-marketing .engagement-steps{grid-template-columns:1fr 1fr}
+  body.page-ai-marketing .maturity-bar{grid-template-columns:1fr 1fr}
+  body.page-ai-marketing .maturity-step:nth-child(2){border-right:0}
+  body.page-ai-marketing .maturity-step{border-bottom:1px solid var(--ai-line)}
+  body.page-ai-marketing .maturity-step:nth-child(3), body.page-ai-marketing .maturity-step:nth-child(4){border-bottom:0}
+  body.page-ai-marketing .offer-grid, body.page-ai-marketing .research-grid, body.page-ai-marketing .why-grid, body.page-ai-marketing .case-study-grid{grid-template-columns:1fr}
+  body.page-ai-marketing .uses-grid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:620px){
   body.page-ai-marketing .wrap{width:min(calc(100% - 26px),var(--max))}
@@ -863,7 +1049,23 @@ body.page-ai-marketing .reveal.in{opacity:1;transform:none}
   body.page-ai-marketing *, body.page-ai-marketing *::before, body.page-ai-marketing *::after{animation:none!important;transition:none!important}
   body.page-ai-marketing .reveal{opacity:1;transform:none}
 }
-
+@media (max-width:680px){
+  body.page-ai-marketing .cases-grid, body.page-ai-marketing .jobs-grid, body.page-ai-marketing .engagement-steps, body.page-ai-marketing .deliverables, body.page-ai-marketing .playbook-mock-grid, body.page-ai-marketing .maturity-bar{grid-template-columns:1fr}
+  body.page-ai-marketing .maturity-step{border-right:0;border-bottom:1px solid var(--ai-line)!important}
+  body.page-ai-marketing .maturity-step:last-child{border-bottom:0!important}
+  body.page-ai-marketing .quiz-card, body.page-ai-marketing .quiz-aside{padding:22px}
+  body.page-ai-marketing .guide-gate-grid{gap:28px}
+  body.page-ai-marketing .proof-stat strong{font-size:2rem}
+  body.page-ai-marketing .uses-grid, body.page-ai-marketing .research-points, body.page-ai-marketing .experience-grid, body.page-ai-marketing .case-study-results{grid-template-columns:1fr}
+  body.page-ai-marketing .uses-grid{grid-template-columns:1fr}
+  body.page-ai-marketing .ai-native-hero-visual{min-height:360px;padding:0}
+  body.page-ai-marketing .ai-native-hero-visual img{width:115%;transform:translateX(0)}
+}
+@media (max-width:1100px){
+  .page-ai-marketing .hero-grid{grid-template-columns:1fr}
+  body.page-ai-marketing .uses-grid{grid-template-columns:repeat(2,1fr)}
+  body.page-ai-marketing .ai-native-hero-visual{min-height:460px;margin-top:10px}
+}
 /* ---------- podcast-marketing-report.html ---------- */
 body.page-podcast-report *{box-sizing:border-box}
 body.page-podcast-report{margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--paper); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased;}
