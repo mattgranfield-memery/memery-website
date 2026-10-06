@@ -8,9 +8,9 @@
   if (!mount) return;
 
   const items = [
-    { label:'Home', href:'index.html', files:['index.html',''] },
-    { label:'Our Approach', href:'index.html#what-we-do' },
-    { label:'Our Work', href:'index.html#work' },
+    { label:'Home', href:'/', files:['index.html',''] },
+    { label:'Our Approach', href:'/#what-we-do' },
+    { label:'Our Work', href:'/#work' },
     { label:'Podcasts', href:'podcast.html', files:['podcast.html','podcast-marketing-report.html'] },
     { label:'Marketing AI', href:'ai-marketing.html', files:['ai-marketing.html'] },
     { label:'GEO/AEO', href:'geo.html', files:['geo.html'] },
@@ -27,13 +27,13 @@
 
   const contactHref = document.getElementById('contact')
     ? '#contact'
-    : 'index.html#contact';
+    : '/#contact';
 
   mount.innerHTML = `
     <div class="site-nav-shell">
       <nav class="site-nav" aria-label="Primary navigation">
 
-        <a class="site-brand" href="index.html" aria-label="memery home">
+        <a class="site-brand" href="/" aria-label="memery home">
           <span class="site-brand-word">
             memery<span class="site-brand-play" aria-hidden="true">▶</span>
           </span>
