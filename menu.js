@@ -9,8 +9,8 @@
 
   const items = [
     { label:'Home', href:'index.html', files:['index.html',''] },
-    { label:'Our Approach', href:'index.html#problem' },
-    { label:'Our Work', href:'index.html#track' },
+    { label:'Our Approach', href:'index.html#what-we-do' },
+    { label:'Our Work', href:'index.html#work' },
     { label:'Podcasts', href:'podcast.html', files:['podcast.html','podcast-marketing-report.html'] },
     { label:'Marketing AI', href:'ai-marketing.html', files:['ai-marketing.html'] },
     { label:'GEO/AEO', href:'geo.html', files:['geo.html'] },
