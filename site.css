@@ -1661,3 +1661,51 @@ body.page-home .home-engage .engage-card h3{font-size:1.8rem;}
   body.page-home .home-work-copy h3,
   body.page-home .home-work-card.featured .home-work-copy h3{font-size:clamp(1.65rem,8vw,2.25rem);max-width:none;}
 }
+
+/* Homepage hero refinement — 2026-10-06 */
+body.page-home .home-hero-grid{
+  grid-template-columns:minmax(0,1.22fr) minmax(300px,.78fr);
+  gap:28px;
+}
+body.page-home .home-hero-copy{
+  position:relative;
+  z-index:3;
+  min-width:0;
+}
+body.page-home .home-hero-copy .display{
+  max-width:none;
+  font-size:clamp(4rem,6.4vw,7.2rem);
+  line-height:.92;
+}
+body.page-home .home-hero-copy .lead{
+  max-width:700px;
+  font-size:clamp(1rem,1.35vw,1.14rem);
+  line-height:1.55;
+}
+body.page-home .home-hero-copy .lead + .lead{margin-top:18px;}
+body.page-home .home-hero-memory{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  min-width:0;
+}
+body.page-home .home-hero-memory img{
+  display:block;
+  width:min(520px,100%);
+  max-width:100%;
+  height:auto;
+  object-fit:contain;
+}
+@media (max-width:1100px){
+  body.page-home .home-hero-grid{grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:22px;}
+  body.page-home .home-hero-copy .display{font-size:clamp(3.8rem,7vw,6rem);}
+}
+@media (max-width:820px){
+  body.page-home .home-hero-grid{grid-template-columns:1fr;}
+  body.page-home .home-hero-memory{justify-content:center;margin-top:24px;}
+  body.page-home .home-hero-memory img{width:min(500px,92vw);}
+  body.page-home .home-hero-copy .display{font-size:clamp(3.5rem,14vw,5.5rem);}
+  body.page-home .home-hero-copy .lead{font-size:1rem;}
+}
