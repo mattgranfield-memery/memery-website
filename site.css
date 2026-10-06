@@ -1682,3 +1682,21 @@ body.page-home .home-hero-memory img{
   body.page-home .home-hero-memory{min-height:340px;}
   body.page-home .home-hero-memory img{width:108%;}
 }
+
+/* Home hero balance fix — protect headline from visual overlap */
+@media (min-width:1101px){
+  body.page-home .home-hero-grid{
+    grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);
+    gap:34px;
+  }
+  body.page-home .home-hero-copy{min-width:0;position:relative;z-index:2;}
+  body.page-home .home-hero-copy .display{
+    max-width:100%;
+    font-size:clamp(3.3rem,7.1vw,7.4rem);
+  }
+  body.page-home .home-hero-memory{z-index:1;}
+  body.page-home .home-hero-memory img{
+    width:min(610px,108%);
+    transform:translateX(6%);
+  }
+}
