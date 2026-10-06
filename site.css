@@ -1586,7 +1586,7 @@ body.page-home .home-work .lead{color:rgba(242,239,232,.68);}
 body.page-home .home-work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
 body.page-home .home-work-card{
   position:relative;
-  min-height:390px;
+  min-height:455px;
   border-radius:26px;
   overflow:hidden;
   background:#232947;
@@ -1595,11 +1595,12 @@ body.page-home .home-work-card{
 }
 body.page-home .home-work-card.featured{grid-column:span 8;min-height:520px;}
 body.page-home .home-work-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-body.page-home .home-work-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,24,.02) 20%,rgba(8,11,24,.90) 100%);}
-body.page-home .home-work-copy{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2;}
-body.page-home .home-work-copy span{display:block;font-size:.74rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.68);margin-bottom:10px;}
-body.page-home .home-work-copy h3{font-size:clamp(1.5rem,2.5vw,2.7rem);line-height:1.02;letter-spacing:-.045em;margin:0 0 10px;color:#fff;max-width:17ch;}
-body.page-home .home-work-copy p{margin:0 0 14px;max-width:58ch;color:rgba(255,255,255,.72);}
+body.page-home .home-work-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,11,24,.36) 0%,rgba(8,11,24,.54) 34%,rgba(8,11,24,.94) 78%,rgba(8,11,24,.98) 100%);}
+body.page-home .home-work-copy{position:absolute;left:0;right:0;bottom:0;padding:26px;z-index:2;text-shadow:0 2px 18px rgba(0,0,0,.38);}
+body.page-home .home-work-copy span{display:block;font-size:.72rem;line-height:1.35;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.84);margin-bottom:10px;}
+body.page-home .home-work-copy h3{font-size:clamp(1.45rem,1.8vw,2.05rem);line-height:1.04;letter-spacing:-.04em;margin:0 0 10px;color:#fff;max-width:none;text-wrap:balance;}
+body.page-home .home-work-card.featured .home-work-copy h3{font-size:clamp(2rem,3vw,3.25rem);max-width:16ch;}
+body.page-home .home-work-copy p{margin:0 0 14px;max-width:58ch;color:rgba(255,255,255,.86);line-height:1.48;}
 body.page-home .home-work-copy strong{display:block;color:#fff;font-size:1.02rem;}
 body.page-home .home-work-card.text-card{background:linear-gradient(145deg,var(--coral),#db4f31);}
 body.page-home .home-work-card.text-card .home-work-copy.standalone{position:relative;display:flex;flex-direction:column;justify-content:flex-end;height:100%;min-height:390px;}
@@ -1648,55 +1649,15 @@ body.page-home .home-engage .engage-card h3{font-size:1.8rem;}
   body.page-home .home-feature-panel{min-height:340px;}
 }
 
-/* Home hero — marketing science / human memory visual */
-body.page-home .home-hero-memory{
-  position:relative;
-  min-height:540px;
-  display:grid;
-  place-items:center;
-  isolation:isolate;
-}
-body.page-home .home-hero-memory::before{
-  content:"";
-  position:absolute;
-  width:78%;
-  aspect-ratio:1;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(247,102,63,.14) 0%,rgba(247,102,63,.045) 42%,transparent 72%);
-  filter:blur(30px);
-  z-index:-1;
-}
-body.page-home .home-hero-memory img{
-  display:block;
-  width:min(690px,112%);
-  max-width:none;
-  height:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 28px 44px rgba(0,0,0,.22));
-}
-@media(max-width:1100px){
-  body.page-home .home-hero-memory{min-height:460px;margin-top:6px;}
-  body.page-home .home-hero-memory img{width:min(660px,94%);}
-}
-@media(max-width:760px){
-  body.page-home .home-hero-memory{min-height:340px;}
-  body.page-home .home-hero-memory img{width:108%;}
-}
 
-/* Home hero balance fix — protect headline from visual overlap */
-@media (min-width:1101px){
-  body.page-home .home-hero-grid{
-    grid-template-columns:minmax(0,1.18fr) minmax(360px,.82fr);
-    gap:34px;
-  }
-  body.page-home .home-hero-copy{min-width:0;position:relative;z-index:2;}
-  body.page-home .home-hero-copy .display{
-    max-width:100%;
-    font-size:clamp(3.3rem,7.1vw,7.4rem);
-  }
-  body.page-home .home-hero-memory{z-index:1;}
-  body.page-home .home-hero-memory img{
-    width:min(610px,108%);
-    transform:translateX(6%);
-  }
+/* Homepage selected-work legibility refinement */
+@media (max-width:1100px){
+  body.page-home .home-work-card{min-height:470px;}
+  body.page-home .home-work-copy h3{font-size:clamp(1.45rem,2.4vw,2rem);}
+}
+@media (max-width:680px){
+  body.page-home .home-work-card{min-height:430px;}
+  body.page-home .home-work-copy{padding:22px;}
+  body.page-home .home-work-copy h3,
+  body.page-home .home-work-card.featured .home-work-copy h3{font-size:clamp(1.65rem,8vw,2.25rem);max-width:none;}
 }
