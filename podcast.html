@@ -17,10 +17,35 @@
   <title>Corporate Podcast Production | memery</title>
   <meta name="description" content="memery helps organisations create corporate podcasts people actually want to hear — from strategy and content ideation to recording, production, distribution and promotion." />
   <meta name="theme-color" content="#171b34" />
+  <link rel="canonical" href="https://memery.agency/podcast.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Corporate Podcast Strategy & Production | memery" />
+  <meta property="og:description" content="Make a podcast people actually want to hear. Explore memery’s corporate podcast services and our 2027 research-led Podcast Marketing Playbook." />
+  <meta property="og:url" content="https://memery.agency/podcast.html" />
+  <meta property="og:image" content="https://memery.agency/memery-podcast-playbook-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://memery.agency/memery-podcast-playbook-cover.png" />
+
 
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="components.css">
   <script src="menu.js" defer></script>
+  <style>
+    /* Scoped additions for the 2027 field guide; existing site styles remain untouched. */
+    .research-cover-link{display:block;float:right;width:min(35%,220px);margin:0 0 22px 26px;transform:rotate(2deg);transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 18px 42px rgba(15,19,45,.22);border-radius:5px;overflow:hidden}
+    .research-cover-link:hover,.research-cover-link:focus-visible{transform:rotate(0deg) translateY(-4px);box-shadow:0 24px 52px rgba(15,19,45,.3)}
+    .research-cover-link img{display:block;width:100%;height:auto}
+    .research-promo-actions{clear:both}
+    .playbook-download-panel{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,1fr);gap:34px;align-items:start;padding:30px;background:#f6f2ec;color:#171b34;border-radius:16px;margin-top:24px}
+    .playbook-download-panel .eyebrow{color:#db5e2a}
+    .playbook-download-panel h3{font-size:clamp(24px,2.6vw,37px);line-height:1.1;margin:10px 0 14px}
+    .playbook-download-panel p{margin:0;line-height:1.6}
+    .playbook-download-panel .form-card{margin:0}
+    .playbook-download-panel .tiny{font-size:12px;line-height:1.5}
+    .playbook-download-panel .success{display:none}
+    @media(max-width:850px){.playbook-download-panel{grid-template-columns:1fr}.research-cover-link{width:145px;max-width:42%;margin:0 0 18px 18px}}
+    @media(max-width:520px){.playbook-download-panel{padding:20px}.research-cover-link{width:120px}}
+  </style>
 </head>
 
 <body class="page-podcast">
@@ -114,6 +139,9 @@
         <div class="reveal">
           <div class="eyebrow">New memery research / 2027</div>
 
+          <a class="research-cover-link" href="#playbook-download" aria-label="Download the 2027 Podcast Marketing Playbook">
+            <img src="memery-podcast-playbook-cover.png" alt="Cover of memery's 2027 Podcast Marketing Playbook" width="640" height="905" loading="lazy">
+          </a>
           <h2 class="h2" style="margin-top:18px;">
             What actually works in podcast marketing?
           </h2>
@@ -131,12 +159,11 @@
           </p>
 
           <div class="research-promo-actions">
-            <a class="btn primary" href="podcast-marketing-report.html">
-              Get the full report <span class="arrow">↗</span>
+            <a class="btn primary" href="#playbook-download">
+              Download the 2027 playbook <span class="arrow">↓</span>
             </a>
-
-            <a class="btn secondary" href="podcast-marketing-report.html#download">
-              See what’s inside
+            <a class="btn secondary" href="podcast-marketing-report.html">
+              Explore the research <span class="arrow">↗</span>
             </a>
           </div>
         </div>
@@ -172,6 +199,28 @@
             </span>
           </article>
 
+        </div>
+
+        <div class="playbook-download-panel reveal" id="playbook-download">
+          <div>
+            <div class="eyebrow">Free research / 2027</div>
+            <h3>30 successes. 30 failures. Three ways to grow.</h3>
+            <p>Get the full 26-page field guide to owned branded podcasts, paid podcast advertising and executive guesting. Practical examples, common mistakes, measurement frameworks and a checklist you can use before spending a dollar.</p>
+          </div>
+          <div class="form-card">
+            <form class="form" id="playbookForm" action="https://formspree.io/f/xwlpqagb" method="POST">
+              <input type="hidden" name="lead_type" value="Podcast Marketing Playbook 2027 download">
+              <input type="hidden" name="source_page" value="Podcast landing page - research">
+              <div class="form-row">
+                <div class="field"><label for="playbook-name">Name</label><input id="playbook-name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="playbook-company">Organisation</label><input id="playbook-company" name="company" autocomplete="organization"></div>
+              </div>
+              <div class="field"><label for="playbook-email">Work email</label><input id="playbook-email" name="email" type="email" autocomplete="email" required></div>
+              <button class="btn primary" id="playbookSubmit" type="submit">Get the free playbook <span class="arrow">↓</span></button>
+              <p class="tiny">We'll open the PDF after your details have been submitted. memery may also contact you about relevant services; you can opt out at any time.</p>
+              <div class="success" id="playbookSuccess" role="status" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
 
       </div>
@@ -621,6 +670,34 @@
         guideSuccess.style.display = 'block';
         guideSubmit.disabled = false;
         guideSubmit.innerHTML = originalText;
+      }
+    });
+
+    /* NEW 2027 PLAYBOOK LEAD FORM — separate from the existing starter guide. */
+    const playbookForm = document.getElementById('playbookForm');
+    const playbookSubmit = document.getElementById('playbookSubmit');
+    const playbookSuccess = document.getElementById('playbookSuccess');
+    playbookForm.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const originalText = playbookSubmit.innerHTML;
+      playbookSuccess.style.display = 'none';
+      playbookSuccess.textContent = '';
+      playbookSubmit.disabled = true;
+      playbookSubmit.textContent = 'Sending…';
+      try {
+        const response = await fetch(playbookForm.action, {
+          method:'POST', body:new FormData(playbookForm), headers:{'Accept':'application/json'}
+        });
+        if (!response.ok) throw new Error('Submission failed');
+        playbookSuccess.textContent = 'Thanks — opening your playbook now…';
+        playbookSuccess.style.display = 'block';
+        if (typeof gtag === 'function') gtag('event','generate_lead',{lead_source:'podcast_playbook_2027'});
+        setTimeout(() => { window.location.href = 'memery-podcast-marketing-playbook-2027.pdf'; }, 450);
+      } catch (error) {
+        playbookSuccess.textContent = 'Something went wrong. Please check your details and try again.';
+        playbookSuccess.style.display = 'block';
+        playbookSubmit.disabled = false;
+        playbookSubmit.innerHTML = originalText;
       }
     });
 
